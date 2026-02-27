@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GPQHNR6C2C');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Foreign Assistance Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f2ed; --white: #ffffff; --ink: #1a1a1a; --ink-light: #4a4a4a;
+    --ink-dim: #8a8a8a; --ink-faint: #b5b5b5; --border: #d8d4cd; --border-light: #e8e4dd;
+    --accent: #b8860b;
+    --commitment: #1a6b4a; --commitment-bg: #e8f5ee;
+    --announcement: #6b5b1a; --announcement-bg: #fdf6e3;
+    --milestone: #4a5568; --milestone-bg: #f0f0f0;
+    --health: #2563eb; --humanitarian: #dc2626; --agriculture: #16a34a;
+    --innovation: #7c3aed; --policy: #d97706; --economic: #0891b2; --budget: #9333ea;
+    --africa: #b45309; --indo-pacific: #0369a1; --global: #6b7280; --americas: #15803d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 0; height: 52px; }
+  .nav-brand { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; margin-right: 32px; white-space: nowrap; }
+  .nav-tab { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.5px; padding: 0 16px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; color: var(--ink-dim); text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+  .nav-tab:hover { color: var(--ink); }
+  .nav-tab.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  /* PAGE */
+  .page { max-width: 1200px; margin: 0 auto; padding: 80px 32px 80px; }
+
+  /* HERO */
+  .dash-hero { margin-bottom: 36px; }
+  .dash-hero h1 { font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+  .dash-hero p { font-size: 14px; color: var(--ink-light); }
+
+  /* SUMMARY STATS */
+  .summary-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 36px; }
+  .stat-box { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 18px 20px; }
+  .stat-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 6px; display: block; }
+  .stat-value { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 700; line-height: 1; }
+  .stat-value.sv-commitment { color: var(--commitment); }
+  .stat-value.sv-announcement { color: var(--announcement); }
+  .stat-value.sv-count { color: var(--ink); }
+  .stat-sub { font-size: 11px; color: var(--ink-dim); margin-top: 4px; }
+
+  /* SECTOR BARS */
+  .section-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 14px; }
+  .sector-bars { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 20px 24px; margin-bottom: 36px; }
+  .sector-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .sector-row:last-child { margin-bottom: 0; }
+  .sector-name { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; width: 100px; flex-shrink: 0; color: var(--ink-light); }
+  .sector-bar-wrap { flex: 1; height: 8px; background: var(--border-light); border-radius: 4px; overflow: hidden; }
+  .sector-bar { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+  .sector-amount { font-family: 'Source Serif 4', serif; font-size: 13px; font-weight: 600; width: 70px; text-align: right; flex-shrink: 0; }
+  .sector-count { font-size: 11px; color: var(--ink-dim); width: 50px; text-align: right; flex-shrink: 0; }
+
+  /* FILTERS */
+  .filters { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 28px; align-items: flex-start; }
+  .filter-group { display: flex; flex-direction: column; gap: 8px; }
+  .filter-group-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); }
+  .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.3px; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border); background: var(--white); color: var(--ink-light); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .chip:hover { border-color: var(--ink-dim); color: var(--ink); }
+  .chip.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+  .chip.active.geo-africa { background: var(--africa); border-color: var(--africa); }
+  .chip.active.geo-indo-pacific { background: var(--indo-pacific); border-color: var(--indo-pacific); }
+  .chip.active.geo-global { background: var(--global); border-color: var(--global); }
+  .chip.active.geo-americas { background: var(--americas); border-color: var(--americas); }
+  .chip.active.sec-health { background: var(--health); border-color: var(--health); }
+  .chip.active.sec-humanitarian { background: var(--humanitarian); border-color: var(--humanitarian); }
+  .chip.active.sec-agriculture { background: var(--agriculture); border-color: var(--agriculture); }
+  .chip.active.sec-innovation { background: var(--innovation); border-color: var(--innovation); }
+  .chip.active.sec-policy { background: var(--policy); border-color: var(--policy); }
+  .chip.active.sec-economic { background: var(--economic); border-color: var(--economic); }
+  .chip.active.sec-budget { background: var(--budget); border-color: var(--budget); }
+  .chip.active.typ-commitment { background: var(--commitment); border-color: var(--commitment); }
+  .chip.active.typ-announcement { background: var(--announcement); border-color: var(--announcement); }
+  .chip.active.typ-milestone { background: var(--milestone); border-color: var(--milestone); }
+
+  .reset-btn { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--ink-dim); cursor: pointer; transition: all 0.15s; align-self: flex-end; }
+  .reset-btn:hover { color: var(--ink); border-color: var(--ink-dim); }
+
+  /* RESULTS */
+  .results-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+  .results-count { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-dim); }
+  .results-total { font-family: 'Source Serif 4', serif; font-size: 13px; color: var(--ink-light); }
+
+  /* CARD GRID */
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .dash-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--border); border-radius: 4px; padding: 16px; cursor: pointer; transition: all 0.2s; }
+  .dash-card:hover { box-shadow: 0 2px 14px rgba(0,0,0,0.07); transform: translateY(-1px); }
+  .dash-card.type-commitment { border-top-color: var(--commitment); background: var(--commitment-bg); }
+  .dash-card.type-announcement { border-top-color: var(--announcement); background: var(--announcement-bg); }
+  .dash-card.type-milestone { border-top-color: var(--milestone); background: var(--milestone-bg); border-top-style: dashed; }
+  .dash-card.hidden { display: none; }
+
+  .dc-tags { display: flex; gap: 5px; margin-bottom: 8px; flex-wrap: wrap; }
+  .dc-tag { font-family: 'IBM Plex Mono', monospace; font-size: 7px; letter-spacing: 0.5px; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; font-weight: 500; }
+  .dc-tag-type-commitment { background: rgba(26,107,74,0.12); color: var(--commitment); }
+  .dc-tag-type-announcement { background: rgba(107,91,26,0.12); color: var(--announcement); }
+  .dc-tag-type-milestone { background: rgba(74,85,104,0.12); color: var(--milestone); }
+  .dc-tag-sector { background: rgba(0,0,0,0.05); }
+  .dc-tag-sector.s-health { color: var(--health); }
+  .dc-tag-sector.s-humanitarian { color: var(--humanitarian); }
+  .dc-tag-sector.s-agriculture { color: var(--agriculture); }
+  .dc-tag-sector.s-innovation { color: var(--innovation); }
+  .dc-tag-sector.s-policy { color: var(--policy); }
+  .dc-tag-sector.s-economic { color: var(--economic); }
+  .dc-tag-sector.s-budget { color: var(--budget); }
+  .dc-tag-geo { background: rgba(0,0,0,0.05); color: var(--ink-dim); }
+  .dc-tag-geo.geo-africa { color: var(--africa); }
+  .dc-tag-geo.geo-indo-pacific { color: var(--indo-pacific); }
+  .dc-tag-geo.geo-global { color: var(--global); }
+  .dc-tag-geo.geo-americas { color: var(--americas); }
+
+  .dc-title { font-family: 'Source Serif 4', serif; font-size: 16px; font-weight: 600; line-height: 1.3; margin-bottom: 3px; }
+  .dc-date { font-size: 11px; color: var(--ink-dim); margin-bottom: 8px; }
+  .dc-amount { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 700; line-height: 1; margin-bottom: 2px; }
+  .dc-amount.c-commitment { color: var(--commitment); }
+  .dc-amount.c-announcement { color: var(--announcement); }
+  .dc-amount.c-milestone { color: var(--milestone); font-size: 13px; }
+  .dc-annual { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-dim); margin-bottom: 8px; }
+  .dc-desc { font-size: 12px; color: var(--ink-light); line-height: 1.5; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-light); }
+
+  /* GEO BREAKDOWN */
+  .geo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 36px; }
+  .geo-box { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; border-left: 3px solid; cursor: pointer; transition: all 0.15s; }
+  .geo-box:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+  .geo-box.geo-africa { border-left-color: var(--africa); }
+  .geo-box.geo-indo-pacific { border-left-color: var(--indo-pacific); }
+  .geo-box.geo-global { border-left-color: var(--global); }
+  .geo-box.geo-americas { border-left-color: var(--americas); }
+  .geo-name { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 6px; }
+  .geo-amount { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 700; }
+  .geo-box.geo-africa .geo-amount { color: var(--africa); }
+  .geo-box.geo-indo-pacific .geo-amount { color: var(--indo-pacific); }
+  .geo-box.geo-global .geo-amount { color: var(--global); }
+  .geo-box.geo-americas .geo-amount { color: var(--americas); }
+  .geo-count { font-size: 11px; color: var(--ink-dim); margin-top: 3px; }
+
+  /* EMPTY STATE */
+  .empty-state { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--ink-dim); }
+  .empty-state p { font-size: 14px; margin-bottom: 8px; }
+  .empty-state button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 16px; border: 1px solid var(--border); background: var(--white); border-radius: 4px; cursor: pointer; color: var(--ink-dim); margin-top: 8px; }
+
+  /* FOOTER */
+  .footer { border-top: 1px solid var(--border); padding: 24px 0 0; margin-top: 60px; }
+  .footer p { font-size: 11px; color: var(--ink-dim); line-height: 1.8; }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .page { padding: 70px 12px 60px; }
+    .nav-inner { padding: 0 14px; gap: 0; }
+    .nav-brand { font-size: 12px; margin-right: 16px; }
+    .nav-tab { font-size: 10px; padding: 0 10px; }
+    .dash-hero h1 { font-size: 22px; }
+    .summary-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat-value { font-size: 20px; }
+    .geo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .filters { gap: 14px; }
+    .sector-name { width: 70px; font-size: 9px; }
+    .sector-amount { width: 55px; font-size: 12px; }
+    .sector-count { display: none; }
+  }
+  @media (min-width: 641px) and (max-width: 900px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .summary-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Foreign Assistance Tracker</a>
+    <a href="index.html" class="nav-tab">Timeline</a>
+    <a href="dashboard.html" class="nav-tab active">Dashboard</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="dash-hero">
+    <h1>Sort & Filter</h1>
+    <p>Explore U.S. foreign assistance activity by geography, sector, and type.</p>
+  </div>
+
+  <!-- SUMMARY STATS -->
+  <div class="summary-row">
+    <div class="stat-box">
+      <span class="stat-label">Total Committed (annual)</span>
+      <div class="stat-value sv-commitment" id="statCommitted">—</div>
+      <div class="stat-sub">Obligated funds</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Total Announced (annual)</span>
+      <div class="stat-value sv-announcement" id="statAnnounced">—</div>
+      <div class="stat-sub">Pledged, not yet obligated</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Events Shown</span>
+      <div class="stat-value sv-count" id="statCount">—</div>
+      <div class="stat-sub">of <span id="statTotal">—</span> total</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Period Covered</span>
+      <div class="stat-value sv-count" style="font-size:18px">Jul 2025–<br>Feb 2026</div>
+      <div class="stat-sub">8 months</div>
+    </div>
+  </div>
+
+  <!-- GEO BREAKDOWN -->
+  <div class="section-title">By Region — click to filter</div>
+  <div class="geo-grid">
+    <div class="geo-box geo-africa" onclick="toggleGeoFilter('africa')">
+      <div class="geo-name">Sub-Saharan Africa</div>
+      <div class="geo-amount" id="geoAmtAfrica">—</div>
+      <div class="geo-count" id="geoCntAfrica">— events</div>
+    </div>
+    <div class="geo-box geo-indo-pacific" onclick="toggleGeoFilter('indo-pacific')">
+      <div class="geo-name">Indo-Pacific</div>
+      <div class="geo-amount" id="geoAmtIndoPacific">—</div>
+      <div class="geo-count" id="geoCntIndoPacific">— events</div>
+    </div>
+    <div class="geo-box geo-global" onclick="toggleGeoFilter('global')">
+      <div class="geo-name">Global / Multi-Region</div>
+      <div class="geo-amount" id="geoAmtGlobal">—</div>
+      <div class="geo-count" id="geoCntGlobal">— events</div>
+    </div>
+    <div class="geo-box geo-americas" onclick="toggleGeoFilter('americas')">
+      <div class="geo-name">Americas</div>
+      <div class="geo-amount" id="geoAmtAmericas">—</div>
+      <div class="geo-count" id="geoCntAmericas">— events</div>
+    </div>
+  </div>
+
+  <!-- SECTOR BARS -->
+  <div class="section-title">By Sector</div>
+  <div class="sector-bars" id="sectorBars"></div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <div class="filter-group">
+      <div class="filter-group-label">Geography</div>
+      <div class="filter-chips">
+        <div class="chip geo-africa" data-filter="geo" data-val="africa" onclick="toggleChip(this)">Africa</div>
+        <div class="chip geo-indo-pacific" data-filter="geo" data-val="indo-pacific" onclick="toggleChip(this)">Indo-Pacific</div>
+        <div class="chip geo-global" data-filter="geo" data-val="global" onclick="toggleChip(this)">Global</div>
+        <div class="chip geo-americas" data-filter="geo" data-val="americas" onclick="toggleChip(this)">Americas</div>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-group-label">Sector</div>
+      <div class="filter-chips">
+        <div class="chip sec-health" data-filter="sector" data-val="health" onclick="toggleChip(this)">Health</div>
+        <div class="chip sec-humanitarian" data-filter="sector" data-val="humanitarian" onclick="toggleChip(this)">Humanitarian</div>
+        <div class="chip sec-agriculture" data-filter="sector" data-val="agriculture" onclick="toggleChip(this)">Agriculture</div>
+        <div class="chip sec-innovation" data-filter="sector" data-val="innovation" onclick="toggleChip(this)">Innovation</div>
+        <div class="chip sec-policy" data-filter="sector" data-val="policy" onclick="toggleChip(this)">Policy</div>
+        <div class="chip sec-economic" data-filter="sector" data-val="economic" onclick="toggleChip(this)">Economic</div>
+        <div class="chip sec-budget" data-filter="sector" data-val="budget" onclick="toggleChip(this)">Budget</div>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-group-label">Type</div>
+      <div class="filter-chips">
+        <div class="chip typ-commitment" data-filter="type" data-val="commitment" onclick="toggleChip(this)">Committed</div>
+        <div class="chip typ-announcement" data-filter="type" data-val="announcement" onclick="toggleChip(this)">Announced</div>
+        <div class="chip typ-milestone" data-filter="type" data-val="milestone" onclick="toggleChip(this)">Milestone</div>
+      </div>
+    </div>
+    <button class="reset-btn" onclick="resetFilters()">Reset all</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-header">
+    <span class="results-count" id="resultsCount">Showing all events</span>
+    <span class="results-total" id="resultsTotals"></span>
+  </div>
+
+  <div class="card-grid" id="cardGrid"></div>
+
+  <div class="footer">
+    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>
+    Annualized figures used for multi-year commitments. Draft — Last updated February 26, 2026</p>
+  </div>
+
+</div>
+
+<script>
+const events = [
+  { month:"2025-07", date:"Jul 22, 2025", title:"Philippines Energy Assistance",
+    type:"commitment", sector:"economic", sectorLabel:"Economic", geo:"indo-pacific", geoLabel:"Indo-Pacific",
+    countries:["Philippines"],
+    totalAmount:63e6, annualAmount:63e6, years:1,
+    displayTotal:"$63M", displayAnnual:null,
+    desc:"Energy sector assistance during President Marcos Jr. visit. Energy infrastructure and private sector investment.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/07/secretary-rubios-meeting-with-philippine-president-marcos-jr" },
+
+  { month:"2025-09", date:"Sep 4, 2025", title:"Gilead Lenacapavir — HIV Prevention",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:0, annualAmount:0, years:3,
+    displayTotal:"2M doses at cost", displayAnnual:"Via existing PEPFAR budget",
+    desc:"Pre-market deal for twice-yearly HIV prevention injection. 99% effective. Gilead provides at cost, shares IP with generic manufacturers.",
+    source:"https://www.state.gov/releases/the-united-states-presidents-emergency-plan-for-aids-relief/2025/09/pepfars-support-of-american-innovation-to-reach-up-to-2-million-people-by-2028-with-breakthrough-hiv-drug-lenacapavir" },
+
+  { month:"2025-09", date:"Sep 11, 2025", title:"Philippines Health Systems",
+    type:"commitment", sector:"health", sectorLabel:"Health", geo:"indo-pacific", geoLabel:"Indo-Pacific",
+    countries:["Philippines"],
+    totalAmount:250e6, annualAmount:250e6, years:1,
+    displayTotal:"$250M", displayAnnual:null,
+    desc:"TB, maternal/child health, disease surveillance, lab strengthening. Total Philippines commitment now $313M.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/09/u-s-announces-new-health-sector-assistance-for-the-philippines" },
+
+  { month:"2025-09", date:"Sep 18, 2025", title:"America First Global Health Strategy",
+    type:"milestone", sector:"health", sectorLabel:"Health", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Strategy", displayAnnual:null,
+    desc:"36-page strategy establishing bilateral MOU framework with co-investment requirements. Three pillars: Safer, Stronger, More Prosperous.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/09/release-of-the-america-first-global-health-strategy" },
+
+  { month:"2025-11", date:"Nov 18, 2025", title:"First Lenacapavir Doses Delivered",
+    type:"milestone", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["Eswatini","Zambia"],
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Milestone", displayAnnual:null,
+    desc:"First shipments to Eswatini and Zambia — 5 months from FDA approval to sub-Saharan Africa. A first for any HIV medicine.",
+    source:"https://www.state.gov/releases/2025/11/driving-global-health-progress-through-american-innovation-and-burden-sharing-the-first-doses-of-lenacapavir-arrive-in-eswatini-and-zambia" },
+
+  { month:"2025-11", date:"Nov 21, 2025", title:"Global Fund Replenishment Pledge",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:4.6e9, annualAmount:1.15e9, years:4,
+    displayTotal:"$4.6B over 4 yrs", displayAnnual:"~$1.15B/yr",
+    desc:"US pledge for 2026–2029 cycle. Down from $6B prior. 1:2 matching requires other donors to contribute $2 per $1 US.",
+    source:"https://www.theglobalfund.org/en/replenishment/" },
+
+  { month:"2025-11", date:"Nov 25, 2025", title:"Zipline Drone Delivery Network",
+    type:"commitment", sector:"innovation", sectorLabel:"Innovation", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["Rwanda","Ghana","Nigeria","Kenya","Côte d'Ivoire"],
+    totalAmount:150e6, annualAmount:50e6, years:3,
+    displayTotal:"$150M / 3 yrs", displayAnnual:"~$50M/yr US",
+    desc:"First pay-for-performance grant. Autonomous medical supply delivery in 5 African countries. Governments commit $400M in utilization fees.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/11/advancing-the-america-first-global-health-strategy-and-promoting-american-innovation" },
+
+  { month:"2025-12", date:"Dec 4, 2025", title:"Kenya Bilateral Health MOU",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["Kenya"],
+    totalAmount:1.6e9, annualAmount:320e6, years:5,
+    displayTotal:"$1.6B US / 5 yrs", displayAnnual:"~$320M/yr US",
+    desc:"First bilateral health compact. $1.6B US + $850M Kenya co-investment. Procurement transitions to KEMSA by 2026.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/advancing-the-america-first-global-health-strategy-through-landmark-bilateral-agreements-on-global-health-cooperation" },
+
+  { month:"2025-12", date:"Dec 5–31, 2025", title:"13 More Bilateral Health MOUs",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["Rwanda","Uganda","Nigeria","Liberia","Lesotho","Eswatini","Mozambique","Cameroon","Ethiopia","Botswana","Sierra Leone","Madagascar","Côte d'Ivoire"],
+    totalAmount:8.599e9, annualAmount:1.72e9, years:5,
+    displayTotal:"~$8.6B US / 5 yrs", displayAnnual:"~$1.72B/yr US",
+    desc:"13 countries after Kenya. Nigeria largest ($2.1B US). USG-only figures; host co-investment adds ~$5B more. All include 2:1 reduction clause for missed targets.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/delivering-on-president-trumps-commitment-america-first-global-health-strategy-and-bilateral-health-mous" },
+
+  { month:"2025-12", date:"Dec 15, 2025", title:"Indo-Pacific Assistance Conference",
+    type:"milestone", sector:"policy", sectorLabel:"Policy", geo:"indo-pacific", geoLabel:"Indo-Pacific",
+    countries:["Philippines","Papua New Guinea","Pacific Islands"],
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Policy", displayAnnual:null,
+    desc:"State Dept outlines Indo-Pacific approach. Quad Ports of the Future, PNG corridor, Pacific islands strategy.",
+    source:"https://www.state.gov/releases/bureau-of-east-asian-and-pacific-affairs/2025/12/america-first-foreign-assistance-in-the-indo-pacific" },
+
+  { month:"2025-12", date:"Dec 29, 2025", title:"OCHA Humanitarian Reset",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Global — 17 countries"],
+    totalAmount:2e9, annualAmount:2e9, years:1,
+    displayTotal:"$2B", displayAnnual:"Initial 2026 contribution",
+    desc:"All US humanitarian funding shifts to OCHA pooled funds. Replaces fragmented grants. 17 countries.",
+    source:"https://www.state.gov/releases/under-secretary-for-foreign-assistance-humanitarian-affairs-and-religious-freedom/2025/12/more-lives-saved-for-fewer-taxpayer-dollars-trump-administration-leads-humanitarian-reset-in-the-united-nations" },
+
+  { month:"2026-01", date:"Jan 14, 2026", title:"Malawi Bilateral Health MOU",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["Malawi"],
+    totalAmount:792e6, annualAmount:158.4e6, years:5,
+    displayTotal:"$792M US / 5 yrs", displayAnnual:"~$158M/yr US",
+    desc:"US–Malawi health MOU. $792M US + $143.8M Malawi co-investment. HIV/AIDS, TB, malaria, maternal health. Shifts from parallel NGO delivery to national systems.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/01/driving-progress-on-the-america-first-global-health-strategy-through-bilateral-global-health-mou-with-malawi" },
+
+  { month:"2026-01", date:"Jan 14, 2026", title:"White House SAP on HR 7006",
+    type:"milestone", sector:"budget", sectorLabel:"Budget", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Policy", displayAnnual:null,
+    desc:"Statement of Administration Policy endorses FY26 SFOPS bill. Creates America First Opportunity Fund, acknowledges USAID closure.",
+    source:"https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR7006.pdf" },
+
+  { month:"2026-01", date:"Jan 16, 2026", title:"State Dept Strategic Plan FY 2026–2030",
+    type:"milestone", sector:"policy", sectorLabel:"Policy", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Strategy", displayAnnual:null,
+    desc:"First post-USAID strategic plan. Goal 6: 'Targeted Foreign Assistance that Puts American Interests First.'",
+    source:"https://www.state.gov/wp-content/uploads/2026/01/ASP-for-Fiscal-Years-2026-2030-v5.pdf" },
+
+  { month:"2026-02", date:"Feb 6–26, 2026", title:"4 More Bilateral Health MOUs",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"global", geoLabel:"Global",
+    countries:["Burundi","Burkina Faso","Panama","DRC"],
+    totalAmount:1.198e9, annualAmount:239.6e6, years:5,
+    displayTotal:"$1.198B US / 5 yrs", displayAnnual:"~$240M/yr US",
+    desc:"Burundi (Feb 6), Burkina Faso (Feb 25), Panama (Feb 25), DRC (Feb 26). Brings total to 19 MOUs. Panama first in Western Hemisphere. DRC at $900M US is largest since Nigeria.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/fostering-health-sovereignty-in-the-democratic-republic-of-the-congo-through-the-america-first-global-health-strategy/" },
+
+  { month:"2026-02", date:"Feb 3, 2026", title:"FY26 Appropriations Signed",
+    type:"milestone", sector:"budget", sectorLabel:"Budget", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"$50B enacted", displayAnnual:"59% above admin request",
+    desc:"Bipartisan SFOPS bill signed at $50B — nearly 60% above the administration's $30.1B request.",
+    source:"https://www.congress.gov/bill/119th-congress/house-bill/7006" },
+
+  { month:"2026-02", date:"Feb 3, 2026", title:"USDA Food for Peace — WFP Agreement",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["DRC","El Salvador","Ethiopia","Guatemala","Haiti","Kenya","Rwanda"],
+    totalAmount:452e6, annualAmount:452e6, years:1,
+    displayTotal:"$452M", displayAnnual:"FY25 funds; $1.2B FY26 also available",
+    desc:"USDA takes over Food for Peace from State Dept via Dec 2025 interagency agreement. First award: 211,000 tons of U.S. commodities to 7 countries via WFP.",
+    source:"https://www.fas.usda.gov/newsroom/usda-purchase-211000-metric-tons-american-commodities-administer-food-peace-program" },
+
+  { month:"2026-02", date:"Feb 18, 2026", title:"CIMMYT Crop Research Award",
+    type:"commitment", sector:"agriculture", sectorLabel:"Agriculture", geo:"americas", geoLabel:"Americas",
+    countries:["Mexico","Global"],
+    totalAmount:40e6, annualAmount:40e6, years:1,
+    displayTotal:"$40M", displayAnnual:null,
+    desc:"Grant to CIMMYT for drought/heat-tolerant maize and wheat, gene bank conservation, crop disease surveillance.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/america-first-leadership-in-crop-research" },
+
+  { month:"2026-02", date:"Feb 20, 2026", title:"Feed the Future Innovation Labs",
+    type:"announcement", sector:"agriculture", sectorLabel:"Agriculture", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:64e6, annualAmount:64e6, years:1,
+    displayTotal:"$64M", displayAnnual:"Solicitation posted",
+    desc:"7 awards expected ($20–40M each). First restart since Jan 2025 USAID freeze. Closes April 3, 2026.",
+    source:"https://simpler.grants.gov/opportunity/2334100f-f7b1-470c-9881-447ba64a0ee9" }
+];
+
+// ---- STATE ----
+let activeGeo = new Set();
+let activeSector = new Set();
+let activeType = new Set();
+
+// ---- HELPERS ----
+function fmt(n) {
+  if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(0) + 'M';
+  if (n === 0) return '—';
+  return '$0';
+}
+
+function matchesFilters(ev) {
+  if (activeGeo.size > 0 && !activeGeo.has(ev.geo)) return false;
+  if (activeSector.size > 0 && !activeSector.has(ev.sector)) return false;
+  if (activeType.size > 0 && !activeType.has(ev.type)) return false;
+  return true;
+}
+
+// ---- RENDER CARDS ----
+function renderCards() {
+  const grid = document.getElementById('cardGrid');
+  grid.innerHTML = '';
+  const visible = events.filter(matchesFilters);
+
+  if (visible.length === 0) {
+    grid.innerHTML = `<div class="empty-state"><p>No events match the selected filters.</p><button onclick="resetFilters()">Reset filters</button></div>`;
+  } else {
+    visible.forEach(ev => {
+      const typeLabel = ev.type.charAt(0).toUpperCase() + ev.type.slice(1);
+      const countries = ev.countries.join(', ');
+      const card = document.createElement('div');
+      card.className = `dash-card type-${ev.type}`;
+      card.innerHTML = `
+        <div class="dc-tags">
+          <span class="dc-tag dc-tag-type-${ev.type}">${typeLabel}</span>
+          <span class="dc-tag dc-tag-sector s-${ev.sector}">${ev.sectorLabel}</span>
+          <span class="dc-tag dc-tag-geo geo-${ev.geo}">${ev.geoLabel}</span>
+        </div>
+        <div class="dc-title">${ev.title}</div>
+        <div class="dc-date">${ev.date} · ${countries}</div>
+        <div class="dc-amount c-${ev.type}">${ev.displayTotal}</div>
+        ${ev.displayAnnual ? `<div class="dc-annual">${ev.displayAnnual}</div>` : ''}
+        <div class="dc-desc">${ev.desc}</div>
+      `;
+      card.onclick = () => window.open(ev.source, '_blank');
+      grid.appendChild(card);
+    });
+  }
+
+  // Update summary stats
+  let committed = 0, announced = 0;
+  visible.forEach(ev => {
+    if (ev.type === 'commitment') committed += ev.annualAmount;
+    if (ev.type === 'announcement') announced += ev.annualAmount;
+  });
+  document.getElementById('statCommitted').textContent = fmt(committed);
+  document.getElementById('statAnnounced').textContent = fmt(announced);
+  document.getElementById('statCount').textContent = visible.length;
+  document.getElementById('statTotal').textContent = events.length;
+
+  const filterDesc = visible.length === events.length ? 'Showing all events' : `${visible.length} of ${events.length} events`;
+  document.getElementById('resultsCount').textContent = filterDesc;
+
+  const totalStr = committed > 0 || announced > 0
+    ? `${fmt(committed)} committed · ${fmt(announced)} announced (annual)`
+    : '';
+  document.getElementById('resultsTotals').textContent = totalStr;
+}
+
+// ---- GEO BOXES ----
+function renderGeoBoxes() {
+  const geos = ['africa','indo-pacific','global','americas'];
+  const labels = { africa: 'Africa', 'indo-pacific': 'Indo-Pacific', global: 'Global', americas: 'Americas' };
+  const amtIds = { africa: 'geoAmtAfrica', 'indo-pacific': 'geoAmtIndoPacific', global: 'geoAmtGlobal', americas: 'geoAmtAmericas' };
+  const cntIds = { africa: 'geoCntAfrica', 'indo-pacific': 'geoCntIndoPacific', global: 'geoCntGlobal', americas: 'geoCntAmericas' };
+
+  geos.forEach(g => {
+    const evs = events.filter(e => e.geo === g);
+    let total = 0;
+    evs.forEach(e => { if (e.type !== 'milestone') total += e.annualAmount; });
+    document.getElementById(amtIds[g]).textContent = fmt(total);
+    document.getElementById(cntIds[g]).textContent = `${evs.length} event${evs.length !== 1 ? 's' : ''}`;
+  });
+}
+
+// ---- SECTOR BARS ----
+function renderSectorBars() {
+  const sectors = [
+    { key:'health', label:'Health', color:'var(--health)' },
+    { key:'humanitarian', label:'Humanitarian', color:'var(--humanitarian)' },
+    { key:'agriculture', label:'Agriculture', color:'var(--agriculture)' },
+    { key:'innovation', label:'Innovation', color:'var(--innovation)' },
+    { key:'economic', label:'Economic', color:'var(--economic)' },
+    { key:'budget', label:'Budget', color:'var(--budget)' },
+    { key:'policy', label:'Policy', color:'var(--policy)' },
+  ];
+
+  const totals = {};
+  const counts = {};
+  sectors.forEach(s => { totals[s.key] = 0; counts[s.key] = 0; });
+  events.forEach(ev => {
+    if (ev.type !== 'milestone' && totals[ev.sector] !== undefined) {
+      totals[ev.sector] += ev.annualAmount;
+      counts[ev.sector]++;
+    }
+    if (ev.type === 'milestone' && counts[ev.sector] !== undefined) {
+      counts[ev.sector]++;
+    }
+  });
+
+  const maxVal = Math.max(...Object.values(totals), 1);
+  const container = document.getElementById('sectorBars');
+  container.innerHTML = sectors.map(s => {
+    const pct = Math.round((totals[s.key] / maxVal) * 100);
+    const minPct = totals[s.key] > 0 ? Math.max(pct, 3) : 0;
+    return `
+      <div class="sector-row">
+        <div class="sector-name">${s.label}</div>
+        <div class="sector-bar-wrap">
+          <div class="sector-bar" style="width:${minPct}%;background:${s.color}"></div>
+        </div>
+        <div class="sector-amount" style="color:${s.color}">${totals[s.key] > 0 ? fmt(totals[s.key]) : '—'}</div>
+        <div class="sector-count">${counts[s.key]} event${counts[s.key] !== 1 ? 's' : ''}</div>
+      </div>`;
+  }).join('');
+}
+
+// ---- FILTER LOGIC ----
+function toggleChip(chip) {
+  const filter = chip.dataset.filter;
+  const val = chip.dataset.val;
+  chip.classList.toggle('active');
+
+  if (filter === 'geo') activeGeo.has(val) ? activeGeo.delete(val) : activeGeo.add(val);
+  if (filter === 'sector') activeSector.has(val) ? activeSector.delete(val) : activeSector.add(val);
+  if (filter === 'type') activeType.has(val) ? activeType.delete(val) : activeType.add(val);
+
+  // Sync geo box highlight
+  renderCards();
+}
+
+function toggleGeoFilter(geo) {
+  activeGeo.has(geo) ? activeGeo.delete(geo) : activeGeo.add(geo);
+  // Sync chip
+  document.querySelectorAll(`[data-filter="geo"][data-val="${geo}"]`).forEach(c => {
+    c.classList.toggle('active', activeGeo.has(geo));
+  });
+  renderCards();
+}
+
+function resetFilters() {
+  activeGeo.clear(); activeSector.clear(); activeType.clear();
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  renderCards();
+}
+
+// ---- INIT ----
+renderGeoBoxes();
+renderSectorBars();
+renderCards();
+</script>
+
+<footer style="text-align:center; padding:32px 20px 24px; color:#8a8f9e; font-size:0.85rem; border-top:1px solid #e8eaf0; margin-top:48px;">
+  Questions or feedback? <a href="mailto:contact@thenewforeignassistance.org" style="color:#4a7c59; text-decoration:none;">contact@thenewforeignassistance.org</a>
+</footer>
+</body>
+</html>
