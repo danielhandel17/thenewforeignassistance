@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The New Foreign Assistance</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23c4893a'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #f5f2ed;
+    --bg-alt:   #edeae4;
+    --white:    #ffffff;
+    --ink:      #1c2e4a;
+    --ink-light:#2e4060;
+    --ink-dim:  #8a8a8a;
+    --border:   #d8d4cd;
+    --banner:   #1e3452;
+    --amber:    #b8682a;
+    --amber-mid:#9a5620;
+    --amber-pale:#f5e6d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--banner);
+    border-bottom: 2px solid rgba(184,104,42,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .site-name em {
+    font-style: normal;
+    color: var(--amber);
+  }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-transform: none;
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: rgba(255,255,255,1); }
+  .nav-tracker {
+    color: var(--amber) !important;
+    border: 1px solid var(--amber);
+    padding: 5px 13px;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-tracker:hover {
+    background: var(--amber) !important;
+    color: var(--white) !important;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--white);
+    padding: 88px 40px 96px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-left {}
+  .hero-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--amber);
+  }
+  .hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(42px, 5vw, 66px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .hero-body {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--ink-light);
+    font-weight: 300;
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--amber);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: background 0.2s;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--amber-mid); }
+  .btn-ghost {
+    color: var(--ink-dim);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .btn-ghost:hover { color: var(--ink); }
+  .btn-ghost::after { content: '→'; }
+
+  /* Hero right — tracker mini preview */
+  .tracker-preview {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tp-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tp-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .tp-live {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tp-live::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+    display: inline-block;
+  }
+  .tp-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .tp-stat {
+    padding: 20px 20px;
+    border-right: 1px solid var(--border);
+  }
+  .tp-stat:last-child { border-right: none; }
+  .tp-stat-value {
+    font-family: 'Source Serif 4', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .tp-stat-value.amber { color: var(--amber); }
+  .tp-stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .tp-events { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .tp-event {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .tp-event.commitment { border-left-color: #2a7a4a; }
+  .tp-event.announcement { border-left-color: var(--amber); }
+  .tp-event.milestone { border-left-color: #8a8a8a; border-left-style: dashed; }
+  .tp-event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .tp-event-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .tp-event-amount {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .tp-event-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    color: var(--ink-dim);
+  }
+  .tp-footer {
+    border-top: 1px solid var(--border);
+    padding: 12px 20px;
+    text-align: center;
+  }
+  .tp-footer a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--amber);
+    text-decoration: none;
+  }
+  .tp-footer a:hover { text-decoration: underline; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 80px 40px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 16px; height: 1px;
+    background: var(--amber);
+  }
+  h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    margin-bottom: 28px;
+  }
+
+  /* ── MISSION ── */
+  .mission-section { background: var(--bg); }
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .mission-left p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--ink-light);
+    margin-bottom: 18px;
+  }
+  .mission-right { padding-top: 4px; }
+  .stat-stack {}
+  .stat-item {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item:first-child { padding-top: 0; }
+  .stat-item:last-child { border-bottom: none; }
+  .stat-number {
+    font-family: 'Source Serif 4', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .stat-label { font-size: 13px; color: var(--ink-dim); line-height: 1.5; }
+
+  /* ── PRINCIPLES ── */
+  .principles-section { background: var(--white); }
+  .principles-intro {
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink-light);
+    margin-bottom: 48px;
+  }
+
+  .principle-card {
+    padding: 28px 24px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .principle-card:hover { background: var(--bg); }
+  .principle-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .principle-card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .principle-card p { font-size: 13px; color: var(--ink-dim); line-height: 1.7; }
+
+  /* Tracker-card principles */
+  .principles-cards { display: flex; flex-direction: column; gap: 8px; }
+  .pc {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    transition: box-shadow 0.15s;
+  }
+  .pc:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.07); }
+  .pc.amber { border-left-color: var(--amber); }
+  .pc.navy  { border-left-color: var(--ink); }
+  .pc.green { border-left-color: #2a7a4a; }
+  .pc-inner { flex: 1; }
+  .pc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 5px;
+  }
+  .pc-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .pc-desc { font-size: 13px; color: var(--ink-dim); line-height: 1.65; }
+  .pc-cat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-dim);
+    white-space: nowrap;
+    padding-top: 2px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── TRACKER CALLOUT ── */
+  .tracker-callout-section { background: var(--bg); }
+  .tracker-callout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .tc-left h2 { margin-bottom: 16px; }
+  .tc-left p { font-size: 16px; line-height: 1.8; color: var(--ink-light); }
+
+  /* ── WRITING ── */
+  .writing-section { background: var(--bg); }
+  .pub-list { list-style: none; }
+  .pub-list li {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: start;
+  }
+  .pub-list li:first-child { padding-top: 0; }
+  .pub-list li:last-child { border-bottom: none; }
+  .pub-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 19px;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.2s;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .pub-title:hover { color: var(--amber); }
+  .pub-desc { font-size: 13px; color: var(--ink-dim); line-height: 1.5; }
+  .pub-outlet {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .about-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .about-org { font-size: 13px; color: var(--ink-dim); line-height: 1.7; }
+  .about-main p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .about-main p:last-child { margin-bottom: 0; }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--bg-alt);
+    padding: 72px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-section .section-label { justify-content: center; }
+  .contact-section h2 { margin-bottom: 14px; }
+  .contact-section p {
+    color: var(--ink-dim);
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-email {
+    font-family: 'Source Serif 4', serif;
+    font-size: 21px;
+    color: var(--amber);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196,137,58,0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  .contact-email:hover { border-color: var(--amber); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg);
+    padding: 22px 40px;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── FADE ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 860px) {
+    .header-inner { padding: 0 20px; }
+    nav a:not(.nav-tracker) { display: none; }
+    .hero { padding: 56px 20px 64px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .section { padding: 56px 20px; }
+    .mission-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .pub-list li { grid-template-columns: 1fr; gap: 6px; }
+    .contact-section { padding: 56px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
+    <nav>
+      <a href="#principles">Principles</a>
+      <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
+      <a href="#about">About</a>
+      <a href="index.html" class="nav-tracker">Tracker →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-kicker">Foreign Assistance Reform</div>
+      <h1>The next $12 billion<br>should <em>actually work.</em></h1>
+      <p class="hero-body">The State Department is rebuilding U.S. foreign assistance from the ground up. We are shaping what comes next — commercially anchored, evidence-based, and designed to end because it worked.</p>
+      <div class="hero-actions">
+        <a href="#principles" class="btn-primary">Our framework</a>
+        <a href="index.html" class="btn-ghost">Track the build</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section mission-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">Mission</div>
+    <div class="mission-grid">
+      <div class="mission-left">
+        <h2>Aid That Ends Because It Worked</h2>
+        <p>The New Foreign Assistance works with Congress, the executive branch, and the policy community to shape the next generation of U.S. foreign assistance — leaner, evidence-based, and aligned with American interests.</p>
+        <p>Our model is South Korea: once dependent on American aid, today the world's tenth-largest economy and an aid donor. That graduation is the standard. Every program should be designed to make itself unnecessary.</p>
+        <p>Economic growth is the primary driver of development. The U.S. should fund what only governments can do — trade, institutions, infrastructure, security — and get out of the way of everything else.</p>
+      </div>
+      <div class="mission-right">
+        <div class="stat-stack">
+          <div class="stat-item">
+            <div class="stat-number">$12B+</div>
+            <div class="stat-label">In new foreign assistance pledged by State Dept since July 2025 — the architecture being built now will determine how it's spent</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Bilateral health MOUs signed under the America First Global Health Strategy — a new model of co-investment and country ownership</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">11 yrs</div>
+            <div class="stat-label">At USAID as a Foreign Service Officer — including pioneering the cash benchmarking methodology that changed how aid effectiveness is measured</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- TRACKER CALLOUT -->
+<section class="section tracker-callout-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">Live Tracker</div>
+    <div class="tracker-callout-grid">
+      <div class="tc-left">
+        <h2>It's being built.<br>Track it in real time.</h2>
+        <p>Every major foreign assistance commitment, pledge, and policy action from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.</p>
+        <a href="index.html" class="btn-primary" style="display:inline-block; margin-top:24px;">Open the tracker →</a>
+      </div>
+      <div class="tc-right">
+        <div class="tracker-preview">
+          <div class="tp-header">
+            <span class="tp-title">Foreign Assistance Tracker</span>
+            <span class="tp-live">Updated weekly</span>
+          </div>
+          <div class="tp-stats">
+            <div class="tp-stat">
+              <div class="tp-stat-value">$2.1B</div>
+              <div class="tp-stat-label">Committed / yr</div>
+            </div>
+            <div class="tp-stat">
+              <div class="tp-stat-value amber">$3.4B</div>
+              <div class="tp-stat-label">Pledged / yr</div>
+            </div>
+          </div>
+          <div class="tp-events">
+            <div class="tp-event announcement">
+              <div class="tp-event-header">
+                <div class="tp-event-title">24 Bilateral Health MOUs</div>
+                <div class="tp-event-amount">$12.5B US</div>
+              </div>
+              <div class="tp-event-meta">Dec 2025 – Feb 2026 &nbsp;·&nbsp; Health</div>
+            </div>
+            <div class="tp-event commitment">
+              <div class="tp-event-header">
+                <div class="tp-event-title">USDA Food for Peace — WFP</div>
+                <div class="tp-event-amount">$452M</div>
+              </div>
+              <div class="tp-event-meta">Feb 3, 2026 &nbsp;·&nbsp; Humanitarian</div>
+            </div>
+            <div class="tp-event milestone">
+              <div class="tp-event-header">
+                <div class="tp-event-title">Pacific Investment Summit</div>
+                <div class="tp-event-amount">16 nations</div>
+              </div>
+              <div class="tp-event-meta">Feb 22–24, 2026 &nbsp;·&nbsp; Indo-Pacific</div>
+            </div>
+          </div>
+          <div class="tp-footer">
+            <a href="index.html">View all events →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PRINCIPLES -->
+<section class="section principles-section" id="principles">
+  <div class="section-inner fade-up">
+    <div class="section-label">Framework</div>
+    <h2>Nine Principles for Reformed<br>Foreign Assistance</h2>
+    <p class="principles-intro">An evidence-based framework for what U.S. foreign assistance should look like — aligned with American interests, designed to produce results, and built to end.</p>
+    <div class="principles-grid">
+      <div class="principle-card"><div class="principle-num">01</div><h3>Economic Growth As the Goal</h3><p>Rising household incomes are the most efficient path to improving human welfare. The goal is trading partners and allies, not a global safety net.</p></div>
+      <div class="principle-card"><div class="principle-num">02</div><h3>Do What Only Governments Can Do</h3><p>Trade agreements, regulatory reform, public health infrastructure, large commercial deals. Not household programs better handled by philanthropy.</p></div>
+      <div class="principle-card"><div class="principle-num">03</div><h3>Trade and Investment First</h3><p>Where commercial solutions exist or can be developed, assistance should work through them. Investment over dependency, opportunity over aid.</p></div>
+      <div class="principle-card"><div class="principle-num">04</div><h3>Partner with Reformers</h3><p>Prioritize countries that demonstrate commitment to reform. Deeper engagement is earned, not automatic. Poor governance is not America's responsibility to subsidize.</p></div>
+      <div class="principle-card"><div class="principle-num">05</div><h3>Measure Everything</h3><p>Every program should have clear, measurable outcomes defined before it launches. Cost-effectiveness analysis should be the norm. If we can't measure it, we shouldn't fund it.</p></div>
+      <div class="principle-card"><div class="principle-num">06</div><h3>Finite by Design</h3><p>The best foreign aid ends — because it worked. Built-in graduation criteria and transition plans. That graduation should be celebrated, not feared.</p></div>
+      <div class="principle-card"><div class="principle-num">07</div><h3>No Abortion Funding Abroad</h3><p>Abortion is fiercely contested in the United States. It is inappropriate for the U.S. government to fund it overseas, or organizations that provide it alongside other services.</p></div>
+      <div class="principle-card"><div class="principle-num">08</div><h3>Rights Without Imperialism</h3><p>Oppose the criminalization of LGBT individuals. But advocacy for particular social positions on sexuality and gender in sovereign nations is cultural neo-colonialism, not development.</p></div>
+      <div class="principle-card"><div class="principle-num">09</div><h3>Climate Realism</h3><p>Foreign assistance is not an effective climate policy tool. The most effective climate resilience comes through economic growth and technology transfer — not energy restrictions on poor countries.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- WRITING -->
+<section class="section writing-section" id="writing">
+  <div class="section-inner fade-up">
+    <div class="section-label">Writing &amp; Media</div>
+    <h2>In the Press</h2>
+    <ul class="pub-list">
+      <li>
+        <div>
+          <a href="https://www.nationalaffairs.com" class="pub-title">Reforming Foreign Assistance for the America First Era</a>
+          <div class="pub-desc">The case for evidence-based, commercially anchored foreign assistance under the new architecture</div>
+        </div>
+        <span class="pub-outlet">National Affairs — 2026</span>
+      </li>
+      <li>
+        <div>
+          <a href="https://www.foxnews.com/opinion/i-worked-usaid-11-years-how-you-build-foreign-aid-system-actually-works" class="pub-title">I Worked at USAID for 11 Years. Here Is How You Build a Foreign Aid System That Actually Works.</a>
+          <div class="pub-desc">The structural reforms that would make the transition from USAID to State actually deliver</div>
+        </div>
+        <span class="pub-outlet">Fox News — July 2025</span>
+      </li>
+      <li>
+        <div>
+          <a href="https://www.vox.com/future-perfect/23854173/foreign-aid-cash-benchmarking-evidence-usaid" class="pub-title">We're Finally Figuring Out If Foreign Aid Is Any Better Than Handing Out Cash</a>
+          <div class="pub-desc">How cash benchmarking is changing what we know about aid effectiveness</div>
+        </div>
+        <span class="pub-outlet">Vox — September 2023</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="section-inner fade-up">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div>
+        <div class="about-name">Daniel Handel</div>
+        <div class="about-title">Founder &amp; Executive Director</div>
+        <div class="about-org">
+          Policy Director, Unlock Aid<br>
+          Former USAID Foreign Service Officer<br>
+          Former Senior Specialist, 3ie
+        </div>
+      </div>
+      <div class="about-main">
+        <p>Daniel Handel spent eleven years as a USAID Foreign Service Officer, with field assignments in Rwanda and Nicaragua and Washington postings focused on aid effectiveness. While at USAID, he created the agency's first cash benchmarking initiative — testing whether traditional programs outperformed simply giving people money — work covered by NPR, the Washington Post, and the Center for Global Development.</p>
+        <p>He subsequently served as a senior evaluation specialist at the International Initiative for Impact Evaluation (3ie), where he helped establish the Global Evidence Commitment. He currently serves as Policy Director at Unlock Aid, working closely with State Department officials on foreign assistance reform, procurement innovation, and the DEALS Applied Policy Solicitation.</p>
+        <p>He writes on foreign assistance for National Affairs, Fox News, and The Hill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2>Contact</h2>
+  <p>For press inquiries, partnership opportunities, or to learn more about our work.</p>
+  <a href="mailto:contact@thenewforeignassistance.org" class="contact-email">contact@thenewforeignassistance.org</a>
+</div>
+
+<footer>&copy; 2026 The New Foreign Assistance &nbsp;·&nbsp; All rights reserved</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(el => {
+    if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
