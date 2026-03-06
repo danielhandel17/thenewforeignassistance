@@ -84,12 +84,12 @@
   .timeline-rail { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--border); transform: translateX(-1px); }
 
   .month-row { position: relative; min-height: 160px; display: flex; align-items: flex-start; padding-bottom: 20px; }
-  .month-row.empty { min-height: 56px; }
+  .month-row.empty { min-height: 120px; }
 
   .month-marker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 3; background: var(--bg); padding: 4px 14px; border: 1px solid var(--border); border-radius: 20px; text-align: center; white-space: nowrap; }
   .month-marker .mm-name { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; color: var(--ink); }
   .month-marker .mm-year { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--ink-dim); margin-left: 4px; }
-  .month-row.empty .month-marker { border-style: dashed; }
+  .month-row.empty .month-marker { border-style: dashed; top: 50%; transform: translateX(-50%) translateY(-50%); }
   .month-row.empty .mm-name { color: var(--ink-faint); font-weight: 400; }
 
   .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; width: 100%; padding-top: 40px; }
@@ -97,16 +97,16 @@
   .side-right { grid-column: 2; }
 
   /* EVENT CARDS */
-  .event-card { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--border); border-radius: 6px; padding: 18px 20px; margin-bottom: 14px; cursor: pointer; transition: all 0.2s; }
+  .event-card { background: var(--white); border: 1px solid var(--border); border-right: 3px solid var(--border); border-radius: 6px; padding: 18px 20px; margin-bottom: 14px; cursor: pointer; transition: all 0.2s; }
   .event-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.10); transform: translateY(-1px); }
-  .event-card.type-commitment { border-left-color: var(--commitment); background: var(--commitment-bg); }
-  .event-card.type-announcement { border-left-color: var(--announcement); background: var(--announcement-bg); }
-  .event-card.type-milestone { border-left-color: var(--milestone); background: var(--milestone-bg); border-left-style: dashed; }
+  .event-card.type-commitment { border-right-color: var(--commitment); background: var(--commitment-bg); }
+  .event-card.type-announcement { border-right-color: var(--announcement); background: var(--announcement-bg); }
+  .event-card.type-milestone { border-right-color: var(--milestone); background: var(--milestone-bg); border-right-style: dashed; }
 
-  .side-right.event-card { border-left: 1px solid var(--border); border-right: 3px solid var(--border); }
-  .side-right.event-card.type-commitment { border-right-color: var(--commitment); border-left-color: var(--border); }
-  .side-right.event-card.type-announcement { border-right-color: var(--announcement); border-left-color: var(--border); }
-  .side-right.event-card.type-milestone { border-right-color: var(--milestone); border-left-color: var(--border); border-right-style: dashed; }
+  .side-right.event-card { border-right: 1px solid var(--border); border-left: 3px solid var(--border); }
+  .side-right.event-card.type-commitment { border-left-color: var(--commitment); border-right-color: var(--border); }
+  .side-right.event-card.type-announcement { border-left-color: var(--announcement); border-right-color: var(--border); }
+  .side-right.event-card.type-milestone { border-left-color: var(--milestone); border-right-color: var(--border); border-left-style: dashed; }
 
   .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
   .card-left-inner { flex: 1; min-width: 0; }
@@ -287,7 +287,7 @@
       padding-bottom: 10px;
     }
     .month-row.empty {
-      min-height: 48px;
+      min-height: 80px;
     }
     .cards-grid {
       grid-template-columns: 1fr;
@@ -298,7 +298,14 @@
       grid-column: 1;
     }
 
-    /* All cards left-bordered on mobile */
+    /* All cards left-bordered on mobile (rail is on left) */
+    .event-card {
+      border-left: 3px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+    .event-card.type-commitment { border-left-color: var(--commitment); }
+    .event-card.type-announcement { border-left-color: var(--announcement); }
+    .event-card.type-milestone { border-left-color: var(--milestone); border-left-style: dashed; }
     .side-right.event-card {
       border-left: 3px solid var(--border);
       border-right: 1px solid var(--border);
