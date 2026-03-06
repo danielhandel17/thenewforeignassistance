@@ -671,9 +671,9 @@ const events = [
 
   { month:"2026-02", date:"Feb 3, 2026", title:"Sudan Humanitarian Donor Conference",
     type:"announcement", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:200e6, annualAmount:200e6, years:1,
-    displayTotal:"$200M US pledge", displayAnnual:"$1.5B raised total",
-    desc:"US hosted 20+ donor nations at the Trump Institute of Peace. US contributed $200M to the Sudan Humanitarian Fund — drawn from the Dec 2025 $2B OCHA MOU — as the world's largest humanitarian crisis deepens. Total pledges from all donors: $1.5B.",
+    totalAmount:0, annualAmount:0, years:1,
+    displayTotal:"$200M US (reallocation)", displayAnnual:"$1.5B raised total",
+    desc:"US hosted 20+ donor nations at the Trump Institute of Peace. US contributed $200M to the Sudan Humanitarian Fund — drawn from the Dec 2025 $2B OCHA commitment already tracked above, not new money. Total pledges from all donors: $1.5B.",
     details:{"US contribution":"$200M (part of Dec $2B OCHA MOU)","Total pledged":"$1.5B across 20+ donors","Key donors":"UAE, Saudi Arabia, Qatar, Kuwait, Egypt, Chad, UK, Norway","Channel":"Sudan Humanitarian Fund (OCHA-managed)","Next step":"April 15 follow-on meeting in Berlin"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/sudan-humanitarian-fund-call-to-action-event" },
 
@@ -695,8 +695,8 @@ const events = [
 
   { month:"2026-02", date:"Feb 26–27, 2026", title:"5 More Bilateral Health MOUs",
     type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:514.7e6, annualAmount:102.9e6, years:5,
-    displayTotal:"$514.7M US / 5 yrs", displayAnnual:"~$103M/yr US",
+    totalAmount:337e6, annualAmount:67.4e6, years:5,
+    displayTotal:"$337M US / 5 yrs", displayAnnual:"~$67M/yr US",
     desc:"Niger, Dominican Republic, Guatemala, Guinea, and El Salvador join the America First Global Health Strategy. First MOUs in West Africa (Guinea, Niger) and Central America (Guatemala, El Salvador). Running total reaches 24 bilateral health MOUs representing $12.5B in US assistance.",
     details:{
       "Niger":"$107.4M US + $71.9M Niger — malaria, maternal & child health, disease surveillance",
@@ -764,7 +764,7 @@ const events = [
     source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" }
 ];
 
-// Build months Jul 2025 → Feb 2026
+// Build months Jul 2025 → Mar 2026
 const months = [];
 let d = new Date(2025, 6, 1);
 const end = new Date(2026, 3, 1);
