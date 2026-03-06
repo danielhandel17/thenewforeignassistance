@@ -89,7 +89,7 @@
   .month-marker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 3; background: var(--bg); padding: 4px 14px; border: 1px solid var(--border); border-radius: 20px; text-align: center; white-space: nowrap; }
   .month-marker .mm-name { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; color: var(--ink); }
   .month-marker .mm-year { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--ink-dim); margin-left: 4px; }
-  .month-row.empty .month-marker { border-style: dashed; top: 50%; transform: translateX(-50%) translateY(-50%); }
+  .month-row.empty .month-marker { border-style: dashed; }
   .month-row.empty .mm-name { color: var(--ink-dim); font-weight: 600; }
 
   .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; width: 100%; padding-top: 40px; }
@@ -833,6 +833,39 @@ function buildCard(ev, side) {
 
 // Equalize month row heights so time passes evenly — desktop only, skip empty rows
 // Rows size to their own content — no equalization
+
+function positionEmptyBubbles() {
+  if (window.innerWidth <= 640) return; // mobile handles differently
+  document.querySelectorAll('.month-row.empty').forEach(emptyRow => {
+    const prevRow = emptyRow.previousElementSibling;
+    const nextRow = emptyRow.nextElementSibling;
+    if (!prevRow || !nextRow) return;
+
+    const marker = emptyRow.querySelector('.month-marker');
+    if (!marker) return;
+
+    // Bottom of last card in prev row (excluding its own padding-bottom)
+    const prevRect = prevRow.getBoundingClientRect();
+    const prevPb = parseFloat(getComputedStyle(prevRow).paddingBottom) || 0;
+    const prevContentBottom = prevRect.bottom - prevPb;
+
+    // Top of next row's month bubble
+    const nextMarker = nextRow.querySelector('.month-marker');
+    const nextTop = nextMarker
+      ? nextMarker.getBoundingClientRect().top
+      : nextRow.getBoundingClientRect().top;
+
+    const midY = (prevContentBottom + nextTop) / 2;
+    const emptyTop = emptyRow.getBoundingClientRect().top;
+    const markerH = marker.getBoundingClientRect().height;
+
+    marker.style.top = Math.round(midY - emptyTop - markerH / 2) + 'px';
+    marker.style.transform = 'translateX(-50%)';
+  });
+}
+
+positionEmptyBubbles();
+window.addEventListener('resize', positionEmptyBubbles);
 
 // Hero stats — always show full totals
 function fmt(n) { if(n>=1e9) return '$'+(n/1e9).toFixed(1)+'B'; if(n>=1e6) return '$'+(n/1e6).toFixed(0)+'M'; return '$0'; }
