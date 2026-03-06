@@ -633,7 +633,7 @@ const events = [
     type:"announcement", sector:"health", sectorLabel:"Health",
     totalAmount:1.198e9, annualAmount:239.6e6, years:5,
     displayTotal:"$1.198B US / 5 yrs", displayAnnual:"~$240M/yr US",
-    desc:"Burundi (Feb 6), Burkina Faso (Feb 25), Panama (Feb 25), DRC (Feb 26). Brings total to 19 bilateral health MOUs. Panama is first in Western Hemisphere. DRC is largest since Nigeria.",
+    desc:"Burundi (Feb 6), Burkina Faso (Feb 25), Panama (Feb 25), DRC (Feb 26). Brings State Dept HQ total to 19 bilateral health MOUs. Panama is first in Western Hemisphere. DRC is largest since Nigeria.",
     details:{"DRC":"$900M US + $300M DRC (largest 2026 MOU)","Burkina Faso":"$147M US + $107M BF","Burundi":"$129M US + $26M Burundi","Panama":"$22.5M US + $11M Panama (3-yr, first in hemisphere)","Running USG total":"~$10.6B across all 19 MOUs","Status":"MOUs — non-binding, subject to appropriations"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/fostering-health-sovereignty-in-the-democratic-republic-of-the-congo-through-the-america-first-global-health-strategy/" },
 
@@ -670,7 +670,7 @@ const events = [
     source:"https://simpler.grants.gov/opportunity/2334100f-f7b1-470c-9881-447ba64a0ee9" },
 
   { month:"2026-02", date:"Feb 3, 2026", title:"Sudan Humanitarian Donor Conference",
-    type:"announcement", sector:"humanitarian", sectorLabel:"Humanitarian",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
     totalAmount:200e6, annualAmount:200e6, years:1,
     displayTotal:"$200M US pledge", displayAnnual:"$1.5B raised total",
     desc:"US hosted 20+ donor nations at the Trump Institute of Peace. US contributed $200M to the Sudan Humanitarian Fund — drawn from the Dec 2025 $2B OCHA MOU — as the world's largest humanitarian crisis deepens. Total pledges from all donors: $1.5B.",
@@ -685,14 +685,6 @@ const events = [
     details:{"Channel":"Catholic Church / Caritas Cuba","Goods":"Rice, beans, pasta, canned tuna, solar lamps","Tranche 1":"$3M (Jan 14, 2026)","Total to date":"$9M since Hurricane Melissa (Oct 2025)","Note":"First direct aid bypassing Cuban government in history"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/delivering-additional-humanitarian-support-directly-to-the-cuban-people/" },
 
-    { month:"2026-02", date:"Feb 13, 2026", title:"Venezuela Medical Supplies Airlift",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"6,000+ kg delivered", displayAnnual:"First of multi-phase plan",
-    desc:"At President Trump's direction, the US airlifted 25 pallets (over 6,000 kg) of priority medical supplies to Venezuela — the first shipment of a multi-phase stabilization plan following the capture of Nicolás Maduro. Interim Ministry of Health distributing nationwide. State Dept framed as \'promoting trade, not aid.\'",
-    details:{"Volume":"25 pallets, 6,000+ kg of priority medications","Channel":"Venezuela interim Ministry of Health","Framework":"3-phase plan: stabilization, recovery, transition","Received by":"US diplomat Laura Dogu + Venezuelan FM Félix Plasencia at Caracas airport","Note":"Venezuela to pay for medical supplies per Trump; first US-Venezuela cooperation in years"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/delivering-priority-medical-supplies-for-the-venezuelan-people" },
-
   { month:"2026-02", date:"Feb 22–24, 2026", title:"Pacific Investment Summit — Honolulu",
     type:"announcement", sector:"economic", sectorLabel:"Economic",
     totalAmount:0, annualAmount:0, years:0,
@@ -701,7 +693,7 @@ const events = [
     details:{"Countries":"16 Pacific Island nations & territories","Outcomes":"Undersea cables for Marshall Islands & American Samoa; hospital deal for Palau","Agencies":"DFC, MCC, USTDA present","Also":"$3M to fund DOJ prosecutor position for Pacific criminal cases","Significance":"First summit of this kind — explicit counter to China's regional presence"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/honolulu-investment-summit-connects-u-s-businesses-and-pacific-island-countries/" },
 
-  { month:"2026-02", date:"Feb 26, 2026", title:"5 More Bilateral Health MOUs",
+  { month:"2026-02", date:"Feb 26–27, 2026", title:"5 More Bilateral Health MOUs",
     type:"announcement", sector:"health", sectorLabel:"Health",
     totalAmount:514.7e6, annualAmount:102.9e6, years:5,
     displayTotal:"$514.7M US / 5 yrs", displayAnnual:"~$103M/yr US",
@@ -727,13 +719,55 @@ const events = [
       "Scope":"Foreign NGOs, international organizations, US NGOs, subrecipients",
       "Waiver":"Secretary of State may waive for national security/foreign policy",
       "Cost":"One-time compliance cost estimated at $54M; $77M annually thereafter"},
-    source:"https://www.federalregister.gov/documents/2026/01/27/2026-01519/protecting-life-in-foreign-assistance" }
+    source:"https://www.federalregister.gov/documents/2026/01/27/2026-01519/protecting-life-in-foreign-assistance" },
+
+  { month:"2026-02", date:"Feb 13, 2026", title:"Venezuela Medical Airlift — Phase 1",
+    type:"committed", sector:"humanitarian", sectorLabel:"Humanitarian",
+    totalAmount:0, annualAmount:0, years:1,
+    displayTotal:"In-kind delivery", displayAnnual:"Phase 1 of 3",
+    desc:"First US foreign assistance to Venezuela in years — 25 pallets (~6,000 kg) of priority medical supplies airlifted to the interim Ministry of Health for nationwide distribution. Part of the Trump administration's three-phase plan for Venezuela stabilization, recovery, and transition.",
+    details:{
+      "Delivery":"25 pallets, 6,000+ kg of medical supplies",
+      "Channel":"Interim Ministry of Health (direct government-to-government)",
+      "Phase plan":"Phase 1: emergency medical supplies; Phase 2–3: stabilization and recovery",
+      "Significance":"First direct US assistance to Venezuelan government since Maduro era",
+      "Note":"Dollar value not disclosed; committed delivery"},
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/delivering-priority-medical-supplies-for-the-venezuelan-people" },
+
+  { month:"2026-03", date:"Mar 5, 2026", title:"GHSD Advancing Global Health APS",
+    type:"pledged", sector:"health", sectorLabel:"Global Health",
+    totalAmount:342000000, annualAmount:68400000, years:5,
+    displayTotal:"$342M (active addenda)", displayAnnual:"Up to $4.5B total APS",
+    desc:"Bureau of Global Health Security and Diplomacy launches the first major procurement vehicle for MOU implementation — an Annual Program Statement (APS) inviting NGOs and implementers to fill gaps in bilateral health agreement delivery. Two live addenda open now; more expected throughout 2026. SOIs due May 31. This is the first signal of how State will use third-party implementers under the new architecture.",
+    details:{
+      "APS ceiling":"Up to $4.5B (full program lifetime)",
+      "Active addenda":"2 (as of Mar 5)",
+      "Addendum 1":"Child Development, Care & Protection — up to $52.65M, up to 5 awards",
+      "Addendum 2":"Rapid Outbreak Response — up to $290M, up to 10 awards",
+      "Combined live":"~$342M across 15 anticipated awards",
+      "SOI deadline":"May 31, 2026",
+      "Eligibility":"Unrestricted (US and foreign organizations)",
+      "Status":"Live solicitation — funds reserved but no grantees selected yet",
+      "Note":"More binding than a conference pledge but not yet a signed award"},
+    source:"https://simpler.grants.gov/opportunity/c5c18cae-dbe8-4d93-9d9b-3d5ec27a4dcf" },
+
+  { month:"2026-03", date:"Mar 31, 2026", title:"MOU Implementation Plans Due",
+    type:"milestone", sector:"health", sectorLabel:"Global Health",
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Upcoming deadline", displayAnnual:"All 24 MOU countries",
+    desc:"Deadline for all 24 bilateral health MOU partner countries to submit detailed implementation plans. Plans are expected to clarify how MOU funds will flow, which implementers will be used, and how countries will hit co-investment benchmarks. A key test of whether the new architecture can actually operationalize at scale.",
+    details:{
+      "Countries":"All 24 signed MOU partners",
+      "Significance":"First accountability checkpoint under the America First Global Health Strategy",
+      "What to watch":"Which countries submit on time; how plans address NGO role and G2G fund flows",
+      "Source":"Think Global Health tracker, March 3, 2026"},
+    source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" }
 ];
 
 // Build months Jul 2025 → Feb 2026
 const months = [];
 let d = new Date(2025, 6, 1);
-const end = new Date(2026, 3, 1);
+const end = new Date(2026, 4, 1);
 while (d < end) {
   months.push({ key: d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'), name: d.toLocaleString('en-US',{month:'long'}), year: d.getFullYear() });
   d.setMonth(d.getMonth()+1);
@@ -866,7 +900,4 @@ updateTotals();
 </script>
 
 <footer style="text-align:center; padding:32px 20px 24px; color:#8a8f9e; font-size:0.85rem; border-top:1px solid #e8eaf0; margin-top:48px;">
-  Questions or feedback? <a href="mailto:contact@thenewforeignassistance.org" style="color:#4a7c59; text-decoration:none;">contact@thenewforeignassistance.org</a>
-</footer>
-</body>
-</html>
+  Questions or feedback? <a href="/cdn-cgi/l/email-protection#fe9d91908a9f9d8abe8a969b909b8998918c9b9799909f8d8d978d8a9f909d9bd0918c99" style="color:#4a7c59; text-decoration:none;"><span cl
