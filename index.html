@@ -767,7 +767,7 @@ const events = [
 // Build months Jul 2025 → Feb 2026
 const months = [];
 let d = new Date(2025, 6, 1);
-const end = new Date(2026, 4, 1);
+const end = new Date(2026, 3, 1);
 while (d < end) {
   months.push({ key: d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'), name: d.toLocaleString('en-US',{month:'long'}), year: d.getFullYear() });
   d.setMonth(d.getMonth()+1);
@@ -785,6 +785,7 @@ months.forEach(m => {
   const isEmpty = mEvents.length === 0;
   const row = document.createElement('div');
   row.className = 'month-row' + (isEmpty ? ' empty' : '');
+  if (m.key === '2026-03') row.style.marginTop = '32px';
 
   let html = `<div class="month-marker"><span class="mm-name">${m.name}</span><span class="mm-year">${m.year}</span>${isEmpty ? '<span class="empty-label">no activity</span>' : ''}</div>`;
 
@@ -823,7 +824,7 @@ function buildCard(ev, side) {
   </div>`;
 }
 
-// Equalize month row heights so time passes evenly — desktop only
+// Equalize month row heights so time passes evenly — desktop only, skip empty rows
 function equalizeMonths() {
   if (window.innerWidth <= 640) {
     document.querySelectorAll('.month-row').forEach(r => r.style.height = 'auto');
@@ -831,9 +832,12 @@ function equalizeMonths() {
   }
   const rows = document.querySelectorAll('.month-row');
   rows.forEach(r => r.style.height = 'auto');
+  // Only measure and equalize rows that have content
+  const activeRows = document.querySelectorAll('.month-row:not(.empty)');
   let maxH = 160;
-  rows.forEach(r => { if (r.offsetHeight > maxH) maxH = r.offsetHeight; });
-  rows.forEach(r => r.style.height = maxH + 'px');
+  activeRows.forEach(r => { if (r.offsetHeight > maxH) maxH = r.offsetHeight; });
+  activeRows.forEach(r => r.style.height = maxH + 'px');
+  // Empty rows stay at their natural CSS height
 }
 equalizeMonths();
 window.addEventListener('resize', equalizeMonths);
