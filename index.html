@@ -84,7 +84,7 @@
   .timeline-rail { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--border); transform: translateX(-1px); }
 
   .month-row { position: relative; min-height: 160px; display: flex; align-items: flex-start; padding-bottom: 20px; }
-  .month-row.empty { min-height: 160px; }
+  .month-row.empty { min-height: 56px; }
 
   .month-marker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 3; background: var(--bg); padding: 4px 14px; border: 1px solid var(--border); border-radius: 20px; text-align: center; white-space: nowrap; }
   .month-marker .mm-name { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; color: var(--ink); }
@@ -287,7 +287,7 @@
       padding-bottom: 10px;
     }
     .month-row.empty {
-      min-height: 56px;
+      min-height: 48px;
     }
     .cards-grid {
       grid-template-columns: 1fr;
@@ -405,7 +405,7 @@
   .event-card.expanded .expand-chevron { transform: rotate(180deg); }
 
   /* EMPTY MONTH LABEL */
-  .empty-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--ink-faint); letter-spacing: 0.5px; margin-top: 2px; display: block; text-align: center; }
+  .empty-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink-dim); letter-spacing: 1px; margin-top: 4px; display: block; text-align: center; }
   .info-wrap { position: relative; display: inline-flex; align-items: center; }
   .info-icon { width: 14px; height: 14px; border-radius: 50%; border: 1px solid currentColor; display: inline-flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 500; cursor: default; opacity: 0.5; margin-left: 4px; flex-shrink: 0; line-height: 1; }
   .info-wrap:hover .info-icon { opacity: 1; }
@@ -722,7 +722,7 @@ const events = [
     source:"https://www.federalregister.gov/documents/2026/01/27/2026-01519/protecting-life-in-foreign-assistance" },
 
   { month:"2026-02", date:"Feb 13, 2026", title:"Venezuela Medical Airlift — Phase 1",
-    type:"committed", sector:"humanitarian", sectorLabel:"Humanitarian",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
     totalAmount:0, annualAmount:0, years:1,
     displayTotal:"In-kind delivery", displayAnnual:"Phase 1 of 3",
     desc:"First US foreign assistance to Venezuela in years — 25 pallets (~6,000 kg) of priority medical supplies airlifted to the interim Ministry of Health for nationwide distribution. Part of the Trump administration's three-phase plan for Venezuela stabilization, recovery, and transition.",
@@ -735,7 +735,7 @@ const events = [
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/delivering-priority-medical-supplies-for-the-venezuelan-people" },
 
   { month:"2026-03", date:"Mar 5, 2026", title:"GHSD Advancing Global Health APS",
-    type:"pledged", sector:"health", sectorLabel:"Global Health",
+    type:"announcement", sector:"health", sectorLabel:"Global Health",
     totalAmount:342000000, annualAmount:68400000, years:5,
     displayTotal:"$342M (active addenda)", displayAnnual:"Up to $4.5B total APS",
     desc:"Bureau of Global Health Security and Diplomacy launches the first major procurement vehicle for MOU implementation — an Annual Program Statement (APS) inviting NGOs and implementers to fill gaps in bilateral health agreement delivery. Two live addenda open now; more expected throughout 2026. SOIs due May 31. This is the first signal of how State will use third-party implementers under the new architecture.",
