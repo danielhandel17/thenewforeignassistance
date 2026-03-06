@@ -83,13 +83,13 @@
   .timeline-wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px 100px; position: relative; }
   .timeline-rail { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--border); transform: translateX(-1px); }
 
-  .month-row { position: relative; min-height: 160px; display: flex; align-items: flex-start; padding-bottom: 20px; }
-  .month-row.empty { min-height: 72px; }
+  .month-row { position: relative; min-height: 160px; display: flex; align-items: flex-start; padding-bottom: 52px; }
+  .month-row.empty { min-height: 180px; padding-bottom: 0; }
 
   .month-marker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 3; background: var(--bg); padding: 4px 14px; border: 1px solid var(--border); border-radius: 20px; text-align: center; white-space: nowrap; }
   .month-marker .mm-name { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; color: var(--ink); }
   .month-marker .mm-year { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--ink-dim); margin-left: 4px; }
-  .month-row.empty .month-marker { border-style: dashed; }
+  .month-row.empty .month-marker { border-style: dashed; top: 50%; transform: translateX(-50%) translateY(-50%); }
   .month-row.empty .mm-name { color: var(--ink-dim); font-weight: 600; }
 
   .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; width: 100%; padding-top: 40px; }
@@ -284,10 +284,10 @@
     .month-row {
       flex-direction: column;
       min-height: auto;
-      padding-bottom: 10px;
+      padding-bottom: 32px;
     }
     .month-row.empty {
-      min-height: 80px;
+      min-height: 140px;
     }
     .cards-grid {
       grid-template-columns: 1fr;
@@ -792,7 +792,7 @@ months.forEach(m => {
   const isEmpty = mEvents.length === 0;
   const row = document.createElement('div');
   row.className = 'month-row' + (isEmpty ? ' empty' : '');
-  if (m.key === '2026-03') row.style.marginTop = '32px';
+  // padding-bottom: 52px on all .month-row handles universal gap
 
   let html = `<div class="month-marker"><span class="mm-name">${m.name}</span><span class="mm-year">${m.year}</span>${isEmpty ? '<span class="empty-label">no activity</span>' : ''}</div>`;
 
