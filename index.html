@@ -770,7 +770,7 @@ const events = [
     source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" }
 ];
 
-// Build months Jul 2025 → Mar 2026
+// Build months Mar 2026 → Jul 2025 (most recent first)
 const months = [];
 let d = new Date(2025, 6, 1);
 const end = new Date(2026, 3, 1);
@@ -778,15 +778,16 @@ while (d < end) {
   months.push({ key: d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'), name: d.toLocaleString('en-US',{month:'long'}), year: d.getFullYear() });
   d.setMonth(d.getMonth()+1);
 }
+months.reverse();
 
 const timeline = document.getElementById('timeline');
 let globalSide = 0;
 
 months.forEach(m => {
   const mEvents = events.filter(e => e.month === m.key).sort((a, b) => {
-    // Take first date from ranges like "Sep 5–22, 2025" → "Sep 5, 2025"
+    // Most recent first within each month
     const parseDate = s => new Date(s.replace(/(\w+ \d+)[–\-]\d+/, '$1'));
-    return parseDate(a.date) - parseDate(b.date);
+    return parseDate(b.date) - parseDate(a.date);
   });
   const isEmpty = mEvents.length === 0;
   const row = document.createElement('div');
@@ -899,26 +900,25 @@ function updateTotals() {
     totalsEl.classList.remove('visible');
   }
 
-  // Count up as events scroll into view
-  let c=0, a=0;
+  // Most-recent-first: start at full total, subtract cards that have scrolled past
+  let c = fullCommitted, a = fullPledged;
   const cards = document.querySelectorAll('.event-card');
-  const allPast = [...cards].every(card => card.getBoundingClientRect().top < window.innerHeight*0.7);
-  
-  if (allPast) {
-    // Scrolled to bottom — show full totals to match hero
-    c = fullCommitted; a = fullPledged;
-  } else {
-    cards.forEach((card,i) => {
-      if(card.getBoundingClientRect().top < window.innerHeight*0.7) {
-        const ev=events[i];
-        if(ev.type==='commitment') c+=ev.annualAmount;
-        else if(ev.type==='announcement') a+=ev.annualAmount;
+  const allPast = [...cards].every(card => card.getBoundingClientRect().bottom < 0);
+
+  if (!allPast) {
+    cards.forEach((card, i) => {
+      if (card.getBoundingClientRect().bottom < 0) {
+        const ev = events[i];
+        if (ev.type === 'commitment') c -= ev.annualAmount;
+        else if (ev.type === 'announcement') a -= ev.annualAmount;
       }
     });
+  } else {
+    c = 0; a = 0;
   }
-  
-  cEl.textContent=fmt(c); aEl.textContent=fmt(a);
-  hdr.classList.toggle('scrolled', window.scrollY>100);
+
+  cEl.textContent = fmt(Math.max(0,c)); aEl.textContent = fmt(Math.max(0,a));
+  hdr.classList.toggle('scrolled', window.scrollY > 100);
 }
 window.addEventListener('scroll', updateTotals, {passive:true});
 updateTotals();
