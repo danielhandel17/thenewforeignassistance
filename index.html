@@ -271,6 +271,9 @@
       left: 28px;
       transform: none;
       padding: 2px 8px;
+      max-width: calc(100% - 32px);
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .month-marker .mm-name {
       font-size: 11px;
@@ -903,9 +906,11 @@ function updateTotals() {
   // Most-recent-first: start at full total, subtract cards that have scrolled past
   let c = fullCommitted, a = fullPledged;
   const cards = document.querySelectorAll('.event-card');
-  const allPast = [...cards].every(card => card.getBoundingClientRect().bottom < 0);
+  const nearBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100;
 
-  if (!allPast) {
+  if (nearBottom) {
+    c = 0; a = 0;
+  } else {
     cards.forEach((card, i) => {
       if (card.getBoundingClientRect().bottom < 0) {
         const ev = events[i];
@@ -913,8 +918,6 @@ function updateTotals() {
         else if (ev.type === 'announcement') a -= ev.annualAmount;
       }
     });
-  } else {
-    c = 0; a = 0;
   }
 
   cEl.textContent = fmt(Math.max(0,c)); aEl.textContent = fmt(Math.max(0,a));
