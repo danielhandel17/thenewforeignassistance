@@ -472,7 +472,7 @@
       <div class="hero-stat-label">Pledged (annual)</div>
     </div>
   </div>
-  <div class="hero-updated">Last updated April 6, 2026 &nbsp;·&nbsp; Updated weekly</div>
+  <div class="hero-updated">Last updated April 16, 2026 &nbsp;·&nbsp; Updated weekly</div>
 </section>
 
 <div class="explainer">
@@ -807,13 +807,55 @@ const events = [
       "Significance":"First accountability checkpoint under the America First Global Health Strategy",
       "What to watch":"Which countries submit on time; how plans address NGO role and G2G fund flows",
       "Source":"Think Global Health tracker, March 3, 2026"},
-    source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" }
+    source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" },
+
+  // --- APR 2026 ---
+  { month:"2026-04", date:"Apr 9, 2026", title:"Landau Doctrine Speech at Atlantic Council",
+    type:"milestone", sector:"policy", sectorLabel:"Policy",
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Doctrinal articulation", displayAnnual:"Commercial diplomacy",
+    desc:"Deputy Secretary Christopher Landau delivers the most public articulation to date of the administration's commercial diplomacy doctrine. Argues the United States has been \"under leveraging\" its influence, rejects zero-sum framing of commerce (\"the whole point of the way that the free-market system works is that you find win-win situations\"), and frames the Washington establishment's old theory of foreign policy — getting people to think well of the US in London, Berlin, and Paris — as \"a chapter coming to a close.\" Delivered at the Atlantic Council's Global Prosperity Forum.",
+    details:{
+      "Venue":"Atlantic Council Front Page, Global Prosperity Forum",
+      "Speaker":"Deputy Secretary of State Christopher Landau",
+      "Core frame":"Commercial diplomacy as bidirectional, win-win",
+      "Signature line":"\"The old chapter is coming to a close\"",
+      "Significance":"Most prominent public articulation of the new doctrine by a senior State principal"},
+    source:"https://www.atlanticcouncil.org/commentary/event-recap/us-deputy-secretary-of-state-christopher-landau-the-old-chapter-on-us-foreign-policy-is-coming-to-a-close/" },
+
+  { month:"2026-04", date:"Apr 14, 2026", title:"Lenacapavir Partnership Scales to 3 Million",
+    type:"commitment", sector:"health", sectorLabel:"Health",
+    totalAmount:0, annualAmount:0, years:3,
+    displayTotal:"3M people by 2028", displayAnnual:"+1M over prior commitment",
+    desc:"Under Secretary Lewin announces at CSIS that the US-Global Fund partnership to deliver Gilead's twice-yearly HIV prevention drug lenacapavir will expand from 2 million to 3 million people reached through 2028. Since the first delivery to Eswatini in November 2025, 135,000 doses have reached nine African countries (Eswatini, Kenya, Lesotho, Mozambique, Nigeria, South Africa, Uganda, Zambia, Zimbabwe). US year-one commitment increased from 250,000 to 325,000 doses — reserving 100 percent of Gilead's 2026 production alongside the Global Fund. Partnership is positioned as the flagship of the America First Global Health Strategy.",
+    details:{
+      "Expanded target":"3 million people reached by 2028 (up from 2M)",
+      "Countries active":"Nine African countries receiving doses",
+      "Next wave":"12 additional countries (Benin, Botswana, Dominican Republic, Fiji, Georgia, Haiti, Honduras, Indonesia, Morocco, Papua New Guinea, Rwanda, Thailand)",
+      "Year-one US doses":"Increased from 250,000 to 325,000",
+      "Production share":"US + Global Fund reserving 100% of Gilead's 2026 volume",
+      "Strategic frame":"Core element of America First Global Health Strategy",
+      "Announcement venue":"CSIS Futures Summit, New York"},
+    source:"https://www.state.gov/releases/under-secretary-for-foreign-assistance-humanitarian-affairs-and-religious-freedom/2026/04/the-lenacapavir-partnership-and-the-evolution-of-u-s-foreign-assistance/" },
+
+  { month:"2026-04", date:"Apr 14, 2026", title:"\"Trade Over Aid\" UN Démarche",
+    type:"milestone", sector:"policy", sectorLabel:"Policy",
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Global démarche", displayAnnual:"UN initiative",
+    desc:"Secretary Rubio directs all US embassies and consular posts to issue a démarche to foreign nations asking their support for a joint US declaration calling for \"trade over aid.\" Per the cable, the initiative frames the UN system as a vehicle to \"promote America First values and create business opportunities for U.S. companies,\" with formal introduction at the United Nations planned for end of April. Marks the first export of the new US foreign assistance doctrine into the multilateral system and an explicit rejection of America's historical framing as a leading provider of humanitarian assistance.",
+    details:{
+      "Mechanism":"Cable to all embassies and consular posts; démarche due by Monday Apr 20",
+      "Venue":"United Nations, end of April 2026",
+      "Framing":"\"Trade over aid, opportunity over dependency, investment over assistance\"",
+      "Stated objectives":"Promote America First values; create US commercial opportunities",
+      "First reported":"Washington Post, April 15, 2026"},
+    source:"https://www.washingtonpost.com/national-security/2026/04/15/trump-un-trade-over-aid/" }
 ];
 
-// Build months Mar 2026 → Jul 2025 (most recent first)
+// Build months Apr 2026 → Jul 2025 (most recent first)
 const months = [];
 let d = new Date(2025, 6, 1);
-const end = new Date(2026, 3, 1);
+const end = new Date(2026, 4, 1);
 while (d < end) {
   months.push({ key: d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'), name: d.toLocaleString('en-US',{month:'long'}), year: d.getFullYear() });
   d.setMonth(d.getMonth()+1);
