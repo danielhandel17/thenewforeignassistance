@@ -565,8 +565,8 @@
   <div class="newsletter">
     <div class="newsletter-eyebrow">From the rebuild</div>
     <h2 class="newsletter-h">A brief, occasional newsletter on the rebuild.</h2>
-    <form class="newsletter-form" onsubmit="event.preventDefault(); document.querySelector('.newsletter-thanks').classList.add('shown'); this.querySelector('input').value=''; this.querySelector('button').style.display='none'; this.querySelector('input').style.display='none';">
-      <input type="email" placeholder="you@example.com" required>
+    <form class="newsletter-form">
+      <input type="email" name="email" placeholder="you@example.com" required>
       <button type="submit">Subscribe</button>
     </form>
     <p class="newsletter-thanks">Thanks — you're on the list.</p>
@@ -575,6 +575,40 @@
     © 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003
   </div>
 </footer>
+
+<script>
+  // Newsletter subscribe — POSTs to Google Apps Script, appends row to Sheet
+  document.querySelectorAll('.newsletter-form').forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const input = this.querySelector('input');
+      const button = this.querySelector('button');
+      const thanks = this.parentElement.querySelector('.newsletter-thanks');
+      const email = input.value.trim();
+      if (!email) return;
+
+      button.disabled = true;
+      const originalLabel = button.textContent;
+      button.textContent = 'Subscribing…';
+
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbx996LofuZ6IPGdVJ4MtqYq6SJBK2OzXJ1fro6Wvr1bHulzDftMVn7kdGpaDa9KgAmK/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: new URLSearchParams({ email: email })
+        });
+        input.style.display = 'none';
+        button.style.display = 'none';
+        thanks.classList.add('shown');
+      } catch (err) {
+        button.disabled = false;
+        button.textContent = originalLabel;
+        thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
+        thanks.classList.add('shown');
+      }
+    });
+  });
+</script>
 
 <script>
 const events = [
