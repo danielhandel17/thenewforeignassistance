@@ -18,23 +18,32 @@
   gtag('config', 'G-GPQHNR6C2C');
 </script>
 <meta charset="UTF-8">
-<!-- Social Card -->
-<meta property="og:title" content="The New Foreign Assistance Tracker">
-<meta property="og:description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
-<meta property="og:url" content="https://thenewforeignassistance.org">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The New Foreign Assistance Tracker">
-<meta name="twitter:description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard — Foreign Assistance Tracker</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231a6b4a'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>FA</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Foreign assistance commitments and pledges by region, sector, and type. Explore every State Department deal since July 2025.">
+<title>Dashboard — The New Foreign Assistance</title>
+<!-- Social Card -->
+<meta property="og:title" content="The New Foreign Assistance — Dashboard">
+<meta property="og:description" content="Foreign assistance commitments and pledges by region, sector, and type. Explore every State Department deal since July 2025.">
+<meta property="og:url" content="https://thenewforeignassistance.org/dashboard.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thenewforeignassistance.org/og-image.png">
+<meta property="og:site_name" content="The New Foreign Assistance">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The New Foreign Assistance — Dashboard">
+<meta name="twitter:description" content="Foreign assistance commitments and pledges by region, sector, and type. Explore every State Department deal since July 2025.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='44' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='44' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f5f2ed; --white: #ffffff; --ink: #1a1a1a; --ink-light: #4a4a4a;
-    --ink-dim: #8a8a8a; --ink-faint: #b5b5b5; --border: #d8d4cd; --border-light: #e8e4dd;
-    --accent: #b8860b;
+    /* Brand palette — matches site-wide */
+    --bg: #faf7f0; --bone: #f4ede0; --cream: #fcf7eb; --white: #ffffff;
+    --ink: #1c2e4a; --ink-light: #4a5d7e; --ink-dim: #8a9bb5; --ink-faint: #b5b5b5;
+    --border: rgba(28,46,74,0.12); --border-light: rgba(28,46,74,0.06);
+    --amber: #b8682a; --accent: #b8682a;
+    /* Functional event-type colors — keep semantic */
     --commitment: #1a6b4a; --commitment-bg: #e8f5ee;
     --announcement: #6b5b1a; --announcement-bg: #fdf6e3;
     --milestone: #4a5568; --milestone-bg: #f0f0f0;
@@ -45,20 +54,39 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-  /* NAV */
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 0; height: 52px; }
-  .nav-brand { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; margin-right: 32px; white-space: nowrap; }
-  .nav-tab { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.5px; padding: 0 16px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; color: var(--ink-dim); text-decoration: none; transition: all 0.2s; white-space: nowrap; }
-  .nav-tab:hover { color: var(--ink); }
-  .nav-tab.active { color: var(--ink); border-bottom-color: var(--accent); }
+  /* NAV — dark navy, unified with rest of site */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 24px; height: 56px; }
+  .nav-brand { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 500; color: #fff; text-decoration: none; letter-spacing: -0.2px; white-space: nowrap; flex-shrink: 0; }
+  .nav-brand em { font-style: italic; color: var(--amber); font-weight: 500; }
+  .main-nav { display: flex; align-items: center; gap: 26px; }
+  .main-nav a { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.78); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+  .main-nav a:hover { color: #fff; }
+  .main-nav a.nav-current { color: #fff; font-weight: 600; pointer-events: none; }
+  .main-nav a.nav-tracker { color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 11px; border-radius: 4px; font-size: 12px; }
+  .main-nav a.nav-tracker:hover { border-color: var(--amber); color: var(--amber); }
+  .main-nav a.nav-tracker.nav-current { background: rgba(184,104,42,0.18); border-color: var(--amber); pointer-events: none; }
+
+  .nav-tabs { display: flex; align-items: center; height: 100%; gap: 0; margin-left: auto; }
+  .nav-tab { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; padding: 0 14px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.65); text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+  .nav-tab:hover { color: #fff; }
+  .nav-tab.active { color: #fff; border-bottom-color: var(--amber); }
+
+  @media (max-width: 720px) {
+    .nav-inner { padding: 0 14px; gap: 12px; height: 52px; }
+    .nav-brand { font-size: 15px; }
+    .main-nav { display: none; }
+    .nav-tabs { margin-left: 0; }
+    .nav-tab { font-size: 10px; padding: 0 8px; height: 36px; }
+  }
 
   /* PAGE */
   .page { max-width: 1200px; margin: 0 auto; padding: 80px 32px 80px; }
 
   /* HERO */
   .dash-hero { margin-bottom: 36px; }
-  .dash-hero h1 { font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+  .dash-hero h1 { font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.3px; color: var(--ink); }
+  .dash-hero h1 em { font-style: italic; color: var(--amber); font-weight: 500; }
   .dash-hero p { font-size: 14px; color: var(--ink-light); }
 
   /* SUMMARY STATS */
@@ -171,16 +199,34 @@
   .empty-state p { font-size: 14px; margin-bottom: 8px; }
   .empty-state button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 8px 16px; border: 1px solid var(--border); background: var(--white); border-radius: 4px; cursor: pointer; color: var(--ink-dim); margin-top: 8px; }
 
-  /* FOOTER */
-  .footer { border-top: 1px solid var(--border); padding: 24px 0 0; margin-top: 60px; }
-  .footer p { font-size: 11px; color: var(--ink-dim); line-height: 1.8; }
+  /* FOOTER — unified across site */
+  .site-footer { background: var(--ink); color: rgba(255,255,255,0.85); margin-top: 64px; }
+  .footer-sources { max-width: 720px; margin: 0 auto; padding: 32px 32px 8px; }
+  .footer-sources p { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.8; text-align: center; }
+  .newsletter { max-width: 1100px; margin: 0 auto; padding: 56px 40px 48px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .newsletter-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+  .newsletter-h { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 3vw, 28px); font-weight: 500; color: #fff; letter-spacing: -0.3px; line-height: 1.25; margin-bottom: 22px; max-width: 560px; }
+  .newsletter-form { display: flex; gap: 10px; max-width: 480px; flex-wrap: wrap; }
+  .newsletter-form input { flex: 1; min-width: 220px; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color: #fff; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; border-radius: 3px; transition: border-color 0.15s; }
+  .newsletter-form input:focus { outline: none; border-color: var(--amber); }
+  .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+  .newsletter-form button { padding: 12px 22px; background: var(--amber); color: #fff; border: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; cursor: pointer; border-radius: 3px; transition: background 0.15s; }
+  .newsletter-form button:hover { background: #a35a22; }
+  .newsletter-thanks { display: none; font-family: 'Source Serif 4', serif; font-size: 14px; color: rgba(255,255,255,0.85); font-style: italic; margin-top: 4px; }
+  .newsletter-thanks.shown { display: block; }
+  .footer-bottom { max-width: 1100px; margin: 0 auto; padding: 22px 40px 36px; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.4px; color: rgba(255,255,255,0.45); }
+  @media (max-width: 640px) {
+    .newsletter { padding: 40px 20px 32px; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input { min-width: 0; width: 100%; }
+    .newsletter-form button { width: 100%; }
+    .footer-bottom { padding: 18px 20px 32px; }
+    .footer-sources { padding: 24px 20px 4px; }
+  }
 
   /* MOBILE */
   @media (max-width: 640px) {
     .page { padding: 70px 12px 60px; }
-    .nav-inner { padding: 0 14px; gap: 0; }
-    .nav-brand { font-size: 12px; margin-right: 16px; }
-    .nav-tab { font-size: 10px; padding: 0 10px; }
     .dash-hero h1 { font-size: 22px; }
     .summary-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .stat-value { font-size: 20px; }
@@ -201,16 +247,23 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">The New Foreign Assistance</a>
-    <a href="index.html" class="nav-tab">Timeline</a>
-    <a href="dashboard.html" class="nav-tab active">Dashboard</a>
+    <a href="home.html" class="nav-brand">The <em>New</em> Foreign Assistance</a>
+    <div class="main-nav">
+      <a href="agenda.html">Agenda</a>
+      <a href="about.html">About</a>
+      <a href="press.html">Press</a>
+    </div>
+    <div class="nav-tabs">
+      <a href="index.html" class="nav-tab">Timeline</a>
+      <a href="dashboard.html" class="nav-tab active">Dashboard</a>
+    </div>
   </div>
 </nav>
 
 <div class="page">
 
   <div class="dash-hero">
-    <h1>The new foreign assistance, by the numbers.</h1>
+    <h1>The new foreign assistance, <em>by the numbers.</em></h1>
     <p>Explore every commitment and pledge by region, sector, and type. Click any card to go to the source.</p>
   </div>
 
@@ -309,12 +362,25 @@
 
   <div class="card-grid" id="cardGrid"></div>
 
-  <div class="footer">
-    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>
-    Annualized figures used for multi-year commitments. Last updated May 26, 2026</p>
-  </div>
-
 </div>
+
+<footer class="site-footer">
+  <div class="footer-sources">
+    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated May 26, 2026</p>
+  </div>
+  <div class="newsletter">
+    <div class="newsletter-eyebrow">From the rebuild</div>
+    <h2 class="newsletter-h">A brief, occasional newsletter on the rebuild.</h2>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); document.querySelector('.newsletter-thanks').classList.add('shown'); this.querySelector('input').value=''; this.querySelector('button').style.display='none'; this.querySelector('input').style.display='none';">
+      <input type="email" placeholder="you@example.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter-thanks">Thanks — you're on the list.</p>
+  </div>
+  <div class="footer-bottom">
+    © 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003
+  </div>
+</footer>
 
 <script>
 const events = [
@@ -1033,8 +1099,6 @@ renderSectorBars();
 renderCards();
 </script>
 
-<footer style="text-align:center; padding:32px 20px 24px; color:#8a8f9e; font-size:0.85rem; border-top:1px solid #e8eaf0; margin-top:48px;">
-  Questions or feedback? <a href="mailto:contact@thenewforeignassistance.org" style="color:#4a7c59; text-decoration:none;">contact@thenewforeignassistance.org</a>
-</footer>
+
 </body>
 </html>
