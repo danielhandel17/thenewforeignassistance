@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The New Foreign Assistance</title>
+<meta name="description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
+<meta property="og:title" content="The New Foreign Assistance">
+<meta property="og:description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
+<meta property="og:url" content="https://thenewforeignassistance.org/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thenewforeignassistance.org/og-image.png">
+<meta property="og:site_name" content="The New Foreign Assistance">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The New Foreign Assistance">
+<meta name="twitter:description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
+<meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #f5f2ed;
+    --bg-alt:   #edeae4;
+    --white:    #ffffff;
+    --ink:      #1c2e4a;
+    --ink-light:#2e4060;
+    --ink-dim:  #8a8a8a;
+    --border:   #d8d4cd;
+    --banner:   #1e3452;
+    --amber:    #b8682a;
+    --amber-mid:#9a5620;
+    --amber-pale:#f5e6d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--banner);
+    border-bottom: 2px solid rgba(184,104,42,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .site-name em {
+    font-style: normal;
+    color: var(--amber);
+  }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-transform: none;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s, opacity 0.2s;
+  }
+  nav a:hover { color: rgba(255,255,255,1); }
+  .nav-current {
+    color: rgba(255,255,255,1) !important;
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .nav-tracker {
+    color: rgba(255,255,255,1) !important;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 5px 13px;
+    border-radius: 3px;
+    transition: border-color 0.2s !important;
+  }
+  .nav-tracker:hover {
+    border-color: rgba(255,255,255,1) !important;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--white);
+    padding: 88px 40px 96px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-left {}
+  .hero-kicker {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--amber);
+  }
+  .hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(42px, 5vw, 66px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .hero-body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    font-weight: 300;
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--amber);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: background 0.2s;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--amber-mid); }
+
+  /* Hero right — tracker mini preview */
+  .tracker-preview {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tp-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tp-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .tp-live {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tp-live::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+    display: inline-block;
+  }
+  .tp-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .tp-stat {
+    padding: 20px 20px;
+    border-right: 1px solid var(--border);
+  }
+  .tp-stat:last-child { border-right: none; }
+  .tp-stat-value {
+    font-family: 'Source Serif 4', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .tp-stat-value.amber { color: var(--amber); }
+  .tp-stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .tp-events { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .tp-event {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .tp-event.commitment { border-left-color: #2a7a4a; }
+  .tp-event.announcement { border-left-color: var(--amber); }
+  .tp-event.milestone { border-left-color: #8a8a8a; border-left-style: dashed; }
+  .tp-event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .tp-event-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .tp-event-amount {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .tp-event-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    color: var(--ink-dim);
+  }
+  .tp-footer {
+    border-top: 1px solid var(--border);
+    padding: 12px 20px;
+    text-align: center;
+  }
+  .tp-footer a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--amber);
+    text-decoration: none;
+  }
+  .tp-footer a:hover { text-decoration: underline; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 64px 40px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--amber);
+  }
+  h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    margin-bottom: 28px;
+  }
+
+  /* ── MISSION ── */
+  .mission-section { background: var(--bg); }
+
+  /* ── PRINCIPLES ── */
+  .principles-section { background: var(--white); }
+  .principles-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 620px;
+    margin-bottom: 48px;
+  }
+
+  .principle-card {
+    display: block;
+    padding: 32px 26px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.18s ease, border-color 0.18s ease;
+  }
+  .principle-card:hover { background: rgba(184,104,42,0.04); }
+  .principle-card:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: -2px;
+  }
+  .principle-card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .principle-num {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--amber);
+    margin-right: 0.35em;
+    letter-spacing: -0.2px;
+  }
+  .principle-card p { font-size: 18px; color: var(--ink-light); line-height: 1.7; }
+
+  /* Tracker-card principles */
+  .principles-cards { display: flex; flex-direction: column; gap: 8px; }
+  .pc.amber { border-left-color: var(--amber); }
+
+  /* ── TRACKER CALLOUT ── */
+  .tracker-callout-section { background: var(--bg); }
+  .tracker-callout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .tc-left h2 { margin-bottom: 16px; }
+  .tc-left p { font-size: 16px; line-height: 1.8; color: var(--ink-light); }
+
+  /* ── WRITING ── */
+  .writing-section { background: var(--bg); }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--white); }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--bg-alt);
+    padding: 72px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-section .section-label { justify-content: center; }
+  .contact-section h2 { margin-bottom: 14px; }
+  .contact-section p {
+    color: var(--ink-dim);
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-email {
+    font-family: 'Source Serif 4', serif;
+    font-size: 21px;
+    color: var(--amber);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196,137,58,0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  .contact-email:hover { border-color: var(--amber); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg);
+    padding: 22px 40px;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── FADE ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 860px) {
+    .header-inner { padding: 0 20px; }
+    nav { gap: 16px; }
+    nav a { font-size: 12px; }
+    .hero { padding: 56px 20px 64px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .section { padding: 56px 20px; }
+    .mission-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .pub-list li { grid-template-columns: 1fr; gap: 6px; }
+    .contact-section { padding: 56px 20px; }
+  }
+
+  /* ── MISSION IDEA BLOCKS (right side) ── */
+  .idea-block { padding: 26px 0; border-bottom: 1px solid var(--border); }
+  .idea-block:first-child { padding-top: 0; }
+  .idea-block:last-child { border-bottom: none; padding-bottom: 0; }
+  .idea-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+  .idea-list { list-style: none; padding: 0; margin: 0; }
+  .idea-list li {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-light);
+    padding: 7px 0 7px 18px;
+    position: relative;
+  }
+  .idea-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 9px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  /* ── MISSION MASTHEAD ── */
+  .mission-masthead {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(28px, 4.4vw, 52px);
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.6px;
+    color: var(--ink);
+    margin: 20px 0 64px;
+    max-width: 1050px;
+  }
+  .diagnosis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    row-gap: 0;
+    margin-top: 40px;
+    align-items: start;
+  }
+  .diagnosis-grid .idea-label {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+  .diagnosis-grid .idea-item {
+    padding: 16px 0;
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    position: relative;
+    padding-left: 20px;
+  }
+  .diagnosis-grid .idea-item::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--amber);
+  }
+  @media (max-width: 720px) {
+    .diagnosis-grid { grid-template-columns: 1fr; }
+    .diagnosis-grid .idea-label:last-of-type { margin-top: 24px; }
+  }
+
+  /* ── PUBLICATIONS ── */
+  .publications-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+
+  /* Documents */
+  .cover-navy  { background: var(--ink); border-color: var(--ink); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 72px 40px 36px;
+    margin: 0;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-newsletter {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(252,247,235,0.12);
+    margin-bottom: 28px;
+  }
+  .newsletter-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .newsletter-headline {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(22px, 2.8vw, 30px);
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -0.3px;
+    color: var(--cream);
+    margin: 0 0 26px;
+    max-width: 640px;
+  }
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 500px;
+  }
+  .newsletter-input {
+    flex: 1;
+    min-width: 220px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    padding: 13px 16px;
+    background: rgba(252,247,235,0.06);
+    border: 1px solid rgba(252,247,235,0.18);
+    color: var(--cream);
+    border-radius: 4px;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .newsletter-input::placeholder { color: rgba(252,247,235,0.4); }
+  .newsletter-input:focus {
+    outline: none;
+    border-color: var(--amber);
+    background: rgba(252,247,235,0.10);
+  }
+  .newsletter-submit {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 13px 22px;
+    background: var(--amber);
+    color: var(--ink);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background .15s ease, transform .15s ease;
+  }
+  .newsletter-submit:hover {
+    background: #cf7d36;
+    transform: translateY(-1px);
+  }
+  .newsletter-thanks {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: var(--amber);
+    margin-top: 14px;
+    display: none;
+  }
+  .newsletter-thanks.show { display: block; }
+  .footer-bottom {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: rgba(252,247,235,0.55);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .footer-sep { opacity: 0.4; }
+
+
+  /* ── TOUCH/MOBILE GENERAL ── */
+  @media (hover: none) and (pointer: coarse) {
+    .flip-card:hover .flip-card-front,
+    .flip-card:hover .flip-card-back { border-color: var(--border); }
+    .advisor-card:hover { background: transparent; border-color: var(--border); }
+    a:hover, button:hover { opacity: 1; }
+  }
+  @media (max-width: 600px) {
+    .advisor-card { padding: 18px 14px 16px; }
+    .advisor-name { font-size: 15px; }
+    .advisor-affil { font-size: 11px; }
+    .agenda-section { padding: 40px 16px; }
+    .agenda-frame { font-size: 16px; }
+    .examples-list li { font-size: 15px; line-height: 1.55; }
+    .page-h1 { font-size: 32px !important; line-height: 1.15; }
+    .hero h1 { font-size: 38px !important; line-height: 1.1; }
+    .principle-card { padding: 22px 18px; }
+    .principle-num { font-size: 13px; }
+    .principle-card h3 { font-size: 17px; }
+    .principle-card p { font-size: 14px; }
+    .article-card { padding: 20px 18px; }
+    .article-title { font-size: 16px; }
+    .article-pull { font-size: 14px; }
+    .org-prose p { font-size: 16px; line-height: 1.6; }
+    .footer-bottom { flex-direction: column; gap: 4px; text-align: center; }
+    .footer-sep { display: none; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-input, .newsletter-submit { width: 100%; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="home.html" class="site-name">The <em>New</em> Foreign Assistance</a>
+    <nav>
+      <a href="agenda.html">Framework</a>
+      <a href="about.html">About</a>
+      <a href="press.html">Press</a>
+      <a href="index.html" class="nav-tracker">Tracker →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1>Ambitious. Effective. <em>Built to End.</em></h1>
+      <p class="hero-body">The era of small, ineffective, top-down development projects is over. <em>That's a good thing.</em> It's time for a new approach to foreign assistance focused on unleashing economic growth, programs that work, and government accountability.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section mission-section">
+  <div class="section-inner fade-up">
+    <h2>What Went Wrong. What Comes Next.</h2>
+    <div class="diagnosis-grid">
+      <div class="idea-label">What went wrong</div>
+      <div class="idea-label">What comes next</div>
+      <div class="idea-item">Programs tried to do too much and accomplished too little</div>
+      <div class="idea-item">Big bets, targeted programs that can move the needle on development challenges</div>
+      <div class="idea-item">A bureaucracy focused on internal compliance, not external impact</div>
+      <div class="idea-item">Fast and flexible procurement, pay for what works</div>
+      <div class="idea-item">Development planned by government, not unleashed by markets</div>
+      <div class="idea-item">Partner with the private sector, remove barriers to business</div>
+      <div class="idea-item">Programs detached from foreign policy</div>
+      <div class="idea-item">Focus on trade, not aid; bilateral partnership</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PRINCIPLES -->
+<section class="section principles-section" id="principles">
+  <div class="section-inner fade-up">
+    <h2>Six Principles for a Reformed Approach to Foreign Assistance</h2>
+    <p class="principles-intro">A framework for what U.S. foreign assistance should look like.</p>
+    <div class="principles-grid">
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">01.</span>Focus on Economic Growth</h3><p>Trading partners and allies, not a global safety net.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">02.</span>Do What Only Governments Can Do</h3><p>Public goods and systems change. Leave the rest to civil society and competent local governments.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">03.</span>Commercial First</h3><p>Work through markets where markets can deliver. Support them; don&#39;t displace them.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">04.</span>Partner with Reformers, Not Failing States</h3><p>Reformers earn deeper partnership. Predatory governments do not.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">05.</span>Assess Everything, End What Doesn&#39;t Work</h3><p>Set clear objectives. Measure outcomes. Reallocate from what fails to what works.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">06.</span>Finite by Design</h3><p>Clear end dates. Self-reliance is the goal, not permanent dependency.</p></a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- TRACKER CALLOUT -->
+<section class="section tracker-callout-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">Live Tracker</div>
+    <div class="tracker-callout-grid">
+      <div class="tc-left">
+        <h2>It's being built.<br>Track it in real time.</h2>
+        <p>Every major foreign assistance commitment, pledge, and policy action from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.</p>
+        <a href="index.html" class="btn-primary" style="display:inline-block; margin-top:24px;">Open the tracker →</a>
+      </div>
+      <div class="tc-right">
+        <div class="tracker-preview" id="tracker-preview">
+          <div class="tp-header">
+            <span class="tp-title">Foreign Assistance Tracker</span>
+            <span class="tp-live">Updated weekly</span>
+          </div>
+          <div class="tp-stats">
+            <div class="tp-stat">
+              <div class="tp-stat-value" data-tp="committed">$4.7B</div>
+              <div class="tp-stat-label">Committed / yr</div>
+            </div>
+            <div class="tp-stat">
+              <div class="tp-stat-value amber" data-tp="pledged">$4.1B</div>
+              <div class="tp-stat-label">Pledged / yr</div>
+            </div>
+          </div>
+          <div class="tp-events" data-tp="events">
+            <div class="tp-event commitment">
+              <div class="tp-event-header">
+                <div class="tp-event-title">Ebola Outbreak Response — DRC, Uganda, South Sudan</div>
+                <div class="tp-event-amount">50 treatment clinics, 7 NGO/UN partners</div>
+              </div>
+              <div class="tp-event-meta">May 19–23, 2026 &nbsp;·&nbsp; Health</div>
+            </div>
+            <div class="tp-event commitment">
+              <div class="tp-event-header">
+                <div class="tp-event-title">OCHA Humanitarian Reset — Additional $1.8B</div>
+                <div class="tp-event-amount">Total US OCHA: $3.8B</div>
+              </div>
+              <div class="tp-event-meta">May 14, 2026 &nbsp;·&nbsp; Humanitarian</div>
+            </div>
+            <div class="tp-event announcement">
+              <div class="tp-event-header">
+                <div class="tp-event-title">Cuba — $100M Conditional Pledge</div>
+                <div class="tp-event-amount">Pending Cuban regime approval</div>
+              </div>
+              <div class="tp-event-meta">May 13, 2026 &nbsp;·&nbsp; Humanitarian</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2>Contact</h2>
+  <p>For press inquiries, partnership opportunities, or to learn more about our work.</p>
+  <a href="mailto:contact@thenewforeignassistance.org" class="contact-email">contact@thenewforeignassistance.org</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-newsletter">
+      <div class="newsletter-eyebrow">From the rebuild</div>
+      <h3 class="newsletter-headline">A brief, occasional newsletter on the rebuild.</h3>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="newsletter-submit">Subscribe →</button>
+      </form>
+      <div class="newsletter-thanks" id="newsletterThanks">Thank you. We'll be in touch.</div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The New Foreign Assistance</span>
+      <span class="footer-sep">·</span>
+      <span>700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(el => {
+    if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+<script>
+// ── NEWSLETTER FORM (placeholder handler) ──
+(function() {
+  const form = document.getElementById('newsletterForm');
+  const thanks = document.getElementById('newsletterThanks');
+  if (!form || !thanks) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    const button = form.querySelector('button');
+    const email = input.value.trim();
+    if (!email) return;
+    button.disabled = true;
+    const originalLabel = button.textContent;
+    button.textContent = 'Subscribing…';
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbx996LofuZ6IPGdVJ4MtqYq6SJBK2OzXJ1fro6Wvr1bHulzDftMVn7kdGpaDa9KgAmK/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams({ email: email })
+      });
+      form.style.display = 'none';
+      thanks.classList.add('show');
+    } catch (err) {
+      button.disabled = false;
+      button.textContent = originalLabel;
+      thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
+      thanks.classList.add('show');
+    }
+  });
+})();
+</script>
+
+<script>
+// ── TRACKER PREVIEW: AUTO-SYNC FROM index.html ──
+// Fetches the live tracker page, extracts its events array, computes totals,
+// and renders the 3 most recent events. No manual sync step — when the tracker
+// is updated, the home preview reflects it on next page load.
+// Falls back silently to the hardcoded values if fetch fails (e.g. file://).
+(async function () {
+  try {
+    const res = await fetch('index.html', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const html = await res.text();
+
+    // Extract the events array source from the tracker HTML.
+    const start = html.indexOf('const events = [');
+    if (start < 0) return;
+    const endRel = html.slice(start).indexOf('\n];');
+    if (endRel < 0) return;
+    const arrayJs = html.slice(start, start + endRel + 3);
+
+    // Evaluate the array literal in an isolated function scope.
+    let events;
+    try {
+      events = new Function(arrayJs + ' return events;')();
+    } catch (e) { return; }
+    if (!Array.isArray(events) || events.length === 0) return;
+
+    // Compute totals (match tracker logic exactly).
+    let committed = 0, pledged = 0;
+    events.forEach(ev => {
+      if (ev.type === 'commitment') committed += ev.annualAmount || 0;
+      else if (ev.type === 'announcement') pledged += ev.annualAmount || 0;
+    });
+    const fmt = n => n >= 1e9 ? '$' + (n / 1e9).toFixed(1) + 'B'
+                   : n >= 1e6 ? '$' + (n / 1e6).toFixed(0) + 'M' : '$0';
+
+    const cEl = document.querySelector('[data-tp="committed"]');
+    const pEl = document.querySelector('[data-tp="pledged"]');
+    if (cEl) cEl.textContent = fmt(committed);
+    if (pEl) pEl.textContent = fmt(pledged);
+
+    // Sort events most-recent-first using month (YYYY-MM) + first day number in
+    // the date string. The tracker doesn't keep the array in strict chronological
+    // order, so a sort is required.
+    const rank = ev => {
+      const monthNum = parseInt((ev.month || '0-0').replace('-', ''), 10) || 0;
+      const dayMatch = (ev.date || '').match(/\b(\d{1,2})\b/);
+      const day = dayMatch ? parseInt(dayMatch[1], 10) : 1;
+      return monthNum * 100 + day;
+    };
+    const recent = events.slice().sort((a, b) => rank(b) - rank(a)).slice(0, 3);
+    const container = document.querySelector('[data-tp="events"]');
+    if (container && recent.length > 0) {
+      const safe = s => String(s || '').replace(/[<>]/g, '');
+      container.innerHTML = recent.map(ev => {
+        const type = (ev.type || 'commitment').toLowerCase();
+        const amount = ev.displayAnnual || ev.displayTotal || '';
+        const category = ev.sectorLabel || ev.sector || '';
+        return `
+          <div class="tp-event ${safe(type)}">
+            <div class="tp-event-header">
+              <div class="tp-event-title">${safe(ev.title)}</div>
+              <div class="tp-event-amount">${safe(amount)}</div>
+            </div>
+            <div class="tp-event-meta">${safe(ev.date)} &nbsp;·&nbsp; ${safe(category)}</div>
+          </div>`;
+      }).join('');
+    }
+  } catch (e) {
+    // Silent fail — hardcoded fallback values stay visible.
+  }
+})();
+</script>
+
+</body>
+</html>
