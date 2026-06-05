@@ -144,12 +144,15 @@
     color: var(--amber);
   }
   .hero-body {
+    font-family: 'Source Serif 4', serif;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.65;
     color: var(--ink-light);
-    font-weight: 300;
-    max-width: 620px;
+    max-width: 740px;
     margin-bottom: 40px;
+  }
+  @media (max-width: 600px) {
+    .hero-body { font-size: 16px; }
   }
   .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
   .btn-primary {
@@ -761,7 +764,6 @@
 <section class="section mission-section">
   <div class="section-inner fade-up">
     <h2>What Went Wrong. What Comes Next.</h2>
-    <p class="section-lead">Since 1961 the United States Agency for International Development was America&#39;s premier foreign assistance agency. Its successes were real; so were its failures. It&#39;s time for what comes next.</p>
     <div class="diagnosis-grid">
       <div class="idea-label">What went wrong</div>
       <div class="idea-label">What comes next</div>
