@@ -1,1412 +1,932 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DY00G9KT05');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GPQHNR6C2C');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
-<title>Tracker — The New Foreign Assistance</title>
-<!-- Social Card -->
-<meta property="og:title" content="The New Foreign Assistance — Tracker">
-<meta property="og:description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
-<meta property="og:url" content="https://thenewforeignassistance.org/index.html">
+<title>The New Foreign Assistance</title>
+<meta name="description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
+<meta property="og:title" content="The New Foreign Assistance">
+<meta property="og:description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
+<meta property="og:url" content="https://thenewforeignassistance.org/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://thenewforeignassistance.org/og-image.png">
 <meta property="og:site_name" content="The New Foreign Assistance">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The New Foreign Assistance — Tracker">
-<meta name="twitter:description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='44' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='44' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="twitter:title" content="The New Foreign Assistance">
+<meta name="twitter:description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
+<meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>NFA</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Brand palette — matches site-wide */
-    --bg: #faf7f0; --bone: #f4ede0; --cream: #fcf7eb; --white: #ffffff;
-    --ink: #1c2e4a; --ink-light: #4a5d7e; --ink-dim: #8a9bb5; --ink-faint: #b5b5b5;
-    --border: rgba(28,46,74,0.12); --border-light: rgba(28,46,74,0.06);
-    --amber: #b8682a; --accent: #b8682a;
-    /* Functional event-type colors — keep semantic */
-    --commitment: #1a6b4a; --commitment-bg: #e8f5ee;
-    --announcement: #6b5b1a; --announcement-bg: #fdf6e3;
-    --milestone: #4a5568; --milestone-bg: #f0f0f0;
-    --health: #2563eb; --humanitarian: #dc2626; --agriculture: #16a34a;
-    --innovation: #7c3aed; --policy: #d97706; --economic: #0891b2; --budget: #9333ea;
+    --bg:       #f5f2ed;
+    --bg-alt:   #edeae4;
+    --white:    #ffffff;
+    --ink:      #1c2e4a;
+    --ink-light:#2e4060;
+    --ink-dim:  #8a8a8a;
+    --border:   #d8d4cd;
+    --banner:   #1e3452;
+    --amber:    #b8682a;
+    --amber-mid:#9a5620;
+    --amber-pale:#f5e6d4;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { overflow-x: hidden; }
-  body { background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-  /* STICKY HEADER — dark navy, unified with rest of site */
-  .sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.06); transition: box-shadow 0.3s; }
-  .sticky-header.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.18); }
-  .header-inner { max-width: 1240px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 56px; gap: 24px; }
-  .site-name { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 500; color: #fff; text-decoration: none; letter-spacing: -0.2px; white-space: nowrap; flex-shrink: 0; }
-  .site-name em { font-style: italic; color: var(--amber); font-weight: 500; }
-  .main-nav { display: flex; align-items: center; gap: 26px; }
-  .main-nav a { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.78); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
-  .main-nav a:hover { color: #fff; }
-  .main-nav a.nav-current { color: #fff; font-weight: 600; pointer-events: none; }
-  .main-nav a.nav-tracker { color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 11px; border-radius: 4px; font-size: 12px; }
-  .main-nav a.nav-tracker:hover { border-color: var(--amber); color: var(--amber); }
-  .main-nav a.nav-tracker.nav-current { background: rgba(184,104,42,0.18); border-color: var(--amber); }
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--banner);
+    border-bottom: 2px solid rgba(184,104,42,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .site-name em {
+    font-style: normal;
+    color: var(--amber);
+  }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-transform: none;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s, opacity 0.2s;
+  }
+  nav a:hover { color: rgba(255,255,255,1); }
+  .nav-current {
+    color: rgba(255,255,255,1) !important;
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .nav-tracker {
+    color: rgba(255,255,255,1) !important;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 5px 13px;
+    border-radius: 3px;
+    transition: border-color 0.2s !important;
+  }
+  .nav-tracker:hover {
+    border-color: rgba(255,255,255,1) !important;
+  }
 
-  .header-tabs { display: flex; align-items: center; height: 100%; gap: 0; margin-left: auto; }
-  .header-tab { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; padding: 0 14px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.65); text-decoration: none; transition: all 0.2s; white-space: nowrap; }
-  .header-tab:hover { color: #fff; }
-  .header-tab.active { color: #fff; border-bottom-color: var(--amber); }
+  /* ── HERO ── */
+  .hero {
+    background: var(--white);
+    padding: 88px 40px 96px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-left {}
+  .hero-kicker {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--amber);
+  }
+  .hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(42px, 5vw, 66px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .hero-body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    font-weight: 300;
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--amber);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: background 0.2s;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--amber-mid); }
 
-  .header-totals { display: flex; gap: 24px; align-items: baseline; opacity: 0; transition: opacity 0.4s; pointer-events: none; padding-left: 4px; }
-  .header-totals.visible { opacity: 1; pointer-events: auto; }
-  .total-block { text-align: right; }
-  .total-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.55); display: block; }
-  .total-value { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 700; transition: all 0.4s; color: #fff; }
-  .total-committed { color: #86efac; }
-  .total-announced { color: #fcd34d; }
+  /* Hero right — tracker mini preview */
+  .tracker-preview {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tp-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tp-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .tp-live {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tp-live::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+    display: inline-block;
+  }
+  .tp-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .tp-stat {
+    padding: 20px 20px;
+    border-right: 1px solid var(--border);
+  }
+  .tp-stat:last-child { border-right: none; }
+  .tp-stat-value {
+    font-family: 'Source Serif 4', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .tp-stat-value.amber { color: var(--amber); }
+  .tp-stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .tp-events { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .tp-event {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .tp-event.commitment { border-left-color: #2a7a4a; }
+  .tp-event.announcement { border-left-color: var(--amber); }
+  .tp-event.milestone { border-left-color: #8a8a8a; border-left-style: dashed; }
+  .tp-event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .tp-event-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .tp-event-amount {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .tp-event-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    color: var(--ink-dim);
+  }
+  .tp-footer {
+    border-top: 1px solid var(--border);
+    padding: 12px 20px;
+    text-align: center;
+  }
+  .tp-footer a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--amber);
+    text-decoration: none;
+  }
+  .tp-footer a:hover { text-decoration: underline; }
 
-  /* HERO */
-  .hero { padding: 120px 32px 40px; max-width: 920px; margin: 0 auto; text-align: center; }
-  .hero h1 { font-family: 'Source Serif 4', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 500; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.3px; color: var(--ink); }
-  .hero h1 em { font-style: italic; color: var(--amber); font-weight: 500; display: inline-block; margin-top: 8px; }
-  .hero .subtitle { font-size: 17px; color: var(--ink-light); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  /* ── SECTIONS ── */
+  .section { padding: 64px 40px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--amber);
+  }
+  h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    margin-bottom: 28px;
+  }
 
-  /* EXPLAINER */
-  .explainer { max-width: 640px; margin: 32px auto 40px; padding: 24px 28px; background: var(--white); border: 1px solid var(--border); border-radius: 6px; text-align: left; }
-  .explainer-title { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 16px; }
-  .explainer-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
-  .explainer-item:last-child { margin-bottom: 0; }
-  .explainer-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
-  .explainer-dot.ed-committed { background: #b8e8cc; border: 2px solid var(--commitment); }
-  .explainer-dot.ed-announced { background: var(--announcement-bg); border: 1px solid var(--announcement); }
-  .explainer-dot.ed-milestone { background: #c8cdd6; border: 2px dashed var(--milestone); }
-  .explainer-text strong { font-size: 16px; font-weight: 600; display: block; margin-bottom: 2px; }
-  .explainer-text span { font-size: 15px; color: var(--ink-light); line-height: 1.5; }
-  .explainer-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-light); font-size: 13px; color: var(--ink-dim); line-height: 1.6; font-style: italic; }
+  /* ── MISSION ── */
+  .mission-section { background: var(--bg); }
 
-  /* BUDGET BOXES */
-  .budget-context { max-width: 720px; margin: 0 auto 48px; padding: 0 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .budget-box { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 16px 22px; text-align: center; min-width: 150px; }
-  .budget-box .bl { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 4px; }
-  .budget-box .bv { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 700; }
-  .budget-box .bn { font-size: 11px; color: var(--ink-dim); margin-top: 2px; }
+  /* ── PRINCIPLES ── */
+  .principles-section { background: var(--white); }
+  .principles-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 620px;
+    margin-bottom: 48px;
+  }
 
-  /* TIMELINE — DESKTOP */
-  .timeline-wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px 100px; position: relative; }
-  .timeline-rail { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--border); transform: translateX(-1px); }
+  .principle-card {
+    display: block;
+    padding: 32px 26px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.18s ease, border-color 0.18s ease;
+  }
+  .principle-card:hover { background: rgba(184,104,42,0.04); }
+  .principle-card:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: -2px;
+  }
+  .principle-card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .principle-num {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--amber);
+    margin-right: 0.35em;
+    letter-spacing: -0.2px;
+  }
+  .principle-card p { font-size: 18px; color: var(--ink-light); line-height: 1.7; }
 
-  .month-row { position: relative; min-height: 160px; display: flex; align-items: flex-start; padding-bottom: 52px; }
-  .month-row.empty { min-height: 180px; padding-bottom: 0; }
+  /* Tracker-card principles */
+  .principles-cards { display: flex; flex-direction: column; gap: 8px; }
+  .pc.amber { border-left-color: var(--amber); }
 
-  .month-marker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 3; background: var(--bg); padding: 4px 14px; border: 1px solid var(--border); border-radius: 20px; text-align: center; white-space: nowrap; }
-  .month-marker .mm-name { font-family: 'Source Serif 4', serif; font-size: 14px; font-weight: 600; color: var(--ink); }
-  .month-marker .mm-year { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--ink-dim); margin-left: 4px; }
-  .month-row.empty .month-marker { border-style: dashed; top: 50%; transform: translateX(-50%) translateY(-50%); }
+  /* ── TRACKER CALLOUT ── */
+  .tracker-callout-section { background: var(--bg); }
+  .tracker-callout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .tc-left h2 { margin-bottom: 16px; }
+  .tc-left p { font-size: 16px; line-height: 1.8; color: var(--ink-light); }
 
-  .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; width: 100%; padding-top: 40px; }
-  .side-left { grid-column: 1; }
-  .side-right { grid-column: 2; }
+  /* ── WRITING ── */
+  .writing-section { background: var(--bg); }
 
-  /* EVENT CARDS */
-  .event-card { background: var(--white); border: 1px solid var(--border); border-right: 3px solid var(--border); border-radius: 6px; padding: 18px 20px; margin-bottom: 14px; cursor: pointer; transition: all 0.2s; }
-  .event-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.10); transform: translateY(-1px); }
-  .event-card.type-commitment { border-right-color: var(--commitment); background: var(--commitment-bg); }
-  .event-card.type-announcement { border-right-color: var(--announcement); background: var(--announcement-bg); }
-  .event-card.type-milestone { border-right-color: var(--milestone); background: var(--milestone-bg); border-right-style: dashed; }
+  /* ── ABOUT ── */
+  .about-section { background: var(--white); }
 
-  .side-right.event-card { border-right: 1px solid var(--border); border-left: 3px solid var(--border); }
-  .side-right.event-card.type-commitment { border-left-color: var(--commitment); border-right-color: var(--border); }
-  .side-right.event-card.type-announcement { border-left-color: var(--announcement); border-right-color: var(--border); }
-  .side-right.event-card.type-milestone { border-left-color: var(--milestone); border-right-color: var(--border); border-left-style: dashed; }
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--bg-alt);
+    padding: 72px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-section .section-label { justify-content: center; }
+  .contact-section h2 { margin-bottom: 14px; }
+  .contact-section p {
+    color: var(--ink-dim);
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-email {
+    font-family: 'Source Serif 4', serif;
+    font-size: 21px;
+    color: var(--amber);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196,137,58,0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  .contact-email:hover { border-color: var(--amber); }
 
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-  .card-left-inner { flex: 1; min-width: 0; }
-  .card-tags { display: flex; gap: 5px; margin-bottom: 5px; flex-wrap: wrap; }
-  .tag { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.7px; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; font-weight: 500; }
-  .tag-type-commitment { background: rgba(26,107,74,0.12); color: var(--commitment); }
-  .tag-type-announcement { background: rgba(107,91,26,0.12); color: var(--announcement); }
-  .tag-type-milestone { background: rgba(74,85,104,0.12); color: var(--milestone); }
-  .tag-sector { background: rgba(0,0,0,0.04); }
-  .tag-sector.s-health { color: var(--health); } .tag-sector.s-humanitarian { color: var(--humanitarian); }
-  .tag-sector.s-agriculture { color: var(--agriculture); } .tag-sector.s-innovation { color: var(--innovation); }
-  .tag-sector.s-policy { color: var(--policy); } .tag-sector.s-economic { color: var(--economic); }
-  .tag-sector.s-budget { color: var(--budget); }
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg);
+    padding: 22px 40px;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.5px;
+  }
 
-  .card-title { font-family: 'Source Serif 4', serif; font-size: 16px; font-weight: 600; line-height: 1.3; margin-bottom: 3px; }
-  .card-date { font-size: 12px; color: var(--ink-dim); }
-  .card-amounts { text-align: right; flex-shrink: 0; }
-  .card-total-amount { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 700; line-height: 1.2; }
-  .card-total-amount.c-commitment { color: var(--commitment); }
-  .card-total-amount.c-announcement { color: var(--announcement); }
-  .card-total-amount.c-milestone { color: var(--milestone); font-size: 13px; }
-  .card-annual { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-dim); margin-top: 2px; }
-  .card-desc { font-size: 14px; color: var(--ink-light); margin-top: 6px; line-height: 1.55; }
-  .expand-hint { font-size: 12px; font-weight: 600; color: var(--ink-dim); margin-top: 5px; }
-  .event-card.expanded .expand-hint { display: none; }
-  .card-details { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-  .event-card.expanded .card-details { max-height: 600px; }
-  .card-details-inner { padding-top: 10px; margin-top: 10px; border-top: 1px solid var(--border-light); }
-  .detail-row { display: flex; justify-content: space-between; padding: 2px 0; font-size: 12px; gap: 8px; }
-  .detail-k { color: var(--ink-dim); flex-shrink: 0; }
-  .detail-v { color: var(--ink-light); font-weight: 500; text-align: right; }
-  .source-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--accent); text-decoration: none; font-weight: 500; }
-  .source-link:hover { text-decoration: underline; }
+  /* ── FADE ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  .rail-dot { position: absolute; left: 50%; width: 10px; height: 10px; border-radius: 50%; border: 2px solid; background: var(--bg); transform: translateX(-5px); z-index: 2; }
-  .rail-dot.rd-commitment { border-color: var(--commitment); background: var(--commitment); }
-  .rail-dot.rd-announcement { border-color: var(--announcement); background: var(--announcement-bg); }
-  .rail-dot.rd-milestone { border-color: var(--milestone); background: var(--bg); border-style: dashed; }
+  /* ── MOBILE ── */
+  @media (max-width: 860px) {
+    .header-inner { padding: 0 20px; }
+    nav { gap: 16px; }
+    nav a { font-size: 12px; }
+    .hero { padding: 56px 20px 64px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .section { padding: 56px 20px; }
+    .mission-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .pub-list li { grid-template-columns: 1fr; gap: 6px; }
+    .contact-section { padding: 56px 20px; }
+  }
 
-  /* FOOTER — unified across site */
-  .site-footer { background: var(--ink); color: rgba(255,255,255,0.85); margin-top: 64px; }
-  .footer-sources { max-width: 720px; margin: 0 auto; padding: 32px 32px 8px; }
-  .footer-sources p { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.8; text-align: center; }
-  .newsletter { max-width: 1100px; margin: 0 auto; padding: 56px 40px 48px; border-top: 1px solid rgba(255,255,255,0.08); }
-  .newsletter-eyebrow { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
-  .newsletter-h { font-family: 'Source Serif 4', serif; font-size: clamp(22px, 3vw, 28px); font-weight: 500; color: #fff; letter-spacing: -0.3px; line-height: 1.25; margin-bottom: 22px; max-width: 560px; }
-  .newsletter-form { display: flex; gap: 10px; max-width: 480px; flex-wrap: wrap; }
-  .newsletter-form input { flex: 1; min-width: 220px; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color: #fff; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; border-radius: 3px; transition: border-color 0.15s; }
-  .newsletter-form input:focus { outline: none; border-color: var(--amber); }
-  .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
-  .newsletter-form button { padding: 12px 22px; background: var(--amber); color: #fff; border: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; cursor: pointer; border-radius: 3px; transition: background 0.15s; }
-  .newsletter-form button:hover { background: #a35a22; }
-  .newsletter-thanks { display: none; font-family: 'Source Serif 4', serif; font-size: 14px; color: rgba(255,255,255,0.85); font-style: italic; margin-top: 4px; }
-  .newsletter-thanks.shown { display: block; }
-  .footer-bottom { max-width: 1100px; margin: 0 auto; padding: 22px 40px 36px; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.4px; color: rgba(255,255,255,0.45); }
-  @media (max-width: 640px) {
-    .newsletter { padding: 40px 20px 32px; }
+  /* ── MISSION IDEA BLOCKS (right side) ── */
+  .idea-block { padding: 26px 0; border-bottom: 1px solid var(--border); }
+  .idea-block:first-child { padding-top: 0; }
+  .idea-block:last-child { border-bottom: none; padding-bottom: 0; }
+  .idea-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+  .idea-list { list-style: none; padding: 0; margin: 0; }
+  .idea-list li {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-light);
+    padding: 7px 0 7px 18px;
+    position: relative;
+  }
+  .idea-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 9px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  /* ── MISSION MASTHEAD ── */
+  .mission-masthead {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(28px, 4.4vw, 52px);
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.6px;
+    color: var(--ink);
+    margin: 20px 0 64px;
+    max-width: 1050px;
+  }
+  .diagnosis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    row-gap: 0;
+    margin-top: 40px;
+    align-items: start;
+  }
+  .diagnosis-grid .idea-label {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+  .diagnosis-grid .idea-item {
+    padding: 16px 0;
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    position: relative;
+    padding-left: 20px;
+  }
+  .diagnosis-grid .idea-item::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--amber);
+  }
+  @media (max-width: 720px) {
+    .diagnosis-grid { grid-template-columns: 1fr; }
+    .diagnosis-grid .idea-label:last-of-type { margin-top: 24px; }
+  }
+
+  /* ── PUBLICATIONS ── */
+  .publications-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+
+  /* Documents */
+  .cover-navy  { background: var(--ink); border-color: var(--ink); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 72px 40px 36px;
+    margin: 0;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-newsletter {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(252,247,235,0.12);
+    margin-bottom: 28px;
+  }
+  .newsletter-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .newsletter-headline {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(22px, 2.8vw, 30px);
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -0.3px;
+    color: var(--cream);
+    margin: 0 0 26px;
+    max-width: 640px;
+  }
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 500px;
+  }
+  .newsletter-input {
+    flex: 1;
+    min-width: 220px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    padding: 13px 16px;
+    background: rgba(252,247,235,0.06);
+    border: 1px solid rgba(252,247,235,0.18);
+    color: var(--cream);
+    border-radius: 4px;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .newsletter-input::placeholder { color: rgba(252,247,235,0.4); }
+  .newsletter-input:focus {
+    outline: none;
+    border-color: var(--amber);
+    background: rgba(252,247,235,0.10);
+  }
+  .newsletter-submit {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 13px 22px;
+    background: var(--amber);
+    color: var(--ink);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background .15s ease, transform .15s ease;
+  }
+  .newsletter-submit:hover {
+    background: #cf7d36;
+    transform: translateY(-1px);
+  }
+  .newsletter-thanks {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: var(--amber);
+    margin-top: 14px;
+    display: none;
+  }
+  .newsletter-thanks.show { display: block; }
+  .footer-bottom {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: rgba(252,247,235,0.55);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .footer-sep { opacity: 0.4; }
+
+
+  /* ── TOUCH/MOBILE GENERAL ── */
+  @media (hover: none) and (pointer: coarse) {
+    .flip-card:hover .flip-card-front,
+    .flip-card:hover .flip-card-back { border-color: var(--border); }
+    .advisor-card:hover { background: transparent; border-color: var(--border); }
+    a:hover, button:hover { opacity: 1; }
+  }
+  @media (max-width: 600px) {
+    .advisor-card { padding: 18px 14px 16px; }
+    .advisor-name { font-size: 15px; }
+    .advisor-affil { font-size: 11px; }
+    .agenda-section { padding: 40px 16px; }
+    .agenda-frame { font-size: 16px; }
+    .examples-list li { font-size: 15px; line-height: 1.55; }
+    .page-h1 { font-size: 32px !important; line-height: 1.15; }
+    .hero h1 { font-size: 38px !important; line-height: 1.1; }
+    .principle-card { padding: 22px 18px; }
+    .principle-num { font-size: 13px; }
+    .principle-card h3 { font-size: 17px; }
+    .principle-card p { font-size: 14px; }
+    .article-card { padding: 20px 18px; }
+    .article-title { font-size: 16px; }
+    .article-pull { font-size: 14px; }
+    .org-prose p { font-size: 16px; line-height: 1.6; }
+    .footer-bottom { flex-direction: column; gap: 4px; text-align: center; }
+    .footer-sep { display: none; }
     .newsletter-form { flex-direction: column; }
-    .newsletter-form input { min-width: 0; width: 100%; }
-    .newsletter-form button { width: 100%; }
-    .footer-bottom { padding: 18px 20px 32px; }
-    .footer-sources { padding: 24px 20px 4px; }
+    .newsletter-input, .newsletter-submit { width: 100%; }
   }
-
-  /* =====================
-     MOBILE STYLES
-     ===================== */
-  @media (max-width: 640px) {
-    .card-title { font-size: 17px; }
-    .card-desc { font-size: 15px; }
-
-    /* Header — compact on mobile, hide global nav, show wordmark + tabs */
-    .header-inner {
-      padding: 0 14px;
-      gap: 12px;
-      height: 52px;
-    }
-    .site-name {
-      font-size: 15px;
-    }
-    .main-nav {
-      display: none;
-    }
-    .header-tabs {
-      height: auto;
-      gap: 0;
-      margin-left: 0;
-    }
-    .header-tab {
-      font-size: 10px;
-      padding: 0 8px;
-      height: 36px;
-      border-bottom-width: 2px;
-    }
-    .header-totals {
-      gap: 14px;
-      padding-left: 0;
-    }
-    .total-block {
-      text-align: center;
-    }
-    .total-label {
-      font-size: 8px;
-      letter-spacing: 0.6px;
-    }
-    .total-value {
-      font-size: 15px;
-    }
-
-    /* Hero — generous top padding to clear header */
-    .hero {
-      padding: 80px 16px 24px;
-    }
-    .hero h1 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-    .hero .subtitle {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    /* Explainer */
-    .explainer {
-      margin: 16px 10px 24px;
-      padding: 14px 12px;
-    }
-    .explainer-title {
-      font-size: 9px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-    .explainer-item {
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .explainer-dot {
-      width: 11px;
-      height: 11px;
-      margin-top: 2px;
-    }
-    .explainer-text strong {
-      font-size: 12px;
-    }
-    .explainer-text span {
-      font-size: 11px;
-    }
-    .explainer-note {
-      font-size: 10px;
-      margin-top: 10px;
-      padding-top: 10px;
-    }
-
-    /* Budget boxes — row of 3, very compact */
-    .budget-context {
-      padding: 0 10px;
-      gap: 6px;
-      margin-bottom: 20px;
-      flex-wrap: nowrap;
-    }
-    .budget-box {
-      padding: 8px 6px;
-      min-width: 0;
-      flex: 1;
-    }
-    .budget-box .bl {
-      font-size: 6px;
-      letter-spacing: 0.3px;
-    }
-    .budget-box .bv {
-      font-size: 15px;
-    }
-    .budget-box .bn {
-      font-size: 8px;
-    }
-
-    /* Timeline — single column, rail on left */
-    .timeline-wrap {
-      padding: 0 10px 60px;
-    }
-    .timeline-rail {
-      left: 18px;
-      transform: none;
-    }
-
-    /* Month marker — starts at rail, flows right */
-    .month-marker {
-      left: 28px;
-      transform: none;
-      padding: 2px 8px;
-      max-width: calc(100% - 32px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .month-marker .mm-name {
-      font-size: 11px;
-    }
-    .month-row.empty .month-marker {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    /* Single column grid on mobile */
-    .month-row {
-      flex-direction: column;
-      min-height: auto;
-      padding-bottom: 32px;
-    }
-    .month-row.empty {
-      min-height: 140px;
-    }
-    .cards-grid {
-      grid-template-columns: 1fr;
-      padding-left: 38px;
-      padding-top: 36px;
-    }
-    .side-left, .side-right {
-      grid-column: 1;
-    }
-
-    /* All cards left-bordered on mobile (rail is on left) */
-    .event-card {
-      border-left: 3px solid var(--border);
-      border-right: 1px solid var(--border);
-    }
-    .event-card.type-commitment { border-left-color: var(--commitment); }
-    .event-card.type-announcement { border-left-color: var(--announcement); }
-    .event-card.type-milestone { border-left-color: var(--milestone); border-left-style: dashed; }
-    .side-right.event-card {
-      border-left: 3px solid var(--border);
-      border-right: 1px solid var(--border);
-    }
-    .side-right.event-card.type-commitment {
-      border-left-color: var(--commitment);
-      border-right-color: var(--border);
-    }
-    .side-right.event-card.type-announcement {
-      border-left-color: var(--announcement);
-      border-right-color: var(--border);
-    }
-    .side-right.event-card.type-milestone {
-      border-left-color: var(--milestone);
-      border-right-color: var(--border);
-      border-left-style: dashed;
-      border-right-style: solid;
-    }
-
-    /* Rail dot */
-    .rail-dot {
-      left: 18px;
-      transform: translateX(-5px);
-    }
-
-    /* Cards — very compact */
-    .event-card {
-      padding: 10px 10px;
-      margin-bottom: 7px;
-    }
-    .card-top {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 6px;
-    }
-    .card-title {
-      font-size: 13px;
-      line-height: 1.25;
-    }
-    .card-date {
-      font-size: 10px;
-    }
-    .card-desc {
-      font-size: 11px;
-      margin-top: 4px;
-      line-height: 1.45;
-    }
-    .card-total-amount {
-      font-size: 13px;
-    }
-    .card-annual {
-      font-size: 9px;
-    }
-    .card-amounts {
-      text-align: right;
-      flex-shrink: 0;
-      max-width: 90px;
-    }
-    .tag {
-      font-size: 7px;
-      padding: 1px 4px;
-    }
-    .expand-hint {
-      font-size: 9px;
-    }
-    .detail-row {
-      font-size: 10px;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    .detail-v {
-      text-align: right;
-    }
-    .source-link {
-      font-size: 10px;
-    }
-
-  }
-  /* HERO STATS */
-  .hero-stats { display: flex; justify-content: center; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
-  .hero-stat { text-align: center; }
-  .hero-stat-value { font-family: 'Source Serif 4', serif; font-size: 42px; font-weight: 700; line-height: 1; }
-  .hero-stat-value.hv-committed { color: var(--commitment); }
-  .hero-stat-value.hv-pledged { color: var(--announcement); }
-  .hero-stat-value.hv-count { color: var(--ink); }
-  .hero-stat-label { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-light); margin-top: 6px; }
-  .hero-stat-divider { width: 1px; background: var(--border); align-self: stretch; margin: 4px 0; }
-  .hero-updated { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3px; color: var(--ink-dim); margin-top: 16px; text-align: center; }
-
-  /* CARD CONNECTOR LINE */
-  .card-connector { display: none; }
-
-  /* CHEVRON EXPAND */
-  .expand-chevron { display: inline-block; font-size: 10px; color: var(--ink-faint); margin-top: 6px; transition: transform 0.25s; user-select: none; }
-  .event-card.expanded .expand-chevron { transform: rotate(180deg); }
-
-  /* EMPTY MONTH LABEL */
-  .empty-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink-dim); letter-spacing: 1px; margin-top: 4px; display: block; text-align: center; }
-  .info-wrap { position: relative; display: inline-flex; align-items: center; }
-  .info-icon { width: 14px; height: 14px; border-radius: 50%; border: 1px solid currentColor; display: inline-flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 500; cursor: default; opacity: 0.5; margin-left: 4px; flex-shrink: 0; line-height: 1; }
-  .info-wrap:hover .info-icon { opacity: 1; }
-  .info-tooltip { position: absolute; bottom: calc(100% + 8px); right: 0; width: 220px; background: var(--ink); color: var(--white); font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; line-height: 1.6; padding: 10px 12px; border-radius: 4px; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 200; }
-  .info-tooltip::after { content: ''; position: absolute; top: 100%; right: 12px; border: 5px solid transparent; border-top-color: var(--ink); }
-  .info-wrap:hover .info-tooltip { opacity: 1; }
 
 </style>
 </head>
 <body>
 
-<div class="sticky-header" id="stickyHeader">
+<!-- HEADER -->
+<header class="site-header">
   <div class="header-inner">
-    <span class="site-name">The <em>New</em> Foreign Assistance</span>
-    <div class="header-tabs">
-      <a href="index.html" class="header-tab active">Timeline</a>
-      <a href="dashboard.html" class="header-tab">Dashboard</a>
-    </div>
-    <div class="header-totals">
-      <div class="total-block">
-        <span class="total-label">
-          Committed (annual)
-          <span class="info-wrap">
-            <span class="info-icon">i</span>
-            <span class="info-tooltip">Funds in a binding legal vehicle — a signed grant award, executed contract, or contribution to a pooled fund. Money is actually moving. Some committed items were never publicly pledged first.</span>
-          </span>
-        </span>
-        <span class="total-value total-committed" id="totalCommitted">$0</span>
-      </div>
-      <div class="total-block">
-        <span class="total-label">
-          Pledged (annual)
-          <span class="info-wrap">
-            <span class="info-icon">i</span>
-            <span class="info-tooltip">Publicly stated intent not yet in a binding contract — MOUs, multi-year pledges subject to future appropriations, and solicitations not yet awarded. Signals direction and scale. Over time, some pledges become commitments; some don't.</span>
-          </span>
-        </span>
-        <span class="total-value total-announced" id="totalAnnounced">$0</span>
-      </div>
-    </div>
+    <a href="index.html" class="site-name">The <em>New</em> Foreign Assistance</a>
+    <nav>
+      <a href="agenda.html">Framework</a>
+      <a href="about.html">About</a>
+      <a href="press.html">Press</a>
+      <a href="tracker.html" class="nav-tracker">Tracker →</a>
+    </nav>
   </div>
-</div>
+</header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>The new foreign assistance is being built.<br><em>Track it in real time.</em></h1>
-  <p class="subtitle">Every major foreign assistance deal, commitment, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Follow the money month by month.</p>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-value hv-committed" id="heroCommitted">—</div>
-      <div class="hero-stat-label">Committed (annual)</div>
-    </div>
-    <div class="hero-stat-divider"></div>
-    <div class="hero-stat">
-      <div class="hero-stat-value hv-pledged" id="heroPledged">—</div>
-      <div class="hero-stat-label">Pledged (annual)</div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1>Ambitious. Effective. <em>Built to End.</em></h1>
+      <p class="hero-body">The era of small, ineffective, top-down development projects is over. <em>That's a good thing.</em> It's time for a new approach to foreign assistance focused on unleashing economic growth, programs that work, and government accountability.</p>
     </div>
   </div>
-  <div class="hero-updated">Last updated May 26, 2026 &nbsp;·&nbsp; Updated weekly</div>
 </section>
 
-<div class="explainer">
-  <div class="explainer-title">How to read this tracker</div>
-  <div class="explainer-item">
-    <div class="explainer-dot ed-committed"></div>
-    <div class="explainer-text">
-      <strong>Committed</strong>
-      <span>Money is moving through a binding vehicle — a grant award, executed contract, or contribution to a pooled fund.</span>
+<!-- MISSION -->
+<section class="section mission-section">
+  <div class="section-inner fade-up">
+    <h2>What Went Wrong. What Comes Next.</h2>
+    <div class="diagnosis-grid">
+      <div class="idea-label">What went wrong</div>
+      <div class="idea-label">What comes next</div>
+      <div class="idea-item">Programs tried to do too much and accomplished too little</div>
+      <div class="idea-item">Big bets, targeted programs that can move the needle on development challenges</div>
+      <div class="idea-item">A bureaucracy focused on internal compliance, not external impact</div>
+      <div class="idea-item">Fast and flexible procurement, pay for what works</div>
+      <div class="idea-item">Development planned by government, not unleashed by markets</div>
+      <div class="idea-item">Partner with the private sector, remove barriers to business</div>
+      <div class="idea-item">Programs detached from foreign policy</div>
+      <div class="idea-item">Focus on trade, not aid; bilateral partnership</div>
     </div>
   </div>
-  <div class="explainer-item">
-    <div class="explainer-dot ed-announced"></div>
-    <div class="explainer-text">
-      <strong>Pledged</strong>
-      <span>Includes MOUs, multi-year pledges subject to future appropriations, and solicitations not yet awarded. Signals direction and scale — over time, some pledges become commitments; some don't.</span>
-    </div>
-  </div>
-  <div class="explainer-item">
-    <div class="explainer-dot ed-milestone"></div>
-    <div class="explainer-text">
-      <strong>Milestone</strong>
-      <span>Strategy releases, delivery events, legislation, and conferences. No new spending, but sets the framework for what follows.</span>
-    </div>
-  </div>
-  <div class="explainer-note">
-    Multi-year deals are annualized in the running total. A $1.6B five-year MOU counts as ~$320M/yr, not $1.6B. Each card shows both the headline figure and the per-year amount. Click any card for details and source links.
-  </div>
-</div>
+</section>
 
-<div class="budget-context">
-  <div class="budget-box"><div class="bl">FY25 Enacted</div><div class="bv">$59.7B</div><div class="bn">SFOPS total</div></div>
-  <div class="budget-box"><div class="bl">FY26 Enacted</div><div class="bv">$50.0B</div><div class="bn">SFOPS total</div></div>
-</div>
+<hr class="section-divider">
 
-<div class="timeline-wrap">
-  <div class="timeline-rail"></div>
-  <div id="timeline"></div>
+<!-- PRINCIPLES -->
+<section class="section principles-section" id="principles">
+  <div class="section-inner fade-up">
+    <h2>Six Principles for a Reformed Approach to Foreign Assistance</h2>
+    <p class="principles-intro">A framework for what U.S. foreign assistance should look like.</p>
+    <div class="principles-grid">
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">01.</span>Focus on Economic Growth</h3><p>Trading partners and allies, not a global safety net.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">02.</span>Do What Only Governments Can Do</h3><p>Public goods and systems change. Leave the rest to civil society and competent local governments.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">03.</span>Commercial First</h3><p>Work through markets where markets can deliver. Support them; don&#39;t displace them.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">04.</span>Partner with Reformers, Not Failing States</h3><p>Reformers earn deeper partnership. Predatory governments do not.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">05.</span>Assess Everything, End What Doesn&#39;t Work</h3><p>Set clear objectives. Measure outcomes. Reallocate from what fails to what works.</p></a>
+      <a class="principle-card" href="agenda.html"><h3><span class="principle-num">06.</span>Finite by Design</h3><p>Clear end dates. Self-reliance is the goal, not permanent dependency.</p></a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- TRACKER CALLOUT -->
+<section class="section tracker-callout-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">Live Tracker</div>
+    <div class="tracker-callout-grid">
+      <div class="tc-left">
+        <h2>It's being built.<br>Track it in real time.</h2>
+        <p>Every major foreign assistance commitment, pledge, and policy action from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.</p>
+        <a href="tracker.html" class="btn-primary" style="display:inline-block; margin-top:24px;">Open the tracker →</a>
+      </div>
+      <div class="tc-right">
+        <div class="tracker-preview" id="tracker-preview">
+          <div class="tp-header">
+            <span class="tp-title">Foreign Assistance Tracker</span>
+            <span class="tp-live">Updated weekly</span>
+          </div>
+          <div class="tp-stats">
+            <div class="tp-stat">
+              <div class="tp-stat-value" data-tp="committed">$4.7B</div>
+              <div class="tp-stat-label">Committed / yr</div>
+            </div>
+            <div class="tp-stat">
+              <div class="tp-stat-value amber" data-tp="pledged">$4.1B</div>
+              <div class="tp-stat-label">Pledged / yr</div>
+            </div>
+          </div>
+          <div class="tp-events" data-tp="events">
+            <div class="tp-event commitment">
+              <div class="tp-event-header">
+                <div class="tp-event-title">Ebola Outbreak Response — DRC, Uganda, South Sudan</div>
+                <div class="tp-event-amount">50 treatment clinics, 7 NGO/UN partners</div>
+              </div>
+              <div class="tp-event-meta">May 19–23, 2026 &nbsp;·&nbsp; Health</div>
+            </div>
+            <div class="tp-event commitment">
+              <div class="tp-event-header">
+                <div class="tp-event-title">OCHA Humanitarian Reset — Additional $1.8B</div>
+                <div class="tp-event-amount">Total US OCHA: $3.8B</div>
+              </div>
+              <div class="tp-event-meta">May 14, 2026 &nbsp;·&nbsp; Humanitarian</div>
+            </div>
+            <div class="tp-event announcement">
+              <div class="tp-event-header">
+                <div class="tp-event-title">Cuba — $100M Conditional Pledge</div>
+                <div class="tp-event-amount">Pending Cuban regime approval</div>
+              </div>
+              <div class="tp-event-meta">May 13, 2026 &nbsp;·&nbsp; Humanitarian</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2>Contact</h2>
+  <p>For press inquiries, partnership opportunities, or to learn more about our work.</p>
+  <a href="mailto:contact@thenewforeignassistance.org" class="contact-email">contact@thenewforeignassistance.org</a>
 </div>
 
 <footer class="site-footer">
-  <div class="footer-sources">
-    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Running totals use annualized figures for multi-year commitments. Co-investment shown separately on cards.</p>
-  </div>
-  <div class="newsletter">
-    <div class="newsletter-eyebrow">From the rebuild</div>
-    <h2 class="newsletter-h">A brief, occasional newsletter on the rebuild.</h2>
-    <form class="newsletter-form">
-      <input type="email" name="email" placeholder="you@example.com" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p class="newsletter-thanks">Thanks — you're on the list.</p>
-  </div>
-  <div class="footer-bottom">
-    © 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003
+  <div class="footer-inner">
+    <div class="footer-newsletter">
+      <div class="newsletter-eyebrow">From the rebuild</div>
+      <h3 class="newsletter-headline">A brief, occasional newsletter on the rebuild.</h3>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="newsletter-submit">Subscribe →</button>
+      </form>
+      <div class="newsletter-thanks" id="newsletterThanks">Thank you. We'll be in touch.</div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The New Foreign Assistance</span>
+      <span class="footer-sep">·</span>
+      <span>700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  // Newsletter subscribe — POSTs to Google Apps Script, appends row to Sheet
-  document.querySelectorAll('.newsletter-form').forEach(form => {
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const input = this.querySelector('input');
-      const button = this.querySelector('button');
-      const thanks = this.parentElement.querySelector('.newsletter-thanks');
-      const email = input.value.trim();
-      if (!email) return;
-
-      button.disabled = true;
-      const originalLabel = button.textContent;
-      button.textContent = 'Subscribing…';
-
-      try {
-        await fetch('https://script.google.com/macros/s/AKfycbx996LofuZ6IPGdVJ4MtqYq6SJBK2OzXJ1fro6Wvr1bHulzDftMVn7kdGpaDa9KgAmK/exec', {
-          method: 'POST',
-          mode: 'no-cors',
-          body: new URLSearchParams({ email: email })
-        });
-        input.style.display = 'none';
-        button.style.display = 'none';
-        thanks.classList.add('shown');
-      } catch (err) {
-        button.disabled = false;
-        button.textContent = originalLabel;
-        thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
-        thanks.classList.add('shown');
-      }
-    });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(el => {
+    if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); }
   });
+}, { threshold: 0.07 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
 <script>
-const events = [
-  // --- JUL 2025 ---
-  { month:"2025-07", date:"Jul 22, 2025", title:"Philippines Energy Assistance",
-    type:"commitment", sector:"economic", sectorLabel:"Economic",
-    totalAmount:63e6, annualAmount:63e6, years:1,
-    displayTotal:"$63M", displayAnnual:null,
-    desc:"Energy sector assistance during President Marcos Jr. visit. Energy infrastructure and private sector investment.",
-    details:{"Partner":"Government of the Philippines","Sector":"Energy infrastructure","Type":"Bilateral grant"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/07/secretary-rubios-meeting-with-philippine-president-marcos-jr" },
-
-  // --- SEP 2025 ---
-  { month:"2025-09", date:"Sep 4, 2025", title:"Gilead Lenacapavir — HIV Prevention",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:0, annualAmount:0, years:3,
-    displayTotal:"2M doses at cost", displayAnnual:"Via existing PEPFAR budget",
-    desc:"Pre-market deal for twice-yearly HIV prevention injection. 99% effective. Gilead provides at cost, shares IP with generic manufacturers.",
-    details:{"Partner":"Gilead Sciences + Global Fund","Drug":"Lenacapavir (twice-yearly)","Efficacy":">99% HIV prevention","Year 1":"600K doses (325K US-funded)","Target":"2M doses by mid-2027","Note":"No new $ — existing PEPFAR funds"},
-    source:"https://www.state.gov/releases/the-united-states-presidents-emergency-plan-for-aids-relief/2025/09/pepfars-support-of-american-innovation-to-reach-up-to-2-million-people-by-2028-with-breakthrough-hiv-drug-lenacapavir" },
-
-  { month:"2025-09", date:"Sep 11, 2025", title:"Philippines Health Systems",
-    type:"commitment", sector:"health", sectorLabel:"Health",
-    totalAmount:250e6, annualAmount:250e6, years:1,
-    displayTotal:"$250M", displayAnnual:null,
-    desc:"TB, maternal/child health, disease surveillance, lab strengthening. Total Philippines commitment now $313M.",
-    details:{"Partner":"Government of the Philippines","Focus":"TB, maternal health, lab systems","Implementation":"Embassy Foreign Assistance Section"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/09/u-s-announces-new-health-sector-assistance-for-the-philippines" },
-
-  { month:"2025-09", date:"Sep 18, 2025", title:"America First Global Health Strategy",
-    type:"milestone", sector:"health", sectorLabel:"Health",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Strategy", displayAnnual:null,
-    desc:"36-page strategy released by GHSD bureau. Three pillars: Safer, Stronger, More Prosperous. Establishes bilateral MOU framework with co-investment requirements.",
-    details:{"Pillars":"Safer, Stronger, More Prosperous","Key mechanism":"Bilateral MOUs with country co-investment","Focus areas":"HIV, TB, malaria, polio, global health security","Target":"MOUs with dozens of countries by Dec 31, 2025","Replaces":"Withdrawn Biden-era GHS strategy"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/09/release-of-the-america-first-global-health-strategy" },
-
-  // --- NOV 2025 ---
-  { month:"2025-11", date:"Nov 18, 2025", title:"First Lenacapavir Doses Delivered",
-    type:"milestone", sector:"health", sectorLabel:"Health",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Milestone", displayAnnual:null,
-    desc:"First shipments to Eswatini and Zambia — 5 months from FDA approval to sub-Saharan Africa. A first for any HIV medicine.",
-    details:{"Countries":"Eswatini, Zambia (10 total planned)","Speed":"5 months from FDA approval","Focus":"Pregnant/breastfeeding mothers"},
-    source:"https://www.state.gov/releases/2025/11/driving-global-health-progress-through-american-innovation-and-burden-sharing-the-first-doses-of-lenacapavir-arrive-in-eswatini-and-zambia" },
-
-  { month:"2025-11", date:"Nov 21, 2025", title:"Global Fund Replenishment Pledge",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:4.6e9, annualAmount:1.15e9, years:4,
-    displayTotal:"$4.6B over 4 yrs", displayAnnual:"~$1.15B/yr",
-    desc:"US pledge for 2026–2029 cycle. Down from $6B prior. 1:2 matching requires other donors to contribute $2 per $1 US.",
-    details:{"Period":"2026–2029 (4 years)","Prior cycle":"$6B (23% cut)","Matching":"$2 from others per $1 US","Total raised":"$11.3B of $18B target","Status":"Pledge — subject to annual appropriations"},
-    source:"https://www.theglobalfund.org/en/replenishment/" },
-
-  { month:"2025-11", date:"Nov 25, 2025", title:"Zipline Drone Delivery Network",
-    type:"commitment", sector:"innovation", sectorLabel:"Innovation",
-    totalAmount:150e6, annualAmount:50e6, years:3,
-    displayTotal:"$150M / 3 yrs", displayAnnual:"~$50M/yr US",
-    desc:"First pay-for-performance grant. Autonomous medical supply delivery in 5 African countries. Governments commit $400M in utilization fees.",
-    details:{"Partner":"Zipline International","Countries":"Rwanda, Ghana, Nigeria, Kenya, Côte d'Ivoire","Facilities":"Up to 15,000","Gov co-invest":"$400M (utilization fees)","Model":"Pay-for-performance","US benefit":"Engineering + manufacturing jobs"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/11/advancing-the-america-first-global-health-strategy-and-promoting-american-innovation" },
-
-  // --- DEC 2025 ---
-  { month:"2025-12", date:"Dec 4, 2025", title:"Kenya Health Framework",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:1.6e9, annualAmount:320e6, years:5,
-    displayTotal:"$1.6B US / 5 yrs", displayAnnual:"~$320M/yr US",
-    desc:"First bilateral health compact. $1.6B US + $850M Kenya. Procurement transitions to KEMSA by 2026. 2:1 reduction clause.",
-    details:{"Total":"$2.5B ($1.6B US + $850M Kenya)","US annual":"~$320M/yr","Kenya annual":"~$170M/yr","Focus":"HIV, TB, malaria, maternal health","Reform":"KEMSA procurement by Dec 2026","Enforcement":"2:1 cut if Kenya misses targets","Status":"MOU — non-binding"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/advancing-the-america-first-global-health-strategy-through-landmark-bilateral-agreements-on-global-health-cooperation" },
-
-  { month:"2025-12", date:"Dec 5, 2025", title:"Rwanda Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:158e6, annualAmount:31.6e6, years:5,
-    displayTotal:"$228M total / 5 yrs", displayAnnual:"~$32M/yr US",
-    desc:"Five-year $228M MOU. US intends to provide $158M, Rwanda commits $70M in co-investment. Targets full national control of HIV/AIDS response within four years. Includes $10M for Ginkgo Bioworks disease outbreak surveillance, and support for Zipline drone medical delivery.",
-    details:{"US commitment":"$158M over 5 yrs","Rwanda co-invest":"$70M","Total":"$228M","Focus":"HIV/AIDS, malaria, GHS, data systems","Zipline":"Rwanda assumes ops & maintenance of Zipline drone network","Surveillance":"$10M to Ginkgo Bioworks for biothreat radar system","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/continuing-to-deliver-on-the-america-first-global-health-strategy-with-the-signing-of-the-united-states-rwanda-bilateral-health-cooperation-memorandum-of-understanding" },
-
-  { month:"2025-12", date:"Dec 12, 2025", title:"Liberia Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:132e6, annualAmount:26.4e6, years:5,
-    displayTotal:"$183M total / 5 yrs", displayAnnual:"~$26M/yr US",
-    desc:"Five-year $183M MOU. US provides $132M, Liberia commits to increase domestic health spending by $51M. Focus on HIV/AIDS, malaria, maternal & child health, GHS. Liberia to gradually assume financial and operational responsibility for domestic health systems.",
-    details:{"US commitment":"$132M over 5 yrs","Liberia co-invest":"$51M","Total":"$183M","Focus":"HIV/AIDS, malaria, maternal & child health, GHS","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/leveraging-momentum-of-the-america-first-global-health-strategy-with-the-signing-of-the-united-states-liberia-bilateral-health-cooperation-memorandum-of-understanding" },
-
-  { month:"2025-12", date:"Dec 18, 2025", title:"Nigeria Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:2.1e9, annualAmount:420e6, years:5,
-    displayTotal:"$5.1B total / 5 yrs", displayAnnual:"~$420M/yr US",
-    desc:"Largest bilateral health MOU. $2.1B US + $3B Nigeria co-investment = $5.1B total. Focus on HIV/AIDS, TB, malaria, maternal health. Nigeria commits to raise health spending to 6% of national budget by 2026.",
-    details:{"US commitment":"$2.1B over 5 yrs","Nigeria co-invest":"$3B","Total":"$5.1B","Focus":"HIV/AIDS, TB, malaria, maternal health, GHS","Accountability":"Nigeria must raise health budget to 6% of national spending","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/delivering-on-president-trumps-commitment-america-first-global-health-strategy-and-bilateral-health-mous" },
-
-  { month:"2025-12", date:"Dec 18, 2025", title:"Uganda Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:1.7e9, annualAmount:340e6, years:5,
-    displayTotal:"$2.2B total / 5 yrs", displayAnnual:"~$340M/yr US",
-    desc:"$1.7B US + $500M Uganda = $2.2B total. Combats HIV/AIDS, TB, malaria. Supports digital health and faith-based providers. Uganda health spending linked to National Development Plan IV. 2:1 funding cut if Uganda misses co-investment targets.",
-    details:{"US commitment":"$1.7B over 5 yrs","Uganda co-invest":"$500M+","Total":"$2.2B","Focus":"HIV/AIDS, TB, malaria, digital health, faith-based providers","Enforcement":"2:1 US funding cut if Uganda misses targets","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/delivering-on-president-trumps-commitment-america-first-global-health-strategy-and-bilateral-health-mous" },
-
-  { month:"2025-12", date:"Dec 18, 2025", title:"Lesotho Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:232e6, annualAmount:46.4e6, years:5,
-    displayTotal:"$364M total / 5 yrs", displayAnnual:"~$46M/yr US",
-    desc:"$232M US + $132M Lesotho = $364M total. HIV/AIDS focus with workforce strengthening. Includes internet connectivity for health clinics and advanced robotics delivery of medical products via Zipline.",
-    details:{"US commitment":"$232M over 5 yrs","Lesotho co-invest":"$132M","Total":"$364M","Focus":"HIV/AIDS, workforce, data systems","Innovation":"Internet connectivity for clinics; Zipline drone delivery","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/delivering-on-president-trumps-commitment-america-first-global-health-strategy-and-bilateral-health-mous" },
-
-  { month:"2025-12", date:"Dec 18, 2025", title:"Eswatini Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:205e6, annualAmount:41e6, years:5,
-    displayTotal:"$242M total / 5 yrs", displayAnnual:"~$41M/yr US",
-    desc:"$205M US + $37M Eswatini = $242M total. Strengthens national health efforts, public health data systems, HIV antiretroviral access including American-made lenacapavir. Leverages US technology for long-term sustainability.",
-    details:{"US commitment":"$205M over 5 yrs","Eswatini co-invest":"$37M","Total":"$242M","Focus":"HIV/AIDS, data systems, lenacapavir scale-up","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/delivering-on-president-trumps-commitment-america-first-global-health-strategy-and-bilateral-health-mous" },
-
-  { month:"2025-12", date:"Dec 18, 2025", title:"Mozambique Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:1.8e9, annualAmount:360e6, years:5,
-    displayTotal:"$1.8B US / 5 yrs", displayAnnual:"~$360M/yr US",
-    desc:"$1.8B US over 5 years. Mozambique commits to increase domestic health spending by ~30% of government health budget (est. $137M). Expands access to HIV/AIDS prevention including lenacapavir; improves maternal and child health services.",
-    details:{"US commitment":"$1.8B over 5 yrs","Mozambique co-invest":"~$137M est. (30% of govt health budget)","Focus":"HIV/AIDS prevention, maternal & child health, lenacapavir scale-up","Note":"Mozambique co-invest $ not publicly disclosed in press release","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/delivering-on-president-trumps-commitment-america-first-global-health-strategy-and-bilateral-health-mous" },
-
-  { month:"2025-12", date:"Dec 18, 2025", title:"Cameroon Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:400e6, annualAmount:80e6, years:5,
-    displayTotal:"$850M total / 5 yrs", displayAnnual:"~$80M/yr US",
-    desc:"$400M US + $450M Cameroon = $850M total. Funds healthcare workers, modernizes disease surveillance infrastructure, strengthens HIV/AIDS and TB response.",
-    details:{"US commitment":"$400M over 5 yrs","Cameroon co-invest":"$450M","Total":"$850M","Focus":"HIV/AIDS, TB, disease surveillance, health workforce","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/delivering-on-president-trumps-commitment-america-first-global-health-strategy-and-bilateral-health-mous" },
-
-  { month:"2025-12", date:"Dec 22, 2025", title:"Ethiopia Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:1.016e9, annualAmount:203.2e6, years:5,
-    displayTotal:"$1.466B total / 5 yrs", displayAnnual:"~$203M/yr US",
-    desc:"$1.016B US + $450M Ethiopia = $1.466B total. Builds on $5B in prior US health assistance. Covers HIV/AIDS, TB, malaria, polio, maternal & child health, and ongoing Marburg outbreak response.",
-    details:{"US commitment":"$1.016B over 5 yrs","Ethiopia co-invest":"$450M","Total":"$1.466B","Focus":"HIV/AIDS, TB, malaria, polio, MCH, Marburg response","History":"Preserves gains from >$5B in prior US health assistance","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/advancing-the-america-first-global-health-strategy-through-landmark-bilateral-global-health-mous" },
-
-  { month:"2025-12", date:"Dec 22, 2025", title:"Botswana Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:106e6, annualAmount:21.2e6, years:5,
-    displayTotal:"$487M total / 5 yrs", displayAnnual:"~$21M/yr US",
-    desc:"$106M US + $381M Botswana = $487M total. Botswana's high GNI (highest of any African MOU partner) means it takes on the largest co-investment share. Sustains HIV epidemic control beyond 95-95-95 targets. Modernizes electronic medical records with US satellite-based surveillance technology.",
-    details:{"US commitment":"$106M over 5 yrs","Botswana co-invest":"$381M (largest % share of any partner)","Total":"$487M","Focus":"HIV/AIDS, electronic medical records, satellite surveillance","Note":"Botswana has highest GNI among African MOU partners; 3-yr timeline","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/advancing-the-america-first-global-health-strategy-through-landmark-bilateral-global-health-mous" },
-
-  { month:"2025-12", date:"Dec 22, 2025", title:"Sierra Leone Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:129e6, annualAmount:25.8e6, years:5,
-    displayTotal:"$173M total / 5 yrs", displayAnnual:"~$26M/yr US",
-    desc:"$129M US + $44M Sierra Leone = $173M total. Front-loads $30M in 2026 to rapidly strengthen disease surveillance, lab capacity, health workforce, and data systems. Sierra Leone increases contributions steadily through 2030.",
-    details:{"US commitment":"$129M over 5 yrs","Sierra Leone co-invest":"$44M","Total":"$173M","2026":"$30M US front-loaded for rapid system strengthening","Focus":"Disease surveillance, lab capacity, health workforce","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/advancing-the-america-first-global-health-strategy-through-landmark-bilateral-global-health-mous" },
-
-  { month:"2025-12", date:"Dec 22, 2025", title:"Madagascar Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:134e6, annualAmount:26.8e6, years:5,
-    displayTotal:"$175M total / 5 yrs", displayAnnual:"~$27M/yr US",
-    desc:"$134M US + $41M Madagascar = $175M total. Part of the four-country Dec 22 announcement alongside Ethiopia, Botswana, and Sierra Leone. Focus on HIV/AIDS, malaria, and infectious disease surveillance.",
-    details:{"US commitment":"$134M over 5 yrs","Madagascar co-invest":"$41M","Total":"$175M","Focus":"HIV/AIDS, malaria, disease surveillance","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/advancing-the-america-first-global-health-strategy-through-landmark-bilateral-global-health-mous" },
-
-  { month:"2025-12", date:"Dec 31, 2025", title:"Côte d'Ivoire Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:487e6, annualAmount:97.4e6, years:5,
-    displayTotal:"$937M total / 5 yrs", displayAnnual:"~$97M/yr US",
-    desc:"$487M US + $450M Côte d'Ivoire = $937M total. Five-year MOU locks in path to full country ownership. Strengthens epidemic surveillance, lab systems, health supply chains, and data systems. Opens US company opportunities in logistics, data, and supply chain management.",
-    details:{"US commitment":"$487M over 5 yrs","CIV co-invest":"$450M","Total":"$937M","Focus":"HIV/AIDS, GHS, epidemic surveillance, lab systems, supply chain","Private sector":"US companies supported in logistics, data, supply chain","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2025/12/advancing-the-america-first-global-health-strategy-through-a-landmark-bilateral-global-health-mou-with-cote-divoire" },
-
-  { month:"2026-01", date:"Jan 14, 2026", title:"Malawi Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:792e6, annualAmount:158.4e6, years:5,
-    displayTotal:"$792M US / 5 yrs", displayAnnual:"~$158M/yr US",
-    desc:"US–Malawi health MOU. $792M US + $144M Malawi co-investment ($936M total). Focuses on HIV/AIDS, TB, malaria, maternal health. Shifts from NGO delivery to national government systems.",
-    details:{"US commitment":"$792M over 5 yrs","Malawi co-invest":"$143.8M","Total":"$936M","Focus":"HIV/AIDS, TB, malaria, MCH, GHS","Reform":"Away from parallel NGO systems","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/01/driving-progress-on-the-america-first-global-health-strategy-through-bilateral-global-health-mou-with-malawi" },
-
-  { month:"2025-12", date:"Dec 15, 2025", title:"Indo-Pacific Assistance Conference",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Policy", displayAnnual:null,
-    desc:"State Dept outlines Indo-Pacific approach. Philippines, Quad Ports of the Future, PNG corridor, Pacific islands.",
-    details:{"Themes":"Alliances, commercial engagement, counter-narcotics","Key initiative":"Quad Ports of the Future Partnership"},
-    source:"https://www.state.gov/releases/bureau-of-east-asian-and-pacific-affairs/2025/12/america-first-foreign-assistance-in-the-indo-pacific" },
-
-  { month:"2025-12", date:"Dec 29, 2025", title:"OCHA Humanitarian Reset",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:2e9, annualAmount:2e9, years:1,
-    displayTotal:"$2B", displayAnnual:"Initial 2026 contribution",
-    desc:"All US humanitarian funding shifts to OCHA pooled funds. Replaces fragmented grants. 17 countries. UN agencies 'adapt, shrink, or die.'",
-    details:{"Structure":"Consolidated pooled funds via OCHA","Savings claim":"$1.9B vs prior model","Scope":"17 countries","Features":"Negative earmarks, hyper-prioritization","Requirement":"UN agencies adapt or lose funding"},
-    source:"https://www.state.gov/releases/under-secretary-for-foreign-assistance-humanitarian-affairs-and-religious-freedom/2025/12/more-lives-saved-for-fewer-taxpayer-dollars-trump-administration-leads-humanitarian-reset-in-the-united-nations" },
-
-  // --- JAN 2026 ---
-  { month:"2026-01", date:"Jan 14, 2026", title:"White House SAP on HR 7006 (FY26 Approps)",
-    type:"milestone", sector:"budget", sectorLabel:"Budget",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Policy", displayAnnual:null,
-    desc:"Statement of Administration Policy endorses FY26 SFOPS bill. Highlights creation of America First Opportunity Fund, acknowledges USAID closure, supports consolidated foreign assistance accounts.",
-    details:{"Bill":"HR 7006","Vote":"341–79 (House)","Key provision":"Creates America First Opportunity Fund","Aid posture":"'Significantly reducing spending, eliminating wasteful programs, consolidating accounts'","USAID":"Bill 'acknowledges the closure' and eliminates billions across USAID accounts","Recommendation":"Senior advisors recommend President sign"},
-    source:"https://www.whitehouse.gov/wp-content/uploads/2026/01/SAP-HR7006.pdf" },
-
-  { month:"2026-01", date:"Jan 16, 2026", title:"State Dept Agency Strategic Plan FY 2026–2030",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Strategy", displayAnnual:null,
-    desc:"First post-USAID strategic plan. Goal 6: 'Targeted Foreign Assistance that Puts American Interests First.' Replaces prior joint State-USAID plan.",
-    details:{"Key goal":"Goal 6: Targeted Foreign Assistance","Obj 6.1":"Leverage assistance as tool of statecraft","Obj 6.2":"Promote trade, not aid","Scope":"First plan without USAID as separate entity","Other goals":"Sovereignty, Western Hemisphere, Indo-Pacific, Europe, Economic Dominance"},
-    source:"https://www.state.gov/wp-content/uploads/2026/01/ASP-for-Fiscal-Years-2026-2030-v5.pdf" },
-
-  { month:"2026-01", date:"Jan 14, 2026", title:"Cuba Humanitarian Aid — First Tranche",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:3e6, annualAmount:3e6, years:1,
-    displayTotal:"$3M", displayAnnual:"First of three shipments",
-    desc:"First US direct humanitarian aid to Cuba following Hurricane Melissa — 3 flights from Miami carrying food kits, hygiene kits, kitchen sets, and solar lanterns. Delivered via Catholic Church and Caritas Cuba, bypassing the regime. First direct US aid to Cuba not routed through the Cuban government.",
-    details:{"Channel":"Catholic Church / Caritas Cuba","Goods":"Food kits, hygiene kits, kitchen sets, solar lanterns","Beneficiaries":"~6,000 families in Santiago de Cuba, Holguín, Granma, Guantánamo","Note":"First direct US aid to Cuba not routed through the Cuban government"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/01/delivering-on-our-commitment-u-s-disaster-assistance-to-the-cuban-people/" },
-
-  // --- FEB 2026 ---
-  { month:"2026-02", date:"Feb 6, 2026", title:"Burundi Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:129e6, annualAmount:25.8e6, years:5,
-    displayTotal:"$155M total / 5 yrs", displayAnnual:"~$26M/yr US",
-    desc:"$129M US + $26M Burundi = $155M total. HIV/AIDS, malaria, TB, and global health security. Burundi commits to increase domestic health expenditures and assume greater operational ownership by 2030.",
-    details:{"US commitment":"$129M over 5 yrs","Burundi co-invest":"$26M","Total":"$155M","Focus":"HIV/AIDS, malaria, TB, GHS","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/fostering-health-sovereignty-in-the-democratic-republic-of-the-congo-through-the-america-first-global-health-strategy/" },
-
-  { month:"2026-02", date:"Feb 25, 2026", title:"Burkina Faso Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:147e6, annualAmount:29.4e6, years:5,
-    displayTotal:"$254M total / 5 yrs", displayAnnual:"~$29M/yr US",
-    desc:"$147M US + $107M Burkina Faso = $254M total. HIV/AIDS, malaria, TB, and GHS. Burkina Faso commits substantial co-investment relative to its size. Focuses on fortifying health systems and countering infectious disease threats.",
-    details:{"US commitment":"$147M over 5 yrs","Burkina Faso co-invest":"$107M","Total":"$254M","Focus":"HIV/AIDS, malaria, TB, GHS, health workforce","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/fostering-health-sovereignty-in-the-democratic-republic-of-the-congo-through-the-america-first-global-health-strategy/" },
-
-  { month:"2026-02", date:"Feb 25, 2026", title:"Panama Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:22.5e6, annualAmount:7.5e6, years:3,
-    displayTotal:"$34.5M total / 3 yrs", displayAnnual:"~$7.5M/yr US",
-    desc:"$22.5M US + $11M Panama = $34.5M total. 3-year agreement — shortest MOU reflecting Panama's stronger economic capacity. First Western Hemisphere health MOU. Focus on global health security and disease surveillance protecting both nations from cross-border infectious disease threats.",
-    details:{"US commitment":"$22.5M over 3 yrs","Panama co-invest":"$11M","Total":"$34.5M","Duration":"3 years (reflecting Panama's higher economic capacity)","Focus":"GHS, disease surveillance, outbreak response","Significance":"First Western Hemisphere health MOU","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/fostering-health-sovereignty-in-the-democratic-republic-of-the-congo-through-the-america-first-global-health-strategy/" },
-
-  { month:"2026-02", date:"Feb 26, 2026", title:"DRC Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:900e6, annualAmount:180e6, years:5,
-    displayTotal:"$1.2B total / 5 yrs", displayAnnual:"~$180M/yr US",
-    desc:"$900M US + $300M DRC = $1.2B total — largest MOU since Nigeria. Strengthens DRC's capacity to detect and contain infectious disease outbreaks (Ebola, mpox) before international spread. Professionalize community health workers with sustainable remuneration. DRC signed a critical minerals MOU with the US before the health agreement.",
-    details:{"US commitment":"$900M over 5 yrs","DRC co-invest":"$300M (incl. $75M for commodities and frontline workers)","Total":"$1.2B","Focus":"HIV, TB, malaria, MCH, polio, GHS, Ebola/mpox response, CHW professionalization","Surveillance":"National integrated outbreak system detecting within 7 days","Context":"Preceded by US-DRC critical minerals MOU","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/fostering-health-sovereignty-in-the-democratic-republic-of-the-congo-through-the-america-first-global-health-strategy/" },
-
-  { month:"2026-02", date:"Feb 3, 2026", title:"FY26 Appropriations Signed",
-    type:"milestone", sector:"budget", sectorLabel:"Budget",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"$50B enacted", displayAnnual:"59% above admin request",
-    desc:"Bipartisan SFOPS bill signed. $50B — nearly 60% above admin's $30.1B request. Congress reasserts authority, funds multilaterals and programs admin sought to cut.",
-    details:{"Enacted":"$50B","Admin request":"$30.1B (+59% above)","vs FY25":"−$9.3B (−16%)","Key":"Congress funds CIO, peacekeeping, programs admin zeroed","USAID":"Bill does not mention USAID; funds go directly to State"},
-    source:"https://www.congress.gov/bill/119th-congress/house-bill/7006" },
-
-  { month:"2026-02", date:"Feb 3, 2026", title:"USDA Food for Peace — WFP Agreement",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:452e6, annualAmount:452e6, years:1,
-    displayTotal:"$452M", displayAnnual:"FY25 funds, purchases by March",
-    desc:"USDA takes over Food for Peace from State Dept via Dec 2025 interagency agreement. First award: 211,000 tons of U.S. commodities to 7 countries via WFP. $1.2B in FY26 funds also available.",
-    details:{"Partner":"UN World Food Programme","Commodities":"Rice, cornmeal, sorghum, wheat, peas, vegetable oil, RUSF","Countries":"DRC, El Salvador, Ethiopia, Guatemala, Haiti, Kenya, Rwanda","FY26 funding":"$1.2B additional available","Reform":"100% U.S.-origin procurement; anti-fraud requirements"},
-    source:"https://www.fas.usda.gov/newsroom/usda-purchase-211000-metric-tons-american-commodities-administer-food-peace-program" },
-
-  { month:"2026-02", date:"Feb 18, 2026", title:"CIMMYT Crop Research Award",
-    type:"commitment", sector:"agriculture", sectorLabel:"Agriculture",
-    totalAmount:40e6, annualAmount:40e6, years:1,
-    displayTotal:"$40M", displayAnnual:null,
-    desc:"Grant to CIMMYT for drought/heat-tolerant maize and wheat, gene bank conservation, crop disease surveillance.",
-    details:{"Partner":"CIMMYT (Texcoco, Mexico)","Focus":"Maize & wheat resilience, gene bank, digital ag","US benefit":"60% of US wheat uses CIMMYT varieties"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/america-first-leadership-in-crop-research" },
-
-  { month:"2026-02", date:"Feb 20, 2026", title:"Feed the Future Innovation Labs",
-    type:"announcement", sector:"agriculture", sectorLabel:"Agriculture",
-    totalAmount:64e6, annualAmount:64e6, years:1,
-    displayTotal:"$64M", displayAnnual:"Solicitation posted",
-    desc:"7 awards expected ($20–40M each). First restart since Jan 2025 USAID freeze. Closes April 3, 2026.",
-    details:{"Awards":"7 expected","Range":"$20M–$40M each","Closes":"April 3, 2026","Note":"Labs idle since Jan 2025 freeze","Exception":"Climate Resilient Cereals (KSU) never stopped"},
-    source:"https://simpler.grants.gov/opportunity/2334100f-f7b1-470c-9881-447ba64a0ee9" },
-
-  { month:"2026-02", date:"Feb 3, 2026", title:"Sudan Humanitarian Donor Conference",
-    type:"announcement", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:0, annualAmount:0, years:1,
-    displayTotal:"$200M US (reallocation)", displayAnnual:"$1.5B raised total",
-    desc:"US hosted 20+ donor nations at the Trump Institute of Peace. US contributed $200M to the Sudan Humanitarian Fund — drawn from the Dec 2025 $2B OCHA commitment already tracked above, not new money. Total pledges from all donors: $1.5B.",
-    details:{"US contribution":"$200M (part of Dec $2B OCHA MOU)","Total pledged":"$1.5B across 20+ donors","Key donors":"UAE, Saudi Arabia, Qatar, Kuwait, Egypt, Chad, UK, Norway","Channel":"Sudan Humanitarian Fund (OCHA-managed)","Next step":"April 15 follow-on meeting in Berlin"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/sudan-humanitarian-fund-call-to-action-event" },
-
-  { month:"2026-02", date:"Feb 5, 2026", title:"Cuba Humanitarian Aid — Second Tranche",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:6e6, annualAmount:6e6, years:1,
-    displayTotal:"$6M", displayAnnual:"$9M total to Cuba",
-    desc:"Second direct humanitarian shipment to Cuba via Catholic Church and Caritas. Brings total US assistance to Cuba since Hurricane Melissa to $9M. See January card for first tranche.",
-    details:{"Channel":"Catholic Church / Caritas Cuba","Goods":"Rice, beans, pasta, canned tuna, solar lamps","Tranche 1":"$3M (Jan 14, 2026) — see separate card","Total to date":"$9M since Hurricane Melissa (Oct 2025)"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/delivering-additional-humanitarian-support-directly-to-the-cuban-people/" },
-
-  { month:"2026-02", date:"Feb 22–24, 2026", title:"Pacific Investment Summit — Honolulu",
-    type:"milestone", sector:"economic", sectorLabel:"Economic",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Inaugural summit", displayAnnual:"16 Pacific nations",
-    desc:"Inaugural 'Pacific Agenda: Investment, Security and Shared Prosperity Summit' at East-West Center. Deputy Sec. Landau + INDOPACOM co-host. 300 participants, 80+ companies including Salesforce, Boeing, Google, SpaceX, JP Morgan. First major US private-sector mobilization for Pacific Islands to counter Chinese influence.",
-    details:{"Countries":"16 Pacific Island nations & territories","Outcomes":"Undersea cables for Marshall Islands & American Samoa; hospital deal for Palau","Agencies":"DFC, MCC, USTDA present","Also":"$3M to fund DOJ prosecutor position for Pacific criminal cases","Significance":"First summit of this kind — explicit counter to China's regional presence"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/honolulu-investment-summit-connects-u-s-businesses-and-pacific-island-countries/" },
-
-  { month:"2026-02", date:"Feb 26, 2026", title:"Niger Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:107.4e6, annualAmount:21.48e6, years:5,
-    displayTotal:"$179M total / 5 yrs", displayAnnual:"~$21M/yr US",
-    desc:"$107.4M US + $71.9M Niger = $179.3M total. First West Africa MOU (announced same day as Dominican Republic). Focus on malaria, maternal & child health, disease surveillance, outbreak prevention.",
-    details:{"US commitment":"$107.4M over 5 yrs","Niger co-invest":"$71.9M","Total":"$179.3M","Focus":"Malaria, maternal & child health, disease surveillance","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/bolstering-infectious-disease-outbreak-prevention-and-response-in-niger-and-the-dominican-republic-through-the-america-first-global-health-strategy/" },
-
-  { month:"2026-02", date:"Feb 26, 2026", title:"Dominican Republic Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:46.7e6, annualAmount:9.34e6, years:5,
-    displayTotal:"$60.8M total / 5 yrs", displayAnnual:"~$9M/yr US",
-    desc:"$46.7M US + $14.1M Dominican Republic = $60.8M total. HIV/AIDS, outbreak detection. Includes 7-1-7 outbreak detection system: detect within 7 days, notify within 1 day, respond within 7 days.",
-    details:{"US commitment":"$46.7M over 5 yrs","DR co-invest":"$14.1M","Total":"$60.8M","Focus":"HIV/AIDS, 7-1-7 outbreak detection system","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/bolstering-infectious-disease-outbreak-prevention-and-response-in-niger-and-the-dominican-republic-through-the-america-first-global-health-strategy/" },
-
-  { month:"2026-02", date:"Feb 27, 2026", title:"Guatemala Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:60e6, annualAmount:12e6, years:5,
-    displayTotal:"$61.6M total / 5 yrs", displayAnnual:"~$12M/yr US",
-    desc:"~$60M US + $1.6M Guatemala = $61.6M total. Robust surveillance and lab system capable of detecting outbreaks within 7 days, notifying international authorities within 1 day, and implementing response within 7 days.",
-    details:{"US commitment":"~$60M over 5 yrs","Guatemala co-invest":"$1.6M (new domestic expenditures)","Total":"~$61.6M","Focus":"Disease surveillance, 7-1-7 outbreak detection, lab systems","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/pursuing-sustainable-health-outcomes-under-the-trump-administrations-america-first-global-health-strategy-in-the-republic-of-guatemala-the-republic-of-guinea-and-the-republic-of-el-salvador" },
-
-  { month:"2026-02", date:"Feb 27, 2026", title:"Guinea Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:91e6, annualAmount:18.2e6, years:5,
-    displayTotal:"$142M total / 5 yrs", displayAnnual:"~$18M/yr US",
-    desc:"$91M US + $51M Guinea = $142M total. Clear transition toward Guinea's independent health system management by 2030. Focus: HIV, malaria, polio eradication, GHS. Lab networks aligned with biosafety standards by 2027. Preceded by US-Guinea critical minerals MOU.",
-    details:{"US commitment":"$91M over 5 yrs","Guinea co-invest":"$51M","Total":"$142M","Focus":"HIV, malaria, polio eradication, GHS, lab systems","Lab target":"Biosafety/biosecurity aligned networks by 2027","Context":"Preceded by critical minerals MOU with US","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/pursuing-sustainable-health-outcomes-under-the-trump-administrations-america-first-global-health-strategy-in-the-republic-of-guatemala-the-republic-of-guinea-and-the-republic-of-el-salvador" },
-
-  { month:"2026-02", date:"Feb 27, 2026", title:"El Salvador Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:31.9e6, annualAmount:6.38e6, years:5,
-    displayTotal:"$51.6M total / 5 yrs", displayAnnual:"~$6M/yr US",
-    desc:"$31.9M US + $19.7M El Salvador = $51.6M total. HIV/AIDS and global health security. Part of the first Central American batch alongside Guatemala.",
-    details:{"US commitment":"$31.9M over 5 yrs","El Salvador co-invest":"$19.7M","Total":"$51.6M","Focus":"HIV/AIDS, global health security","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/pursuing-sustainable-health-outcomes-under-the-trump-administrations-america-first-global-health-strategy-in-the-republic-of-guatemala-the-republic-of-guinea-and-the-republic-of-el-salvador" },
-
-  { month:"2026-02", date:"Feb 26, 2026", title:"PHFFA Rule Takes Effect",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Regulatory rule", displayAnnual:"All new & existing awards",
-    desc:"Protecting Human Flourishing in Foreign Assistance (PHFFA) rule takes effect, covering all new awards and existing grants receiving new funds. Expands Mexico City Policy into three binding requirements for all foreign assistance recipients.",
-    details:{
-      "PLFA":"Protecting Life in Foreign Assistance — no abortion promotion",
-      "CGIFA":"Combating Gender Ideology in Foreign Assistance",
-      "CDEIFA":"Combating Discriminatory Equity Ideology — applies DEI restrictions to US NGOs",
-      "Scope":"Foreign NGOs, international organizations, US NGOs, subrecipients",
-      "Waiver":"Secretary of State may waive for national security/foreign policy",
-      "Cost":"One-time compliance cost estimated at $54M; $77M annually thereafter"},
-    source:"https://www.federalregister.gov/documents/2026/01/27/2026-01519/protecting-life-in-foreign-assistance" },
-
-  { month:"2026-02", date:"Feb 13, 2026", title:"Venezuela Medical Airlift — Phase 1",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:0, annualAmount:0, years:1,
-    displayTotal:"In-kind delivery", displayAnnual:"Phase 1 of 3",
-    desc:"First US foreign assistance to Venezuela in years — 25 pallets (~6,000 kg) of priority medical supplies airlifted to the interim Ministry of Health for nationwide distribution. Part of the Trump administration's three-phase plan for Venezuela stabilization, recovery, and transition.",
-    details:{
-      "Delivery":"25 pallets, 6,000+ kg of medical supplies",
-      "Channel":"Interim Ministry of Health (direct government-to-government)",
-      "Phase plan":"Phase 1: emergency medical supplies; Phase 2–3: stabilization and recovery",
-      "Significance":"First direct US assistance to Venezuelan government since Maduro era",
-      "Note":"Dollar value not disclosed; committed delivery"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/02/delivering-priority-medical-supplies-for-the-venezuelan-people" },
-
-  { month:"2026-03", date:"Mar 5, 2026", title:"GHSD Advancing Global Health APS",
-    type:"announcement", sector:"health", sectorLabel:"Global Health",
-    totalAmount:342000000, annualAmount:68400000, years:5,
-    displayTotal:"$342M (active addenda)", displayAnnual:"Up to $4.5B total APS",
-    desc:"Bureau of Global Health Security and Diplomacy launches the first major procurement vehicle for MOU implementation — an Annual Program Statement (APS) inviting NGOs and implementers to fill gaps in bilateral health agreement delivery. Two live addenda open now; more expected throughout 2026. SOIs due May 31. This is the first signal of how State will use third-party implementers under the new architecture.",
-    details:{
-      "APS ceiling":"Up to $4.5B (full program lifetime)",
-      "Active addenda":"2 (as of Mar 5)",
-      "Addendum 1":"Child Development, Care & Protection — up to $52.65M, up to 5 awards",
-      "Addendum 2":"Rapid Outbreak Response — up to $290M, up to 10 awards",
-      "Combined live":"~$342M across 15 anticipated awards",
-      "SOI deadline":"May 31, 2026",
-      "Eligibility":"Unrestricted (US and foreign organizations)",
-      "Status":"Live solicitation — funds reserved but no grantees selected yet",
-      "Note":"More binding than a conference pledge but not yet a signed award"},
-    source:"https://simpler.grants.gov/opportunity/c5c18cae-dbe8-4d93-9d9b-3d5ec27a4dcf" },
-
-  { month:"2026-03", date:"Mar 13, 2026", title:"Honduras Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:29.6e6, annualAmount:5.92e6, years:5,
-    displayTotal:"$46.5M total / 5 yrs", displayAnnual:"~$6M/yr US",
-    desc:"$29.6M US + $16.9M Honduras = $46.5M total. Integrates HIV/AIDS programming with infectious disease outbreak preparedness. Goal: Honduras detects outbreaks within 7 days, notifies the US within 1 day, and initiates response within 7 days by 2030. 95 US-funded frontline health workers to be absorbed into Honduras government payroll by 2028.",
-    details:{"US commitment":"$29.6M over 5 yrs","Honduras co-invest":"$16.9M (incl. $9.6M for GHS)","Total":"$46.5M","Focus":"HIV/AIDS, disease surveillance, 7-1-7 outbreak detection, lab capacity","Target":"95 US-funded workers onto Honduras payroll by 2028","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/03/forging-health-partnerships-under-the-trump-administrations-america-first-global-health-strategy-in-honduras-and-senegal/" },
-
-  { month:"2026-03", date:"Mar 13, 2026", title:"Senegal Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:63.1e6, annualAmount:12.62e6, years:5,
-    displayTotal:"$90.4M total / 5 yrs", displayAnnual:"~$13M/yr US",
-    desc:"$63.1M US + $27.3M Senegal = $90.4M total. Targets HIV, malaria, health governance, lab capacity, digital health (electronic patient records and telemedicine), and pharmaceutical sovereignty — Senegal commits to producing 30% of medicines locally using its own funds.",
-    details:{"US commitment":"$63.1M over 5 yrs","Senegal co-invest":"$27.3M","Total":"$90.4M","Focus":"HIV, malaria, GHS, digital health, pharmaceutical sovereignty","Pharma":"Senegal to produce 30% of medicines locally","GHS":"$15.7M dedicated to lab capacity and health facility upgrades","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/03/forging-health-partnerships-under-the-trump-administrations-america-first-global-health-strategy-in-honduras-and-senegal/" },
-
-  { month:"2026-03", date:"Mar 20, 2026", title:"Bureau of Disaster & Humanitarian Response Established",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"~$5.4B/yr budget", displayAnnual:"200 staff · 12 regional hubs",
-    desc:"State Dept formally establishes the Bureau of Disaster and Humanitarian Response — capping the Trump administration's full restructuring of post-USAID foreign assistance. ~200 staff, 12 regional hubs in Latin America, Asia, Europe, and Africa, ~$5.4B annual budget. Ryan Shrum (former USAID senior adviser) named Senior Bureau Official. Bureau consolidates sudden-onset disaster response, complex humanitarian emergencies, and food security under a single authority. 'We're going to pick more carefully the stuff that we respond to. It's not the United States' responsibility to respond to every disaster.'",
-    details:{"Budget":"~$5.4B annually","Staff":"~200 Washington-based staff","Hubs":"12 regional hubs (Latin America, Asia, Europe, Africa)","Leadership":"Ryan Shrum — Senior Bureau Official; Karrie Peterson — Chief of Staff; Paul Seong — Principal Deputy AS","Mandate":"Sudden-onset disasters, complex humanitarian emergencies, food security, agricultural research","vs USAID":"USAID managed ~$40B/yr and longer-term development; DHR focuses on life-saving and food security","Key quote":"'It's not the United States' responsibility to respond to every disaster, every crisis'","Operational":"12 hubs expected fully operational by end of 2026"},
-    source:"https://www.state.gov/bureaus-offices/under-secretary-for-foreign-assistance-humanitarian-affairs-and-religious-freedom/bureau-of-disaster-and-humanitarian-response" },
-
-  { month:"2026-03", date:"Mar 26, 2026", title:"Pax Silica Fund Launch",
-    type:"announcement", sector:"economic", sectorLabel:"Economic",
-    totalAmount:250e6, annualAmount:250e6, years:1,
-    displayTotal:"$250M pledge", displayAnnual:"Expected to catalyze $1T+ in private/sovereign capital",
-    desc:"State Dept announces $250M in foreign assistance funding for the new Pax Silica Fund — supporting critical minerals extraction, processing, critical infrastructure, and manufacturing assets for secure semiconductor supply chains. Expected to catalyze trusted capital from sovereign wealth and private sources controlling $1T+ in assets. Advances Secretary Rubio's 'Trade Not Aid' objective.",
-    details:{"Amount":"$250M US foreign assistance (working with Congress)","Focus":"Critical minerals, semiconductor supply chains, critical infrastructure","Leverage":"Expected to catalyze $1T+ in sovereign wealth and private capital","Partners":"Pax Silica sovereign signatories and private sector leaders","Initiative":"Part of broader Pax Silica supply chain security coalition","Announced by":"Under Secretary Helberg"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/03/department-of-state-launches-pax-silica-fund" },
-
-  { month:"2026-03", date:"Mar 26, 2026", title:"Ukraine — Forcibly Relocated Children Program",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:25e6, annualAmount:25e6, years:1,
-    displayTotal:"$25M", displayAnnual:"Grant solicitation closed Apr 29",
-    desc:"$25M to support identification, return, and rehabilitation of Ukrainian children forcibly transferred to Russian-controlled territories. Funds two objectives: (1) partner organizations to identify and track displaced children; (2) Ukrainian government and local partners to provide rehabilitation, family reunification, and reintegration services. ~20,000 children in Russian custody per Ukraine government figures.",
-    details:{"Amount":"$25M","Channel":"Nonprofits and Public International Organizations","Objectives":"1) Track and identify forcibly transferred children; 2) Rehabilitation, family reunification, legal aid, education placement","Grant closed":"April 29, 2026 (simpler.grants.gov)","Context":"UN investigation found Russia's actions amount to crimes against humanity"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/03/united-states-launches-new-25-million-effort-to-support-the-return-and-rehabilitation-of-forcibly-relocated-ukrainian-children" },
-
-  { month:"2026-03", date:"Mar 19, 2026", title:"Angola Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:121e6, annualAmount:24.2e6, years:5,
-    displayTotal:"$121M total / 5 yrs", displayAnnual:"~$24M/yr US",
-    desc:"US and Angola sign five-year health MOU. $71M US + $50M Angola co-investment. Focuses on HIV, malaria, and global health security with emphasis on private sector integration and remote laboratory capacity. Brings total to 27 bilateral health MOUs representing $20.5B+ in combined funding.",
-    details:{
-      "US commitment":"$71M over 5 yrs — HIV, malaria, global health security",
-      "Angola co-invest":"$50M (30% dedicated to laboratory and health commodities)",
-      "Total":"$121M",
-      "Private sector":"US and Angolan companies to strengthen health systems in HR, data, supply chains",
-      "GHS focus":"$5M to strengthen lab capacity in remote/underserved areas",
-      "Running total":"27 MOUs, $12.7B+ US assistance + $7.8B co-investment = $20.5B+",
-      "Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/03/implementing-the-trump-administrations-america-first-global-health-strategy-in-angola/" },
-
-  { month:"2026-03", date:"Mar 31, 2026", title:"MOU Implementation Plans Due",
-    type:"milestone", sector:"health", sectorLabel:"Global Health",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Upcoming deadline", displayAnnual:"All 24 MOU countries",
-    desc:"Deadline passed March 31 for all 27 bilateral health MOU partner countries to submit implementation plans clarifying how funds will flow, which implementers will be used, and how countries will hit co-investment benchmarks. State Dept has not publicly confirmed which countries submitted on time — a key test of whether the new architecture can operationalize at scale.",
-    details:{
-      "Countries":"All 24 signed MOU partners",
-      "Significance":"First accountability checkpoint under the America First Global Health Strategy",
-      "What to watch":"Which countries submit on time; how plans address NGO role and G2G fund flows",
-      "Source":"Think Global Health tracker, March 3, 2026"},
-    source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" },
-
-  // --- MAY 2026 ---
-  { month:"2026-05", date:"May 6, 2026", title:"US Humanitarian Hub — South Florida",
-    type:"milestone", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Operational hub", displayAnnual:"2026 hurricane season + beyond",
-    desc:"State Dept launches DHR's first US humanitarian assistance hub in South Florida — pre-positioned emergency relief supplies integrated with SOUTHCOM, disaster advisors embedded for civil-military coordination. Tied to new policy committing 20% of all US assistance to the Western Hemisphere. Marks first formalization of State-led regional humanitarian pre-positioning.",
-    details:{"Location":"South Florida","Integration":"SOUTHCOM — DHR advisors embedded for civil-military coordination","Policy":"20% of all US foreign assistance dedicated to Western Hemisphere","Supplies":"Pre-positioned emergency relief across the region","Significance":"First State-led humanitarian pre-positioning hub in US history","Season":"Launched ahead of 2026 Atlantic hurricane season"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/reaffirming-the-united-states-commitment-to-humanitarian-assistance-in-our-hemisphere/" },
-
-  { month:"2026-05", date:"May 13, 2026", title:"Cuba — $100M Conditional Pledge",
-    type:"announcement", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"$100M pledged — conditional", displayAnnual:"Pending Cuban regime approval",
-    desc:"State Dept announces the US is ready to provide $100M in direct humanitarian assistance to the Cuban people — contingent on the Cuban regime permitting it. Largest single US assistance pledge to Cuba ever. Would be delivered directly to Cuban civil society and citizens, bypassing regime channels (consistent with the $3M Jan and $6M Feb Caritas deliveries already made). Cuba has so far blocked direct US assistance. The offer creates diplomatic pressure while committing funds in principle.",
-    details:{"Amount":"$100M pledged","Condition":"Cuban regime must permit direct delivery to Cuban people","Channel":"Direct to civil society — not through Cuban government","Prior committed":"$9M already delivered ($3M Jan + $6M Feb via Caritas)","Context":"Cuba has not accepted the offer as of announcement date","Significance":"Largest US assistance pledge to Cuba in history"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/the-united-states-is-ready-to-provide-100-million-in-direct-assistance-to-the-cuban-people-if-the-cuban-regime-will-permit-it/" },
-
-  { month:"2026-05", date:"May 19–23, 2026", title:"Ebola Outbreak Response — DRC, Uganda, South Sudan",
-    type:"commitment", sector:"health", sectorLabel:"Health",
-    totalAmount:32e6, annualAmount:32e6, years:1,
-    displayTotal:"$32M bilateral + $250M OCHA earmark", displayAnnual:"50 treatment clinics, 7 NGO/UN partners",
-    desc:"State Dept response to Ebola outbreak confirmed May 15. First case notification triggered a 24-hour interagency activation. DART deployed within 4 days — fastest-ever US Ebola response. $32M in bilateral assistance committed to seven implementing partners (International Medical Corps, UNICEF, MedAir, IOM, WFP, FHI 360, Samaritan's Purse). State funding up to 50 Ebola treatment clinics in DRC and Uganda. Additionally, $250M of the May 14 OCHA $1.8B commitment is earmarked specifically for the DRC and Uganda response. GHSD and DHR jointly leading — first major operational test of the new DHR Bureau structure.",
-    details:{
-      "Bilateral assistance":"$32M committed (up from initial $23M announced May 19)",
-      "OCHA earmark":"$250M of the May 14 $1.8B OCHA commitment prioritized for DRC + Uganda Ebola response",
-      "Treatment clinics":"Up to 50 Ebola treatment clinics being funded in DRC and Uganda",
-      "Partners":"International Medical Corps, UNICEF, MedAir, IOM, WFP, FHI 360, Samaritan's Purse",
-      "DART":"Fastest-ever US Ebola response DART — deployed within 4 days of first case notification",
-      "Task Force":"Activated within 24 hours of May 15 case confirmation — GHSD + DHR + CA + MED + CDC",
-      "Leadership":"Two senior experts with direct experience from 2014 and 2018 Ebola responses",
-      "Status":"Outbreak response ongoing"
-    },
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/ebola-response-update-may-23-2026/" },
-
-    { month:"2026-05", date:"May 14, 2026", title:"OCHA Humanitarian Reset — Additional $1.8B",
-    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian",
-    totalAmount:1.8e9, annualAmount:1.8e9, years:1,
-    displayTotal:"$1.8B (second tranche)", displayAnnual:"Total US OCHA: $3.8B",
-    desc:"State Dept announces additional $1.8B for OCHA's country-based pooled funds, building on the $2B December 2025 anchor commitment. Brings total US OCHA contribution to $3.8B — US is now OCHA's single largest national donor. Covers 21 country-based pooled funds plus the UN Central Emergency Response Fund. Announced at UN HQ jointly by Amb. Waltz, OCHA Coordinator Fletcher, and Sr. Official Lewin. State frames it as proof the Humanitarian Reset is working — first $2B reached 21.1M people in <4 months, 92% to highest-need populations, 13% to local partners.",
-    details:{
-      "Amount":"$1.8B additional (brings total to $3.8B since Dec 2025)",
-      "Status":"US is now OCHA's largest single national donor",
-      "Countries":"21 country pooled funds: Bangladesh, Burma, CAR, Chad, Colombia, DRC, El Salvador, Ethiopia, Guatemala, Haiti, Honduras, Kenya, Lebanon, Mozambique, Nigeria, South Sudan, Sudan, Syria, Uganda, Ukraine, Venezuela + UN CERF",
-      "Tangible results (first $2B)":"21.1M people reached in <4 months; 92% to highest-need; 13% to local partners (vs 3.9% norm)",
-      "Implementation":"$1.71B of original $2B already programmed",
-      "Announced by":"Amb. Mike Waltz, OCHA Coordinator Tom Fletcher, Sr. Official Jeremy Lewin (UN HQ)",
-      "Lewin quote":"'Every single dollar of taxpayer money has to be programmed in the American national interest'"
-    },
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/united-states-pledges-additional-1-8-billion-in-life-saving-humanitarian-funding-to-ochas-humanitarian-reset-shares-powerful-results-from-the-trump-administrations-un-humanita/" },
-
-    { month:"2026-05", date:"May 13, 2026", title:"SC Johnson + Global Fund Malaria Initiative",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:0, annualAmount:0, years:3,
-    displayTotal:"30M Guardian repellents", displayAnnual:"60M+ people protected over 3 yrs",
-    desc:"State Dept announces new initiative with SC Johnson and the Global Fund to deploy the Guardian — a first-of-its-kind American spatial repellent providing year-long malaria protection. 30M units to protect 60M+ people over 3 years, procured and distributed via the Global Fund. Modeled on the Lenacapavir market-shaping deal. Targets high-burden Sub-Saharan African countries and accelerates elimination in Southeast Asia. Advances 'Made in America' innovation and supports US manufacturing jobs.",
-    details:{"Product":"Guardian spatial repellent — novel vector control tool, first American product of its kind","Scale":"30 million units, protecting 60M+ people over 3 years","Channel":"Global Fund procurement and distribution","Model":"Market-shaping via Global Fund — mirrors Lenacapavir partnership","Geographic focus":"High-burden Sub-Saharan Africa + malaria elimination in Southeast Asia","US benefit":"Supports SC Johnson US manufacturing and research jobs","Efficacy":"Year-long protection per unit (vs 3-month for prior tools)"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/u-s-department-of-state-announces-initiative-with-sc-johnson-and-the-global-fund-to-deploy-innovative-american-malaria-prevention-tool/" },
-
-    // --- APR 2026 ---
-  { month:"2026-04", date:"Apr 2, 2026", title:"Cambodia Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:30.8e6, annualAmount:6.16e6, years:5,
-    displayTotal:"$36.1M total / 5 yrs", displayAnnual:"~$6M/yr US",
-    desc:"First Asia MOU under the America First Global Health Strategy. $30.8M US + $5.3M Cambodia = $36.1M total. Cambodia assumes ownership of commodity chains and scales up health innovations. Identifies pathogens of epidemic and pandemic potential before international spread.",
-    details:{"US commitment":"$30.8M over 5 yrs","Cambodia co-invest":"$5.3M","Total":"$36.1M","Focus":"HIV, TB, malaria, GHS, pathogen surveillance","Significance":"First AFGHS MOU in Asia","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/04/charting-a-new-phase-of-trump-administrations-america-first-global-health-strategy-in-asia-beginning-with-cambodia/" },
-
-  { month:"2026-04", date:"Apr 6, 2026", title:"Tajikistan Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:38e6, annualAmount:7.6e6, years:5,
-    displayTotal:"$78M total / 5 yrs", displayAnnual:"~$8M/yr US",
-    desc:"First South and Central Asia MOU. $38M US + $40M Tajikistan = $78M total. Tajikistan's co-investment exceeds the US commitment — notable burden-sharing. Focus on HIV/AIDS, TB, disease surveillance, outbreak response.",
-    details:{"US commitment":"$38M over 5 yrs","Tajikistan co-invest":"$40M (exceeds US share)","Total":"$78M","Focus":"HIV/AIDS, TB, disease surveillance, outbreak response","Significance":"First S/Central Asia AFGHS MOU","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/04/broadening-the-trump-administrations-america-first-global-health-engagement-in-south-and-central-asia/" },
-
-  { month:"2026-04", date:"Apr 7, 2026", title:"Philippines — Joint Declaration of Intent on Health",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Framework — full MOU pending", displayAnnual:null,
-    desc:"US and Philippines sign a Joint Declaration of Intent — a precursor framework to a full bilateral health MOU. Commits to co-funding shared health objectives targeting HIV, TB, and infectious disease response. Builds on $313M in prior US health assistance to the Philippines.",
-    details:{"Type":"Joint Declaration of Intent (not a full MOU)","Focus":"HIV, TB, infectious disease response, health system autonomy","Prior":"$313M in US health assistance to Philippines to date","Next step":"Full bilateral health MOU to follow","Status":"Non-binding declaration"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/04/united-states-and-the-philippines-sign-joint-declaration-of-intent-to-strengthen-bilateral-health-cooperation/" },
-
-  { month:"2026-04", date:"Apr 8, 2026", title:"US Nominates Lindberg for WFP Executive Director",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Institutional play", displayAnnual:"WFP leadership contested",
-    desc:"State Dept announces US candidacy of USDA Under Secretary Luke Lindberg for WFP Executive Director, replacing Cindy McCain who is stepping down for health reasons. Lindberg oversaw the Feb 2026 $452M USDA-WFP Food for Peace award. US has traditionally controlled the WFP top post since 1961. Complication: UN Sec-Gen Guterres deferred the appointment to his successor after European governments privately raised opposition.",
-    details:{"Candidate":"Luke Lindberg, USDA Under Secretary for Trade and Foreign Agricultural Affairs","Replacing":"Cindy McCain (stepping down for health reasons)","Lindberg connection":"Oversaw $452M USDA-WFP Food for Peace award (Feb 2026)","Complication":"Guterres deferring appointment to successor; European resistance reported","Significance":"US has controlled WFP executive director post since founding in 1961","Note":"Lindberg's wife is daughter of Senate Majority Leader John Thune"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/04/u-s-support-for-usda-under-secretary-luke-j-lindbergs-candidacy-for-un-world-food-program-executive-director-position" },
-
-  { month:"2026-04", date:"Apr 9, 2026", title:"Landau Doctrine Speech at Atlantic Council",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Doctrinal articulation", displayAnnual:"Commercial diplomacy",
-    desc:"Deputy Secretary Christopher Landau delivers the most public articulation to date of the administration's commercial diplomacy doctrine. Argues the United States has been \"under leveraging\" its influence, rejects zero-sum framing of commerce (\"the whole point of the way that the free-market system works is that you find win-win situations\"), and frames the Washington establishment's old theory of foreign policy — getting people to think well of the US in London, Berlin, and Paris — as \"a chapter coming to a close.\" Delivered at the Atlantic Council's Global Prosperity Forum.",
-    details:{
-      "Venue":"Atlantic Council Front Page, Global Prosperity Forum",
-      "Speaker":"Deputy Secretary of State Christopher Landau",
-      "Core frame":"Commercial diplomacy as bidirectional, win-win",
-      "Signature line":"\"The old chapter is coming to a close\"",
-      "Significance":"Most prominent public articulation of the new doctrine by a senior State principal"},
-    source:"https://www.atlanticcouncil.org/commentary/event-recap/us-deputy-secretary-of-state-christopher-landau-the-old-chapter-on-us-foreign-policy-is-coming-to-a-close/" },
-
-  { month:"2026-04", date:"Apr 14, 2026", title:"Lenacapavir Partnership Scales to 3 Million",
-    type:"commitment", sector:"health", sectorLabel:"Health",
-    totalAmount:0, annualAmount:0, years:3,
-    displayTotal:"3M people by 2028", displayAnnual:"+1M over prior commitment",
-    desc:"Under Secretary Lewin announces at CSIS that the US-Global Fund partnership to deliver Gilead's twice-yearly HIV prevention drug lenacapavir will expand from 2 million to 3 million people reached through 2028. Since the first delivery to Eswatini in November 2025, 135,000 doses have reached nine African countries (Eswatini, Kenya, Lesotho, Mozambique, Nigeria, South Africa, Uganda, Zambia, Zimbabwe). US year-one commitment increased from 250,000 to 325,000 doses — reserving 100 percent of Gilead's 2026 production alongside the Global Fund. Partnership is positioned as the flagship of the America First Global Health Strategy.",
-    details:{
-      "Expanded target":"3 million people reached by 2028 (up from 2M)",
-      "Countries active":"Nine African countries receiving doses",
-      "Next wave":"12 additional countries (Benin, Botswana, Dominican Republic, Fiji, Georgia, Haiti, Honduras, Indonesia, Morocco, Papua New Guinea, Rwanda, Thailand)",
-      "Year-one US doses":"Increased from 250,000 to 325,000",
-      "Production share":"US + Global Fund reserving 100% of Gilead's 2026 volume",
-      "Strategic frame":"Core element of America First Global Health Strategy",
-      "Announcement venue":"CSIS Futures Summit, New York"},
-    source:"https://www.state.gov/releases/under-secretary-for-foreign-assistance-humanitarian-affairs-and-religious-freedom/2026/04/the-lenacapavir-partnership-and-the-evolution-of-u-s-foreign-assistance/" },
-
-  { month:"2026-04", date:"Apr 14, 2026", title:"\"Trade Over Aid\" UN Démarche",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Global démarche", displayAnnual:"UN initiative",
-    desc:"Secretary Rubio directs all US embassies and consular posts to issue a démarche to foreign nations asking their support for a joint US declaration calling for \"trade over aid.\" Per the cable, the initiative frames the UN system as a vehicle to \"promote America First values and create business opportunities for U.S. companies,\" with formal introduction at the United Nations planned for end of April. Marks the first export of the new US foreign assistance doctrine into the multilateral system and an explicit rejection of America's historical framing as a leading provider of humanitarian assistance.",
-    details:{
-      "Mechanism":"Cable to all embassies and consular posts; démarche due by Monday Apr 20",
-      "Venue":"United Nations, end of April 2026",
-      "Framing":"\"Trade over aid, opportunity over dependency, investment over assistance\"",
-      "Stated objectives":"Promote America First values; create US commercial opportunities",
-      "First reported":"Washington Post, April 15, 2026"},
-    source:"https://www.washingtonpost.com/national-security/2026/04/15/trump-un-trade-over-aid/" }
-,
-
-  { month:"2026-04", date:"Apr 16, 2026", title:"Philippines Economic Security Zone — Pax Silica",
-    type:"announcement", sector:"economic", sectorLabel:"Economic",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"4,000 acres gifted", displayAnnual:"AI industrial park",
-    desc:"Philippines unconditionally gifts the US 4,000 acres to launch an AI-native industrial park under the Pax Silica supply chain security initiative. Announced by Under Secretary Helberg at CSIS. Finland signed as third EU country in Pax Silica the same day. Focus: semiconductor inputs, supply chain security, emerging market manufacturing.",
-    details:{"Initiative":"Pax Silica — supply chain security coalition","Land":"4,000 acres gifted unconditionally by Philippines","Goal":"Shore up semiconductor and critical supply chains","Members":"US, Philippines, Finland (3rd EU country) + others","Announced by":"Under Secretary Helberg, CSIS (Apr 16)"},
-    source:"https://www.state.gov/countries-areas/philippines" },
-
-  { month:"2026-04", date:"Apr 17, 2026", title:"Bolivia Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:10e6, annualAmount:3.33e6, years:3,
-    displayTotal:"$12M total / 3 yrs", displayAnnual:"~$3M/yr US",
-    desc:"$10M US + $2M Bolivia = $12M total. Three-year MOU through December 2028 — reflecting Bolivia's smaller program footprint. Focus on neglected tropical diseases (NTDs), HIV medicines procurement, and building toward health system autonomy. MOU #31.",
-    details:{"US commitment":"$10M over 3 yrs","Bolivia co-invest":"$2M","Total":"$12M","Duration":"3 years (through Dec 2028)","Focus":"Neglected tropical diseases, HIV medicines, health system autonomy","MOU count":"31st bilateral health agreement","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/04/trump-administrations-america-first-global-health-strategy-fights-infectious-diseases-through-bilateral-health-memorandum-of-understanding-with-bolivia/" },
-
-  { month:"2026-04", date:"Apr 20, 2026", title:"FY2027 State Dept Budget Request Released",
-    type:"milestone", sector:"budget", sectorLabel:"Budget",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"FY2027 CBJ", displayAnnual:null,
-    desc:"State Department releases FY2027 Congressional Budget Justification — the first CBJ fully integrating former USAID programs under State authority. Includes detailed breakdown of global health, humanitarian, and development requests. Continues America First Global Health Strategy funding; outlines enhanced ForeignAssistance.gov data quality.",
-    details:{"Released":"April 20, 2026","Significance":"First CBJ fully integrating former USAID programs under State","Global health":"Continues AFGHS funding and MOU implementation","Transparency":"ForeignAssistance.gov data quality improvements included","AI":"StateChat AI tool noted as saving 1.5M staff hours in 2025"},
-    source:"https://www.state.gov/wp-content/uploads/2026/04/FY2027-Department-of-State-Congressional-Budget-Justification-Final-4.20.2026.pdf" },
-
-  { month:"2026-04", date:"Apr 22, 2026", title:"House Approps FY2027 NSRP Bill — Committee Passed",
-    type:"milestone", sector:"budget", sectorLabel:"Budget",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"$47.32B proposed", displayAnnual:"Committee markup Apr 22–28",
-    desc:"House Appropriations Committee passes FY2027 NSRP bill. $47.32B total — 6% below FY26 enacted ($50B). Global Health Programs down $532M to $8.9B; bilateral HIV down $350M to $4.28B; Global Fund flat at $1.25B; humanitarian down $400M; Food for Peace down 25%. America First Opportunity Fund at $1.5B. UN peacekeeping cut 60%. IO&P zeroed. PHFFA, gender ideology, and DEI prohibitions written into appropriations language. Díaz-Balart: 'PEPFAR is a great success story, but most of us agree the program cannot, and should not, go on forever.' Bill is far from enacted — Senate will differ significantly.",
-    details:{"Total":"$47.32B (-6% vs FY26 $50B)","Global Health Programs":"$8.9B (-$532M, -7.4%)","Bilateral HIV":"$4.28B (-$350M, -8%)","Global Fund":"$1.25B (flat)","Humanitarian":"$5.1B (-$400M, -5.6%)","Food for Peace":"~$900M (-25%)","America First Opportunity Fund":"$1.5B flexible account","IO&P":"Zeroed (UNICEF, UNDP, UN Women)","UN peacekeeping":"$489.5M (-60%)","Policy riders":"PHFFA + gender ideology + DEI prohibitions in appropriations language","Status":"Passed committee — Senate and floor process will reshape significantly"},
-    source:"https://appropriations.house.gov/news/press-releases/committee-approves-fy27-national-security-department-state-appropriations-act" },
-
-  { month:"2026-04", date:"Apr 22, 2026", title:"Papua New Guinea Bilateral Health MOU",
-    type:"announcement", sector:"health", sectorLabel:"Health",
-    totalAmount:15e6, annualAmount:3e6, years:5,
-    displayTotal:"$18M total / 5 yrs", displayAnnual:"~$3M/yr US",
-    desc:"$15M US + $3M PNG = $18M total. First Oceania MOU. Focuses on emerging infectious diseases, surge-response capacity, and enabling PNG's government to independently manage new health threats before international spread. Brings total to 32 bilateral health MOUs.",
-    details:{"US commitment":"$15M over 5 yrs","PNG co-invest":"Up to $3M","Total":"$18M","Focus":"Emerging infectious diseases, surge response, HIV","Significance":"First Oceania AFGHS MOU; 32nd bilateral health agreement","Status":"MOU — non-binding, subject to appropriations"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/04/united-states-forging-a-healthier-oceania-through-trump-administrations-america-first-global-health-strategy-through-bilateral-health-memorandum-of-understanding-with-papua-new-guinea" },
-
-  { month:"2026-04", date:"Apr 28–30, 2026", title:"G7 Development Ministerial — Paris",
-    type:"milestone", sector:"policy", sectorLabel:"Policy",
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"Ministerial meeting", displayAnnual:"G7 + EU, Paris",
-    desc:"G7 Development Ministers met in Paris under the French G7 presidency. US represented by Andrew Veprek (Bureau of Population, Refugees, and Migration). US pushed 'trade over aid' doctrine, private sector-led development, and burden-sharing among G7 partners. No new US dollar commitments. G7 Leaders' Summit follows June 15–17 in Évian.",
-    details:{"US representative":"Andrew Veprek, Deputy Asst Secretary, Bureau of Population, Refugees & Migration","US position":"Trade over aid; private sector development; bypass NGO industrial complex; burden-sharing","French presidency focus":"Innovative financing, infrastructure gap, new development model","Next step":"G7 Leaders' Summit, Évian, June 15–17, 2026","No new commitments":"US made no dollar announcements at this meeting"},
-    source:"https://www.state.gov/policy-issues/foreign-assistance-and-humanitarian-aid" }
-];
-
-// Build months Apr 2026 → Jul 2025 (most recent first)
-const months = [];
-let d = new Date(2025, 6, 1);
-const end = new Date(2026, 5, 1);
-while (d < end) {
-  months.push({ key: d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'), name: d.toLocaleString('en-US',{month:'long'}), year: d.getFullYear() });
-  d.setMonth(d.getMonth()+1);
-}
-months.reverse();
-
-const timeline = document.getElementById('timeline');
-let globalSide = 0;
-
-months.forEach(m => {
-  const mEvents = events.filter(e => e.month === m.key).sort((a, b) => {
-    // Most recent first within each month
-    const parseDate = s => new Date(s.replace(/(\w+ \d+)[–\-]\d+/, '$1'));
-    return parseDate(b.date) - parseDate(a.date);
+// ── NEWSLETTER FORM (placeholder handler) ──
+(function() {
+  const form = document.getElementById('newsletterForm');
+  const thanks = document.getElementById('newsletterThanks');
+  if (!form || !thanks) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    const button = form.querySelector('button');
+    const email = input.value.trim();
+    if (!email) return;
+    button.disabled = true;
+    const originalLabel = button.textContent;
+    button.textContent = 'Subscribing…';
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbx996LofuZ6IPGdVJ4MtqYq6SJBK2OzXJ1fro6Wvr1bHulzDftMVn7kdGpaDa9KgAmK/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams({ email: email })
+      });
+      form.style.display = 'none';
+      thanks.classList.add('show');
+    } catch (err) {
+      button.disabled = false;
+      button.textContent = originalLabel;
+      thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
+      thanks.classList.add('show');
+    }
   });
-  const isEmpty = mEvents.length === 0;
-  const row = document.createElement('div');
-  row.className = 'month-row' + (isEmpty ? ' empty' : '');
-  // padding-bottom: 52px on all .month-row handles universal gap
-
-  let html = `<div class="month-marker"><span class="mm-name">${m.name}</span><span class="mm-year">${m.year}</span>${isEmpty ? '<span class="empty-label">no activity</span>' : ''}</div>`;
-
-  if (!isEmpty) {
-    let allCards = '';
-    mEvents.forEach((ev, i) => {
-      const side = i % 2 === 0 ? 'left' : 'right';
-      allCards += buildCard(ev, side);
-    });
-    html += `<div class="cards-grid">${allCards}</div>`;
-  }
-
-  row.innerHTML = html;
-  timeline.appendChild(row);
-});
-
-function buildCard(ev, side) {
-  const typeLabel = ev.type === 'announcement' ? 'Pledge' : ev.type.charAt(0).toUpperCase() + ev.type.slice(1);
-  let dh = ev.details ? Object.entries(ev.details).map(([k,v]) => `<div class="detail-row"><span class="detail-k">${k}</span><span class="detail-v">${v}</span></div>`).join('') : '';
-  return `<div class="event-card type-${ev.type} side-${side}" onclick="this.classList.toggle('expanded')">
-    <div class="card-connector"></div>
-    <div class="card-top">
-      <div class="card-left-inner">
-        <div class="card-tags"><span class="tag tag-type-${ev.type}">${typeLabel}</span><span class="tag tag-sector s-${ev.sector}">${ev.sectorLabel}</span></div>
-        <div class="card-title">${ev.title}</div>
-        <div class="card-date">${ev.date}</div>
-      </div>
-      <div class="card-amounts">
-        <div class="card-total-amount c-${ev.type}">${ev.displayTotal}</div>
-        ${ev.displayAnnual ? `<div class="card-annual">${ev.displayAnnual}</div>` : ''}
-      </div>
-    </div>
-    <div class="card-desc">${ev.desc}</div>
-    <div class="expand-hint">Details →</div>
-    <div class="card-details"><div class="card-details-inner">${dh}${ev.source ? `<a class="source-link" href="${ev.source}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View source →</a>` : ''}</div></div>
-  </div>`;
-}
-
-// Equalize month row heights so time passes evenly — desktop only, skip empty rows
-// Rows size to their own content — no equalization
-
-function positionEmptyBubbles() {
-  if (window.innerWidth <= 640) return; // mobile handles differently
-  document.querySelectorAll('.month-row.empty').forEach(emptyRow => {
-    const prevRow = emptyRow.previousElementSibling;
-    const nextRow = emptyRow.nextElementSibling;
-    if (!prevRow || !nextRow) return;
-
-    const marker = emptyRow.querySelector('.month-marker');
-    if (!marker) return;
-
-    // Bottom of last card in prev row (excluding its own padding-bottom)
-    const prevRect = prevRow.getBoundingClientRect();
-    const prevPb = parseFloat(getComputedStyle(prevRow).paddingBottom) || 0;
-    const prevContentBottom = prevRect.bottom - prevPb;
-
-    // Top of next row's month bubble
-    const nextMarker = nextRow.querySelector('.month-marker');
-    const nextTop = nextMarker
-      ? nextMarker.getBoundingClientRect().top
-      : nextRow.getBoundingClientRect().top;
-
-    const midY = (prevContentBottom + nextTop) / 2;
-    const emptyTop = emptyRow.getBoundingClientRect().top;
-    const markerH = marker.getBoundingClientRect().height;
-
-    marker.style.top = Math.round(midY - emptyTop - markerH / 2) + 'px';
-    marker.style.transform = 'translateX(-50%)';
-  });
-}
-
-positionEmptyBubbles();
-window.addEventListener('resize', positionEmptyBubbles);
-
-// Hero stats — always show full totals
-function fmt(n) { if(n>=1e9) return '$'+(n/1e9).toFixed(1)+'B'; if(n>=1e6) return '$'+(n/1e6).toFixed(0)+'M'; return '$0'; }
-(function populateHero() {
-  let c=0, a=0;
-  events.forEach(ev => {
-    if(ev.type==='commitment') c+=ev.annualAmount;
-    else if(ev.type==='announcement') a+=ev.annualAmount;
-  });
-  document.getElementById('heroCommitted').textContent = fmt(c);
-  document.getElementById('heroPledged').textContent = fmt(a);
 })();
-
-const cEl=document.getElementById('totalCommitted'), aEl=document.getElementById('totalAnnounced'), hdr=document.getElementById('stickyHeader');
-const totalsEl = document.querySelector('.header-totals');
-const heroEl = document.querySelector('.hero');
-
-// Precompute full totals for maxing out at bottom
-let fullCommitted=0, fullPledged=0;
-events.forEach(ev => {
-  if(ev.type==='commitment') fullCommitted+=ev.annualAmount;
-  else if(ev.type==='announcement') fullPledged+=ev.annualAmount;
-});
-
-function updateTotals() {
-  const heroBottom = heroEl.getBoundingClientRect().bottom;
-  
-  // Show/hide header totals — appear once hero scrolls out of view
-  if (heroBottom < 52) {
-    totalsEl.classList.add('visible');
-  } else {
-    totalsEl.classList.remove('visible');
-  }
-
-  // Most-recent-first: start at full total, subtract cards that have scrolled past
-  let c = fullCommitted, a = fullPledged;
-  const cards = document.querySelectorAll('.event-card');
-  const nearBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100;
-
-  if (nearBottom) {
-    c = 0; a = 0;
-  } else {
-    cards.forEach((card, i) => {
-      if (card.getBoundingClientRect().bottom < 0) {
-        const ev = events[i];
-        if (ev.type === 'commitment') c -= ev.annualAmount;
-        else if (ev.type === 'announcement') a -= ev.annualAmount;
-      }
-    });
-  }
-
-  cEl.textContent = fmt(Math.max(0,c)); aEl.textContent = fmt(Math.max(0,a));
-  hdr.classList.toggle('scrolled', window.scrollY > 100);
-}
-window.addEventListener('scroll', updateTotals, {passive:true});
-updateTotals();
 </script>
+
+<script>
+// ── TRACKER PREVIEW: AUTO-SYNC FROM index.html ──
+// Fetches the live tracker page, extracts its events array, computes totals,
+// and renders the 3 most recent events. No manual sync step — when the tracker
+// is updated, the home preview reflects it on next page load.
+// Falls back silently to the hardcoded values if fetch fails (e.g. file://).
+(async function () {
+  try {
+    const res = await fetch('tracker.html', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const html = await res.text();
+
+    // Extract the events array source from the tracker HTML.
+    const start = html.indexOf('const events = [');
+    if (start < 0) return;
+    const endRel = html.slice(start).indexOf('\n];');
+    if (endRel < 0) return;
+    const arrayJs = html.slice(start, start + endRel + 3);
+
+    // Evaluate the array literal in an isolated function scope.
+    let events;
+    try {
+      events = new Function(arrayJs + ' return events;')();
+    } catch (e) { return; }
+    if (!Array.isArray(events) || events.length === 0) return;
+
+    // Compute totals (match tracker logic exactly).
+    let committed = 0, pledged = 0;
+    events.forEach(ev => {
+      if (ev.type === 'commitment') committed += ev.annualAmount || 0;
+      else if (ev.type === 'announcement') pledged += ev.annualAmount || 0;
+    });
+    const fmt = n => n >= 1e9 ? '$' + (n / 1e9).toFixed(1) + 'B'
+                   : n >= 1e6 ? '$' + (n / 1e6).toFixed(0) + 'M' : '$0';
+
+    const cEl = document.querySelector('[data-tp="committed"]');
+    const pEl = document.querySelector('[data-tp="pledged"]');
+    if (cEl) cEl.textContent = fmt(committed);
+    if (pEl) pEl.textContent = fmt(pledged);
+
+    // Sort events most-recent-first using month (YYYY-MM) + first day number in
+    // the date string. The tracker doesn't keep the array in strict chronological
+    // order, so a sort is required.
+    const rank = ev => {
+      const monthNum = parseInt((ev.month || '0-0').replace('-', ''), 10) || 0;
+      const dayMatch = (ev.date || '').match(/\b(\d{1,2})\b/);
+      const day = dayMatch ? parseInt(dayMatch[1], 10) : 1;
+      return monthNum * 100 + day;
+    };
+    const recent = events.slice().sort((a, b) => rank(b) - rank(a)).slice(0, 3);
+    const container = document.querySelector('[data-tp="events"]');
+    if (container && recent.length > 0) {
+      const safe = s => String(s || '').replace(/[<>]/g, '');
+      container.innerHTML = recent.map(ev => {
+        const type = (ev.type || 'commitment').toLowerCase();
+        const amount = ev.displayAnnual || ev.displayTotal || '';
+        const category = ev.sectorLabel || ev.sector || '';
+        return `
+          <div class="tp-event ${safe(type)}">
+            <div class="tp-event-header">
+              <div class="tp-event-title">${safe(ev.title)}</div>
+              <div class="tp-event-amount">${safe(amount)}</div>
+            </div>
+            <div class="tp-event-meta">${safe(ev.date)} &nbsp;·&nbsp; ${safe(category)}</div>
+          </div>`;
+      }).join('');
+    }
+  } catch (e) {
+    // Silent fail — hardcoded fallback values stay visible.
+  }
+})();
+</script>
+
 </body>
 </html>
