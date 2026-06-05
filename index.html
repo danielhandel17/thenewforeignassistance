@@ -325,7 +325,35 @@
 
   /* ── PRINCIPLES ── */
   .principles-section { background: var(--white); }
-  .right-section { background: var(--bg); border-top: 1px solid var(--border); }
+  .right-section {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .usaid-watermark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-out;
+    z-index: 0;
+  }
+  .usaid-watermark.visible { opacity: 0.06; }
+  .usaid-watermark svg {
+    width: 70%;
+    max-width: 700px;
+    height: auto;
+  }
+  .right-section .section-inner { position: relative; z-index: 1; }
+  @media (max-width: 600px) {
+    .usaid-watermark svg { width: 90%; }
+    .usaid-watermark.visible { opacity: 0.05; }
+  }
   .right-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -760,6 +788,38 @@
   </div>
 </section>
 
+<!-- WHAT WENT RIGHT -->
+<section class="section right-section" id="rightSection">
+  <div class="usaid-watermark" aria-hidden="true">
+    <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <text x="300" y="115" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-weight="700" font-size="140" letter-spacing="8" fill="currentColor">USAID</text>
+      <text x="300" y="160" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-weight="400" font-size="18" letter-spacing="6" fill="currentColor">1961 – 2025</text>
+    </svg>
+  </div>
+  <div class="section-inner fade-up">
+    <h2>What Went Right.</h2>
+    <p class="section-lead">For all its failures, the old system also produced some of the most successful foreign assistance programs in American history. The lesson is not to abandon the model. It is to build on what worked.</p>
+    <div class="right-grid">
+      <div class="right-item">
+        <div class="right-stat">25 million</div>
+        <div class="right-label">Lives saved by PEPFAR</div>
+        <div class="right-desc">Since 2003, a $100 billion bipartisan investment has supported 20.6 million people on antiretroviral therapy and prevented millions of new infections. <a href="https://www.cgdev.org/blog/how-many-lives-does-us-foreign-aid-save" target="_blank" rel="noopener">Source.</a></div>
+      </div>
+      <div class="right-item">
+        <div class="right-stat">940,000</div>
+        <div class="right-label">Deaths prevented by PMI</div>
+        <div class="right-desc">The President&#39;s Malaria Initiative prevented an estimated 185 million cases and nearly one million deaths between 2005 and 2017. <a href="https://www.cgdev.org/blog/dear-secretary-rubio-you-are-right-foreign-assistance-works-please-resume-it" target="_blank" rel="noopener">Source.</a></div>
+      </div>
+      <div class="right-item">
+        <div class="right-stat">23.4 million</div>
+        <div class="right-label">Lifted out of poverty by Feed the Future</div>
+        <div class="right-desc">USAID&#39;s flagship agriculture initiative reached nearly 7 million smallholder farmers, reduced stunting for 3.4 million children, and was sustained across three administrations. <a href="https://www.feedthefuture.gov/" target="_blank" rel="noopener">Source.</a></div>
+      </div>
+    </div>
+    <p class="section-close">When American foreign assistance has been focused, sustained, and bipartisan, it has changed outcomes at scale. The new foreign assistance should do more of this, not less.</p>
+  </div>
+</section>
+
 <!-- MISSION -->
 <section class="section mission-section">
   <div class="section-inner fade-up">
@@ -782,32 +842,6 @@
 <hr class="section-divider">
 
 <!-- PRINCIPLES -->
-<!-- WHAT WENT RIGHT -->
-<section class="section right-section">
-  <div class="section-inner fade-up">
-    <h2>What Went Right.</h2>
-    <p class="section-lead">For all its failures, the old system also produced some of the most successful foreign assistance programs in American history. The lesson is not to abandon the model. It is to build on what worked.</p>
-    <div class="right-grid">
-      <div class="right-item">
-        <div class="right-stat">25 million</div>
-        <div class="right-label">Lives saved by PEPFAR</div>
-        <div class="right-desc">Since 2003, a $100 billion bipartisan investment has supported 20.6 million people on antiretroviral therapy and prevented millions of new infections.</div>
-      </div>
-      <div class="right-item">
-        <div class="right-stat">940,000</div>
-        <div class="right-label">Deaths prevented by PMI</div>
-        <div class="right-desc">The President&#39;s Malaria Initiative prevented an estimated 185 million cases and nearly one million deaths between 2005 and 2017.</div>
-      </div>
-      <div class="right-item">
-        <div class="right-stat">Hundreds of millions</div>
-        <div class="right-label">Children immunized through Gavi</div>
-        <div class="right-desc">U.S. support has helped Gavi vaccinate more than a billion children since 2000, averting deaths at a cost of dollars per dose.</div>
-      </div>
-    </div>
-    <p class="section-close">When American foreign assistance has been focused, sustained, and bipartisan, it has changed outcomes at scale. The new foreign assistance should do more of this, not less.</p>
-  </div>
-</section>
-
 <section class="section principles-section" id="principles">
   <div class="section-inner fade-up">
     <h2>Six Principles for a Reformed Approach to Foreign Assistance</h2>
@@ -1024,5 +1058,30 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 })();
 </script>
 
+
+<script>
+// USAID watermark fade-in/fade-out on scroll
+(function() {
+  const section = document.getElementById('rightSection');
+  if (!section) return;
+  const mark = section.querySelector('.usaid-watermark');
+  if (!mark) return;
+  function update() {
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // Fully visible when section is centered in viewport; fades at edges
+    const sectionMid = rect.top + rect.height / 2;
+    const viewMid = vh / 2;
+    const distance = Math.abs(sectionMid - viewMid);
+    const maxDistance = vh / 2 + rect.height / 2;
+    const proximity = 1 - Math.min(distance / maxDistance, 1);
+    if (proximity > 0.15) mark.classList.add('visible');
+    else mark.classList.remove('visible');
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>
