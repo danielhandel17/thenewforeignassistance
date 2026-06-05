@@ -322,6 +322,51 @@
 
   /* ── PRINCIPLES ── */
   .principles-section { background: var(--white); }
+  .right-section { background: var(--bg); border-top: 1px solid var(--border); }
+  .right-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin: 32px 0 24px;
+  }
+  .right-item {
+    padding: 24px 0;
+  }
+  .right-stat {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.1;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+  .right-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .right-desc {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-light);
+  }
+  .section-close {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 740px;
+    margin-top: 16px;
+  }
+  @media (max-width: 720px) {
+    .right-grid { grid-template-columns: 1fr; gap: 20px; }
+    .right-stat { font-size: 30px; }
+  }
   .principles-intro {
     font-family: 'Source Serif 4', serif;
     font-size: 18px;
@@ -735,6 +780,32 @@
 <hr class="section-divider">
 
 <!-- PRINCIPLES -->
+<!-- WHAT WENT RIGHT -->
+<section class="section right-section">
+  <div class="section-inner fade-up">
+    <h2>What Went Right.</h2>
+    <p class="section-lead">For all its failures, the old system also produced some of the most successful foreign assistance programs in American history. The lesson is not to abandon the model. It is to build on what worked.</p>
+    <div class="right-grid">
+      <div class="right-item">
+        <div class="right-stat">25 million</div>
+        <div class="right-label">Lives saved by PEPFAR</div>
+        <div class="right-desc">Since 2003, a $100 billion bipartisan investment has supported 20.6 million people on antiretroviral therapy and prevented millions of new infections.</div>
+      </div>
+      <div class="right-item">
+        <div class="right-stat">940,000</div>
+        <div class="right-label">Deaths prevented by PMI</div>
+        <div class="right-desc">The President&#39;s Malaria Initiative prevented an estimated 185 million cases and nearly one million deaths between 2005 and 2017.</div>
+      </div>
+      <div class="right-item">
+        <div class="right-stat">Hundreds of millions</div>
+        <div class="right-label">Children immunized through Gavi</div>
+        <div class="right-desc">U.S. support has helped Gavi vaccinate more than a billion children since 2000, averting deaths at a cost of dollars per dose.</div>
+      </div>
+    </div>
+    <p class="section-close">When American foreign assistance has been focused, sustained, and bipartisan, it has changed outcomes at scale. The new foreign assistance should do more of this, not less.</p>
+  </div>
+</section>
+
 <section class="section principles-section" id="principles">
   <div class="section-inner fade-up">
     <h2>Six Principles for a Reformed Approach to Foreign Assistance</h2>
