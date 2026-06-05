@@ -489,6 +489,17 @@
     margin: 20px 0 64px;
     max-width: 1050px;
   }
+  .section-lead {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-light);
+    max-width: 740px;
+    margin: 12px 0 32px;
+  }
+  @media (max-width: 600px) {
+    .section-lead { font-size: 16px; margin: 8px 0 24px; }
+  }
   .diagnosis-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -518,7 +529,18 @@
     color: var(--amber);
   }
   @media (max-width: 720px) {
-    .diagnosis-grid { grid-template-columns: 1fr; }
+    .section-lead {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-light);
+    max-width: 740px;
+    margin: 12px 0 32px;
+  }
+  @media (max-width: 600px) {
+    .section-lead { font-size: 16px; margin: 8px 0 24px; }
+  }
+  .diagnosis-grid { grid-template-columns: 1fr; }
     .diagnosis-grid .idea-label:last-of-type { margin-top: 24px; }
   }
 
@@ -670,12 +692,12 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="site-name">The <em>New</em> Foreign Assistance</a>
+    <a href="home.html" class="site-name">The <em>New</em> Foreign Assistance</a>
     <nav>
       <a href="agenda.html">Framework</a>
       <a href="about.html">About</a>
       <a href="press.html">Press</a>
-      <a href="tracker.html" class="nav-tracker">Tracker →</a>
+      <a href="index.html" class="nav-tracker">Tracker →</a>
     </nav>
   </div>
 </header>
@@ -694,6 +716,7 @@
 <section class="section mission-section">
   <div class="section-inner fade-up">
     <h2>What Went Wrong. What Comes Next.</h2>
+    <p class="section-lead">Since 1961 the United States Agency for International Development was America&#39;s premier foreign assistance agency. Its successes were real; so were its failures. It&#39;s time for what comes next.</p>
     <div class="diagnosis-grid">
       <div class="idea-label">What went wrong</div>
       <div class="idea-label">What comes next</div>
@@ -737,7 +760,7 @@
       <div class="tc-left">
         <h2>It's being built.<br>Track it in real time.</h2>
         <p>Every major foreign assistance commitment, pledge, and policy action from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.</p>
-        <a href="tracker.html" class="btn-primary" style="display:inline-block; margin-top:24px;">Open the tracker →</a>
+        <a href="index.html" class="btn-primary" style="display:inline-block; margin-top:24px;">Open the tracker →</a>
       </div>
       <div class="tc-right">
         <div class="tracker-preview" id="tracker-preview">
@@ -863,7 +886,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 // Falls back silently to the hardcoded values if fetch fails (e.g. file://).
 (async function () {
   try {
-    const res = await fetch('tracker.html', { cache: 'no-cache' });
+    const res = await fetch('index.html', { cache: 'no-cache' });
     if (!res.ok) return;
     const html = await res.text();
 
