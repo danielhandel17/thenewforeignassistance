@@ -1275,10 +1275,10 @@ const events = [
     source:"https://www.state.gov/policy-issues/foreign-assistance-and-humanitarian-aid" }
 ];
 
-// Build months Apr 2026 → Jul 2025 (most recent first)
+// Build months Jun 2026 → Jul 2025 (most recent first)
 const months = [];
 let d = new Date(2025, 6, 1);
-const end = new Date(2026, 5, 1);
+const end = new Date(2026, 6, 1);
 while (d < end) {
   months.push({ key: d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'), name: d.toLocaleString('en-US',{month:'long'}), year: d.getFullYear() });
   d.setMonth(d.getMonth()+1);
