@@ -55,15 +55,15 @@
   body { background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
   /* NAV — dark navy, unified with rest of site */
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--banner); border-bottom: 2px solid rgba(184,104,42,0.6); }
   .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 24px; height: 56px; }
-  .nav-brand { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 500; color: #fff; text-decoration: none; letter-spacing: -0.2px; white-space: nowrap; flex-shrink: 0; }
-  .nav-brand em { font-style: italic; color: var(--amber); font-weight: 500; }
+  .nav-brand { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.92); text-decoration: none; letter-spacing: -0.3px; white-space: nowrap; flex-shrink: 0; }
+  .nav-brand em { font-style: normal; color: var(--amber); }
   .main-nav { display: flex; align-items: center; gap: 26px; }
-  .main-nav a { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.78); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+  .main-nav a { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
   .main-nav a:hover { color: #fff; }
   .main-nav a.nav-current { color: #fff; font-weight: 600; pointer-events: none; }
-  .main-nav a.nav-tracker { color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 11px; border-radius: 4px; font-size: 12px; }
+  .main-nav a.nav-tracker { color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 13px; border-radius: 3px; font-size: 13px; }
   .main-nav a.nav-tracker:hover { border-color: var(--amber); color: var(--amber); }
   .main-nav a.nav-tracker.nav-current { background: rgba(184,104,42,0.18); border-color: var(--amber); pointer-events: none; }
 
