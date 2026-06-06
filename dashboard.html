@@ -243,6 +243,25 @@
     .summary-row { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
+<style id="design-polish">
+  /* ── DESIGN POLISH (craft layer) ── */
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  [id] { scroll-margin-top: 80px; }
+  ::selection { background: var(--amber); color: #fff; }
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px;
+  }
+  a { text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+  .stat-value { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    html.js .fade-up { opacity: 1 !important; transform: none !important; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+</style>
 </head>
 <body>
 
