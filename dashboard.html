@@ -58,10 +58,10 @@
 
   /* NAV — dark navy, unified with rest of site */
   .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--banner); border-bottom: 2px solid rgba(184,104,42,0.6); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 24px; height: 56px; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; gap: 24px; height: 56px; }
   .nav-brand { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.92); text-decoration: none; letter-spacing: -0.3px; white-space: nowrap; flex-shrink: 0; }
   .nav-brand em { font-style: normal; color: var(--amber); }
-  .main-nav { display: flex; align-items: center; gap: 26px; }
+  .main-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
   .main-nav a { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
   .main-nav a:hover { color: #fff; }
   .main-nav a.nav-current { color: #fff; font-weight: 600; pointer-events: none; }
@@ -69,7 +69,7 @@
   .main-nav a.nav-tracker:hover { border-color: var(--amber); color: var(--amber); }
   .main-nav a.nav-tracker.nav-current { background: rgba(184,104,42,0.18); border-color: var(--amber); pointer-events: none; }
 
-  .nav-tabs { display: flex; align-items: center; height: 100%; gap: 0; margin-left: auto; }
+  .nav-tabs { display: flex; align-items: center; height: 100%; gap: 0; }
   .nav-tab { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; padding: 0 14px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.65); text-decoration: none; transition: all 0.2s; white-space: nowrap; }
   .nav-tab:hover { color: #fff; }
   .nav-tab.active { color: #fff; border-bottom-color: var(--amber); }
@@ -269,16 +269,16 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">The <em>New</em> Foreign Assistance</a>
+    <div class="nav-tabs">
+      <a href="tracker.html" class="nav-tab">Timeline</a>
+      <a href="dashboard.html" class="nav-tab active">Dashboard</a>
+    </div>
     <nav class="main-nav">
       <a href="framework.html">Framework</a>
       <a href="about.html">About</a>
       <a href="press.html">Press</a>
       <a href="tracker.html" class="nav-tracker nav-current">Tracker →</a>
     </nav>
-    <div class="nav-tabs">
-      <a href="tracker.html" class="nav-tab">Timeline</a>
-      <a href="dashboard.html" class="nav-tab active">Dashboard</a>
-    </div>
   </div>
 </nav>
 

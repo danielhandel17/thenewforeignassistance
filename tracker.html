@@ -59,10 +59,10 @@
   /* STICKY HEADER — dark navy, unified with rest of site */
   .sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--banner); border-bottom: 2px solid rgba(184,104,42,0.6); transition: box-shadow 0.3s; }
   .sticky-header.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.18); }
-  .header-inner { max-width: 1240px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 56px; gap: 24px; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; height: 56px; gap: 24px; }
   .site-name { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.92); text-decoration: none; letter-spacing: -0.3px; white-space: nowrap; flex-shrink: 0; }
   .site-name em { font-style: normal; color: var(--amber); }
-  .main-nav { display: flex; align-items: center; gap: 26px; }
+  .main-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
   .main-nav a { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
   .main-nav a:hover { color: #fff; }
   .main-nav a.nav-current { color: #fff; font-weight: 600; pointer-events: none; }
@@ -70,7 +70,7 @@
   .main-nav a.nav-tracker:hover { border-color: var(--amber); color: var(--amber); }
   .main-nav a.nav-tracker.nav-current { background: rgba(184,104,42,0.18); border-color: var(--amber); }
 
-  .header-tabs { display: flex; align-items: center; height: 100%; gap: 0; margin-left: auto; }
+  .header-tabs { display: flex; align-items: center; height: 100%; gap: 0; }
   .header-tab { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; padding: 0 14px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.65); text-decoration: none; transition: all 0.2s; white-space: nowrap; }
   .header-tab:hover { color: #fff; }
   .header-tab.active { color: #fff; border-bottom-color: var(--amber); }
@@ -495,12 +495,6 @@
 <div class="sticky-header" id="stickyHeader">
   <div class="header-inner">
     <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
-    <nav class="main-nav">
-      <a href="framework.html">Framework</a>
-      <a href="about.html">About</a>
-      <a href="press.html">Press</a>
-      <a href="tracker.html" class="nav-tracker nav-current">Tracker →</a>
-    </nav>
     <div class="header-tabs">
       <a href="tracker.html" class="header-tab active">Timeline</a>
       <a href="dashboard.html" class="header-tab">Dashboard</a>
@@ -527,6 +521,12 @@
         <span class="total-value total-announced" id="totalAnnounced">$0</span>
       </div>
     </div>
+    <nav class="main-nav">
+      <a href="framework.html">Framework</a>
+      <a href="about.html">About</a>
+      <a href="press.html">Press</a>
+      <a href="tracker.html" class="nav-tracker nav-current">Tracker →</a>
+    </nav>
   </div>
 </div>
 
