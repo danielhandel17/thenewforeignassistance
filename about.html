@@ -20,8 +20,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:       #f5f2ed;
+    --bg:       #faf7f0;
     --bg-alt:   #edeae4;
+    --cream:    #fcf7eb;
+    --bone:     #f4ede0;
     --white:    #ffffff;
     --ink:      #1c2e4a;
     --ink-light:#2e4060;
@@ -850,7 +852,7 @@
             </div>
             <div class="flip-card-back">
               <div class="flip-back-name">Daniel Handel</div>
-              <p class="flip-back-bio">Eleven years at USAID as a Foreign Service Officer, where he created the agency's cash benchmarking methodology. Subsequently 3ie and Policy Director at Unlock Aid. Writes for <em>National Affairs</em>, <em>Fox News</em>, and <em>Vox</em>.</p>
+              <p class="flip-back-bio">Eleven years at USAID as a Foreign Service Officer, where he created the agency's cash benchmarking methodology. Subsequently 3ie and Policy Director at Unlock Aid. Writes for <em>National Affairs</em> and <em>Fox News</em>.</p>
             </div>
           </div>
         </button>
@@ -1012,10 +1014,29 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   const form = document.getElementById('newsletterForm');
   const thanks = document.getElementById('newsletterThanks');
   if (!form || !thanks) return;
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    form.style.display = 'none';
-    thanks.classList.add('show');
+    const input = form.querySelector('input');
+    const button = form.querySelector('button');
+    const email = input.value.trim();
+    if (!email) return;
+    button.disabled = true;
+    const originalLabel = button.textContent;
+    button.textContent = 'Subscribing…';
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbx996LofuZ6IPGdVJ4MtqYq6SJBK2OzXJ1fro6Wvr1bHulzDftMVn7kdGpaDa9KgAmK/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams({ email: email })
+      });
+      form.style.display = 'none';
+      thanks.classList.add('show');
+    } catch (err) {
+      button.disabled = false;
+      button.textContent = originalLabel;
+      thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
+      thanks.classList.add('show');
+    }
   });
 })();
 </script>
@@ -1149,18 +1170,6 @@ const ADVISORS = {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) close();
-  });
-})();
-
-// ── NEWSLETTER FORM (placeholder handler) ──
-(function() {
-  const form = document.getElementById('newsletterForm');
-  const thanks = document.getElementById('newsletterThanks');
-  if (!form || !thanks) return;
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    form.style.display = 'none';
-    thanks.classList.add('show');
   });
 })();
 

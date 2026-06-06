@@ -20,8 +20,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:       #f5f2ed;
+    --bg:       #faf7f0;
     --bg-alt:   #edeae4;
+    --cream:    #fcf7eb;
+    --bone:     #f4ede0;
     --white:    #ffffff;
     --ink:      #1c2e4a;
     --ink-light:#2e4060;
@@ -133,7 +135,7 @@
   .hero h1 {
     font-family: 'Source Serif 4', serif;
     font-size: clamp(42px, 5vw, 66px);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.5px;
     margin-bottom: 28px;
@@ -162,7 +164,7 @@
   }
   .hero-body {
     font-family: 'Source Serif 4', serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.65;
     color: var(--ink-light);
     max-width: 740px;
@@ -178,7 +180,7 @@
   }
   @media (max-width: 600px) {
     .hero-body-emphasis {
-      font-size: 19px;
+      font-size: 18px;
       margin-top: 10px;
       margin-bottom: 28px;
     }
@@ -516,7 +518,7 @@
   }
   .section-supplement {
     font-family: 'Source Serif 4', serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.65;
     color: var(--ink-light);
     max-width: 740px;
@@ -686,7 +688,7 @@
   }
   .section-close {
     font-family: 'Source Serif 4', serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.65;
     color: var(--ink);
     max-width: 740px;
@@ -798,7 +800,7 @@
   .contact-section h2 { margin-bottom: 14px; }
   .contact-section p {
     color: var(--ink-dim);
-    font-size: 17px;
+    font-size: 18px;
     margin-bottom: 28px;
     max-width: 420px;
     margin-left: auto;
@@ -841,7 +843,6 @@
     nav a { font-size: 12px; }
     .site-name { font-size: 18px; }
     .hero { padding: 56px 20px 64px; }
-    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
     .section { padding: 56px 20px; }
     .mission-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .principles-grid { grid-template-columns: 1fr; }
@@ -893,7 +894,7 @@
   }
   .section-lead {
     font-family: 'Source Serif 4', serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.65;
     color: var(--ink-light);
     max-width: 740px;
@@ -919,7 +920,7 @@
   .diagnosis-grid .idea-item {
     padding: 16px 0;
     font-family: 'Source Serif 4', serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.5;
     color: var(--ink);
     position: relative;
@@ -934,7 +935,7 @@
   @media (max-width: 720px) {
     .section-lead {
     font-family: 'Source Serif 4', serif;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.65;
     color: var(--ink-light);
     max-width: 740px;
@@ -1209,7 +1210,7 @@
           </div>
           <div class="tp-stats">
             <div class="tp-stat">
-              <div class="tp-stat-value" data-tp="committed">$4.7B</div>
+              <div class="tp-stat-value" data-tp="committed">$5.0B</div>
               <div class="tp-stat-label">Committed / yr</div>
             </div>
             <div class="tp-stat">
@@ -1218,6 +1219,13 @@
             </div>
           </div>
           <div class="tp-events" data-tp="events">
+            <div class="tp-event commitment">
+              <div class="tp-event-header">
+                <div class="tp-event-title">Catholic Relief Services — $240M Humanitarian Rapid-Response</div>
+                <div class="tp-event-amount">First in series of direct-to-NGO awards</div>
+              </div>
+              <div class="tp-event-meta">Jun 5, 2026 &nbsp;·&nbsp; Humanitarian</div>
+            </div>
             <div class="tp-event commitment">
               <div class="tp-event-header">
                 <div class="tp-event-title">Ebola Outbreak Response — DRC, Uganda, South Sudan</div>
@@ -1231,13 +1239,6 @@
                 <div class="tp-event-amount">Total US OCHA: $3.8B</div>
               </div>
               <div class="tp-event-meta">May 14, 2026 &nbsp;·&nbsp; Humanitarian</div>
-            </div>
-            <div class="tp-event announcement">
-              <div class="tp-event-header">
-                <div class="tp-event-title">Cuba — $100M Conditional Pledge</div>
-                <div class="tp-event-amount">Pending Cuban regime approval</div>
-              </div>
-              <div class="tp-event-meta">May 13, 2026 &nbsp;·&nbsp; Humanitarian</div>
             </div>
           </div>
         </div>
