@@ -1093,6 +1093,14 @@
     .newsletter-input, .newsletter-submit { width: 100%; }
   }
 
+
+  .growth-section { background: var(--cream); }
+  .growth-h2 { font-family: 'Source Serif 4', serif; font-size: clamp(26px, 3vw, 34px); font-weight: 600; color: var(--ink); margin: 8px 0 6px; letter-spacing: -0.3px; }
+  .growth-sub { font-family: 'Source Serif 4', serif; font-size: 18px; line-height: 1.55; color: var(--ink-light); max-width: 640px; margin: 0 0 28px; text-wrap: pretty; }
+  .growth-card { background: #fff; border: 1px solid var(--border); border-radius: 4px; padding: 24px 24px 14px; }
+  .growth-card svg.growth-chart { width: 100%; height: auto; display: block; font-family: 'IBM Plex Sans', sans-serif; }
+  .growth-src { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; color: var(--ink-dim); margin: 16px 0 0; line-height: 1.5; }
+  .growth-src a { color: var(--amber-mid); }
 </style>
 <style id="design-polish">
   /* ── DESIGN POLISH (craft layer) ── */
@@ -1267,6 +1275,48 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- GROWTH CHART -->
+<section class="section growth-section">
+  <div class="section-inner fade-up">
+    <div class="section-label">The Long View</div>
+    <h2 class="growth-h2">Two centuries of economic growth</h2>
+    <p class="growth-sub">In 1820, every region was poor. Since then, average incomes have risen everywhere &mdash; at very different rates.</p>
+    <div class="growth-card">
+        <svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" class="growth-chart" role="img" aria-label="GDP per capita by world region, 1820 to 2022, showing all regions rising from low and similar incomes in 1820 to widely diverging levels by 2022">
+        <line x1="56" y1="416.0" x2="592" y2="416.0" stroke="#e4ddd0" stroke-width="1"/>
+        <text x="46" y="420.0" text-anchor="end" font-size="12" fill="#8a8a8a">$0</text>
+        <line x1="56" y1="308.2" x2="592" y2="308.2" stroke="#e4ddd0" stroke-width="1"/>
+        <text x="46" y="312.2" text-anchor="end" font-size="12" fill="#8a8a8a">$10k</text>
+        <line x1="56" y1="200.4" x2="592" y2="200.4" stroke="#e4ddd0" stroke-width="1"/>
+        <text x="46" y="204.4" text-anchor="end" font-size="12" fill="#8a8a8a">$20k</text>
+        <line x1="56" y1="92.7" x2="592" y2="92.7" stroke="#e4ddd0" stroke-width="1"/>
+        <text x="46" y="96.7" text-anchor="end" font-size="12" fill="#8a8a8a">$30k</text>
+        <text x="56.0" y="442.0" text-anchor="middle" font-size="12" fill="#8a8a8a">1820</text>
+        <text x="188.7" y="442.0" text-anchor="middle" font-size="12" fill="#8a8a8a">1870</text>
+        <text x="302.8" y="442.0" text-anchor="middle" font-size="12" fill="#8a8a8a">1913</text>
+        <text x="401.0" y="442.0" text-anchor="middle" font-size="12" fill="#8a8a8a">1950</text>
+        <text x="462.0" y="442.0" text-anchor="middle" font-size="12" fill="#8a8a8a">1973</text>
+        <text x="533.6" y="442.0" text-anchor="middle" font-size="12" fill="#8a8a8a">2000</text>
+        <text x="592.0" y="442.0" text-anchor="middle" font-size="12" fill="#8a8a8a">2022</text>
+        <path d="M 56.0 395.5 C 78.1 393.5, 147.5 390.1, 188.7 383.1 C 229.8 376.1, 267.4 365.3, 302.8 353.5 C 338.2 341.7, 374.4 332.1, 401.0 312.5 C 427.5 293.0, 444.3 259.7, 462.0 236.0 C 479.7 212.3, 495.1 191.8, 507.1 170.3 C 519.0 148.7, 524.8 120.9, 533.6 106.7 C 542.5 92.5, 550.4 96.3, 560.2 85.1 C 569.9 74.0, 586.7 47.4, 592.0 39.9" fill="none" stroke="#1c2e4a" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 56.0 402.0 C 78.1 400.5, 147.5 397.1, 188.7 392.8 C 229.8 388.5, 267.4 381.2, 302.8 376.1 C 338.2 371.0, 374.4 377.4, 401.0 362.1 C 427.5 346.8, 444.3 304.4, 462.0 284.5 C 479.7 264.6, 495.1 256.1, 507.1 242.5 C 519.0 228.8, 524.8 213.7, 533.6 202.6 C 542.5 191.5, 550.4 183.6, 560.2 175.7 C 569.9 167.8, 586.7 158.6, 592.0 155.2" fill="none" stroke="#42597f" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 56.0 408.0 C 78.1 408.1, 147.5 408.4, 188.7 408.2 C 229.8 408.1, 267.4 407.6, 302.8 407.1 C 338.2 406.5, 374.4 408.4, 401.0 404.7 C 427.5 401.0, 444.3 392.2, 462.0 384.7 C 479.7 377.3, 495.1 368.0, 507.1 360.0 C 519.0 351.9, 524.8 348.3, 533.6 336.2 C 542.5 324.2, 550.4 304.6, 560.2 287.7 C 569.9 270.9, 586.7 243.7, 592.0 234.9" fill="none" stroke="#9ba3b0" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 56.0 407.4 C 78.1 406.9, 147.5 406.1, 188.7 404.4 C 229.8 402.7, 267.4 400.4, 302.8 397.1 C 338.2 393.9, 374.4 392.0, 401.0 384.7 C 427.5 377.5, 444.3 360.0, 462.0 353.5 C 479.7 347.0, 495.1 349.7, 507.1 345.9 C 519.0 342.2, 524.8 336.6, 533.6 330.9 C 542.5 325.1, 550.4 317.4, 560.2 311.5 C 569.9 305.5, 586.7 298.0, 592.0 295.3" fill="none" stroke="#b9bec7" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 56.0 409.6 C 78.1 409.6, 147.5 409.7, 188.7 409.4 C 229.8 409.2, 267.4 408.5, 302.8 408.2 C 338.2 408.0, 374.4 409.1, 401.0 408.1 C 427.5 407.1, 444.3 404.3, 462.0 402.2 C 479.7 400.1, 495.1 398.1, 507.1 395.5 C 519.0 393.0, 524.8 391.8, 533.6 386.9 C 542.5 382.1, 550.4 374.0, 560.2 366.4 C 569.9 358.9, 586.7 345.8, 592.0 341.6" fill="none" stroke="#b8682a" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M 56.0 410.6 C 78.1 410.5, 147.5 410.4, 188.7 410.0 C 229.8 409.6, 267.4 409.0, 302.8 408.2 C 338.2 407.5, 374.4 407.1, 401.0 405.4 C 427.5 403.8, 444.3 399.5, 462.0 398.3 C 479.7 397.1, 495.1 398.2, 507.1 398.2 C 519.0 398.2, 524.8 399.4, 533.6 398.2 C 542.5 397.0, 550.4 393.5, 560.2 391.2 C 569.9 389.0, 586.7 385.8, 592.0 384.7" fill="none" stroke="#d98a4a" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <text x="602" y="43.9" font-size="12.5" font-weight="600" fill="#1c2e4a">Western Offshoots</text>
+        <text x="602" y="159.2" font-size="12.5" font-weight="600" fill="#42597f">Western Europe</text>
+        <text x="602" y="238.9" font-size="12.5" font-weight="600" fill="#9ba3b0">East Asia</text>
+        <text x="602" y="299.3" font-size="12.5" font-weight="600" fill="#b9bec7">Latin America</text>
+        <text x="602" y="345.6" font-size="12.5" font-weight="600" fill="#b8682a">South & Southeast Asia</text>
+        <text x="602" y="388.7" font-size="12.5" font-weight="600" fill="#d98a4a">Sub-Saharan Africa</text>
+        <text x="46" y="18" text-anchor="start" font-size="11.5" fill="#8a8a8a">GDP per capita (international $, 2011 prices)</text>
+        </svg>
+    </div>
+    <p class="growth-src">Source: Maddison Project Database (Bolt &amp; van Zanden, 2023), via <a href="https://ourworldindata.org/economic-growth" target="_blank" rel="noopener">Our World in Data</a>. Benchmark-year values; GDP per capita in 2011 international dollars.</p>
   </div>
 </section>
 
