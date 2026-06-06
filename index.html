@@ -59,10 +59,12 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    height: 56px;
+    min-height: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
   }
   .site-name {
     font-family: 'Source Serif 4', serif;
@@ -841,7 +843,7 @@
 
   /* ── MOBILE ── */
   @media (max-width: 860px) {
-    .header-inner { padding: 0 20px; }
+    .header-inner { padding: 8px 20px; }
     nav { gap: 16px; }
     nav a { font-size: 12px; }
     .site-name { font-size: 18px; }
