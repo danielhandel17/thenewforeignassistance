@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Press — The New Foreign Assistance</title>
+<link rel="canonical" href="https://thenewforeignassistance.org/press.html">
 <meta name="description" content="Articles by The New Foreign Assistance team in major outlets, and the writing that informs the work.">
 <meta property="og:title" content="Press — The New Foreign Assistance">
 <meta property="og:description" content="Articles by The New Foreign Assistance team in major outlets, and the writing that informs the work.">
@@ -174,12 +176,12 @@
   }
 
   /* ── FADE ── */
-  .fade-up {
+  html.js .fade-up {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  html.js .fade-up.visible { opacity: 1; transform: translateY(0); }
 
   /* ── MOBILE ── */
   @media (max-width: 860px) {
@@ -339,7 +341,7 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--amber-mid);
     align-self: flex-start;
     margin-top: 4px;
   }
@@ -439,7 +441,7 @@
   .newsletter-thanks {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
-    color: var(--amber);
+    color: var(--amber-mid);
     margin-top: 14px;
     display: none;
   }

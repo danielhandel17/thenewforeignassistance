@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The New Foreign Assistance</title>
+<link rel="canonical" href="https://thenewforeignassistance.org/">
 <meta name="description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
 <meta property="og:title" content="The New Foreign Assistance">
 <meta property="og:description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
@@ -119,7 +121,7 @@
     font-weight: 500;
     letter-spacing: 0.9px;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--amber-mid);
     margin-bottom: 24px;
     display: flex;
     align-items: center;
@@ -227,7 +229,7 @@
   .tp-live {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
-    color: var(--amber);
+    color: var(--amber-mid);
     letter-spacing: 1px;
     display: flex;
     align-items: center;
@@ -314,7 +316,7 @@
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--amber-mid);
     text-decoration: none;
   }
   .tp-footer a:hover { text-decoration: underline; }
@@ -333,7 +335,7 @@
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--amber-mid);
     margin-bottom: 18px;
     display: flex;
     align-items: center;
@@ -403,7 +405,7 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--amber);
+    color: var(--amber-mid);
     margin-bottom: 28px;
   }
   .reform-history-prose p {
@@ -829,12 +831,12 @@
   }
 
   /* ── FADE ── */
-  .fade-up {
+  html.js .fade-up {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  html.js .fade-up.visible { opacity: 1; transform: translateY(0); }
 
   /* ── MOBILE ── */
   @media (max-width: 860px) {
@@ -860,7 +862,7 @@
     font-weight: 500;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--amber-mid);
     margin-bottom: 16px;
   }
   .idea-list { list-style: none; padding: 0; margin: 0; }
@@ -1042,7 +1044,7 @@
   .newsletter-thanks {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
-    color: var(--amber);
+    color: var(--amber-mid);
     margin-top: 14px;
     display: none;
   }
