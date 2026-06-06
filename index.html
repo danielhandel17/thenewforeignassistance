@@ -779,10 +779,8 @@
   /* ── TRACKER CALLOUT ── */
   .tracker-callout-section { background: var(--bg); }
   .tracker-callout-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    display: block;
+    max-width: 640px;
   }
   .tc-left h2 { margin-bottom: 16px; }
   .tc-left p { font-size: 16px; line-height: 1.8; color: var(--ink-light); }
@@ -1241,47 +1239,6 @@
         <p>Every major foreign assistance commitment, pledge, and policy action from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.</p>
         <a href="tracker.html" class="btn-primary" style="display:inline-block; margin-top:24px;">Open the tracker →</a>
       </div>
-      <div class="tc-right">
-        <div class="tracker-preview" id="tracker-preview">
-          <div class="tp-header">
-            <span class="tp-title">Foreign Assistance Tracker</span>
-            <span class="tp-live">Updated weekly</span>
-          </div>
-          <div class="tp-stats">
-            <div class="tp-stat">
-              <div class="tp-stat-value" data-tp="committed">$5.0B</div>
-              <div class="tp-stat-label">Committed / yr</div>
-            </div>
-            <div class="tp-stat">
-              <div class="tp-stat-value amber" data-tp="pledged">$4.1B</div>
-              <div class="tp-stat-label">Pledged / yr</div>
-            </div>
-          </div>
-          <div class="tp-events" data-tp="events">
-            <div class="tp-event commitment">
-              <div class="tp-event-header">
-                <div class="tp-event-title">Catholic Relief Services — $240M Humanitarian Rapid-Response</div>
-                <div class="tp-event-amount">First in series of direct-to-NGO awards</div>
-              </div>
-              <div class="tp-event-meta">Jun 5, 2026 &nbsp;·&nbsp; Humanitarian</div>
-            </div>
-            <div class="tp-event commitment">
-              <div class="tp-event-header">
-                <div class="tp-event-title">Ebola Outbreak Response — DRC, Uganda, South Sudan</div>
-                <div class="tp-event-amount">50 treatment clinics, 7 NGO/UN partners</div>
-              </div>
-              <div class="tp-event-meta">May 19–23, 2026 &nbsp;·&nbsp; Health</div>
-            </div>
-            <div class="tp-event commitment">
-              <div class="tp-event-header">
-                <div class="tp-event-title">OCHA Humanitarian Reset — Additional $1.8B</div>
-                <div class="tp-event-amount">Total US OCHA: $3.8B</div>
-              </div>
-              <div class="tp-event-meta">May 14, 2026 &nbsp;·&nbsp; Humanitarian</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1399,78 +1356,6 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 })();
 </script>
 
-<script>
-// ── TRACKER PREVIEW: AUTO-SYNC FROM tracker.html ──
-// Fetches the live tracker page, extracts its events array, computes totals,
-// and renders the 3 most recent events. No manual sync step — when the tracker
-// is updated, the home preview reflects it on next page load.
-// Falls back silently to the hardcoded values if fetch fails (e.g. file://).
-(async function () {
-  try {
-    const res = await fetch('tracker.html', { cache: 'no-cache' });
-    if (!res.ok) return;
-    const html = await res.text();
-
-    // Extract the events array source from the tracker HTML.
-    const start = html.indexOf('const events = [');
-    if (start < 0) return;
-    const endRel = html.slice(start).indexOf('\n];');
-    if (endRel < 0) return;
-    const arrayJs = html.slice(start, start + endRel + 3);
-
-    // Evaluate the array literal in an isolated function scope.
-    let events;
-    try {
-      events = new Function(arrayJs + ' return events;')();
-    } catch (e) { return; }
-    if (!Array.isArray(events) || events.length === 0) return;
-
-    // Compute totals (match tracker logic exactly).
-    let committed = 0, pledged = 0;
-    events.forEach(ev => {
-      if (ev.type === 'commitment') committed += ev.annualAmount || 0;
-      else if (ev.type === 'announcement') pledged += ev.annualAmount || 0;
-    });
-    const fmt = n => n >= 1e9 ? '$' + (n / 1e9).toFixed(1) + 'B'
-                   : n >= 1e6 ? '$' + (n / 1e6).toFixed(0) + 'M' : '$0';
-
-    const cEl = document.querySelector('[data-tp="committed"]');
-    const pEl = document.querySelector('[data-tp="pledged"]');
-    if (cEl) cEl.textContent = fmt(committed);
-    if (pEl) pEl.textContent = fmt(pledged);
-
-    // Sort events most-recent-first using month (YYYY-MM) + first day number in
-    // the date string. The tracker doesn't keep the array in strict chronological
-    // order, so a sort is required.
-    const rank = ev => {
-      const monthNum = parseInt((ev.month || '0-0').replace('-', ''), 10) || 0;
-      const dayMatch = (ev.date || '').match(/\b(\d{1,2})\b/);
-      const day = dayMatch ? parseInt(dayMatch[1], 10) : 1;
-      return monthNum * 100 + day;
-    };
-    const recent = events.slice().sort((a, b) => rank(b) - rank(a)).slice(0, 3);
-    const container = document.querySelector('[data-tp="events"]');
-    if (container && recent.length > 0) {
-      const safe = s => String(s || '').replace(/[<>]/g, '');
-      container.innerHTML = recent.map(ev => {
-        const type = (ev.type || 'commitment').toLowerCase();
-        const amount = ev.displayAnnual || ev.displayTotal || '';
-        const category = ev.sectorLabel || ev.sector || '';
-        return `
-          <div class="tp-event ${safe(type)}">
-            <div class="tp-event-header">
-              <div class="tp-event-title">${safe(ev.title)}</div>
-              <div class="tp-event-amount">${safe(amount)}</div>
-            </div>
-            <div class="tp-event-meta">${safe(ev.date)} &nbsp;·&nbsp; ${safe(category)}</div>
-          </div>`;
-      }).join('');
-    }
-  } catch (e) {
-    // Silent fail — hardcoded fallback values stay visible.
-  }
-})();
-</script>
 
 
 <script>
