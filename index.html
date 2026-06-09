@@ -168,6 +168,17 @@
     color: var(--ink);
     margin: 0 0 44px;
     max-width: 620px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .hero-positioning::before {
+    content: '';
+    flex: 0 0 auto;
+    width: 28px;
+    height: 2px;
+    background: var(--amber);
+    transform: translateY(-6px);
   }
   .hero-positioning em { font-style: italic; color: var(--amber); }
   @media (max-width: 600px) {
