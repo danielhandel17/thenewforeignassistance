@@ -161,7 +161,9 @@
     max-width: 740px;
     letter-spacing: -0.3px;
   }
-  .hero-emph { color: var(--ink); font-weight: 600; }
+  .hero-body { text-wrap: balance; }
+  .hero-emph { color: var(--ink); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 600px) { .hero-emph { white-space: normal; } }
   .hero-positioning {
     font-family: 'Newsreader', serif;
     font-size: 24px;
