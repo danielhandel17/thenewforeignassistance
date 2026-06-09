@@ -116,7 +116,11 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  .hero-left {}
+  .hero-left {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+  }
   .hero-statement { max-width: 680px; }
   .hero-kicker {
     font-family: 'Inter', sans-serif;
@@ -157,7 +161,7 @@
     font-size: clamp(32px, 3.6vw, 46px);
     line-height: 1.2;
     color: var(--amber);
-    margin: 36px 0 36px;
+    margin: 36px auto 36px;
     max-width: 740px;
     letter-spacing: -0.3px;
   }
@@ -175,10 +179,20 @@
     font-size: 26px;
     line-height: 1.35;
     color: var(--ink);
-    margin: 0 0 44px;
+    margin: 8px auto 44px;
     max-width: none;
-    border-left: 3px solid var(--amber);
-    padding-left: 18px;
+    padding-top: 22px;
+    position: relative;
+  }
+  .hero-positioning::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 3px;
+    background: var(--amber);
   }
   @media (min-width: 720px) { .hero-positioning { white-space: nowrap; } }
   @media (max-width: 600px) { .hero-positioning { font-size: 20px; } }
@@ -194,7 +208,9 @@
     font-size: 22px;
     line-height: 1.65;
     color: var(--ink-light);
-    max-width: 900px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 12px;
     text-wrap: pretty;
   }
