@@ -162,6 +162,12 @@
     letter-spacing: -0.3px;
   }
   .hero-body { text-wrap: balance; }
+  .hero-body.turn-line { text-wrap: initial; }
+  .desktop-break { display: none; }
+  @media (min-width: 760px) {
+    .desktop-break { display: inline; }
+    .turn-line { white-space: normal; }
+  }
   .hero-emph { color: var(--ink); font-weight: 600; white-space: nowrap; font-size: 24px; }
   @media (max-width: 600px) { .hero-emph { white-space: normal; font-size: inherit; } }
   .hero-positioning {
@@ -1193,7 +1199,7 @@
     <div class="hero-left">
       <h1>Ambitious. Effective. <em>Built to End.</em></h1>
       <p class="hero-body">Since 1961 USAID was America&#39;s premier foreign assistance agency. <span class="hero-emph">Its successes were real; so were its failures.</span></p>
-      <p class="hero-body">For those of us who support foreign assistance, it is tempting to bring back what USAID was. <span class="hero-emph">That&#39;s not good enough.</span></p>
+      <p class="hero-body turn-line">For those of us who support foreign assistance, it is tempting to bring <br class="desktop-break">back what USAID was. <span class="hero-emph">That&#39;s not good enough.</span></p>
       <p class="hero-statement">It&#39;s time for what comes next.</p>
       <p class="hero-positioning">The New Foreign Assistance is the conservative voice for reform.</p>
     </div>
