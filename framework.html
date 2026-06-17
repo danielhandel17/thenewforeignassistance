@@ -489,6 +489,20 @@
     .reform-history-prose p { font-size: 17px; line-height: 1.65; }
   }
   
+
+  /* ── ENDORSERS ── */
+  .endorser-section { background: var(--bg); border-top: 1px solid var(--border); }
+  .endorser-inner { max-width: 860px; margin: 0 auto; padding: 64px 40px; }
+  .endorser-label { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amber-mid); margin-bottom: 18px; }
+  .endorser-headline { font-family: 'Newsreader', serif; font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; color: var(--ink); margin: 0 0 12px; letter-spacing: -0.3px; }
+  .endorser-sub { font-family: 'Newsreader', serif; font-size: 18px; line-height: 1.65; color: var(--ink-light); max-width: 640px; margin: 0 0 32px; }
+  .endorser-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.3px; color: var(--white); background: var(--amber); padding: 14px 28px; text-decoration: none; transition: background 0.15s; }
+  .endorser-btn:hover { background: var(--amber-mid); }
+  .endorser-count { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink-dim); margin-top: 20px; }
+  .endorser-list { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 32px; }
+  .endorser-list p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.8; color: var(--ink-light); margin: 0; }
+  @media (max-width: 600px) { .endorser-inner { padding: 48px 20px; } }
+
 </style>
 
 <style>
@@ -920,6 +934,17 @@
   </div>
 </section>
 
+
+<!-- ENDORSERS -->
+<section class="endorser-section">
+  <div class="endorser-inner fade-up">
+    <div class="endorser-label">Endorsers</div>
+    <h2 class="endorser-headline">Add your name.</h2>
+    <p class="endorser-sub">If you support this framework, we'd welcome your endorsement. Submissions are reviewed before being listed publicly.</p>
+    <a class="endorser-btn" href="https://forms.gle/PLACEHOLDER" target="_blank" rel="noopener">Endorse these principles &rarr;</a>
+    <p class="endorser-count">0 endorsers</p>
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-inner">
