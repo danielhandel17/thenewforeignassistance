@@ -388,7 +388,7 @@
 
 <footer class="site-footer">
   <div class="footer-sources">
-    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated May 26, 2026</p>
+    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated June 18, 2026</p>
   </div>
   <div class="newsletter">
     <div class="newsletter-eyebrow">From the rebuild</div>
@@ -831,6 +831,31 @@ const events = [
     desc:"Deadline for all 24 bilateral health MOU partner countries to submit implementation plans. First accountability checkpoint.",
     source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" },
 
+  // --- JUN 2026 ---
+  { month:"2026-06", date:"Jun 17, 2026", title:"UNICEF + WFP — $1B+ Global Macro Awards",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:1e9, annualAmount:1e9, years:1,
+    displayTotal:"$1B+", displayAnnual:"40+ countries",
+    desc:"State Dept announces more than $1B in humanitarian and disaster response assistance to UNICEF and WFP through new global macro awards covering 40+ countries. Third major direct-to-partner macro award in 2026 after OCHA ($3.8B) and CRS ($240M). Continues consolidation of US humanitarian funding into trusted multilateral and NGO partners.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/united-states-announces-more-than-1-billion-in-assistance-to-unicef-and-world-food-program-to-address-global-humanitarian-needs" },
+
+  { month:"2026-06", date:"Jun 11, 2026", title:"State Dept + Starlink Disaster Response MOU",
+    type:"milestone", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:0, annualAmount:0, years:2,
+    displayTotal:"Two-year MOU", displayAnnual:"Connectivity for disaster response",
+    desc:"State Dept signs two-year MOU with Starlink for international disaster preparedness and humanitarian response. DHR Bureau coordinates LEO satellite deployment for emergency responders.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/united-states-and-starlink-announce-cooperation-on-critical-disaster-response" },
+
+  { month:"2026-06", date:"Jun 5, 2026", title:"Catholic Relief Services — $240M Humanitarian Rapid-Response",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Burma","DRC","Ethiopia","Haiti","Nigeria","Sudan"],
+    totalAmount:240e6, annualAmount:240e6, years:1,
+    displayTotal:"$240M+", displayAnnual:"First in series of direct-to-NGO awards",
+    desc:"State Dept announces $240M+ to Catholic Relief Services — first in a series of direct-to-NGO awards to 'trusted and vetted' partners. 24-hour rapid deployment. Complements OCHA framework. Burma, DRC, Ethiopia, Haiti, Nigeria, Sudan.",
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/united-states-announces-more-than-240-million-in-assistance-to-catholic-relief-services-to-address-global-humanitarian-needs/" },
+
   // --- MAY 2026 ---
   { month:"2026-05", date:"May 6, 2026", title:"US Humanitarian Hub — South Florida",
     type:"milestone", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"americas", geoLabel:"Americas",
@@ -841,7 +866,39 @@ const events = [
     details:{"Location":"South Florida","Integration":"SOUTHCOM — DHR advisors embedded for civil-military coordination","Policy":"20% of all US foreign assistance dedicated to Western Hemisphere","Supplies":"Pre-positioned emergency relief across the region","Significance":"First State-led humanitarian pre-positioning hub in US history","Season":"Launched ahead of 2026 Atlantic hurricane season"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/reaffirming-the-united-states-commitment-to-humanitarian-assistance-in-our-hemisphere/" },
 
-  { month:"2026-05", date:"May 13, 2026", title:"Cuba — $100M Conditional Pledge",
+  { month:"2026-05", date:"May 13, 2026", title:"USDA Food for Peace Title II — Second Tranche NOFO",
+    type:"announcement", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["DRC","El Salvador","Ethiopia","Guatemala","Haiti","Kenya","Rwanda"],
+    totalAmount:357e6, annualAmount:178.5e6, years:2,
+    displayTotal:"$357M / 7-14 awards", displayAnnual:"~$179M/yr avg",
+    desc:"USDA publishes NOFO for second Food for Peace Title II tranche. $357M; 7-14 awards at $20-200M each; 18-24 month performance. 7 countries (DRC, El Salvador, Ethiopia, Guatemala, Haiti, Kenya, Rwanda). Reforms: American-grown commodities, performance metrics, 'offboarding and graduating' from forever-aid countries. Second major USDA NOFO since program takeover from State in February.",
+    details:{
+      "Amount":"$357M federal funding",
+      "Awards":"7-14 grants, $20-200M each, 18-24 month performance",
+      "Countries":"DRC, El Salvador, Ethiopia, Guatemala, Haiti, Kenya, Rwanda",
+      "Deadline":"June 12, 2026",
+      "Reforms":"American-grown commodities; performance metrics; offboarding criteria",
+      "Lead":"Under Secretary Lindberg (USDA Trade and Foreign Agricultural Affairs)"
+    },
+    source:"https://www.fas.usda.gov/newsroom/usda-publishes-food-peace-notice-funding-opportunity" },
+
+  { month:"2026-05", date:"May 13, 2026", title:"USDA Food for Progress FY26 NOFO",
+    type:"announcement", sector:"economic", sectorLabel:"Economic", geo:"global", geoLabel:"Global",
+    countries:["Bangladesh","Bolivia","Ecuador","Morocco","Philippines","Sri Lanka","Thailand"],
+    totalAmount:226e6, annualAmount:50.2e6, years:4.5,
+    displayTotal:"$226M / 4-5 yrs", displayAnnual:"~$50M/yr",
+    desc:"USDA NOFO for FY26 Food for Progress — $226M for 4-5 year agricultural development projects in 7 countries: Bangladesh, Bolivia, Ecuador, Morocco, Philippines, Sri Lanka, Thailand. Awards $28-35M each. Closing July 6, 2026. Food for Progress provides commodities sold in-country to generate local currency for agricultural value chain projects — structurally different from emergency food aid.",
+    details:{
+      "Amount":"$226M",
+      "Award size":"$28-35M each",
+      "Performance period":"4-5 years",
+      "Countries":"Bangladesh, Bolivia, Ecuador, Morocco, Philippines, Sri Lanka, Thailand",
+      "Deadline":"July 6, 2026",
+      "Model":"Commodities sold in-country generate local currency for ag value chain projects"
+    },
+    source:"https://www.fas.usda.gov/programs/food-progress" },
+
+    { month:"2026-05", date:"May 13, 2026", title:"Cuba — $100M Conditional Pledge",
     type:"announcement", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"americas", geoLabel:"Americas",
     countries:["Cuba"],
     totalAmount:0, annualAmount:0, years:0,
@@ -850,7 +907,23 @@ const events = [
     details:{"Amount":"$100M pledged","Condition":"Cuban regime must permit direct delivery to Cuban people","Channel":"Direct to civil society — not through Cuban government","Prior committed":"$9M already delivered ($3M Jan + $6M Feb via Caritas)","Context":"Cuba has not accepted the offer as of announcement date","Significance":"Largest US assistance pledge to Cuba in history"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/the-united-states-is-ready-to-provide-100-million-in-direct-assistance-to-the-cuban-people-if-the-cuban-regime-will-permit-it/" },
 
-  { month:"2026-05", date:"May 19–23, 2026", title:"Ebola Outbreak Response — DRC, Uganda, South Sudan",
+  { month:"2026-05", date:"May 26, 2026", title:"Quad Foreign Ministers' Meeting — New Delhi",
+    type:"milestone", sector:"policy", sectorLabel:"Policy", geo:"indo-pacific", geoLabel:"Indo-Pacific",
+    countries:["Australia","India","Japan"],
+    totalAmount:0, annualAmount:0, years:0,
+    displayTotal:"Multilateral milestone", displayAnnual:"$25M+ Quad-combined energy funding",
+    desc:"11th Quad Foreign Ministers' Meeting hosted by India. Rubio + Australia FM Wong + India FM Jaishankar + Japan FM Motegi. Joint statement launches Indo-Pacific Maritime Surveillance Collaboration (IPMSC) — first ever Quad maritime initiative. Combined Quad funding for Indo-Pacific energy technology supply chains exceeds $25M. New Quad-Fiji partnership on port infrastructure. Commitment to connect all Pacific Island Forum countries via undersea cables by 2026.",
+    details:{
+      "Location":"Hyderabad House, New Delhi",
+      "Principals":"Rubio (US), Wong (AUS), Jaishankar (IND), Motegi (JPN)",
+      "Marquee initiative":"Indo-Pacific Maritime Surveillance Collaboration (IPMSC)",
+      "Energy supply chains":"$25M+ combined Quad funding",
+      "Fiji partnership":"Quad-Fiji port infrastructure",
+      "Pacific cables":"All Pacific Island Forum countries connected by 2026"
+    },
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/2026-quad-foreign-ministers-meeting-in-new-delhi/" },
+
+    { month:"2026-05", date:"May 19–23, 2026", title:"Ebola Outbreak Response — DRC, Uganda, South Sudan",
     type:"commitment", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
     countries:["DRC","South Sudan","Uganda"],
     totalAmount:32e6, annualAmount:32e6, years:1,
