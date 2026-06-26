@@ -1137,6 +1137,16 @@
   .image-band--plain img { object-position: center 38%; }
   @media (max-width: 860px) { .image-band--plain { height: 200px; } }
 
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announce-bar { background: var(--amber); color: var(--white); display: flex; align-items: center; justify-content: center; gap: 16px; padding: 10px 20px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; line-height: 1.4; position: relative; }
+  .announce-bar a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+  .announce-bar a:hover { opacity: 0.85; }
+  .announce-bar .announce-label { font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; font-size: 11px; background: rgba(0,0,0,0.15); padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+  .announce-bar .announce-close { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--white); font-size: 20px; cursor: pointer; opacity: 0.7; padding: 4px 8px; line-height: 1; }
+  .announce-bar .announce-close:hover { opacity: 1; }
+  .announce-bar.hidden { display: none; }
+
 </style>
 <style id="design-polish">
   /* ── DESIGN POLISH (craft layer) ── */
@@ -1177,6 +1187,13 @@
 <body>
 
 <!-- HEADER -->
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar" id="announceBar">
+  <span class="announce-label">New</span>
+  <span>Reforming Foreign Assistance &mdash; now published in <a href="https://nationalaffairs.com/publications/detail/reforming-foreign-assistance" target="_blank" rel="noopener">National Affairs</a></span>
+  <button class="announce-close" id="announceClose" aria-label="Dismiss">&times;</button>
+</div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
@@ -1450,5 +1467,21 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   update();
 })();
 </script>
+
+<script>
+(function(){
+  var bar = document.getElementById('announceBar');
+  var btn = document.getElementById('announceClose');
+  if (!bar) return;
+  if (localStorage.getItem('announce-na-2026') === 'closed') {
+    bar.classList.add('hidden');
+  }
+  if (btn) btn.addEventListener('click', function(){
+    bar.classList.add('hidden');
+    localStorage.setItem('announce-na-2026', 'closed');
+  });
+})();
+</script>
+
 </body>
 </html>
