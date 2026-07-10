@@ -388,7 +388,7 @@
 
 <footer class="site-footer">
   <div class="footer-sources">
-    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated July 7, 2026</p>
+    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated July 10, 2026</p>
   </div>
   <div class="newsletter">
     <div class="newsletter-eyebrow">From the rebuild</div>
@@ -848,8 +848,27 @@ const events = [
     desc:"Deadline for all 24 bilateral health MOU partner countries to submit implementation plans. First accountability checkpoint.",
     source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" },
 
+  // --- JUL 2026 ---
+  { month:"2026-07", date:"Jul 1, 2026", title:"Tanzania Bilateral Health MOU",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["Tanzania"],
+    totalAmount:1.3e9, annualAmount:260e6, years:5,
+    displayTotal:"$3.1B total / 5 yrs", displayAnnual:"~$260M/yr US",
+    desc:"$1.3B+ US + $1.8B Tanzania = $3.1B total — Tanzania's co-investment exceeds the US share, the largest partner co-investment ratio of any bilateral health MOU. Five-year MOU building a durable network of hospitals, labs, and healthcare workers. Focus: HIV, malaria, TB, polio, MCH. Tanzania commits to finance, manage, and sustain its own health system by 2030. MOU #34 of the America First Global Health Strategy.",
+    details:{"US commitment":"$1.3B+ over 5 yrs","Tanzania co-invest":"$1.8B in domestic expenditures (largest % share of any MOU partner)","Total":"$3.1B","Focus":"HIV, malaria, TB, polio, MCH, health system financing","Notable":"Tanzania co-investment exceeds US share — highest co-investment ratio of any MOU","Target":"Tanzania independently finances and manages own health system by 2030","MOU count":"34th bilateral health agreement","Status":"MOU — non-binding, subject to appropriations"},
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/07/united-states-and-tanzania-advance-global-fight-against-infectious-diseases-through-bilateral-health-memorandum-of-understanding" },
+
   // --- JUN 2026 ---
-  { month:"2026-06", date:"Jun 26, 2026", title:"Venezuela Earthquake Response — $150M+ Additional Awards",
+  { month:"2026-06", date:"Jun 25, 2026", title:"South Sudan Bilateral Health MOU",
+    type:"announcement", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["South Sudan"],
+    totalAmount:146e6, annualAmount:29.2e6, years:5,
+    displayTotal:"$166M total / 3 yrs", displayAnnual:"~$49M/yr US",
+    desc:"$146M US + $20M South Sudan = $166M total. Three-year MOU — reflecting South Sudan's fragile state context and active Ebola outbreak in the region. Focus: HIV/AIDS, infectious disease surveillance, 7-1-7 outbreak detection. South Sudan commits to increase domestic health spending and assume greater self-reliance. MOU #33 of the America First Global Health Strategy. Especially significant given ongoing Ebola response in DRC/Uganda/South Sudan.",
+    details:{"US commitment":"$146M over 3 yrs","South Sudan co-invest":"~$20M in domestic health spending","Total":"$166M","Duration":"3 years (reflecting fragile state context)","Focus":"HIV/AIDS, infectious disease surveillance, 7-1-7 outbreak detection, health systems","Ebola":"Especially timely given active Ebola outbreak in DRC, Uganda, and South Sudan","MOU count":"33rd bilateral health agreement","Status":"MOU — non-binding, subject to appropriations"},
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/implementing-the-trump-administrations-america-first-global-health-strategy-in-south-sudan/" },
+
+    { month:"2026-06", date:"Jun 26, 2026", title:"Venezuela Earthquake Response — $150M+ Additional Awards",
     type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"americas", geoLabel:"Americas",
     countries:["Venezuela"],
     totalAmount:150e6, annualAmount:150e6, years:1,
@@ -876,12 +895,22 @@ const events = [
     details:{"Amount":"$50M","Partners":"World Vision, Samaritan's Purse, Catholic Relief Services, International Medical Corps, IOM, WFP","Focus":"Emergency response — search and rescue, medical care, food, shelter, protection","Model":"Direct bilateral awards to partners with existing Venezuela presence"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/trump-administration-mobilizes-robust-response-to-tragic-venezuelan-earthquakes/" },
 
-    { month:"2026-06", date:"Jun 17, 2026", title:"UNICEF + WFP — $1B+ Global Macro Awards",
+    { month:"2026-06", date:"Jun 17, 2026", title:"WFP — $800M+ Global Macro Award",
     type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
     countries:["Global"],
-    totalAmount:1e9, annualAmount:1e9, years:1,
-    displayTotal:"$1B+", displayAnnual:"40+ countries",
-    desc:"State Dept announces more than $1B in humanitarian and disaster response assistance to UNICEF and WFP through new global macro awards covering 40+ countries. Third major direct-to-partner macro award in 2026 after OCHA ($3.8B) and CRS ($240M). Continues consolidation of US humanitarian funding into trusted multilateral and NGO partners.",
+    totalAmount:800e6, annualAmount:800e6, years:1,
+    displayTotal:"$800M+", displayAnnual:"40+ countries",
+    desc:"More than $800M to the World Food Programme through a new global macro award — largest single US award to WFP. Covers life-saving humanitarian and disaster response in more than 40 countries. Part of the Trump administration's shift to fewer, larger direct awards to trusted implementing partners, replacing the previous fragmented small-grant model. Follows the OCHA $3.8B Humanitarian Reset and CRS $240M rapid-response award.",
+    details:{"Amount":"More than $800M","Mechanism":"Global macro award — single large award covering global WFP operations","Scope":"Humanitarian and disaster response in 40+ countries","Model":"Speed, accountability, measurable impact — bypasses fragmented grant model","Context":"Second largest macro award of 2026 after OCHA $3.8B"},
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/united-states-announces-more-than-1-billion-in-assistance-to-unicef-and-world-food-program-to-address-global-humanitarian-needs" },
+
+  { month:"2026-06", date:"Jun 17, 2026", title:"UNICEF — $218M+ Global Macro Award",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:218e6, annualAmount:218e6, years:1,
+    displayTotal:"$218M+", displayAnnual:"40+ countries",
+    desc:"More than $218M to UNICEF through a new global macro award covering life-saving humanitarian and disaster response in more than 40 countries. Part of the Trump administration's shift toward fewer, larger direct awards. UNICEF gains budget predictability to pre-position resources and respond within 24 hours. Builds on OCHA's demonstrated 7-day average disbursement time — several times faster than USAID's historical average.",
+    details:{"Amount":"More than $218M","Mechanism":"Global macro award — single award covering global UNICEF operations","Scope":"Humanitarian and disaster response in 40+ countries","Speed":"24-hour mobilization capability; pre-positioning enabled by budget predictability","Context":"Extends OCHA Humanitarian Reset model to UNICEF"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/united-states-announces-more-than-1-billion-in-assistance-to-unicef-and-world-food-program-to-address-global-humanitarian-needs" },
 
   { month:"2026-06", date:"Jun 11, 2026", title:"State Dept + Starlink Disaster Response MOU",
