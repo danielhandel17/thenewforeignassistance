@@ -211,7 +211,7 @@
     .header-inner {
       padding: 0 14px;
       gap: 12px;
-      height: 52px;
+      height: 64px;
     }
     .site-name {
       font-size: 18px;
@@ -469,6 +469,8 @@
   .info-tooltip::after { content: ''; position: absolute; top: 100%; right: 12px; border: 5px solid transparent; border-top-color: var(--ink); }
   .info-wrap:hover .info-tooltip { opacity: 1; }
 
+  .site-logo { height: 56px; width: auto; display: block; }
+  @media (max-width: 600px) { .site-logo { height: 44px; } }
 </style>
 <style id="design-polish">
   /* ── DESIGN POLISH (craft layer) ── */
@@ -494,7 +496,7 @@
 
 <div class="sticky-header" id="stickyHeader">
   <div class="header-inner">
-    <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
+    <a href="/" class="site-name"><img src="images/logo-dark.jpg" alt="The New Foreign Assistance" class="site-logo"></a>
     <div class="header-tabs">
       <a href="tracker.html" class="header-tab active">Timeline</a>
       <a href="dashboard.html" class="header-tab">Dashboard</a>

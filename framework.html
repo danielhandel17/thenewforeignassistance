@@ -59,7 +59,9 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    min-height: 56px;
+    min-height: 72px;
+  .site-logo { height: 56px; width: auto; display: block; }
+  @media (max-width: 600px) { .site-logo { height: 44px; } }
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -731,7 +733,7 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
+    <a href="/" class="site-name"><img src="images/logo-dark.jpg" alt="The New Foreign Assistance" class="site-logo"></a>
     <nav>
       <a href="framework.html" class="nav-current">Framework</a>
       <a href="about.html">About</a>
