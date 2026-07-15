@@ -388,7 +388,7 @@
 
 <footer class="site-footer">
   <div class="footer-sources">
-    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated July 10, 2026</p>
+    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated July 15, 2026</p>
   </div>
   <div class="newsletter">
     <div class="newsletter-eyebrow">From the rebuild</div>
@@ -849,7 +849,43 @@ const events = [
     source:"https://www.thinkglobalhealth.org/article/tracking-the-america-first-bilateral-health-agreements" },
 
   // --- JUL 2026 ---
-  { month:"2026-07", date:"Jul 1, 2026", title:"Tanzania Bilateral Health MOU",
+  { month:"2026-07", date:"Jul 15, 2026", title:"USDA Food for Peace — CRS $235M Sudan & Ethiopia",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"africa", geoLabel:"Sub-Saharan Africa",
+    countries:["Sudan","Ethiopia"],
+    totalAmount:235e6, annualAmount:235e6, years:1,
+    displayTotal:"$235M / 110,000+ MT US commodities", displayAnnual:"Sudan + Ethiopia",
+    desc:"USDA announces agreement in principle with Catholic Relief Services to deliver up to $235M in emergency food and nutrition assistance to millions facing extreme hunger and malnutrition in Sudan and Ethiopia. Authorized under Title II of the Food for Peace Act. More than 110,000 metric tons of 100% US-origin agricultural commodities. Leverages CRS's Sudan Emergency Project and Joint Emergency Operation in Ethiopia. 'Farmers First' strategy — all commodities US-grown, directing economic benefits to American farmers. Second major CRS award in 2026 (follows State Dept $240M humanitarian award on June 5). USDA's second standalone Food for Peace award since taking over program from State.",
+    details:{
+      "Amount":"Up to $235M",
+      "Commodities":"110,000+ metric tons of 100% US-origin agricultural commodities",
+      "Countries":"Sudan (Sudan Emergency Project) + Ethiopia (Joint Emergency Operation)",
+      "Authorization":"Food for Peace Act Title II",
+      "Procurement":"100% US-origin under USDA 'Farmers First' strategy",
+      "Implementer":"Catholic Relief Services",
+      "Context":"CRS also received $240M State Dept humanitarian award June 5 — total $475M to CRS in 2026",
+      "USDA context":"Second standalone USDA Food for Peace award (after Feb 3 $452M WFP agreement)"
+    },
+    source:"https://www.fas.usda.gov/newsroom/usda-signs-agreement-mobilizing-235-million-american-commodities-east-africa-food-aid" },
+
+  { month:"2026-07", date:"Jul 14, 2026", title:"Operation End Starvation — $100M Nutrition Partnership",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:100e6, annualAmount:50e6, years:2,
+    displayTotal:"$100M / 2 yrs", displayAnnual:"~$50M/yr via American NGO",
+    desc:"State Dept announces two-year, $100M partnership with Operation End Starvation (OES) — an American NGO and public-private partnership — to combat severe acute malnutrition globally. Delivered through DHR. Builds on $173M in US nutrition assistance in 2025 which provided 27,000 metric tons of ready-to-use foods (RUTFs) across 15 countries treating 2.7 million children. OES founded by Eleanor Crook Foundation (heirs to a Texas grocery chain fortune). Modeled on Trump administration's preferred formula: American-led NGO + technology + private sector cofinancing + philanthropy + American agriculture. Explicitly framed as an alternative to the traditional multilateral model.",
+    details:{
+      "Amount":"$100M over two years (~$50M/yr)",
+      "Implementer":"Operation End Starvation (OES) — American NGO and public-private partnership",
+      "Focus":"Severe acute malnutrition — children under five",
+      "Lead bureau":"Bureau of Disaster and Humanitarian Response (DHR)",
+      "Founded by":"Eleanor Crook Foundation",
+      "Model":"American NGO + technology + private cofinancing + philanthropy + US agriculture",
+      "Precedent":"Follows $173M in 2025 nutrition assistance (27,000 MT RUTFs, 15 countries, 2.7M children)",
+      "Strategic fit":"Preferred formula: American org + commercial leverage + measurable impact"
+    },
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/07/the-united-states-leverages-american-private-sector-to-save-lives-and-treat-global-malnutrition/" },
+
+    { month:"2026-07", date:"Jul 1, 2026", title:"Tanzania Bilateral Health MOU",
     type:"announcement", sector:"health", sectorLabel:"Health", geo:"africa", geoLabel:"Sub-Saharan Africa",
     countries:["Tanzania"],
     totalAmount:1.3e9, annualAmount:260e6, years:5,
@@ -868,14 +904,21 @@ const events = [
     details:{"US commitment":"$146M over 3 yrs","South Sudan co-invest":"~$20M in domestic health spending","Total":"$166M","Duration":"3 years (reflecting fragile state context)","Focus":"HIV/AIDS, infectious disease surveillance, 7-1-7 outbreak detection, health systems","Ebola":"Especially timely given active Ebola outbreak in DRC, Uganda, and South Sudan","MOU count":"33rd bilateral health agreement","Status":"MOU — non-binding, subject to appropriations"},
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/implementing-the-trump-administrations-america-first-global-health-strategy-in-south-sudan/" },
 
-    { month:"2026-06", date:"Jun 26, 2026", title:"Venezuela Earthquake Response — $150M+ Additional Awards",
+    { month:"2026-07", date:"Jun 26 – Jul 7, 2026", title:"Venezuela Earthquake Response — $236M+ Additional Awards",
     type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"americas", geoLabel:"Americas",
     countries:["Venezuela"],
-    totalAmount:150e6, annualAmount:150e6, years:1,
-    displayTotal:"$150M+ additional", displayAnnual:"Increased from initial $150M based on needs",
-    desc:"State Dept increases Venezuela earthquake commitment to $300M+ total based on first responder needs assessments on the ground. Additional $150M+ beyond the initial June 25 awards brings the combined US commitment to more than $300M — the largest single-country disaster commitment since DHR was established in March 2026.",
-    details:{"Amount":"$150M+ additional (June 26 update)","Basis":"First responder needs assessment — DART on ground","Channel":"Through established assistance partners; breakdown not yet specified","Total US commitment":"$300M+ across all three Venezuela earthquake award tranches","Significance":"Largest single-country disaster commitment since DHR established"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/06/update-on-the-trump-administrations-robust-and-rapid-delivery-of-life-saving-u-s-assistance-to-venezuela/" },
+    totalAmount:236e6, annualAmount:236e6, years:1,
+    displayTotal:"$236M+ additional (Jul 7 update)", displayAnnual:"Total US commitment: $386M+",
+    desc:"Total US commitment increased to $386M+ as of July 7 update — up from $300M (June 26). Third tranche reflects ongoing needs assessment by US first responders on the ground. Additional awards bring combined Venezuela earthquake package to $386M+: $50M bilateral partners (Jun 25) + $100M OCHA Venezuela fund (Jun 25) + $236M+ additional (Jun 26–Jul 7). New humanitarian air bridge announced July 7: State + Airlink + Amazon delivering supplies by air. 400+ metric tons delivered from State Dept warehouses reaching 70,000 people.",
+    details:{
+      "Running total":"$386M+ as of July 7 (up from $300M Jun 26, $150M Jun 25)",
+      "Air bridge":"State Dept + Airlink + Amazon humanitarian air bridge announced Jul 7",
+      "Warehouse deliveries":"400+ metric tons delivered to 70,000 people from State Dept warehouses",
+      "USAR teams":"Returned home — mission complete",
+      "DART":"Still on ground in Caracas",
+      "Source":"July 7 State Dept update — 'total financial commitment now stands at more than $386 million'"
+    },
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/07/update-on-the-trump-administrations-continued-delivery-of-life-saving-u-s-assistance-to-venezuela/" },
 
   { month:"2026-06", date:"Jun 25, 2026", title:"Venezuela Earthquake Response — $100M OCHA Venezuela Fund",
     type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"americas", geoLabel:"Americas",
