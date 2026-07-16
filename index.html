@@ -17,8 +17,8 @@
 <meta name="twitter:title" content="The New Foreign Assistance">
 <meta name="twitter:description" content="A conservative-leaning advocacy organization shaping the next chapter of American foreign assistance. Ambitious. Effective. Built to End.">
 <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
-<link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg"><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='48' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>TNFA</text></svg>">
-<link rel="apple-touch-icon" href="images/favicon-mark.jpg"><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='48' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>TNFA</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='48' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>TNFA</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='48' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>TNFA</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -31,7 +31,7 @@
     --ink-light:#2e4060;
     --ink-dim:  #8a8a8a;
     --border:   #d8d4cd;
-    --banner:   #1b3453;
+    --banner:   #1e3452;
     --amber:    #b8682a;
     --amber-mid:#9a5620;
     --amber-pale:#f5e6d4;
@@ -54,23 +54,18 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    overflow: visible;
   }
   .header-inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    height: 56px;
     min-height: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 8px 16px;
-    position: relative;
   }
-  .site-logo { height: 160px; width: auto; display: block; position: relative; top: 52px; z-index: 101; }
-  @media (max-width: 600px) { .site-logo { height: 72px; } }
   .site-name {
     font-family: 'Newsreader', serif;
     font-size: 22px;
@@ -86,7 +81,7 @@
   nav { display: flex; gap: 28px; align-items: center; }
   nav a {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 400;
     letter-spacing: 0px;
     text-transform: none;
@@ -134,7 +129,7 @@
     color: var(--amber-mid);
     margin-bottom: 24px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
   }
   .hero-kicker::before {
@@ -243,7 +238,7 @@
     padding: 14px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
   }
   .tp-title {
     font-family: 'IBM Plex Mono', monospace;
@@ -258,7 +253,7 @@
     color: var(--amber-mid);
     letter-spacing: 1px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 5px;
   }
   .tp-live::before {
@@ -364,7 +359,7 @@
     color: var(--amber-mid);
     margin-bottom: 18px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
   }
   .section-label::before {
@@ -640,7 +635,7 @@
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     color: var(--ink);
     opacity: 0;
@@ -767,7 +762,7 @@
 
   .principles-cta {
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     margin-top: 40px;
     padding: 12px 0;
@@ -867,7 +862,7 @@
   @media (max-width: 860px) {
     .header-inner { padding: 8px 20px; }
     nav { gap: 16px; }
-    nav a { font-size: 15px; }
+    nav a { font-size: 12px; }
     .site-name { font-size: 18px; }
     .hero { padding: 56px 20px 64px; }
     .section { padding: 56px 20px; }
@@ -1082,7 +1077,7 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
   }
   .footer-sep { opacity: 0.4; }
 
@@ -1201,7 +1196,7 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="site-name"><img src="images/logo-dark.jpg" alt="The New Foreign Assistance" class="site-logo"></a>
+    <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
     <nav>
       <a href="framework.html">Framework</a>
       <a href="about.html">About</a>
