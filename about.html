@@ -59,11 +59,11 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    min-height: 180px;
-  .site-logo { height: 160px; width: auto; display: block; }
+    min-height: 56px;
+  .site-logo { height: 100px; width: auto; display: block; margin-top: 8px; }
   @media (max-width: 600px) { .site-logo { height: 72px; } }
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px 16px;
@@ -80,7 +80,7 @@
     font-style: normal;
     color: var(--amber);
   }
-  nav { display: flex; gap: 28px; align-items: center; }
+  nav { display: flex; gap: 28px; align-items: center; margin-top: 16px; }
   nav a {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
@@ -348,7 +348,7 @@
     background: var(--bone);
     border: 1px solid var(--border);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
     transition: background .18s ease, border-color .18s ease;
@@ -402,7 +402,7 @@
     inset: 0;
     z-index: 1000;
     display: none;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 24px;
   }
@@ -462,7 +462,7 @@
     background: var(--bone);
     border: 1px solid var(--border);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
     margin-bottom: 20px;
@@ -622,7 +622,7 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
   }
   .footer-sep { opacity: 0.4; }
 </style>

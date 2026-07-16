@@ -59,14 +59,14 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    min-height: 180px;
+    min-height: 56px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px 16px;
   }
-  .site-logo { height: 160px; width: auto; display: block; }
+  .site-logo { height: 100px; width: auto; display: block; margin-top: 8px; }
   @media (max-width: 600px) { .site-logo { height: 72px; } }
   .site-name {
     font-family: 'Newsreader', serif;
@@ -80,7 +80,7 @@
     font-style: normal;
     color: var(--amber);
   }
-  nav { display: flex; gap: 28px; align-items: center; }
+  nav { display: flex; gap: 28px; align-items: center; margin-top: 16px; }
   nav a {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
@@ -131,7 +131,7 @@
     color: var(--amber-mid);
     margin-bottom: 24px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
   }
   .hero-kicker::before {
@@ -240,7 +240,7 @@
     padding: 14px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
   .tp-title {
     font-family: 'IBM Plex Mono', monospace;
@@ -255,7 +255,7 @@
     color: var(--amber-mid);
     letter-spacing: 1px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 5px;
   }
   .tp-live::before {
@@ -361,7 +361,7 @@
     color: var(--amber-mid);
     margin-bottom: 18px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
   }
   .section-label::before {
@@ -637,7 +637,7 @@
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     color: var(--ink);
     opacity: 0;
@@ -764,7 +764,7 @@
 
   .principles-cta {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     margin-top: 40px;
     padding: 12px 0;
@@ -1079,7 +1079,7 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
   }
   .footer-sep { opacity: 0.4; }
 
