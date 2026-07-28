@@ -388,7 +388,7 @@
 
 <footer class="site-footer">
   <div class="footer-sources">
-    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated July 24, 2026</p>
+    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Annualized figures used for multi-year commitments. Last updated July 28, 2026</p>
   </div>
   <div class="newsletter">
     <div class="newsletter-eyebrow">From the rebuild</div>
@@ -885,6 +885,24 @@ const events = [
     },
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/07/the-united-states-leverages-american-private-sector-to-save-lives-and-treat-global-malnutrition/" },
 
+    { month:"2026-07", date:"Jul 23, 2026", title:"ICRC — $133M Global Appeal Contribution",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:133e6, annualAmount:133e6, years:1,
+    displayTotal:"$133M", displayAnnual:"ICRC 2026 Global Appeal",
+    desc:"Nearly $133M US contribution to the International Committee of the Red Cross 2026 Global Appeal — covering life-saving protection and assistance in active conflict zones worldwide. Part of the Trump administration's macro award model: flexible, globally-scoped funding to trusted implementing partners enabling pre-positioning and rapid disbursement without lengthy procurement timelines. Follows UNICEF ($218M), WFP ($800M), and CRS ($240M) macro awards.",
+    details:{"Amount":"~$133M","Recipient":"International Committee of the Red Cross (ICRC)","Mechanism":"Contribution to ICRC 2026 Global Appeal","Focus":"Protection and assistance in active conflict zones","Model":"Global macro award — flexible coverage, pre-positioning enabled","Context":"Part of $200M+ ICRC+IFRC announcement (July 23)"},
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/07/united-states-announces-more-than-200-million-in-humanitarian-assistance-to-the-icrc-and-ifrc" },
+
+  { month:"2026-07", date:"Jul 23, 2026", title:"IFRC — $70M Global Humanitarian Award",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"global", geoLabel:"Global",
+    countries:["Global"],
+    totalAmount:70e6, annualAmount:70e6, years:1,
+    displayTotal:"$70M", displayAnnual:"IFRC global operations",
+    desc:"$70M US award to the International Federation of Red Cross and Red Crescent Societies (IFRC) for global disaster and humanitarian response. Paired with the $133M ICRC contribution on the same day — together forming the fifth and sixth major macro awards of 2026 (alongside OCHA $3.8B, CRS $240M, UNICEF $218M, WFP $800M). Enables IFRC to address ongoing crises and respond to new disasters using funding already on hand, bypassing lengthy procurement timelines.",
+    details:{"Amount":"$70M","Recipient":"International Federation of Red Cross and Red Crescent Societies (IFRC)","Focus":"Disaster and humanitarian response — global operations","Model":"Global macro award — flexible, pre-positioned funding","Context":"Paired with $133M ICRC contribution — announced same day"},
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/07/united-states-announces-more-than-200-million-in-humanitarian-assistance-to-the-icrc-and-ifrc" },
+
     { month:"2026-07", date:"Jul 23, 2026", title:"U.S.-Africa Strategic Investment Program — $500M APS",
     type:"announcement", sector:"economic", sectorLabel:"Economic", geo:"africa", geoLabel:"Sub-Saharan Africa",
     countries:["Global"],
@@ -1037,14 +1055,14 @@ const events = [
     },
     source:"https://www.fas.usda.gov/programs/food-progress" },
 
-    { month:"2026-05", date:"May 13, 2026", title:"Cuba — $100M Conditional Pledge",
-    type:"announcement", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"americas", geoLabel:"Americas",
+    { month:"2026-05", date:"May 13 – Jul 21, 2026", title:"Cuba — $100M Assistance Commitment (First Delivery Jul 21)",
+    type:"commitment", sector:"humanitarian", sectorLabel:"Humanitarian", geo:"americas", geoLabel:"Americas",
     countries:["Cuba"],
-    totalAmount:0, annualAmount:0, years:0,
-    displayTotal:"$100M pledged — conditional", displayAnnual:"Pending Cuban regime approval",
-    desc:"State Dept announces the US is ready to provide $100M in direct humanitarian assistance to the Cuban people — contingent on the Cuban regime permitting it. Largest single US assistance pledge to Cuba ever. Would be delivered directly to Cuban civil society and citizens, bypassing regime channels (consistent with the $3M Jan and $6M Feb Caritas deliveries already made). Cuba has so far blocked direct US assistance. The offer creates diplomatic pressure while committing funds in principle.",
-    details:{"Amount":"$100M pledged","Condition":"Cuban regime must permit direct delivery to Cuban people","Channel":"Direct to civil society — not through Cuban government","Prior committed":"$9M already delivered ($3M Jan + $6M Feb via Caritas)","Context":"Cuba has not accepted the offer as of announcement date","Significance":"Largest US assistance pledge to Cuba in history"},
-    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/05/the-united-states-is-ready-to-provide-100-million-in-direct-assistance-to-the-cuban-people-if-the-cuban-regime-will-permit-it/" },
+    totalAmount:60e6, annualAmount:60e6, years:1,
+    displayTotal:"$60M first tranche (of $100M total)", displayAnnual:"CRS + Caritas Cuba — 500K+ people",
+    desc:"May 13: State Dept announces readiness to provide $100M in direct humanitarian assistance to the Cuban people — conditional on regime permitting direct delivery. July 21: First humanitarian flight departs Miami with CRS. $60M first tranche awarded to CRS — enabling emergency food, hygiene supplies, and household essentials to nearly 200,000 households (500,000+ people) across Cuba via Caritas Cuba and Catholic Church parish network. Items delivered directly to beneficiaries bypassing the regime. Builds on prior $9M in Hurricane Melissa relief (2025). Lewin and WHA Senior Advisor Viviana Bovo present at MIA for the send-off.",
+    details:{"Total commitment":"$100M (Rubio announced May 13)","First tranche":"$60M awarded to CRS (July 21)","Beneficiaries":"~200,000 households / 500,000+ people","Delivery":"CRS + Caritas Cuba + Catholic Church parish network — direct to families, bypassing regime","First flight":"July 21 from Miami International Airport — food, medical supplies, hygiene kits, household essentials","Prior":"$9M delivered in 2025 (Hurricane Melissa relief, same CRS/Caritas Cuba channel)","Channel":"Faith-based NGO + Catholic Church local network = regime-proof delivery","Officials":"Jeremy Lewin + Viviana Bovo (WHA) at MIA for send-off","Remaining":"$40M balance of $100M commitment — future tranches pending"},
+    source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/07/united-states-and-catholic-relief-services-send-first-humanitarian-flight-to-cuba-under-secretary-rubios-new-100-million-assistance-commitment" },
 
   { month:"2026-05", date:"May 26, 2026", title:"Quad Foreign Ministers' Meeting — New Delhi",
     type:"milestone", sector:"policy", sectorLabel:"Policy", geo:"indo-pacific", geoLabel:"Indo-Pacific",
