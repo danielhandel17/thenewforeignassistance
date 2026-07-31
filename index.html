@@ -1216,8 +1216,8 @@
 <!-- HEADER -->
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce-bar" id="announceBar">
-  <span class="announce-label">New</span>
-  <span>&ldquo;Reforming Foreign Assistance&rdquo; &mdash; now published in <a href="https://nationalaffairs.com/publications/detail/reforming-foreign-assistance" target="_blank" rel="noopener"><em>National Affairs</em></a></span>
+  <span class="announce-label">We're hiring</span>
+  <span>The New Foreign Assistance is looking for a <a href="https://apply.workable.com/the-new-foreign-assistance" target="_blank" rel="noopener">Director of Operations</a></span>
   <button class="announce-close" id="announceClose" aria-label="Dismiss">&times;</button>
 </div>
 
@@ -1500,12 +1500,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   var bar = document.getElementById('announceBar');
   var btn = document.getElementById('announceClose');
   if (!bar) return;
-  if (localStorage.getItem('announce-na-2026') === 'closed') {
+  if (localStorage.getItem('announce-hiring-2026') === 'closed') {
     bar.classList.add('hidden');
   }
   if (btn) btn.addEventListener('click', function(){
     bar.classList.add('hidden');
-    localStorage.setItem('announce-na-2026', 'closed');
+    localStorage.setItem('announce-hiring-2026', 'closed');
   });
 })();
 </script>
