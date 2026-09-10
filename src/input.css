@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+  ::selection {
+    @apply bg-amber text-white;
+  }
+}
+
+@layer components {
+  .btn-filled {
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-[18px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
+  }
+  .btn-outline {
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-white px-8 font-libertinus text-[18px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white;
+  }
+  .eyebrow {
+    @apply font-libertinus text-[18px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
+  }
+  .section-pad {
+    @apply px-5 py-14 desktop:px-16 desktop:py-20;
+  }
+  .fn {
+    @apply relative ml-0.5 inline-block align-super text-[0.65em] font-semibold text-amber no-underline;
+  }
+  .fn a {
+    @apply text-amber no-underline;
+  }
+  .fn-tip {
+    @apply pointer-events-none absolute bottom-full left-1/2 z-20 hidden w-56 -translate-x-1/2 rounded bg-ink px-3 py-2 text-left text-[11px] font-normal normal-case leading-snug tracking-normal text-white shadow-lg;
+  }
+  .fn:hover .fn-tip,
+  .fn:focus-within .fn-tip {
+    @apply block;
+  }
+}
+
+@layer utilities {
+  html.js .fade-up {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  html.js .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .growth-chart path.chart-line {
+    stroke-dasharray: 2400;
+    stroke-dashoffset: 2400;
+    transition: stroke-dashoffset 1.4s ease-out;
+  }
+  .growth-chart.is-drawn path.chart-line {
+    stroke-dashoffset: 0;
+  }
+
+  .newsletter-thanks.show {
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    html.js .fade-up {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .growth-chart path.chart-line {
+      stroke-dasharray: none;
+      stroke-dashoffset: 0;
+      transition: none;
+    }
+  }
+}
