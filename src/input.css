@@ -13,6 +13,11 @@
   [id] {
     scroll-margin-top: 5.5rem;
   }
+  @media (min-width: 860px) {
+    [id] {
+      scroll-margin-top: 9.5rem;
+    }
+  }
   ::selection {
     @apply bg-amber text-white;
   }
