@@ -77,10 +77,13 @@
 
   /* Diagnosis “What went wrong” rule — Figma Group 43 (332:3053): 25×12 rounded ticks, 8px gap */
   .tick-pattern {
+    display: block;
     height: 12px;
     width: 100%;
+    min-width: 0;
+    overflow: hidden;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12' viewBox='0 0 33 12'%3E%3Crect width='25' height='12' rx='2' fill='%23C4C7CC'/%3E%3C/svg%3E");
-    background-repeat: round no-repeat;
+    background-repeat: repeat-x;
     background-position: left center;
     background-size: 33px 12px;
   }
@@ -93,7 +96,6 @@
   /* Diagnosis “What comes next” rule — 23×12 scallop, 9px gap */
   .tick-pattern-next {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='12' viewBox='0 0 32 12' fill='none'%3E%3Cpath d='M0 0H23V0.5C23 6.85127 17.8513 12 11.5 12C5.14873 12 0 6.85127 0 0.5V0Z' fill='%23EBD6C5'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
     background-size: 32px 12px;
   }
 
