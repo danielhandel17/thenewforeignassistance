@@ -718,10 +718,10 @@ body {
 
 @media (min-width: 860px) {
   .section-pad {
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-left: 124px;
+    padding-right: 124px;
+    padding-top: 147px;
+    padding-bottom: 130px;
   }
 }
 
@@ -834,12 +834,12 @@ body {
   right: 0px;
 }
 
-.right-\[-35px\] {
-  right: -35px;
+.right-\[-22px\] {
+  right: -22px;
 }
 
-.right-\[-5\.314\%\] {
-  right: -5.314%;
+.right-\[-35px\] {
+  right: -35px;
 }
 
 .top-0 {
@@ -852,14 +852,6 @@ body {
 
 .top-28 {
   top: 7rem;
-}
-
-.right-\[-22px\] {
-  right: -22px;
-}
-
-.right-\[22px\] {
-  right: 22px;
 }
 
 .z-10 {
@@ -943,6 +935,10 @@ body {
   height: 1793px;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
 .h-\[232px\] {
   height: 232px;
 }
@@ -977,14 +973,6 @@ body {
 
 .h-\[871px\] {
   height: 871px;
-}
-
-.h-\[200px\] {
-  height: 200px;
-}
-
-.max-h-\[200px\] {
-  max-height: 200px;
 }
 
 .w-1 {
@@ -1051,12 +1039,12 @@ body {
   min-width: 0px;
 }
 
-.min-w-\[640px\] {
-  min-width: 640px;
-}
-
 .min-w-\[414px\] {
   min-width: 414px;
+}
+
+.min-w-\[640px\] {
+  min-width: 640px;
 }
 
 .max-w-3xl {
@@ -1790,6 +1778,10 @@ html.js .fade-up.visible {
     top: 9.5rem;
   }
 
+  .desktop\:top-\[147px\] {
+    top: 147px;
+  }
+
   .desktop\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -1862,20 +1854,12 @@ html.js .fade-up.visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .desktop\:grid-cols-\[minmax\(0\2c 3fr\)_minmax\(0\2c 5fr\)_minmax\(0\2c 4fr\)\] {
-    grid-template-columns: minmax(0,3fr) minmax(0,5fr) minmax(0,4fr);
+  .desktop\:grid-cols-\[minmax\(0\2c 3fr\)_minmax\(0\2c 5fr\)_minmax\(414px\2c auto\)\] {
+    grid-template-columns: minmax(0,3fr) minmax(0,5fr) minmax(414px,auto);
   }
 
   .desktop\:grid-cols-subgrid {
     grid-template-columns: subgrid;
-  }
-
-  .desktop\:grid-cols-\[minmax\(0\2c 3fr\)_minmax\(0\2c 5fr\)_minmax\(414px\2c 4fr\)\] {
-    grid-template-columns: minmax(0,3fr) minmax(0,5fr) minmax(414px,4fr);
-  }
-
-  .desktop\:grid-cols-\[minmax\(0\2c 3fr\)_minmax\(0\2c 5fr\)_minmax\(414px\2c auto\)\] {
-    grid-template-columns: minmax(0,3fr) minmax(0,5fr) minmax(414px,auto);
   }
 
   .desktop\:flex-row {
@@ -1904,6 +1888,10 @@ html.js .fade-up.visible {
 
   .desktop\:gap-8 {
     gap: 2rem;
+  }
+
+  .desktop\:gap-\[134px\] {
+    gap: 134px;
   }
 
   .desktop\:gap-x-8 {

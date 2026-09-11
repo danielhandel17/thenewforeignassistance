@@ -34,7 +34,7 @@
     @apply font-libertinus text-[18px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
   }
   .section-pad {
-    @apply px-5 py-14 desktop:px-16 desktop:py-20;
+    @apply px-5 py-14 desktop:px-[124px] desktop:pt-[147px] desktop:pb-[130px];
   }
   .fn {
     @apply relative ml-0.5 inline-block align-super text-[0.65em] font-semibold text-amber no-underline;
