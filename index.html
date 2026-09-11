@@ -279,13 +279,15 @@
 </section>
 
 <!-- LIVE TRACKER — Figma Group 66 (332:2866) + Group 62 (332:2833) -->
-<section class="relative bg-cream" id="live-tracker">
-  <div class="relative mx-auto max-w-page px-5 py-14 wide:min-h-[1507px] wide:px-0 wide:py-0">
-    <div class="pointer-events-none absolute inset-0 hidden overflow-hidden wide:block" aria-hidden="true">
-      <img src="images/decor-arcs.svg" alt="" width="1178" height="1067" class="absolute left-[41.38%] top-0 w-[1178px] max-w-none">
-    </div>
+<section class="relative overflow-hidden bg-cream" id="live-tracker">
+  <!-- Figma Rectangle 35 (332:2983): 1728×358 top fade -->
+  <div class="pointer-events-none absolute inset-x-0 top-0 z-[1] hidden h-[358px] bg-gradient-to-b from-[#f6efea] from-[31.25%] to-[rgba(246,239,234,0)] desktop:block" aria-hidden="true"></div>
+  <!-- Figma Rectangle 36 (332:2984): 1728×862 bottom fade -->
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[1] hidden h-[862px] max-h-full rotate-180 bg-gradient-to-b from-[#f6efea] from-[66.473%] to-[rgba(246,239,234,0)] desktop:block" aria-hidden="true"></div>
+  
+  <div class="relative mx-auto max-w-page overflow-hidden px-5 py-14 wide:min-h-[1507px] wide:px-0 wide:py-0">
 
-    <div class="pointer-events-none absolute left-[28.24%] top-0 z-10 hidden h-[1793px] wide:flex wide:gap-[82px]" aria-hidden="true">
+    <div class="pointer-events-none absolute left-[28.24%] top-0 z-0 hidden h-[1793px] wide:flex wide:gap-[82px]" aria-hidden="true">
       <div class="flex flex-col gap-[134px] pt-3">
         <span class="tracker-month">May</span>
         <span class="tracker-month">Apr</span>
@@ -301,9 +303,14 @@
       <div class="w-px bg-toc-muted"></div>
     </div>
 
-    <div class="pointer-events-none absolute left-[41.38%] top-0 z-[1] hidden h-[871px] w-2 bg-ink wide:block" aria-hidden="true"></div>
+    <!-- Figma Group (332:2869): 955×568 hatch field -->
+    <div class="pointer-events-none absolute left-[54.33%] top-[500px] z-0 hidden h-[568px] w-[955px] max-w-none wide:block" aria-hidden="true">
+      <img src="images/decor-tracker-hatch.svg" alt="" width="955" height="568" class="h-full w-full max-w-none">
+    </div>
 
-    <div class="relative z-[1] flex flex-col gap-11 fade-up wide:ml-[41.38%] wide:max-w-[624px] wide:pl-4 wide:pt-[253px] wide:pb-16">
+    <!-- <div class="pointer-events-none absolute left-[41.38%] top-0 z-[1] hidden h-[871px] w-2 bg-ink wide:block" aria-hidden="true"></div> -->
+
+    <div class="relative z-[2] flex flex-col gap-11 fade-up wide:ml-[41.38%] wide:max-w-[624px] wide:pl-4 wide:pt-[253px] wide:pb-16">
       <div class="flex max-w-[349px] flex-col gap-[21px] desktop:max-w-[608px]">
         <p class="eyebrow">Live Tracker</p>
         <h2 class="font-newsreader text-[36px] font-medium leading-[50px] desktop:text-[49px] desktop:leading-[50px]">
