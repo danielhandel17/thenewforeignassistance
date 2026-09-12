@@ -867,6 +867,10 @@ body {
   top: 590px;
 }
 
+.top-\[-16px\] {
+  top: -16px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -881,6 +885,10 @@ body {
 
 .z-\[2\] {
   z-index: 2;
+}
+
+.z-\[-1\] {
+  z-index: -1;
 }
 
 .col-span-2 {
@@ -1004,6 +1012,14 @@ body {
   height: 871px;
 }
 
+.h-\[260px\] {
+  height: 260px;
+}
+
+.h-\[35px\] {
+  height: 35px;
+}
+
 .w-1 {
   width: 0.25rem;
 }
@@ -1058,6 +1074,22 @@ body {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[100\.5px\] {
+  width: 100.5px;
+}
+
+.w-\[134px\] {
+  width: 134px;
+}
+
+.w-\[101px\] {
+  width: 101px;
+}
+
+.w-\[221px\] {
+  width: 221px;
 }
 
 .min-w-0 {
@@ -1229,6 +1261,10 @@ body {
   gap: 21px;
 }
 
+.gap-\[10px\] {
+  gap: 10px;
+}
+
 .gap-x-7 {
   -moz-column-gap: 1.75rem;
        column-gap: 1.75rem;
@@ -1246,6 +1282,10 @@ body {
 
 .self-start {
   align-self: flex-start;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-visible {
@@ -1311,6 +1351,20 @@ body {
   border-color: rgb(230 217 208 / 0.7);
 }
 
+.border-\[\#FFF3EA\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 243 234 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#\#EECDB2\] {
+  border-color: ##EECDB2;
+}
+
+.border-\[\#EECDB2\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(238 205 178 / var(--tw-border-opacity, 1));
+}
+
 .bg-cream {
   --tw-bg-opacity: 1;
   background-color: rgb(247 243 237 / var(--tw-bg-opacity, 1));
@@ -1329,6 +1383,21 @@ body {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#EECDB2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 205 178 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#FFF3EA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 243 234 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#FFFAF7\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 250 247 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-b {
@@ -1583,6 +1652,10 @@ body {
   line-height: 1.25;
 }
 
+.leading-\[33px\] {
+  line-height: 33px;
+}
+
 .tracking-eyebrow {
   letter-spacing: 0.2em;
 }
@@ -1626,6 +1699,10 @@ body {
 
 .decoration-amber\/40 {
   text-decoration-color: rgb(184 104 42 / 0.4);
+}
+
+.decoration-transparent {
+  text-decoration-color: transparent;
 }
 
 .underline-offset-4 {
@@ -1984,6 +2061,11 @@ html.js .fade-up.visible {
     padding-bottom: 30px;
   }
 
+  .desktop\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .desktop\:pl-9 {
     padding-left: 2.25rem;
   }
@@ -2036,6 +2118,10 @@ html.js .fade-up.visible {
     font-size: 72px;
   }
 
+  .desktop\:text-\[50px\] {
+    font-size: 50px;
+  }
+
   .desktop\:leading-\[1\.15\] {
     line-height: 1.15;
   }
@@ -2058,6 +2144,10 @@ html.js .fade-up.visible {
 
   .desktop\:leading-\[50px\] {
     line-height: 50px;
+  }
+
+  .desktop\:text-\[40pxpx\] {
+    color: 40pxpx;
   }
 }
 

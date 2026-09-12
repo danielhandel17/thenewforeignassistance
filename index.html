@@ -346,17 +346,18 @@
 <section class="section-pad" id="contact">
   <div class="mx-auto flex max-w-content flex-col items-center gap-5 text-center fade-up">
     <p class="eyebrow">Contact</p>
-    <h2 class="max-w-3xl font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[40px]">For press inquiries, partnership opportunities, or to learn more about our work.</h2>
-    <a href="mailto:contact@thenewforeignassistance.org" class="font-newsreader text-[20px] text-ink underline decoration-amber/40 underline-offset-4 desktop:text-[24px]">contact@thenewforeignassistance.org</a>
+    <h2 class="max-w-3xl font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[50px]">For press inquiries, partnership<br>opportunities, or to learn more<br>about our work.</h2>
+    <a href="mailto:contact@thenewforeignassistance.org" class="font-newsreader text-[20px] text-ink underline decoration-transparent desktop:text-[40px]">contact@thenewforeignassistance.org</a>
   </div>
 </section>
 
 <!-- NEWSLETTER + FOOTER -->
-<footer class="bg-cream">
-  <div class="mx-auto flex max-w-content flex-col gap-8 px-5 py-14 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-16 desktop:py-16">
+<footer class="relative bg-[#FFFAF7] overflow-hidden border-t border-[#EECDB2]">
+  <img src="images/decor-rebuild.png" alt="" aria-hidden="true" width="201" height="520" class="pointer-events-none absolute left-0 top-[-16px] z-0 hidden h-[260px] w-[101px] max-w-none shrink-0 desktop:block">
+  <div class="relative mx-auto flex max-w-content flex-col gap-8 px-5 py-14 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-0 desktop:py-16">
     <div class="flex max-w-xl flex-col gap-3">
       <p class="eyebrow">From the rebuild</p>
-      <h3 class="font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[36px]">A brief, occasional newsletter on the rebuild.</h3>
+      <h3 class="font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[36px]">A brief, occasional newsletter<br>on the rebuild.</h3>
     </div>
     <form class="flex w-full max-w-md flex-col gap-3 sm:flex-row" id="newsletterForm">
       <input type="email" class="h-[55px] flex-1 border border-amber bg-white px-4 font-newsreader text-[16px] text-ink placeholder:text-toc-muted" placeholder="Your email address" required aria-label="Email address">
@@ -364,10 +365,10 @@
     </form>
     <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you. We&#39;ll be in touch.</div>
   </div>
-  <div class="border-t border-toc-rail/50">
-    <div class="mx-auto flex max-w-content flex-col gap-3 px-5 py-6 text-[13px] text-amber desktop:flex-row desktop:items-center desktop:justify-between desktop:px-16">
-      <p>&copy; 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
-      <p class="text-ink">Powered by <span class="font-semibold">shapeshift</span></p>
+  <div class="border-t border-b border-[#EECDB2] bg-[#FFF3EA]">
+    <div class="mx-auto flex max-w-content flex-col gap-3 px-5 py-6 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-0">
+      <p class="font-libertinus text-[18px] font-normal leading-tight text-amber">&copy; 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
+      <img src="images/powered-by-shapeshift.png" alt="Powered by shapeshift" width="442" height="70" class="h-[35px] w-[221px] shrink-0">
     </div>
   </div>
 </footer>
@@ -419,6 +420,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   var endLabelsPlugin = {
     id: 'endLabels',
     afterDatasetsDraw: function (chart) {
+      if (!chart.$lineDrawDone) return;
       var ctx = chart.ctx;
       ctx.save();
       ctx.font = '600 12.5px Newsreader, Georgia, serif';
@@ -438,17 +440,41 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     }
   };
 
+  // Smooth left→right reveal via canvas clip (avoids choppy per-point progressive anim)
+  var lineRevealPlugin = {
+    id: 'lineReveal',
+    beforeDatasetsDraw: function (chart) {
+      var progress = chart.$revealProgress;
+      if (progress == null || progress >= 1) return;
+      var area = chart.chartArea;
+      var ctx = chart.ctx;
+      var width = (area.right - area.left) * progress;
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(area.left, area.top - 2, Math.max(width, 0), area.bottom - area.top + 4);
+      ctx.clip();
+      chart.$revealClipped = true;
+    },
+    afterDatasetsDraw: function (chart) {
+      if (!chart.$revealClipped) return;
+      chart.ctx.restore();
+      chart.$revealClipped = false;
+    }
+  };
+
+  // Figma 332:3222 — visual match (Dev Mode gated): Newsreader Italic 18px / lh 33 / #8a9bb5
   var axisTitlePlugin = {
     id: 'axisTitle',
     afterDraw: function (chart) {
       var ctx = chart.ctx;
       var area = chart.chartArea;
       ctx.save();
-      ctx.font = '11.5px Newsreader, Georgia, serif';
-      ctx.fillStyle = '#8a9bb5';
+      ctx.font = 'italic 400 18px Newsreader, Georgia, serif';
+      ctx.fillStyle = '#6B9AE3';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'bottom';
-      ctx.fillText('GDP per capita (international $, 2011 prices)', area.left, area.top - 8);
+      if (ctx.letterSpacing !== undefined) ctx.letterSpacing = '0px';
+      ctx.fillText('GDP per capita (international $, 2011 prices)', area.left, area.top - 25);
       ctx.restore();
     }
   };
@@ -476,7 +502,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
       maintainAspectRatio: false,
       animation: false,
       layout: {
-        padding: { top: 24, right: 168, bottom: 4, left: 4 }
+        padding: { top: 50, right: 168, bottom: 4, left: 4 }
       },
       interaction: { mode: 'nearest', intersect: false },
       plugins: {
@@ -503,40 +529,74 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
           max: 60000,
           grid: { color: '#3a4d6a', drawBorder: false },
           border: { display: false },
+          // Figma 332:3198 — Dev Mode gated; from canvas: Newsreader 400 21px / lh 23 / ls 0 / #be9a7a
+          // Boxes: "$60k"/"$40k" 48×23, "$0k" 36×23 — format includes $0k
           ticks: {
-            color: '#8a9bb5',
-            font: { size: 12 },
+            color: '#be9a7a',
+            font: {
+              family: 'Newsreader, Georgia, serif',
+              size: 21,
+              weight: '400',
+              lineHeight: 23 / 21
+            },
+            padding: 8,
+            crossAlign: 'far',
             stepSize: 20000,
             callback: function (value) {
-              if (value === 0) return '$0';
               return '$' + (value / 1000) + 'k';
             }
           }
         }
       }
     },
-    plugins: [endLabelsPlugin, axisTitlePlugin]
+    plugins: [lineRevealPlugin, endLabelsPlugin, axisTitlePlugin]
   });
 
-  if (reduceMotion) return;
+  if (reduceMotion) {
+    chart.$lineDrawDone = true;
+    chart.$revealProgress = 1;
+    return;
+  }
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
 
   function drawChart() {
+    chart.$lineDrawDone = false;
+    chart.$revealProgress = 0;
     chart.data.datasets.forEach(function (dataset, i) {
       dataset.data = series[i].data.slice();
     });
-    chart.options.animation = { duration: 1400, easing: 'easeOutQuart' };
-    chart.update();
+    chart.options.animation = false;
+    chart.update('none');
+
+    var duration = 1800;
+    var start = null;
+    function frame(now) {
+      if (start == null) start = now;
+      var t = Math.min(1, (now - start) / duration);
+      chart.$revealProgress = easeOutCubic(t);
+      chart.draw();
+      if (t < 1) {
+        requestAnimationFrame(frame);
+        return;
+      }
+      chart.$revealProgress = 1;
+      chart.$lineDrawDone = true;
+      chart.draw();
+    }
+    requestAnimationFrame(frame);
   }
 
-  var section = document.getElementById('long-view') || canvas;
   var chartObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
+      if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
       drawChart();
       chartObserver.disconnect();
     });
-  }, { threshold: 0.15 });
-  chartObserver.observe(section);
+  }, { threshold: 0.5 });
+  chartObserver.observe(canvas);
 })();
 </script>
 
