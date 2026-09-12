@@ -33,6 +33,26 @@
   .eyebrow {
     @apply font-libertinus text-[18px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
   }
+  .link-draw {
+    @apply relative inline-block no-underline;
+  }
+  .link-draw::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0.12em;
+    left: 0;
+    height: 0.06em;
+    min-height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-draw:hover::after,
+  .link-draw:focus-visible::after {
+    transform: scaleX(1);
+  }
   .section-pad {
     @apply px-5 py-14 desktop:px-[124px] desktop:pt-[147px] desktop:pb-[130px];
   }
@@ -111,6 +131,9 @@
     html.js .fade-up {
       opacity: 1 !important;
       transform: none !important;
+    }
+    .link-draw::after {
+      transition: none;
     }
   }
 }
