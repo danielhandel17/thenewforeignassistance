@@ -802,10 +802,6 @@ body {
   position: sticky;
 }
 
-.inset-0 {
-  inset: 0px;
-}
-
 .inset-x-0 {
   left: 0px;
   right: 0px;
@@ -835,6 +831,10 @@ body {
   left: 41.38%;
 }
 
+.left-\[54\.33\%\] {
+  left: 54.33%;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -859,16 +859,16 @@ body {
   top: 7rem;
 }
 
-.left-\[54\.33\%\] {
-  left: 54.33%;
-}
-
 .top-\[500px\] {
   top: 500px;
 }
 
-.z-10 {
-  z-index: 10;
+.top-\[590px\] {
+  top: 590px;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .z-50 {
@@ -877,10 +877,6 @@ body {
 
 .z-\[1\] {
   z-index: 1;
-}
-
-.z-0 {
-  z-index: 0;
 }
 
 .z-\[2\] {
@@ -952,6 +948,10 @@ body {
   height: 1.5rem;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
 .h-\[1793px\] {
   height: 1793px;
 }
@@ -966,6 +966,14 @@ body {
 
 .h-\[296px\] {
   height: 296px;
+}
+
+.h-\[358px\] {
+  height: 358px;
+}
+
+.h-\[460px\] {
+  height: 460px;
 }
 
 .h-\[47\.411\%\] {
@@ -996,26 +1004,6 @@ body {
   height: 871px;
 }
 
-.h-\[358px\] {
-  height: 358px;
-}
-
-.h-\[862px\] {
-  height: 862px;
-}
-
-.h-\[568px\] {
-  height: 568px;
-}
-
-.h-full {
-  height: 100%;
-}
-
-.max-h-full {
-  max-height: 100%;
-}
-
 .w-1 {
   width: 0.25rem;
 }
@@ -1030,10 +1018,6 @@ body {
 
 .w-5 {
   width: 1.25rem;
-}
-
-.w-\[1178px\] {
-  width: 1178px;
 }
 
 .w-\[119px\] {
@@ -1060,6 +1044,10 @@ body {
   width: 35.896%;
 }
 
+.w-\[568px\] {
+  width: 568px;
+}
+
 .w-\[79px\] {
   width: 79px;
 }
@@ -1070,14 +1058,6 @@ body {
 
 .w-full {
   width: 100%;
-}
-
-.w-px {
-  width: 1px;
-}
-
-.w-\[955px\] {
-  width: 955px;
 }
 
 .min-w-0 {
@@ -1268,10 +1248,6 @@ body {
   align-self: flex-start;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
 .overflow-visible {
   overflow: visible;
 }
@@ -1345,11 +1321,6 @@ body {
   background-color: rgb(28 46 74 / var(--tw-bg-opacity, 1));
 }
 
-.bg-toc-muted {
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 154 122 / var(--tw-bg-opacity, 1));
-}
-
 .bg-toc-rail {
   --tw-bg-opacity: 1;
   background-color: rgb(230 217 208 / var(--tw-bg-opacity, 1));
@@ -1374,10 +1345,6 @@ body {
   --tw-gradient-from-position: 31.25%;
 }
 
-.from-\[66\.473\%\] {
-  --tw-gradient-from-position: 66.473%;
-}
-
 .to-\[rgba\(246\2c 239\2c 234\2c 0\)\] {
   --tw-gradient-to: rgba(246,239,234,0) var(--tw-gradient-to-position);
 }
@@ -1395,6 +1362,11 @@ body {
 .object-bottom {
   -o-object-position: bottom;
      object-position: bottom;
+}
+
+.object-left-top {
+  -o-object-position: left top;
+     object-position: left top;
 }
 
 .p-6 {
@@ -1723,16 +1695,6 @@ html.js .fade-up.visible {
   transform: translateY(0);
 }
 
-.growth-chart path.chart-line {
-  stroke-dasharray: 2400;
-  stroke-dashoffset: 2400;
-  transition: stroke-dashoffset 1.4s ease-out;
-}
-
-.growth-chart.is-drawn path.chart-line {
-  stroke-dashoffset: 0;
-}
-
 .newsletter-thanks.show {
   display: block;
 }
@@ -1751,7 +1713,7 @@ html.js .fade-up.visible {
   background-size: 33px 12px;
 }
 
-/* Live tracker month pills — Figma Group 62 (332:2833): 75×36 */
+/* Live tracker month pills — Figma Group 62 (332:2833 / 332:2841): 75×36, bg #F9C69F, text #793A09 16px / 3.2px tracking, radius 4px */
 
 .tracker-month {
   display: flex;
@@ -1760,14 +1722,31 @@ html.js .fade-up.visible {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  border-radius: 4px;
   --tw-bg-opacity: 1;
-  background-color: rgb(245 230 212 / var(--tw-bg-opacity, 1));
+  background-color: rgb(249 198 159 / var(--tw-bg-opacity, 1));
   font-family: "Libertinus Serif Display", Newsreader, Georgia, serif;
-  font-size: 12px;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  line-height: 33px;
+  letter-spacing: 3.2px;
   --tw-text-opacity: 1;
-  color: rgb(184 104 42 / var(--tw-text-opacity, 1));
+  color: rgb(121 58 9 / var(--tw-text-opacity, 1));
+}
+
+/* Live tracker month-rail divider — Figma dashed stroke: 1.5px amber, dash 5 / gap 5 */
+
+.tracker-rail-divider {
+  width: 1.5px;
+  align-self: stretch;
+  flex-shrink: 0;
+  background-image: repeating-linear-gradient(
+      to bottom,
+      #b8682a 0,
+      #b8682a 5px,
+      transparent 5px,
+      transparent 10px
+    );
 }
 
 /* Diagnosis “What comes next” rule — 23×12 scallop, 9px gap */
@@ -1785,12 +1764,6 @@ html.js .fade-up.visible {
   html.js .fade-up {
     opacity: 1 !important;
     transform: none !important;
-  }
-
-  .growth-chart path.chart-line {
-    stroke-dasharray: none;
-    stroke-dashoffset: 0;
-    transition: none;
   }
 }
 
@@ -1882,6 +1855,10 @@ html.js .fade-up.visible {
 
   .desktop\:-ml-16 {
     margin-left: -4rem;
+  }
+
+  .desktop\:-mt-\[358px\] {
+    margin-top: -358px;
   }
 
   .desktop\:mt-\[108px\] {
@@ -2085,6 +2062,14 @@ html.js .fade-up.visible {
 }
 
 @media (min-width: 1100px) {
+  .wide\:sticky {
+    position: sticky;
+  }
+
+  .wide\:top-0 {
+    top: 0px;
+  }
+
   .wide\:ml-\[41\.38\%\] {
     margin-left: 41.38%;
   }
@@ -2097,8 +2082,12 @@ html.js .fade-up.visible {
     display: flex;
   }
 
-  .wide\:min-h-\[1507px\] {
-    min-height: 1507px;
+  .wide\:h-\[1068px\] {
+    height: 1068px;
+  }
+
+  .wide\:h-\[1793px\] {
+    height: 1793px;
   }
 
   .wide\:min-w-\[290px\] {
@@ -2111,6 +2100,14 @@ html.js .fade-up.visible {
 
   .wide\:gap-\[82px\] {
     gap: 82px;
+  }
+
+  .wide\:self-start {
+    align-self: flex-start;
+  }
+
+  .wide\:overflow-hidden {
+    overflow: hidden;
   }
 
   .wide\:px-0 {
@@ -2133,5 +2130,9 @@ html.js .fade-up.visible {
 
   .wide\:pt-\[253px\] {
     padding-top: 253px;
+  }
+
+  .wide\:pb-\[113px\] {
+    padding-bottom: 113px;
   }
 }

@@ -62,15 +62,6 @@
     transform: translateY(0);
   }
 
-  .growth-chart path.chart-line {
-    stroke-dasharray: 2400;
-    stroke-dashoffset: 2400;
-    transition: stroke-dashoffset 1.4s ease-out;
-  }
-  .growth-chart.is-drawn path.chart-line {
-    stroke-dashoffset: 0;
-  }
-
   .newsletter-thanks.show {
     display: block;
   }
@@ -88,9 +79,23 @@
     background-size: 33px 12px;
   }
 
-  /* Live tracker month pills — Figma Group 62 (332:2833): 75×36 */
+  /* Live tracker month pills — Figma Group 62 (332:2833 / 332:2841): 75×36, bg #F9C69F, text #793A09 16px / 3.2px tracking, radius 4px */
   .tracker-month {
-    @apply flex h-9 w-[75px] shrink-0 items-center justify-center bg-[#F5E6D4] font-libertinus text-[12px] uppercase tracking-wider text-amber;
+    @apply flex h-9 w-[75px] shrink-0 items-center justify-center rounded-[4px] bg-[#F9C69F] font-libertinus text-[16px] uppercase leading-[33px] tracking-[3.2px] text-[#793A09];
+  }
+
+  /* Live tracker month-rail divider — Figma dashed stroke: 1.5px amber, dash 5 / gap 5 */
+  .tracker-rail-divider {
+    width: 1.5px;
+    align-self: stretch;
+    flex-shrink: 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      theme('colors.amber') 0,
+      theme('colors.amber') 5px,
+      transparent 5px,
+      transparent 10px
+    );
   }
 
   /* Diagnosis “What comes next” rule — 23×12 scallop, 9px gap */
@@ -106,11 +111,6 @@
     html.js .fade-up {
       opacity: 1 !important;
       transform: none !important;
-    }
-    .growth-chart path.chart-line {
-      stroke-dasharray: none;
-      stroke-dashoffset: 0;
-      transition: none;
     }
   }
 }
