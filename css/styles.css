@@ -2430,6 +2430,10 @@ html.js .fade-up.visible {
     padding-top: 1.5rem;
   }
 
+  .desktop\:text-left {
+    text-align: left;
+  }
+
   .desktop\:text-\[18px\] {
     font-size: 18px;
   }
