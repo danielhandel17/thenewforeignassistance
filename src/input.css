@@ -96,6 +96,26 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Framework pull quote — Figma Rectangle 9 (332:4349): 89×311 accent at x=16 */
+  .fw-pullquote {
+    position: relative;
+    padding-left: 0;
+  }
+  .fw-pullquote::before {
+    content: "";
+    position: absolute;
+    left: -23px;
+    top: 0;
+    bottom: 0;
+    width: 89px;
+    background-color: #ebd6c5;
+    z-index: 0;
+  }
+  .fw-pullquote > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @layer utilities {
