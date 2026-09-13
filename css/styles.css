@@ -1447,6 +1447,14 @@ body {
   padding-top: 2rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.pt-\[25px\] {
+  padding-top: 25px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2016,12 +2024,31 @@ html.js .fade-up.visible {
     padding-bottom: 30px;
   }
 
+  .desktop\:px-\[60px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .desktop\:py-\[20px\] {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .desktop\:py-\[25px\] {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
   .desktop\:pb-\[100px\] {
     padding-bottom: 100px;
   }
 
   .desktop\:pl-9 {
     padding-left: 2.25rem;
+  }
+
+  .desktop\:pt-\[25px\] {
+    padding-top: 25px;
   }
 
   .desktop\:text-\[18px\] {
@@ -2112,6 +2139,18 @@ html.js .fade-up.visible {
 
   .wide\:ml-\[41\.38\%\] {
     margin-left: 41.38%;
+  }
+
+  .wide\:mt-\[110px\] {
+    margin-top: 110px;
+  }
+
+  .wide\:mb-\[108px\] {
+    margin-bottom: 108px;
+  }
+
+  .wide\:ml-6 {
+    margin-left: 1.5rem;
   }
 
   .wide\:block {
@@ -2211,5 +2250,17 @@ html.js .fade-up.visible {
 
   .wide\:pt-\[253px\] {
     padding-top: 253px;
+  }
+
+  .wide\:text-\[40px\] {
+    font-size: 40px;
+  }
+
+  .wide\:text-\[49px\] {
+    font-size: 49px;
+  }
+
+  .wide\:text-\[28px\] {
+    font-size: 28px;
   }
 }
