@@ -29,7 +29,8 @@ module.exports = {
         prose: '680px',
       },
       screens: {
-        mobile: { max: '859px' },
+        'mobile-small': { max: '390px' },
+        mobile: { min: '391px' },
         desktop: '860px',
         wide: '1100px',
       },
