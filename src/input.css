@@ -53,9 +53,6 @@
   .link-draw:focus-visible::after {
     transform: scaleX(1);
   }
-  .section-pad {
-    @apply px-5 py-14 desktop:px-[124px] desktop:pt-[147px] desktop:pb-[130px];
-  }
   .fn {
     @apply relative ml-0.5 inline-block align-super text-[0.65em] font-semibold text-amber no-underline;
   }
@@ -90,7 +87,7 @@
   .tick-pattern {
     display: block;
     height: 12px;
-    width: 100%;
+    width: 396px;
     min-width: 0;
     overflow: hidden;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12' viewBox='0 0 33 12'%3E%3Crect width='25' height='12' rx='2' fill='%23C4C7CC'/%3E%3C/svg%3E");
@@ -120,6 +117,7 @@
 
   /* Diagnosis “What comes next” rule — 23×12 scallop, 9px gap */
   .tick-pattern-next {
+    width: 343px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='12' viewBox='0 0 32 12' fill='none'%3E%3Cpath d='M0 0H23V0.5C23 6.85127 17.8513 12 11.5 12C5.14873 12 0 6.85127 0 0.5V0Z' fill='%23EBD6C5'/%3E%3C/svg%3E");
     background-size: 32px 12px;
   }

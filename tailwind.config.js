@@ -14,6 +14,7 @@ module.exports = {
         bone: '#f4ede0',
         'bg-soft': '#faf7f0',
         banner: '#1e3452',
+        'chart-legend': '#6B9AE3',
       },
       fontFamily: {
         newsreader: ['Newsreader', 'Georgia', 'serif'],
@@ -25,7 +26,6 @@ module.exports = {
       },
       maxWidth: {
         page: '1728px',
-        content: '1200px',
         prose: '680px',
       },
       screens: {
