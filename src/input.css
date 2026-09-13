@@ -31,7 +31,7 @@
     @apply inline-flex h-[55px] items-center justify-center border border-amber bg-white px-8 font-libertinus text-base text-nowrap max-w-[282px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white;
   }
   .eyebrow {
-    @apply font-libertinus text-base text-nowrap max-w-[282px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
+    @apply font-libertinus text-xl text-nowrap max-w-[282px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
   }
   .link-draw {
     @apply relative inline-block no-underline;

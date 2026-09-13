@@ -710,8 +710,8 @@ body {
   max-width: 282px;
   text-wrap: nowrap;
   font-family: "Libertinus Serif Display", Newsreader, Georgia, serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   --tw-text-opacity: 1;
@@ -802,8 +802,8 @@ body {
   left: -114px;
 }
 
-.left-\[-60px\] {
-  left: -60px;
+.left-\[-125px\] {
+  left: -125px;
 }
 
 .left-\[-86px\] {
@@ -882,12 +882,28 @@ body {
   top: 37px;
 }
 
+.top-\[38px\] {
+  top: 38px;
+}
+
 .top-\[590px\] {
   top: 590px;
 }
 
 .top-\[69px\] {
   top: 69px;
+}
+
+.bottom-\[-44px\] {
+  bottom: -44px;
+}
+
+.bottom-\[-99px\] {
+  bottom: -99px;
+}
+
+.left-1\/2 {
+  left: 50%;
 }
 
 .z-0 {
@@ -939,8 +955,16 @@ body {
   margin-top: 1rem;
 }
 
+.mt-\[108px\] {
+  margin-top: 108px;
+}
+
 .mt-\[34px\] {
   margin-top: 34px;
+}
+
+.mt-\[44px\] {
+  margin-top: 44px;
 }
 
 .block {
@@ -995,10 +1019,6 @@ body {
   height: 150px;
 }
 
-.h-\[160px\] {
-  height: 160px;
-}
-
 .h-\[171px\] {
   height: 171px;
 }
@@ -1027,6 +1047,10 @@ body {
   height: 260px;
 }
 
+.h-\[285px\] {
+  height: 285px;
+}
+
 .h-\[296px\] {
   height: 296px;
 }
@@ -1049,6 +1073,10 @@ body {
 
 .h-\[50\.254\%\] {
   height: 50.254%;
+}
+
+.h-\[509px\] {
+  height: 509px;
 }
 
 .h-\[55px\] {
@@ -1103,10 +1131,6 @@ body {
   width: 101px;
 }
 
-.w-\[110px\] {
-  width: 110px;
-}
-
 .w-\[119px\] {
   width: 119px;
 }
@@ -1121,6 +1145,14 @@ body {
 
 .w-\[168px\] {
   width: 168px;
+}
+
+.w-\[197px\] {
+  width: 197px;
+}
+
+.w-\[219px\] {
+  width: 219px;
 }
 
 .w-\[221px\] {
@@ -1183,10 +1215,6 @@ body {
   max-width: 349px;
 }
 
-.max-w-\[368px\] {
-  max-width: 368px;
-}
-
 .max-w-md {
   max-width: 28rem;
 }
@@ -1203,6 +1231,10 @@ body {
   max-width: 36rem;
 }
 
+.max-w-\[368px\] {
+  max-width: 368px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1217,6 +1249,11 @@ body {
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .rotate-180 {
@@ -1612,8 +1649,16 @@ body {
   padding-top: 133px;
 }
 
+.pt-\[153px\] {
+  padding-top: 153px;
+}
+
 .pt-\[250px\] {
   padding-top: 250px;
+}
+
+.pb-\[200px\] {
+  padding-bottom: 200px;
 }
 
 .text-center {
@@ -1654,10 +1699,6 @@ body {
 
 .text-\[22px\] {
   font-size: 22px;
-}
-
-.text-\[24px\] {
-  font-size: 24px;
 }
 
 .text-\[28px\] {
@@ -2024,16 +2065,8 @@ html.js .fade-up.visible {
     position: sticky;
   }
 
-  .desktop\:left-0 {
-    left: 0px;
-  }
-
   .desktop\:right-\[-35px\] {
     right: -35px;
-  }
-
-  .desktop\:top-0 {
-    top: 0px;
   }
 
   .desktop\:top-\[9\.5rem\] {
@@ -2058,10 +2091,6 @@ html.js .fade-up.visible {
 
   .desktop\:-mt-\[358px\] {
     margin-top: -358px;
-  }
-
-  .desktop\:mt-\[108px\] {
-    margin-top: 108px;
   }
 
   .desktop\:block {
@@ -2096,16 +2125,8 @@ html.js .fade-up.visible {
     height: 460px;
   }
 
-  .desktop\:h-\[509px\] {
-    height: 509px;
-  }
-
   .desktop\:min-h-\[985px\] {
     min-height: 985px;
-  }
-
-  .desktop\:w-\[197px\] {
-    width: 197px;
   }
 
   .desktop\:w-\[216px\] {
