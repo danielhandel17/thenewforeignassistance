@@ -99,7 +99,7 @@
       <img src="images/hero-school.jpg" alt="Schoolchildren holding flags outdoors" class="h-[221px] w-full object-cover object-center wide:aspect-[827/985] wide:h-auto wide:min-h-[985px] wide:object-left-bottom desktop:min-h-[985px]" width="1024" height="683">
       <img src="images/decor-arcs.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -bottom-[2.5%] right-0 hidden w-[34%] max-w-[284px] wide:block">
     </div>
-    <div class="order-2 flex flex-col gap-8 px-5 fade-up wide:order-1 wide:px-0 wide:pl-[126px] wide:pt-[147px] wide:pb-[130px]">
+    <div class="order-2 flex flex-col gap-8 px-10 fade-up wide:order-1 wide:px-0 wide:pl-[126px] wide:pt-[147px] wide:pb-[130px]">
       <h1 class="font-newsreader text-[42px] font-medium leading-[1.1] text-ink desktop:text-[72px] desktop:leading-[1.15] xl:text-[92px] xl:leading-[106px]">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
@@ -119,10 +119,16 @@
 </section>
 
 <!-- THE RECORD -->
-<section class="relative overflow-x-clip px-5 py-14 wide:overflow-visible wide:pt-[130px] wide:pb-[78px] wide:px-[124px]" id="the-record">
-  <img src="images/decor-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-[-40px] top-8 h-[82px] w-[80px] shrink-0 desktop:left-0 desktop:top-[129px] desktop:h-[232px] desktop:w-[79px] desktop:block">
+<section class="relative overflow-x-clip px-10 pt-[250px] wide:overflow-visible wide:pt-[130px] wide:pb-[78px] wide:px-[124px]" id="the-record">
+  <!-- Mobile Record decors: Figma 332:3879 (Rectangle 8) + 332:3880 (Group 32) on Home - Mobile -->
+  <div class="pointer-events-none absolute left-[-114px] top-12 h-[194px] w-[165px] desktop:hidden" aria-hidden="true">
+    <div class="absolute left-[73px] top-[69px] h-[82px] w-20 bg-[#ebd6c5]"></div>
+    <img src="images/decor-record-mobile.svg" alt="" width="165" height="194" class="absolute inset-0 h-[194px] w-[165px] max-w-none">
+  </div>
+  <!-- Desktop: existing Record side decor -->
+  <img src="images/decor-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-0 top-[129px] hidden h-[232px] w-[79px] shrink-0 desktop:block">
 
-  <div class="mx-auto flex flex-col gap-12 fade-up">
+  <div class="mx-auto flex flex-col gap-12 fade-up z-1">
     <div class="flex items-start gap-5 desktop:gap-8">
       <div class="flex min-w-0 flex-col gap-4">
         <p class="eyebrow">The Record</p>
