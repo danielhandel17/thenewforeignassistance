@@ -191,7 +191,7 @@
 
 <!-- DIAGNOSIS -->
  <!-- Figma 332:3882 (Group 332:3882) //TODO: CHECK the inline color -->
-<section class="relative overflow-x-clip bg-[#F6EFEA] px-10 pt-[250px] pb-[90px] wide:overflow-visible wide:px-[124px] wide:pt-[147px] wide:pb-[130px]" id="the-diagnosis">
+<section class="relative overflow-x-clip bg-cream-warm px-10 pt-[250px] pb-[90px] wide:overflow-visible wide:px-[124px] wide:pt-[147px] wide:pb-[130px]" id="the-diagnosis">
   <!-- Mobile Diagnosis decors: Figma 332:4004 (Rectangle 41) + 332:4005 (Group 2448) -->
   <div class="pointer-events-none absolute left-[-86px] top-[35px] h-[185px] w-[134px] desktop:hidden" aria-hidden="true">
     <div class="absolute left-[63px] top-[37px] h-[129px] w-[62px] bg-[#ebd6c5]"></div>
@@ -305,13 +305,17 @@
 </section>
 
 <!-- LIVE TRACKER — Figma Group 66 (332:2866) + Group 62 (332:2833) -->
-<section class="relative bg-cream" id="live-tracker">
-  <!-- Figma Rectangle 35 (332:2983): 1728×358 top fade — sticky so months keep fading while copy is docked -->
-  <div class="pointer-events-none sticky top-0 z-[1] hidden h-[358px] bg-gradient-to-b from-[#f6efea] from-[31.25%] to-[rgba(246,239,234,0)] desktop:block" aria-hidden="true"></div>
-  <!-- Bottom fade: same 358px top fade, rotated 180deg -->
-  <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[1] hidden h-[358px] rotate-180 bg-gradient-to-b from-[#f6efea] from-[31.25%] to-[rgba(246,239,234,0)] desktop:block" aria-hidden="true"></div>
+<section class="relative overflow-x-clip bg-cream-warm" id="live-tracker">
+  <!-- Mobile: Figma Group 2454 (332:3754) — masked hatch only -->
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[314px] desktop:hidden" aria-hidden="true">
+    <img src="images/decor-tracker-mobile.png" alt="" width="415" height="314" class="h-full w-full max-w-none object-cover object-left-bottom">
+  </div>
+
+  <!-- Desktop only: Figma Rectangle 35 (332:2983) — 358px top/bottom fades -->
+  <div class="pointer-events-none sticky top-0 z-[1] hidden h-[358px] bg-gradient-to-b from-cream-warm from-[31.25%] to-cream-warm/0 desktop:block" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[1] hidden h-[358px] rotate-180 bg-gradient-to-b from-cream-warm from-[31.25%] to-cream-warm/0 desktop:block" aria-hidden="true"></div>
   
-  <div class="relative mx-auto max-w-page px-5 py-14 desktop:-mt-[358px] wide:h-[1793px] wide:px-0 wide:py-0">
+  <div class="relative mx-auto max-w-page px-10 pt-[86px] pb-[196px] desktop:-mt-[358px] desktop:h-[1793px] desktop:px-0 desktop:py-0">
 
     <div class="pointer-events-none absolute left-[28.24%] top-0 z-0 hidden h-[1793px] wide:flex wide:gap-[82px]" aria-hidden="true">
       <div class="flex flex-col gap-[134px] pt-3">
@@ -346,18 +350,18 @@
           </h2>
           <p class="text-[18px] leading-[1.5] text-ink desktop:text-[22px] desktop:leading-[33px]">A framework for what U.S. foreign assistance should look like.</p>
         </div>
-        <a href="tracker.html" class="btn-outline w-full self-start wide:w-auto wide:min-w-[290px]">Open the tracker</a>
+        <a href="tracker.html" class="btn-outline max-w-none bg-cream-warm w-full wide:w-auto wide:min-w-[290px]">Open the tracker</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- LONG VIEW / CHART -->
-<section class="bg-ink px- py-14 text-white wide:px-[124px] wide:pt-[147px] wide:pb-5" id="long-view">
+<section class="bg-ink px-10 pt-[102px] pb-[44px] text-white wide:px-[124px] wide:pt-[147px] wide:pb-5" id="long-view">
   <div class="mx-auto flex flex-col gap-10 fade-up">
     <div class="flex flex-col gap-5">
-      <p class="font-libertinus text-[18px] desktop:text-[22px] line-height-[33px] uppercase tracking-eyebrow text-toc-muted">The Long View</p>
-      <h2 class="font-newsreader text-[36px] font-medium leading-tight desktop:text-[49px]">Two centuries of<br class="hidden desktop:inline">economic growth</h2>
+      <p class="font-libertinus text-[20px] desktop:text-[22px] line-height-[33px] uppercase tracking-eyebrow text-toc-muted">The Long View</p>
+      <h2 class="font-newsreader text-[40px] font-medium leading-tight desktop:text-[49px]">Two centuries of<br class="hidden desktop:inline"><span class="inline desktop:hidden"> </span>economic growth</h2>
       <p class="max-w-3xl text-[18px] leading-[1.5] text-toc-muted desktop:text-[22px]">In 1820, every region was poor. Since then, average incomes have<br class="hidden desktop:inline"> risen everywhere &mdash; at very different rates.</p>
     </div>
 
@@ -366,7 +370,15 @@
         <canvas id="growth-chart" class="growth-chart" role="img" aria-label="GDP per capita by world region, 1820 to 2022, Maddison Project Database."></canvas>
       </div>
     </div>
-    <p class="text-[14px] desktop:text-[18px] text-chart-legend">Source: Maddison Project Database (Bolt &amp; van Zanden, 2023), via <a href="https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database" target="_blank" rel="noopener" class="underline">Our World in Data</a>. GDP per capita in 2011 international dollars.</p>
+    <ul class="flex flex-col gap-2 font-newsreader text-[14px] leading-snug text-white desktop:hidden">
+      <li class="flex items-center gap-2"><span class="h-0.5 w-5 shrink-0 bg-[#e07a4a]" aria-hidden="true"></span>Western Offshoots</li>
+      <li class="flex items-center gap-2"><span class="h-0.5 w-5 shrink-0 bg-[#7ec86a]" aria-hidden="true"></span>Eastern Europe</li>
+      <li class="flex items-center gap-2"><span class="h-0.5 w-5 shrink-0 bg-[#c5d63a]" aria-hidden="true"></span>East Asia</li>
+      <li class="flex items-center gap-2"><span class="h-0.5 w-5 shrink-0 bg-[#5ecfc9]" aria-hidden="true"></span>Latin America</li>
+      <li class="flex items-center gap-2"><span class="h-0.5 w-5 shrink-0 bg-[#9b7fd4]" aria-hidden="true"></span>South &amp; Southeast Asia</li>
+      <li class="flex items-center gap-2"><span class="h-0.5 w-5 shrink-0 bg-[#7eb8e8]" aria-hidden="true"></span>Sub-Saharan Africa</li>
+    </ul>
+    <p class="text-base desktop:text-[18px] text-chart-legend">Source: Maddison Project Database (Bolt &amp; van Zanden, 2023), via <a href="https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database" target="_blank" rel="noopener" class="underline">Our World in Data</a>. GDP per capita in 2011 international dollars.</p>
   </div>
 </section>
 

@@ -11,6 +11,7 @@ module.exports = {
         'toc-muted': '#be9a7a',
         'toc-rail': '#e6d9d0',
         cream: '#f7f3ed',
+        'cream-warm': '#F6EFEA',
         bone: '#f4ede0',
         'bg-soft': '#faf7f0',
         banner: '#1e3452',

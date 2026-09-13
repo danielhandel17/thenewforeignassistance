@@ -51,9 +51,15 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function useDesktopChartLayout() {
+    var plotWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 0;
+    return window.matchMedia('(min-width: 860px)').matches && plotWidth >= 640;
+  }
+
   var endLabelsPlugin = {
     id: 'endLabels',
     afterDatasetsDraw: function (chart) {
+      if (!useDesktopChartLayout()) return;
       if (!chart.$lineDrawDone) return;
       var ctx = chart.ctx;
       ctx.save();
@@ -100,16 +106,31 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     afterDraw: function (chart) {
       var ctx = chart.ctx;
       var area = chart.chartArea;
+      var isDesktopChart = useDesktopChartLayout();
       ctx.save();
-      ctx.font = 'italic 400 18px Newsreader, Georgia, serif';
       ctx.fillStyle = '#6B9AE3';
       ctx.textAlign = 'left';
-      ctx.textBaseline = 'bottom';
       if (ctx.letterSpacing !== undefined) ctx.letterSpacing = '0px';
-      ctx.fillText('GDP per capita (international $, 2011 prices)', area.left, area.top - 25);
+      if (isDesktopChart) {
+        ctx.font = 'italic 400 18px Newsreader, Georgia, serif';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText('GDP per capita (international $, 2011 prices)', area.left, area.top - 25);
+      } else {
+        ctx.textBaseline = 'alphabetic';
+        ctx.font = 'italic 400 12px Newsreader, Georgia, serif';
+        ctx.fillText('GDP per capita', area.left, area.top - 18);
+        ctx.font = 'italic 400 10px Newsreader, Georgia, serif';
+        ctx.fillText('(international $, 2011 prices)', area.left, area.top - 4);
+      }
       ctx.restore();
     }
   };
+
+  function chartLayoutPadding() {
+    return useDesktopChartLayout()
+      ? { top: 50, right: 168, bottom: 4, left: 4 }
+      : { top: 56, right: 12, bottom: 4, left: 4 };
+  }
 
   var isWide = window.matchMedia('(min-width: 1100px)').matches;
   var chart = new Chart(canvas, {
@@ -135,9 +156,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
       maintainAspectRatio: false,
       animation: false,
       layout: {
-        padding: isWide
-          ? { top: 50, right: 168, bottom: 4, left: 4 }
-          : { top: 36, right: 12, bottom: 4, left: 4 }
+        padding: chartLayoutPadding()
       },
       interaction: { mode: 'nearest', intersect: false },
       plugins: {
@@ -185,6 +204,14 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     plugins: [lineRevealPlugin, endLabelsPlugin, axisTitlePlugin]
   });
 
+  function syncChartPadding() {
+    chart.options.layout.padding = chartLayoutPadding();
+    chart.update('none');
+  }
+
+  window.addEventListener('resize', syncChartPadding);
+  syncChartPadding();
+
   if (reduceMotion) {
     chart.$lineDrawDone = true;
     chart.$revealProgress = 1;
@@ -210,6 +237,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
       if (start == null) start = now;
       var t = Math.min(1, (now - start) / duration);
       chart.$revealProgress = easeOutCubic(t);
+      chart.options.layout.padding = chartLayoutPadding();
       chart.draw();
       if (t < 1) {
         requestAnimationFrame(frame);
