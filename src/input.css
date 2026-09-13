@@ -70,6 +70,32 @@
   .fn:focus-within .fn-tip {
     @apply block;
   }
+
+  /* Mobile menu overlay — Figma Home - Mobile - Menu (350:5411) */
+  .mobile-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.4s;
+  }
+  .mobile-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-menu__nav {
+    opacity: 0;
+    transform: translateY(-16px);
+    transition:
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.06s,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.06s;
+  }
+  .mobile-menu.is-open .mobile-menu__nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer utilities {
@@ -152,6 +178,10 @@
     }
     .link-draw::after {
       transition: none;
+    }
+    .mobile-menu,
+    .mobile-menu__nav {
+      transition: none !important;
     }
   }
 }
