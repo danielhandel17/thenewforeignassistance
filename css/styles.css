@@ -1641,6 +1641,11 @@ body {
   padding-bottom: 2rem;
 }
 
+.py-\[108px\] {
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -2220,6 +2225,10 @@ html.js .fade-up.visible {
 
   .desktop\:max-w-\[608px\] {
     max-width: 608px;
+  }
+
+  .desktop\:max-w-3xl {
+    max-width: 48rem;
   }
 
   .desktop\:grid-cols-12 {

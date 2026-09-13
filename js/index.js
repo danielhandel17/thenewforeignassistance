@@ -116,11 +116,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         ctx.textBaseline = 'bottom';
         ctx.fillText('GDP per capita (international $, 2011 prices)', area.left, area.top - 25);
       } else {
-        ctx.textBaseline = 'alphabetic';
+        var mobileTitleTop = 20;
+        ctx.textBaseline = 'top';
         ctx.font = 'italic 400 12px Newsreader, Georgia, serif';
-        ctx.fillText('GDP per capita', area.left, area.top - 18);
+        ctx.fillText('GDP per capita', area.left, mobileTitleTop);
         ctx.font = 'italic 400 10px Newsreader, Georgia, serif';
-        ctx.fillText('(international $, 2011 prices)', area.left, area.top - 4);
+        ctx.fillText('(international $, 2011 prices)', area.left, mobileTitleTop + 14);
       }
       ctx.restore();
     }
@@ -129,7 +130,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   function chartLayoutPadding() {
     return useDesktopChartLayout()
       ? { top: 50, right: 168, bottom: 4, left: 4 }
-      : { top: 56, right: 12, bottom: 4, left: 4 };
+      : { top: 64, right: 12, bottom: 4, left: 4 };
   }
 
   var isWide = window.matchMedia('(min-width: 1100px)').matches;
