@@ -76,21 +76,25 @@
 
     <a href="tracker.html" class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white desktop:inline-flex">Tracker →</a>
 
-    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-      <img src="images/icon-menu.svg" alt="" class="h-5 w-5" width="24" height="24">
+    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
     </button>
   </div>
-
-  <div id="mobileMenu" class="hidden border-t border-toc-rail bg-white desktop:hidden" hidden>
-    <nav class="flex flex-col gap-1 px-5 py-4" aria-label="Mobile">
-      <a href="/" class="py-3 font-libertinus text-[18px] uppercase tracking-nav text-amber">Home</a>
-      <a href="framework.html" class="py-3 font-libertinus text-[18px] uppercase tracking-nav text-ink">Framework</a>
-      <a href="about.html" class="py-3 font-libertinus text-[18px] uppercase tracking-nav text-ink">About</a>
-      <a href="press.html" class="py-3 font-libertinus text-[18px] uppercase tracking-nav text-ink">Press</a>
-      <a href="tracker.html" class="mt-2 border border-amber px-4 py-3 text-center font-libertinus text-[16px] uppercase tracking-nav text-amber">Tracker →</a>
-    </nav>
-  </div>
 </header>
+
+<!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
+<div id="mobileMenu" class="fixed inset-0 z-[60] hidden bg-[#ebd6c5] desktop:hidden" hidden>
+  <button type="button" id="menuClose" class="absolute right-[15px] top-4 inline-flex h-6 w-6 items-center justify-center text-ink" aria-label="Close menu">
+    <img src="images/icon-close.svg" alt="" class="h-6 w-6" width="24" height="24">
+  </button>
+  <nav class="flex h-full flex-col items-center px-5 pt-[133px]" aria-label="Mobile">
+    <a href="/" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-amber">Home</a>
+    <a href="framework.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">Framework</a>
+    <a href="about.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">About</a>
+    <a href="press.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">Press</a>
+    <a href="tracker.html" class="mt-[34px] inline-flex h-[55px] w-[168px] items-center justify-center gap-2 border border-amber bg-white font-libertinus text-[16px] uppercase tracking-[3.2px] text-amber">Tracker →</a>
+  </nav>
+</div>
 
 <!-- HERO -->
 <section>
@@ -186,7 +190,7 @@
 </section>
 
 <!-- DIAGNOSIS -->
-<section class="relative overflow-x-clip bg-[#F6EFEA] px-5 py-14 wide:overflow-visible wide:px-[124px] wide:pt-[147px] wide:pb-[130px]" id="the-diagnosis">
+<section class="relative overflow-x-clip bg-[#F6EFEA] px-10 py-14 wide:overflow-visible wide:px-[124px] wide:pt-[147px] wide:pb-[130px]" id="the-diagnosis">
   <img src="images/decor-diagnosis.png" alt="" aria-hidden="true" width="180" height="592" class="pointer-events-none absolute left-[-23px] top-8 h-[129px] w-[62px] shrink-0 desktop:left-0 desktop:top-[147px] desktop:h-[296px] desktop:w-[90px]">
   <div class="mx-auto flex flex-col gap-10 desktop:gap-[134px] fade-up">
     <div class="flex items-start gap-5 desktop:gap-8">
@@ -230,7 +234,7 @@
 </section>
 
 <!-- SIX PRINCIPLES -->
-<section class="relative flow-root overflow-x-clip px-5 py-14 wide:overflow-visible wide:px-0 wide:pt-[147px] wide:pb-[130px]" id="principles">
+<section class="relative flow-root overflow-x-clip px-10 py-14 wide:overflow-visible wide:px-0 wide:pt-[147px] wide:pb-[130px]" id="principles">
   <img src="images/decor-principles.png" alt="" aria-hidden="true" width="394" height="1018" class="pointer-events-none absolute left-[-60px] top-4 h-[160px] w-[110px] desktop:left-0 desktop:top-0 desktop:mt-[108px] desktop:h-[509px] desktop:w-[197px] desktop:block">
   <div class="relative mx-auto grid gap-12 wide:mt-[110px] wide:grid-cols-2 wide:gap-16 fade-up">
     <aside class="desktop:sticky desktop:top-[9.5rem] desktop:self-start desktop:justify-end flex">
@@ -339,7 +343,7 @@
 </section>
 
 <!-- LONG VIEW / CHART -->
-<section class="bg-ink px-5 py-14 text-white wide:px-[124px] wide:pt-[147px] wide:pb-5" id="long-view">
+<section class="bg-ink px- py-14 text-white wide:px-[124px] wide:pt-[147px] wide:pb-5" id="long-view">
   <div class="mx-auto flex flex-col gap-10 fade-up">
     <div class="flex flex-col gap-5">
       <p class="font-libertinus text-[18px] desktop:text-[22px] line-height-[33px] uppercase tracking-eyebrow text-toc-muted">The Long View</p>

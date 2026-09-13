@@ -1,12 +1,27 @@
 (function () {
   var toggle = document.getElementById('menuToggle');
+  var closeBtn = document.getElementById('menuClose');
   var menu = document.getElementById('mobileMenu');
   if (!toggle || !menu) return;
-  toggle.addEventListener('click', function () {
-    var open = menu.classList.toggle('hidden') === false;
+
+  function setOpen(open) {
+    menu.classList.toggle('hidden', !open);
     menu.hidden = !open;
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(menu.hidden);
+  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      setOpen(false);
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.hidden) setOpen(false);
   });
 })();
 
