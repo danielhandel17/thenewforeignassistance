@@ -94,8 +94,12 @@
 
 <!-- HERO -->
 <section>
-  <div class="mx-auto grid items-start gap-10 wide:grid-cols-2 wide:gap-16">
-    <div class="flex flex-col gap-8 fade-up wide:pl-[126px] wide:pt-[147px] wide:pb-[130px]">
+  <div class="mx-auto grid items-start gap-8 wide:grid-cols-2 wide:gap-16">
+    <div class="relative order-1 fade-up wide:order-2">
+      <img src="images/hero-school.jpg" alt="Schoolchildren holding flags outdoors" class="h-[221px] w-full object-cover object-center wide:aspect-[827/985] wide:h-auto wide:min-h-[985px] wide:object-left-bottom desktop:min-h-[985px]" width="1024" height="683">
+      <img src="images/decor-arcs.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -bottom-[2.5%] right-0 hidden w-[34%] max-w-[284px] wide:block">
+    </div>
+    <div class="order-2 flex flex-col gap-8 px-5 fade-up wide:order-1 wide:px-0 wide:pl-[126px] wide:pt-[147px] wide:pb-[130px]">
       <h1 class="font-newsreader text-[42px] font-medium leading-[1.1] text-ink desktop:text-[72px] desktop:leading-[1.15] xl:text-[92px] xl:leading-[106px]">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
@@ -106,21 +110,17 @@
         <p>For those of us who support foreign assistance, it is tempting to bring back what USAID was. That&#39;s not good enough.</p>
         <p>It&#39;s time for what comes next. The New Foreign Assistance is the conservative voice for reform.</p>
       </div>
-      <div class="flex flex-row flex-wrap items-center gap-3">
-        <a href="framework.html" class="btn-filled">Read the framework</a>
-        <a href="tracker.html" class="btn-outline">Open the tracker →</a>
+      <div class="flex w-full max-w-[282px] flex-col gap-3 wide:max-w-none wide:flex-row wide:flex-wrap wide:items-center">
+        <a href="framework.html" class="btn-filled w-full wide:w-auto">Read the framework</a>
+        <a href="tracker.html" class="btn-outline w-full wide:w-auto">Open the tracker →</a>
       </div>
-    </div>
-    <div class="relative fade-up">
-      <img src="images/hero-school.jpg" alt="Schoolchildren holding flags outdoors" class="aspect-[827/985] w-full desktop:min-h-[985px] object-cover object-left-bottom" width="1024" height="683">
-      <img src="images/decor-arcs.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -bottom-[2.5%] right-0 w-[34%] max-w-[284px]">
     </div>
   </div>
 </section>
 
 <!-- THE RECORD -->
-<section class="relative wide:pt-[130px] wide:pb-[78px] wide:px-[124px]" id="the-record">
-  <img src="images/decor-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-0 top-0 desktop:top-[129px] hidden h-[232px] w-[79px] shrink-0 desktop:block">
+<section class="relative overflow-x-clip px-5 py-14 wide:overflow-visible wide:pt-[130px] wide:pb-[78px] wide:px-[124px]" id="the-record">
+  <img src="images/decor-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-[-40px] top-8 h-[82px] w-[80px] shrink-0 desktop:left-0 desktop:top-[129px] desktop:h-[232px] desktop:w-[79px] desktop:block">
 
   <div class="mx-auto flex flex-col gap-12 fade-up">
     <div class="flex items-start gap-5 desktop:gap-8">
@@ -137,9 +137,9 @@
           <p class="font-newsreader text-[40px] font-medium leading-none text-ink desktop:text-[48px]">26 million</p>
           <p class="mt-2 text-[18px] text-amber desktop:text-[20px]">Lives saved by PEPFAR</p>
         </div>
-        <p class="text-[18px] leading-[1.5] text-ink desktop:text-[20px] desktop:leading-[30px]">Since 2003, a $100 billion bipartisan<br>investment has supported 20.6 million people<br>on antiretroviral therapy.</p>
+        <p class="text-[18px] leading-[1.5] text-ink desktop:text-[20px] desktop:leading-[30px]">Since 2003, a $100 billion bipartisan<br class="hidden desktop:inline"> investment has supported 20.6 million people<br class="hidden desktop:inline"> on antiretroviral therapy.</p>
         <div class="relative overflow-visible">
-          <img src="images/record-pepfar.jpg" alt="Diplomatic ceremony outdoors" class="h-[200px] w-full max-w-[412px] object-cover" width="828" height="395">
+          <img src="images/record-pepfar.jpg" alt="Diplomatic ceremony outdoors" class="h-[171px] w-full max-w-none object-cover desktop:h-[200px] desktop:max-w-[412px]" width="828" height="395">
           <img src="images/decor-record-pepfar.png" alt="" aria-hidden="true" width="226" height="254" class="pointer-events-none absolute bottom-0 right-[-22px] h-[64.467%] w-[27.295%] max-w-none">
         </div>
       </article>
@@ -149,9 +149,9 @@
           <p class="font-newsreader text-[40px] font-medium leading-none text-ink desktop:text-[48px]">940 000</p>
           <p class="mt-2 text-[18px] text-amber desktop:text-[20px]">Malaria deaths prevented</p>
         </div>
-        <p class="text-[18px] leading-[1.5] text-ink desktop:text-[20px] desktop:leading-[30px]">The President&#39;s Malaria Initiative prevented<br>an estimated 185 million cases between 2005<br>and 2017.</p>
+        <p class="text-[18px] leading-[1.5] text-ink desktop:text-[20px] desktop:leading-[30px]">The President&#39;s Malaria Initiative prevented<br class="hidden desktop:inline"> an estimated 185 million cases between 2005<br class="hidden desktop:inline"> and 2017.</p>
         <div class="relative overflow-visible">
-          <img src="images/record-malaria.jpg" alt="Healthcare worker with a woman and child" class="h-[200px] w-full max-w-[412px] object-cover" width="1024" height="547">
+          <img src="images/record-malaria.jpg" alt="Healthcare worker with a woman and child" class="h-[171px] w-full max-w-none object-cover desktop:h-[200px] desktop:max-w-[412px]" width="1024" height="547">
           <img src="images/decor-record-malaria.png" alt="" aria-hidden="true" width="197" height="198" class="pointer-events-none absolute bottom-0 right-[-35px] h-[50.254%] w-[23.704%] max-w-none">
         </div>
       </article>
@@ -161,9 +161,9 @@
           <p class="font-newsreader text-[36px] font-medium leading-none text-ink desktop:text-[42px]">$17 in benefits</p>
           <p class="mt-2 text-[18px] text-amber desktop:text-[20px]">In benefits per dollar invested</p>
         </div>
-        <p class="text-[18px] leading-[1.5] text-ink desktop:text-[20px] desktop:leading-[30px]">Development Innovation Ventures funded<br>evidence-backed solutions and let results<br>speak.</p>
+        <p class="text-[18px] leading-[1.5] text-ink desktop:text-[20px] desktop:leading-[30px]">Development Innovation Ventures funded<br class="hidden desktop:inline"> evidence-backed solutions and let results<br class="hidden desktop:inline"> speak.</p>
         <div class="relative overflow-visible">
-          <img src="images/record-div.jpg" alt="Scientist looking into a microscope" class="h-[200px] w-full max-w-[412px] object-cover" width="1024" height="683">
+          <img src="images/record-div.jpg" alt="Scientist looking into a microscope" class="h-[171px] w-full max-w-none object-cover desktop:h-[200px] desktop:max-w-[412px]" width="1024" height="683">
           <img src="images/decor-record-div.png" alt="" aria-hidden="true" width="298" height="187" class="pointer-events-none absolute bottom-0 right-[-35px] h-[47.411%] w-[35.896%] max-w-none">
         </div>
       </article>
@@ -180,9 +180,9 @@
 </section>
 
 <!-- DIAGNOSIS -->
-<section class="relative bg-[#F6EFEA] wide:px-[124px] wide:pt-[147px] wide:pb-[130px]" id="the-diagnosis">
-  <img src="images/decor-diagnosis.png" alt="" aria-hidden="true" width="180" height="592" class="pointer-events-none absolute left-0 desktop:top-[147px] hidden h-[296px] w-[90px] shrink-0 desktop:block">
-  <div class="mx-auto flex flex-col desktop:gap-[134px] fade-up">
+<section class="relative overflow-x-clip bg-[#F6EFEA] px-5 py-14 wide:overflow-visible wide:px-[124px] wide:pt-[147px] wide:pb-[130px]" id="the-diagnosis">
+  <img src="images/decor-diagnosis.png" alt="" aria-hidden="true" width="180" height="592" class="pointer-events-none absolute left-[-23px] top-8 h-[129px] w-[62px] shrink-0 desktop:left-0 desktop:top-[147px] desktop:h-[296px] desktop:w-[90px]">
+  <div class="mx-auto flex flex-col gap-10 desktop:gap-[134px] fade-up">
     <div class="flex items-start gap-5 desktop:gap-8">
       <div class="flex min-w-0 flex-col gap-5">
         <p class="eyebrow">The Diagnosis</p>
@@ -190,7 +190,7 @@
           <span class="text-ink">What Went Wrong.</span><br>
           <span class="text-amber"> What Comes Next.</span>
         </h2>
-        <p class="desktop:max-w-4xl text-[18px] leading-[1.5] text-ink desktop:text-[22px] desktop:leading-[33px]">USAID&#39;s failures were not about its people or its mission. They were about the slow accretion<br>of rules, mandates, and reporting requirements that, over decades, crowded out the work of<br>development. Each well-meaning reform added a layer…nothing was ever&nbsp;removed.</p>
+        <p class="desktop:max-w-4xl text-[18px] leading-[1.5] text-ink desktop:text-[22px] desktop:leading-[33px]">USAID&#39;s failures were not about its people or its mission. They were about the slow accretion<br class="hidden desktop:inline"> of rules, mandates, and reporting requirements that, over decades, crowded out the work of<br class="hidden desktop:inline"> development. Each well-meaning reform added a layer…nothing was ever&nbsp;removed.</p>
       </div>
     </div>
 
@@ -214,7 +214,7 @@
           <ul class="list-disc space-y-4 pl-5 text-[18px] leading-[1.45] text-ink desktop:text-[20px]">
             <li>Targeted programs that move the needle on major challenges</li>
             <li>Fast and flexible design and procurement; pay for what works</li>
-            <li>Partner with the private sector, remove barriers to<br>entrepreneurship and investment</li>
+            <li>Partner with the private sector, remove barriers to<br class="hidden desktop:inline"> entrepreneurship and investment</li>
             <li>Focus on trade, not aid; bilateral partnership</li>
           </ul>
         </div>
@@ -224,61 +224,62 @@
 </section>
 
 <!-- SIX PRINCIPLES -->
-<section class="relative flow-root wide:pt-[147px] wide:pb-[130px]" id="principles">
-  <img src="images/decor-principles.png" alt="" aria-hidden="true" width="394" height="1018" class="pointer-events-none absolute left-0 top-0 hidden h-[509px] w-[197px] desktop:mt-[108px] desktop:block">
+<section class="relative flow-root overflow-x-clip px-5 py-14 wide:overflow-visible wide:px-0 wide:pt-[147px] wide:pb-[130px]" id="principles">
+  <img src="images/decor-principles.png" alt="" aria-hidden="true" width="394" height="1018" class="pointer-events-none absolute left-[-60px] top-4 h-[160px] w-[110px] desktop:left-0 desktop:top-0 desktop:mt-[108px] desktop:h-[509px] desktop:w-[197px] desktop:block">
   <div class="relative mx-auto grid gap-12 wide:mt-[110px] wide:grid-cols-2 wide:gap-16 fade-up">
     <aside class="desktop:sticky desktop:top-[9.5rem] desktop:self-start desktop:justify-end flex">
       <div class="flex flex-col gap-6 wide:mb-[108px] wide:ml-6">
         <p class="eyebrow">Reformed Approach</p>
         <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink wide:text-[49px]">Six Principles</h2>
-        <p class="text-[22px] leading-[1.35] font-light text-ink wide:text-[40px] desktop:leading-[1.4]">A framework for what U.S. foreign<br>assistance should look like.</p>
-        <a href="framework.html" class="btn-outline self-start">Read the full framework</a>
+        <p class="text-[22px] leading-[1.35] font-light text-ink wide:text-[40px] desktop:leading-[1.4]">A framework for what U.S. foreign<br class="hidden wide:inline"> assistance should look like.</p>
+        <a href="framework.html" class="btn-outline hidden self-start wide:inline-flex">Read the full framework</a>
       </div>
     </aside>
 
     <div class="flex flex-col gap-10">
-      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-7 gap-y-2">
+      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-2 wide:gap-x-7">
         <p class="font-newsreader text-[24px] font-medium leading-tight text-amber wide:text-[28px]">01</p>
         <div class="flex flex-col gap-2">
           <h3 class="font-newsreader text-[24px] font-medium leading-tight text-ink wide:text-[28px]">Focus on Economic Growth</h3>
           <p class="text-[22px] leading-[1.45] text-ink-light">Trading partners and allies, not a global safety net.</p>
         </div>
       </article>
-      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-7 gap-y-2">
+      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-2 wide:gap-x-7">
         <p class="font-newsreader text-[24px] font-medium leading-tight text-amber wide:text-[28px]">02</p>
         <div class="flex flex-col gap-2">
           <h3 class="font-newsreader text-[24px] font-medium leading-tight text-ink wide:text-[28px]">Do What Only Governments Can Do</h3>
-          <p class="text-[22px] leading-[1.45] text-ink-light">Public goods and systems change. Leave the rest to civil<br>society and competent local governments.</p>
+          <p class="text-[22px] leading-[1.45] text-ink-light">Public goods and systems change. Leave the rest to civil<br class="hidden desktop:inline"> society and competent local governments.</p>
         </div>
       </article>
-      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-7 gap-y-2">
+      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-2 wide:gap-x-7">
         <p class="font-newsreader text-[24px] font-medium leading-tight text-amber wide:text-[28px]">03</p>
         <div class="flex flex-col gap-2">
           <h3 class="font-newsreader text-[24px] font-medium leading-tight text-ink wide:text-[28px]">Commercial First</h3>
-          <p class="text-[22px] leading-[1.45] text-ink-light">Work through markets where markets can deliver. Support<br>them; don&#39;t displace them.</p>
+          <p class="text-[22px] leading-[1.45] text-ink-light">Work through markets where markets can deliver. Support<br class="hidden desktop:inline"> them; don&#39;t displace them.</p>
         </div>
       </article>
-      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-7 gap-y-2">
+      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-2 wide:gap-x-7">
         <p class="font-newsreader text-[24px] font-medium leading-tight text-amber wide:text-[28px]">04</p>
         <div class="flex flex-col gap-2">
           <h3 class="font-newsreader text-[24px] font-medium leading-tight text-ink wide:text-[28px]">Partner with Reformers, Not Failing States</h3>
           <p class="text-[22px] leading-[1.45] text-ink-light">Reformers earn deeper partnership. Predatory governments do not.</p>
         </div>
       </article>
-      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-7 gap-y-2">
+      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-2 wide:gap-x-7">
         <p class="font-newsreader text-[24px] font-medium leading-tight text-amber wide:text-[28px]">05</p>
         <div class="flex flex-col gap-2">
           <h3 class="font-newsreader text-[24px] font-medium leading-tight text-ink wide:text-[28px]">Assess Everything, End What Doesn&#39;t Work</h3>
-          <p class="text-[22px] leading-[1.45] text-ink-light">Set clear objectives. Measure outcomes. Reallocate from what fails to<br>what works.</p>
+          <p class="text-[22px] leading-[1.45] text-ink-light">Set clear objectives. Measure outcomes. Reallocate from what fails to<br class="hidden desktop:inline"> what works.</p>
         </div>
       </article>
-      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-7 gap-y-2">
+      <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-2 wide:gap-x-7">
         <p class="font-newsreader text-[24px] font-medium leading-tight text-amber wide:text-[28px]">06</p>
         <div class="flex flex-col gap-2">
           <h3 class="font-newsreader text-[24px] font-medium leading-tight text-ink wide:text-[28px]">Finite by Design</h3>
-          <p class="text-[22px] leading-[1.45] text-ink-light">Clear end dates. Self-reliance is the goal, not permanent<br>dependency.</p>
+          <p class="text-[22px] leading-[1.45] text-ink-light">Clear end dates. Self-reliance is the goal, not permanent<br class="hidden desktop:inline"> dependency.</p>
         </div>
       </article>
+      <a href="framework.html" class="btn-outline w-full max-w-[368px] wide:hidden">Read the full framework</a>
     </div>
   </div>
 </section>
@@ -325,23 +326,23 @@
           </h2>
           <p class="text-[18px] leading-[1.5] text-ink desktop:text-[22px] desktop:leading-[33px]">Every major foreign assistance commitment, pledge, and policy action from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.</p>
         </div>
-        <a href="tracker.html" class="btn-outline self-start wide:min-w-[290px]">Open the tracker</a>
+        <a href="tracker.html" class="btn-outline w-full self-start wide:w-auto wide:min-w-[290px]">Open the tracker</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- LONG VIEW / CHART -->
-<section class="bg-ink text-white wide:px-[124px] wide:pt-[147px] wide:pb-5" id="long-view">
+<section class="bg-ink px-5 py-14 text-white wide:px-[124px] wide:pt-[147px] wide:pb-5" id="long-view">
   <div class="mx-auto flex flex-col gap-10 fade-up">
     <div class="flex flex-col gap-5">
       <p class="font-libertinus text-[18px] desktop:text-[22px] line-height-[33px] uppercase tracking-eyebrow text-toc-muted">The Long View</p>
       <h2 class="font-newsreader text-[36px] font-medium leading-tight desktop:text-[49px]">Two centuries of<br>economic growth</h2>
-      <p class="max-w-3xl text-[18px] leading-[1.5] text-toc-muted desktop:text-[22px]">In 1820, every region was poor. Since then, average incomes have<br>risen everywhere &mdash; at very different rates.</p>
+      <p class="max-w-3xl text-[18px] leading-[1.5] text-toc-muted desktop:text-[22px]">In 1820, every region was poor. Since then, average incomes have<br class="hidden desktop:inline"> risen everywhere &mdash; at very different rates.</p>
     </div>
 
     <div class="w-full overflow-x-auto">
-      <div class="relative h-[460px] w-full min-w-[640px]">
+      <div class="relative h-[320px] w-full min-w-0 desktop:h-[460px] desktop:min-w-[640px]">
         <canvas id="growth-chart" class="growth-chart" role="img" aria-label="GDP per capita by world region, 1820 to 2022, Maddison Project Database."></canvas>
       </div>
     </div>
@@ -350,7 +351,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="wide:px-[124px] wide:pt-[127px] wide:pb-[131px]" id="contact">
+<section class="px-5 py-14 wide:px-[124px] wide:pt-[127px] wide:pb-[131px]" id="contact">
   <div class="mx-auto flex flex-col items-center gap-5 text-center fade-up">
     <p class="eyebrow">Contact</p>
     <h2 class="max-w-3xl font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[50px]">For press inquiries, partnership<br>opportunities, or to learn more<br>about our work.</h2>
@@ -366,9 +367,9 @@
       <p class="eyebrow">From the rebuild</p>
       <h3 class="font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[36px]">A brief, occasional newsletter<br>on the rebuild.</h3>
     </div>
-    <form class="flex w-full max-w-md flex-col gap-3 sm:flex-row" id="newsletterForm">
-      <input type="email" class="h-[55px] flex-1 border border-amber bg-white px-4 font-newsreader text-[16px] text-ink placeholder:text-toc-muted" placeholder="Your email address" required aria-label="Email address">
-      <button type="submit" class="btn-filled shrink-0">Subscribe</button>
+    <form class="flex w-full max-w-md flex-col gap-3 desktop:flex-row" id="newsletterForm">
+      <input type="email" class="h-[55px] w-full flex-1 border border-amber bg-white px-4 font-newsreader text-[16px] text-ink placeholder:text-toc-muted" placeholder="Your email address" required aria-label="Email address">
+      <button type="submit" class="btn-filled w-full shrink-0 desktop:w-auto">Subscribe</button>
     </form>
     <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you. We&#39;ll be in touch.</div>
   </div>

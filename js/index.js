@@ -96,6 +96,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     }
   };
 
+  var isWide = window.matchMedia('(min-width: 1100px)').matches;
   var chart = new Chart(canvas, {
     type: 'line',
     data: {
@@ -119,7 +120,9 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
       maintainAspectRatio: false,
       animation: false,
       layout: {
-        padding: { top: 50, right: 168, bottom: 4, left: 4 }
+        padding: isWide
+          ? { top: 50, right: 168, bottom: 4, left: 4 }
+          : { top: 36, right: 12, bottom: 4, left: 4 }
       },
       interaction: { mode: 'nearest', intersect: false },
       plugins: {
@@ -150,9 +153,9 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
             color: '#be9a7a',
             font: {
               family: 'Newsreader, Georgia, serif',
-              size: 21,
+              size: isWide ? 21 : 14,
               weight: '400',
-              lineHeight: 23 / 21
+              lineHeight: isWide ? 23 / 21 : 1.2
             },
             padding: 8,
             crossAlign: 'far',
