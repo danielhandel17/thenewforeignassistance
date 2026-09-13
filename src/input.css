@@ -25,10 +25,14 @@
 
 @layer components {
   .btn-filled {
-    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap desktop:max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
   }
   .btn-outline {
-    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-white px-8 font-libertinus text-base text-nowrap max-w-[282px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white;
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-white px-8 font-libertinus text-base text-nowrap desktop:max-w-[282px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white;
+  }
+  /* Footer newsletter email — Figma Group 22 (332:4094): 363×55, placeholder Libertinus 18px amber / 3.6px tracking */
+  .newsletter-input {
+    @apply box-border h-[55px] min-h-[55px] w-full flex-1 border border-solid border-amber bg-white px-[22px] font-libertinus text-[18px] leading-[33px] tracking-normal text-ink placeholder:text-amber placeholder:opacity-100 placeholder:tracking-eyebrow focus:outline-none focus:ring-1 focus:ring-amber;
   }
   .eyebrow {
     @apply font-libertinus text-xl text-nowrap max-w-[282px] uppercase tracking-eyebrow text-amber desktop:text-[22px];

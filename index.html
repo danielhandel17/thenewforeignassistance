@@ -392,20 +392,22 @@
 </section>
 
 <!-- NEWSLETTER + FOOTER -->
-<footer class="relative bg-[#FFFAF7] overflow-hidden border-t border-[#EECDB2]">
+<footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
+  <!-- Mobile: Figma Mask group (332:4102) — 53×159 at left edge, Home - Mobile -->
+  <img src="images/decor-rebuild-mobile.png" alt="" aria-hidden="true" width="53" height="159" class="pointer-events-none absolute left-0 top-0 z-0 h-[159px] w-[53px] max-w-none shrink-0 desktop:hidden">
   <img src="images/decor-rebuild.png" alt="" aria-hidden="true" width="201" height="520" class="pointer-events-none absolute left-0 top-[-16px] z-0 hidden h-[260px] w-[101px] max-w-none shrink-0 desktop:block">
-  <div class="relative mx-auto flex flex-col gap-8 px-5 py-14 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-[124px] desktop:pt-19.5 desktop:pb-[100px]">
+  <div class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] desktop:flex-row desktop:items-center desktop:justify-between desktop:px-[124px] desktop:pt-19.5 desktop:pb-[100px]">
     <div class="flex max-w-xl flex-col gap-3">
       <p class="eyebrow">From the rebuild</p>
-      <h3 class="font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[36px]">A brief, occasional newsletter<br class="hidden desktop:inline">on the rebuild.</h3>
+      <h3 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[49px]">A brief, occasional newsletter<br class="hidden desktop:inline"> on the rebuild.</h3>
     </div>
-    <form class="flex w-full max-w-md flex-col gap-3 desktop:flex-row" id="newsletterForm">
-      <input type="email" class="h-[55px] w-full flex-1 border border-amber bg-white px-4 font-newsreader text-[16px] text-ink placeholder:text-toc-muted" placeholder="Your email address" required aria-label="Email address">
-      <button type="submit" class="btn-filled w-full shrink-0 desktop:w-auto">Subscribe</button>
+    <form class="flex w-full max-w-md flex-col items-stretch gap-3 desktop:flex-row desktop:items-center" id="newsletterForm">
+      <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
+      <button type="submit" class="btn-filled w-full shrink-0 self-start desktop:w-auto desktop:self-auto">Subscribe</button>
     </form>
     <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you. We&#39;ll be in touch.</div>
   </div>
-  <div class="border-t border-b border-[#EECDB2] bg-[#FFF3EA] desktop:px-[124px]">
+  <div class="border-b border-t border-footer-border bg-footer-strip desktop:px-[124px]">
     <div class="mx-auto flex flex-col gap-3 px-5 py-6 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-0">
       <p class="font-libertinus text-[18px] font-normal leading-tight text-amber">&copy; 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
       <img src="images/powered-by-shapeshift.png" alt="Powered by shapeshift" width="442" height="70" class="h-[35px] w-[221px] shrink-0">
