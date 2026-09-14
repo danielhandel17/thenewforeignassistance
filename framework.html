@@ -40,57 +40,62 @@
 </head>
 <body class="font-newsreader">
 
+<!-- HEADER -->
 <header class="sticky top-0 z-50 bg-white">
-  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:border-b desktop:border-toc-rail/60 desktop:px-12 desktop:py-4">
+  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-6 desktop:pb-0">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
       <img src="images/logo.png" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
     </a>
+
     <nav class="hidden items-center gap-8 desktop:flex" aria-label="Primary">
       <a href="/" class="font-libertinus text-[18px] uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
       <a href="framework.html" class="font-libertinus text-[18px] uppercase tracking-nav text-amber">Framework</a>
       <a href="about.html" class="font-libertinus text-[18px] uppercase tracking-nav text-ink transition-colors hover:text-amber">About</a>
       <a href="press.html" class="font-libertinus text-[18px] uppercase tracking-nav text-ink transition-colors hover:text-amber">Press</a>
     </nav>
+
     <a href="tracker.html" class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white desktop:inline-flex">Tracker →</a>
+
     <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
     </button>
   </div>
 </header>
 
+<!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
 <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] desktop:hidden" hidden aria-hidden="true">
   <button type="button" id="menuClose" class="absolute right-[15px] top-4 z-10 inline-flex h-10 w-10 items-center justify-center text-ink" aria-label="Close menu">
     <img src="images/icon-close.svg" alt="" class="h-6 w-6" width="24" height="24">
   </button>
   <nav class="mobile-menu__nav pointer-events-none flex h-full flex-col items-center px-5 pt-[133px]" aria-label="Mobile">
     <div class="pointer-events-auto flex w-full flex-col items-center">
-      <a href="/" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">Home</a>
-      <a href="framework.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-amber">Framework</a>
-      <a href="about.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">About</a>
-      <a href="press.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">Press</a>
-      <a href="tracker.html" class="mt-[34px] inline-flex h-[55px] w-[168px] items-center justify-center gap-2 border border-amber bg-white font-libertinus text-[16px] uppercase tracking-[3.2px] text-amber">Tracker →</a>
+    <a href="/" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">Home</a>
+    <a href="framework.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-amber">Framework</a>
+    <a href="about.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">About</a>
+    <a href="press.html" class="font-libertinus text-[18px] uppercase leading-[61px] tracking-[3.6px] text-ink">Press</a>
+    <a href="tracker.html" class="mt-[34px] inline-flex h-[55px] w-[168px] items-center justify-center gap-2 border border-amber bg-white font-libertinus text-[16px] uppercase tracking-[3.2px] text-amber">Tracker →</a>
     </div>
   </nav>
 </div>
 
-<!-- HERO — Figma Framework - Mobile: title y=235, mask group 333×386 at x=107 -->
+<!-- HERO — Figma mask group 332:3289; decor 332:3293, 332:3294, 332:3335, 332:3376 -->
 <section class="relative overflow-x-clip">
-  <div class="mx-auto grid items-center gap-10 desktop:grid-cols-2 desktop:gap-16 fade-up">
-    <div class="flex flex-col gap-5 px-10 pt-8 desktop:px-0 desktop:pt-0">
-      <p class="eyebrow">Reform Framework</p>
-      <h1 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[56px] desktop:leading-[1.2] xl:text-[72px] xl:leading-[86px]">State Department and Foreign Assistance Reform Framework.</h1>
-    </div>
-    <div class="relative mx-auto h-[386px] w-full max-w-[333px] shrink-0 desktop:hidden">
-      <img src="images/figma-fw-decor.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -left-8 top-0 h-[220px] w-[135px] max-w-none opacity-90">
-      <div class="relative ml-auto h-[386px] w-[333px] overflow-hidden">
-        <img src="images/fw-portrait.jpg" alt="Portrait of a person wearing a hat" class="h-full w-full object-cover object-center" width="800" height="1000">
+  <div class="fw-hero-grid mx-auto grid max-w-page min-h-[520px] items-start gap-8 fade-up wide:min-h-[677px] wide:grid-cols-2 wide:items-center wide:gap-16">
+    <div class="fw-hero-grid__decor" aria-hidden="true">
+      <img src="images/fw-hero-bg.png" alt="" width="1728" height="677" class="fw-hero-grid__bg" decoding="async">
+      <div class="fw-hero-grid__fade" data-node-id="332:3293"></div>
+      <img src="images/fw-hero-bars-mid.svg" alt="" width="381" height="258" class="fw-hero-grid__bars fw-hero-grid__bars--mid" data-node-id="332:3335">
+      <img src="images/fw-hero-bars-right.svg" alt="" width="381" height="258" class="fw-hero-grid__bars fw-hero-grid__bars--right" data-node-id="332:3294">
+      <img src="images/fw-hero-blob-41.svg" alt="" width="496" height="687" class="fw-hero-grid__blob" data-node-id="332:3376">
+      <div class="fw-hero-grid__photo" data-node-id="332:3379">
+        <img src="images/fw-hero-person.png" alt="Person using a tablet in an agricultural field" width="605" height="530" class="fw-hero-grid__photo-img" decoding="async">
       </div>
     </div>
-    <div class="relative hidden grid-cols-2 gap-3 desktop:grid">
-      <img src="images/fw-hero.jpg" alt="Person using a tablet in an agricultural field" class="col-span-2 w-full object-cover" width="1200" height="800">
-      <img src="images/fw-field.jpg" alt="People in an urban setting" class="w-full object-cover" width="800" height="600">
-      <img src="images/fw-portrait.jpg" alt="Portrait of a person wearing a hat" class="w-full object-cover" width="800" height="1000">
+    <div class="relative z-[1] flex flex-col gap-5 px-10 pt-8 wide:px-0 wide:pl-[126px] wide:pt-[147px] wide:pb-[80px]">
+      <p class="eyebrow">Reform Framework</p>
+      <h1 class="font-newsreader text-[42px] font-medium leading-[50px] text-ink wide:text-[72px] wide:leading-[1.15]">State Department and Foreign Assistance Reform Framework.</h1>
     </div>
+    <div class="relative z-[1] hidden min-h-[386px] wide:block wide:min-h-[535px]" aria-hidden="true"></div>
   </div>
 </section>
 

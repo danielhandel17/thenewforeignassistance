@@ -205,3 +205,118 @@
     }
   }
 }
+
+/* Framework hero — Figma mask group 332:3289 (1748×677); decor 332:3293, 332:3294, 332:3335, 332:3376 */
+.fw-hero-grid {
+  position: relative;
+  isolation: isolate;
+  background-color: #fff;
+}
+
+.fw-hero-grid__decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fw-hero-grid__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fw-hero-grid__fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.fw-hero-grid__bars--mid {
+  position: absolute;
+  left: 57.27%;
+  top: 72.82%;
+  width: 21.77%;
+  height: auto;
+}
+
+.fw-hero-grid__bars--right {
+  position: absolute;
+  left: 76.89%;
+  bottom: 0;
+  width: 21.77%;
+  height: auto;
+}
+
+.fw-hero-grid__blob {
+  position: absolute;
+  left: 68.13%;
+  bottom: -83px;
+  width: 28.36%;
+  height: auto;
+  z-index: 2;
+}
+
+/* 332:3379 — 605×535 @ x=1021 y=147 within 1748×677 mask */
+.fw-hero-grid__photo {
+  position: absolute;
+  left: 58.41%;
+  top: 21.71%;
+  width: 34.61%;
+  height: 79.03%;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.fw-hero-grid__photo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.fw-hero-grid__bars--mid,
+.fw-hero-grid__bars--right {
+  z-index: 4;
+}
+
+@media (max-width: 1099px) {
+  .fw-hero-grid__bars--mid {
+    left: 8%;
+    top: auto;
+    bottom: 0;
+    width: 52%;
+    max-width: 220px;
+  }
+
+  .fw-hero-grid__bars--right {
+    display: none;
+  }
+
+  .fw-hero-grid__blob {
+    left: 42%;
+    top: 38%;
+    width: 58%;
+    max-width: 280px;
+  }
+
+  .fw-hero-grid__photo {
+    left: auto;
+    right: 10%;
+    top: auto;
+    bottom: 0;
+    width: min(333px, 85%);
+    height: 386px;
+  }
+}
