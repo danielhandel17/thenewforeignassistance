@@ -10,6 +10,7 @@ module.exports = {
         'amber-mid': '#9a5620',
         'toc-muted': '#be9a7a',
         'toc-rail': '#e6d9d0',
+        'toc-border': '#EBD6C5',
         cream: '#f7f3ed',
         'cream-warm': '#F6EFEA',
         'footer-bg': '#FFFAF7',
