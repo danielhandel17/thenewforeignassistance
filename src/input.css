@@ -99,6 +99,7 @@
 
   /* Framework pull quote — Figma Rectangle 9 (332:4349): 89×311 accent at x=16 */
   .fw-pullquote {
+    @apply text-[19px];
     position: relative;
     padding-left: 0;
   }
@@ -206,10 +207,12 @@
   }
 }
 
-/* Framework hero — Figma mask group 332:3289 (1748×677); decor 332:3293, 332:3294, 332:3335, 332:3376 */
+/* Framework hero — Figma mask 332:3289 (1748×677); title 332:3387 874×258 @ 126,323 */
 .fw-hero-grid {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
+  min-height: 520px;
   background-color: #fff;
 }
 
@@ -228,7 +231,7 @@
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: center;
+  object-position: center bottom;
 }
 
 .fw-hero-grid__fade {
@@ -236,8 +239,14 @@
   left: 0;
   right: 0;
   top: 0;
-  height: 40%;
+  z-index: 1;
+  height: 40.03%;
   background: linear-gradient(to bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.fw-hero-grid__bars--mid,
+.fw-hero-grid__bars--right {
+  z-index: 4;
 }
 
 .fw-hero-grid__bars--mid {
@@ -259,13 +268,13 @@
 .fw-hero-grid__blob {
   position: absolute;
   left: 68.13%;
-  bottom: -83px;
+  top: 12.9%;
   width: 28.36%;
   height: auto;
   z-index: 2;
 }
 
-/* 332:3379 — 605×535 @ x=1021 y=147 within 1748×677 mask */
+/* 332:3379 — 605×535 @ x=1015 y=255 within 1748×677 mask */
 .fw-hero-grid__photo {
   position: absolute;
   left: 58.41%;
@@ -283,12 +292,41 @@
   height: 100%;
   max-width: none;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: right bottom;
 }
 
-.fw-hero-grid__bars--mid,
-.fw-hero-grid__bars--right {
-  z-index: 4;
+.fw-hero-grid__copy {
+  position: relative;
+  z-index: 6;
+}
+
+@media (min-width: 1100px) {
+  .fw-hero-grid {
+    height: 677px;
+    max-height: calc(100dvh - 8.25rem);
+    min-height: 480px;
+  }
+
+  .fw-hero-grid__copy {
+    position: absolute;
+    left: 7.29%;
+    top: 23.78%;
+    width: min(50.58%, 874px);
+  }
+
+  .fw-hero-grid__title {
+    font-size: clamp(2.625rem, 4.1667vw, 4.5rem);
+    line-height: 1.194;
+  }
+
+  .fw-hero-grid__photo {
+    left: 58.41%;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: 79.03%;
+    aspect-ratio: 605 / 535;
+  }
 }
 
 @media (max-width: 1099px) {
@@ -313,7 +351,7 @@
 
   .fw-hero-grid__photo {
     left: auto;
-    right: 10%;
+    right: 0;
     top: auto;
     bottom: 0;
     width: min(333px, 85%);

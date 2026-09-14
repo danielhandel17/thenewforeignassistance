@@ -840,6 +840,7 @@ body {
 /* Framework pull quote — Figma Rectangle 9 (332:4349): 89×311 accent at x=16 */
 
 .fw-pullquote {
+  font-size: 19px;
   position: relative;
   padding-left: 0;
 }
@@ -929,6 +930,10 @@ body {
   left: -125px;
 }
 
+.left-\[-49\.63\%\] {
+  left: -49.63%;
+}
+
 .left-\[-86px\] {
   left: -86px;
 }
@@ -977,12 +982,20 @@ body {
   top: 3rem;
 }
 
-.top-28 {
-  top: 7rem;
+.top-36 {
+  top: 9rem;
 }
 
 .top-4 {
   top: 1rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
+.top-\[-10\.93\%\] {
+  top: -10.93%;
 }
 
 .top-\[-16px\] {
@@ -1058,6 +1071,10 @@ body {
   margin-right: 0.5rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1068,10 +1085,6 @@ body {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .mt-\[108px\] {
@@ -1114,6 +1127,10 @@ body {
   display: none;
 }
 
+.aspect-\[379\/397\] {
+  aspect-ratio: 379/397;
+}
+
 .h-0\.5 {
   height: 0.125rem;
 }
@@ -1126,12 +1143,16 @@ body {
   height: 1.5rem;
 }
 
-.h-\[129px\] {
-  height: 129px;
+.h-\[110\.93\%\] {
+  height: 110.93%;
 }
 
-.h-\[145px\] {
-  height: 145px;
+.h-\[110px\] {
+  height: 110px;
+}
+
+.h-\[129px\] {
+  height: 129px;
 }
 
 .h-\[150px\] {
@@ -1230,14 +1251,6 @@ body {
   height: 100%;
 }
 
-.min-h-\[386px\] {
-  min-height: 386px;
-}
-
-.min-h-\[520px\] {
-  min-height: 520px;
-}
-
 .w-1 {
   width: 0.25rem;
 }
@@ -1272,6 +1285,10 @@ body {
 
 .w-\[134px\] {
   width: 134px;
+}
+
+.w-\[149\.63\%\] {
+  width: 149.63%;
 }
 
 .w-\[165px\] {
@@ -1334,6 +1351,10 @@ body {
   width: 90px;
 }
 
+.w-\[97px\] {
+  width: 97px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1344,10 +1365,6 @@ body {
 
 .max-w-3xl {
   max-width: 48rem;
-}
-
-.max-w-4xl {
-  max-width: 56rem;
 }
 
 .max-w-\[284px\] {
@@ -1494,6 +1511,10 @@ body {
 
 .gap-\[134px\] {
   gap: 134px;
+}
+
+.gap-\[35px\] {
+  gap: 35px;
 }
 
 .gap-x-4 {
@@ -1683,6 +1704,11 @@ body {
      object-fit: cover;
 }
 
+.object-\[72\%_42\%\] {
+  -o-object-position: 72% 42%;
+     object-position: 72% 42%;
+}
+
 .object-center {
   -o-object-position: center;
      object-position: center;
@@ -1696,10 +1722,6 @@ body {
 .object-left-top {
   -o-object-position: left top;
      object-position: left top;
-}
-
-.p-6 {
-  padding: 1.5rem;
 }
 
 .px-10 {
@@ -1839,6 +1861,11 @@ body {
   font-family: Newsreader, Georgia, serif;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-\[14px\] {
   font-size: 14px;
 }
@@ -1882,6 +1909,10 @@ body {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.font-\[22px\] {
+  font-weight: 22px;
 }
 
 .font-light {
@@ -2171,11 +2202,13 @@ html.js .fade-up.visible {
   }
 }
 
-/* Framework hero — Figma mask group 332:3289 (1748×677); decor 332:3293, 332:3294, 332:3335, 332:3376 */
+/* Framework hero — Figma mask 332:3289 (1748×677); title 332:3387 874×258 @ 126,323 */
 
 .fw-hero-grid {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
+  min-height: 520px;
   background-color: #fff;
 }
 
@@ -2195,8 +2228,8 @@ html.js .fade-up.visible {
   max-width: none;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: center bottom;
+     object-position: center bottom;
 }
 
 .fw-hero-grid__fade {
@@ -2204,8 +2237,14 @@ html.js .fade-up.visible {
   left: 0;
   right: 0;
   top: 0;
-  height: 40%;
+  z-index: 1;
+  height: 40.03%;
   background: linear-gradient(to bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.fw-hero-grid__bars--mid,
+.fw-hero-grid__bars--right {
+  z-index: 4;
 }
 
 .fw-hero-grid__bars--mid {
@@ -2227,13 +2266,13 @@ html.js .fade-up.visible {
 .fw-hero-grid__blob {
   position: absolute;
   left: 68.13%;
-  bottom: -83px;
+  top: 12.9%;
   width: 28.36%;
   height: auto;
   z-index: 2;
 }
 
-/* 332:3379 — 605×535 @ x=1021 y=147 within 1748×677 mask */
+/* 332:3379 — 605×535 @ x=1015 y=255 within 1748×677 mask */
 
 .fw-hero-grid__photo {
   position: absolute;
@@ -2253,13 +2292,42 @@ html.js .fade-up.visible {
   max-width: none;
   -o-object-fit: contain;
      object-fit: contain;
-  -o-object-position: center bottom;
-     object-position: center bottom;
+  -o-object-position: right bottom;
+     object-position: right bottom;
 }
 
-.fw-hero-grid__bars--mid,
-.fw-hero-grid__bars--right {
-  z-index: 4;
+.fw-hero-grid__copy {
+  position: relative;
+  z-index: 6;
+}
+
+@media (min-width: 1100px) {
+  .fw-hero-grid {
+    height: 677px;
+    max-height: calc(100dvh - 8.25rem);
+    min-height: 480px;
+  }
+
+  .fw-hero-grid__copy {
+    position: absolute;
+    left: 7.29%;
+    top: 23.78%;
+    width: min(50.58%, 874px);
+  }
+
+  .fw-hero-grid__title {
+    font-size: clamp(2.625rem, 4.1667vw, 4.5rem);
+    line-height: 1.194;
+  }
+
+  .fw-hero-grid__photo {
+    left: 58.41%;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: 79.03%;
+    aspect-ratio: 605 / 535;
+  }
 }
 
 @media (max-width: 1099px) {
@@ -2284,7 +2352,7 @@ html.js .fade-up.visible {
 
   .fw-hero-grid__photo {
     left: auto;
-    right: 10%;
+    right: 0;
     top: auto;
     bottom: 0;
     width: min(333px, 85%);
@@ -2326,6 +2394,18 @@ html.js .fade-up.visible {
     right: -35px;
   }
 
+  .desktop\:top-28 {
+    top: 7rem;
+  }
+
+  .desktop\:top-\[125px\] {
+    top: 125px;
+  }
+
+  .desktop\:top-\[180px\] {
+    top: 180px;
+  }
+
   .desktop\:top-\[9\.5rem\] {
     top: 9.5rem;
   }
@@ -2350,6 +2430,10 @@ html.js .fade-up.visible {
     margin-top: -358px;
   }
 
+  .desktop\:mt-0 {
+    margin-top: 0px;
+  }
+
   .desktop\:block {
     display: block;
   }
@@ -2366,8 +2450,16 @@ html.js .fade-up.visible {
     display: inline-flex;
   }
 
+  .desktop\:grid {
+    display: grid;
+  }
+
   .desktop\:hidden {
     display: none;
+  }
+
+  .desktop\:aspect-\[703\/948\] {
+    aspect-ratio: 703/948;
   }
 
   .desktop\:h-\[108px\] {
@@ -2382,12 +2474,20 @@ html.js .fade-up.visible {
     height: 200px;
   }
 
+  .desktop\:h-\[220px\] {
+    height: 220px;
+  }
+
   .desktop\:h-\[460px\] {
     height: 460px;
   }
 
   .desktop\:min-h-\[985px\] {
     min-height: 985px;
+  }
+
+  .desktop\:w-\[102px\] {
+    width: 102px;
   }
 
   .desktop\:w-\[216px\] {
@@ -2414,10 +2514,6 @@ html.js .fade-up.visible {
     max-width: 608px;
   }
 
-  .desktop\:max-w-page {
-    max-width: 1728px;
-  }
-
   .desktop\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -2438,6 +2534,14 @@ html.js .fade-up.visible {
     flex-direction: row;
   }
 
+  .desktop\:flex-col {
+    flex-direction: column;
+  }
+
+  .desktop\:items-start {
+    align-items: flex-start;
+  }
+
   .desktop\:items-center {
     align-items: center;
   }
@@ -2454,25 +2558,38 @@ html.js .fade-up.visible {
     gap: 3rem;
   }
 
-  .desktop\:gap-14 {
-    gap: 3.5rem;
-  }
-
   .desktop\:gap-16 {
     gap: 4rem;
+  }
+
+  .desktop\:gap-5 {
+    gap: 1.25rem;
   }
 
   .desktop\:gap-8 {
     gap: 2rem;
   }
 
+  .desktop\:gap-\[110px\] {
+    gap: 110px;
+  }
+
   .desktop\:gap-\[134px\] {
     gap: 134px;
+  }
+
+  .desktop\:gap-x-14 {
+    -moz-column-gap: 3.5rem;
+         column-gap: 3.5rem;
   }
 
   .desktop\:gap-x-\[50px\] {
     -moz-column-gap: 50px;
          column-gap: 50px;
+  }
+
+  .desktop\:gap-y-8 {
+    row-gap: 2rem;
   }
 
   .desktop\:self-auto {
@@ -2483,31 +2600,17 @@ html.js .fade-up.visible {
     align-self: flex-start;
   }
 
-  .desktop\:border-t {
-    border-top-width: 1px;
+  .desktop\:border-b-0 {
+    border-bottom-width: 0px;
   }
 
   .desktop\:border-t-0 {
     border-top-width: 0px;
   }
 
-  .desktop\:border-toc-rail\/40 {
-    border-color: rgb(230 217 208 / 0.4);
-  }
-
-  .desktop\:bg-cream {
-    --tw-bg-opacity: 1;
-    background-color: rgb(247 243 237 / var(--tw-bg-opacity, 1));
-  }
-
   .desktop\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
-  }
-
-  .desktop\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
 
   .desktop\:px-9 {
@@ -2535,6 +2638,11 @@ html.js .fade-up.visible {
     padding-bottom: 3.5rem;
   }
 
+  .desktop\:py-\[180px\] {
+    padding-top: 180px;
+    padding-bottom: 180px;
+  }
+
   .desktop\:py-\[30px\] {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -2548,6 +2656,18 @@ html.js .fade-up.visible {
     padding-bottom: 100px;
   }
 
+  .desktop\:pb-\[15px\] {
+    padding-bottom: 15px;
+  }
+
+  .desktop\:pb-\[177px\] {
+    padding-bottom: 177px;
+  }
+
+  .desktop\:pl-5 {
+    padding-left: 1.25rem;
+  }
+
   .desktop\:pl-9 {
     padding-left: 2.25rem;
   }
@@ -2556,12 +2676,34 @@ html.js .fade-up.visible {
     padding-top: 0px;
   }
 
+  .desktop\:pt-36 {
+    padding-top: 9rem;
+  }
+
   .desktop\:pt-6 {
     padding-top: 1.5rem;
   }
 
+  .desktop\:pt-\[131px\] {
+    padding-top: 131px;
+  }
+
+  .desktop\:pt-\[35px\] {
+    padding-top: 35px;
+  }
+
   .desktop\:text-left {
     text-align: left;
+  }
+
+  .desktop\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .desktop\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .desktop\:text-\[18px\] {
@@ -2690,14 +2832,6 @@ html.js .fade-up.visible {
     height: auto;
   }
 
-  .wide\:min-h-\[535px\] {
-    min-height: 535px;
-  }
-
-  .wide\:min-h-\[677px\] {
-    min-height: 677px;
-  }
-
   .wide\:min-h-\[985px\] {
     min-height: 985px;
   }
@@ -2794,16 +2928,16 @@ html.js .fade-up.visible {
     padding-bottom: 78px;
   }
 
-  .wide\:pb-\[80px\] {
-    padding-bottom: 80px;
-  }
-
   .wide\:pl-4 {
     padding-left: 1rem;
   }
 
   .wide\:pl-\[126px\] {
     padding-left: 126px;
+  }
+
+  .wide\:pt-0 {
+    padding-top: 0px;
   }
 
   .wide\:pt-\[127px\] {
@@ -2832,13 +2966,5 @@ html.js .fade-up.visible {
 
   .wide\:text-\[49px\] {
     font-size: 49px;
-  }
-
-  .wide\:text-\[72px\] {
-    font-size: 72px;
-  }
-
-  .wide\:leading-\[1\.15\] {
-    line-height: 1.15;
   }
 }
