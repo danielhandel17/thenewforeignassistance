@@ -117,6 +117,20 @@
     position: relative;
     z-index: 1;
   }
+
+  /* Framework A/B/C subsections — body in title column (col 2), letter in col 1 */
+  .fw-subsection {
+    @apply grid grid-cols-[auto_1fr] gap-x-[17px] gap-y-4;
+  }
+  .fw-subsection-letter {
+    @apply col-start-1 row-start-1 self-baseline font-newsreader text-xl font-semibold leading-[30px] text-[#7f503d];
+  }
+  .fw-subsection-title {
+    @apply col-start-2 row-start-1 font-newsreader text-xl font-semibold leading-[30px] text-ink;
+  }
+  .fw-subsection-body {
+    @apply col-start-2 row-start-2 flex flex-col gap-4;
+  }
 }
 
 @layer utilities {

@@ -863,6 +863,49 @@ body {
   z-index: 1;
 }
 
+/* Framework A/B/C subsections — body in title column (col 2), letter in col 1 */
+
+.fw-subsection {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -moz-column-gap: 17px;
+       column-gap: 17px;
+  row-gap: 1rem;
+}
+
+.fw-subsection-letter {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  align-self: baseline;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  line-height: 30px;
+  --tw-text-opacity: 1;
+  color: rgb(127 80 61 / var(--tw-text-opacity, 1));
+}
+
+.fw-subsection-title {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  line-height: 30px;
+  --tw-text-opacity: 1;
+  color: rgb(28 46 74 / var(--tw-text-opacity, 1));
+}
+
+.fw-subsection-body {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1451,10 +1494,6 @@ body {
   align-items: center;
 }
 
-.items-baseline {
-  align-items: baseline;
-}
-
 .items-stretch {
   align-items: stretch;
 }
@@ -1465,6 +1504,10 @@ body {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-0 {
+  gap: 0px;
 }
 
 .gap-10 {
@@ -1511,16 +1554,8 @@ body {
   gap: 134px;
 }
 
-.gap-\[17px\] {
-  gap: 17px;
-}
-
 .gap-\[35px\] {
   gap: 35px;
-}
-
-.gap-0 {
-  gap: 0px;
 }
 
 .gap-x-4 {
@@ -1605,10 +1640,6 @@ body {
 .border-toc-border {
   --tw-border-opacity: 1;
   border-color: rgb(235 214 197 / var(--tw-border-opacity, 1));
-}
-
-.border-toc-rail\/40 {
-  border-color: rgb(230 217 208 / 0.4);
 }
 
 .border-toc-rail\/50 {
@@ -1779,11 +1810,6 @@ body {
 .py-\[108px\] {
   padding-top: 108px;
   padding-bottom: 108px;
-}
-
-.py-\[70px\] {
-  padding-top: 70px;
-  padding-bottom: 70px;
 }
 
 .py-\[78px\] {
@@ -2037,11 +2063,6 @@ body {
 
 .tracking-nav {
   letter-spacing: 0.2em;
-}
-
-.text-\[\#7f503d\] {
-  --tw-text-opacity: 1;
-  color: rgb(127 80 61 / var(--tw-text-opacity, 1));
 }
 
 .text-amber {
@@ -2710,6 +2731,10 @@ html.js .fade-up.visible {
     padding-bottom: 177px;
   }
 
+  .desktop\:pb-\[70px\] {
+    padding-bottom: 70px;
+  }
+
   .desktop\:pl-5 {
     padding-left: 1.25rem;
   }
@@ -2734,12 +2759,16 @@ html.js .fade-up.visible {
     padding-top: 35px;
   }
 
-  .desktop\:pb-\[70px\] {
-    padding-bottom: 70px;
-  }
-
   .desktop\:pt-\[70px\] {
     padding-top: 70px;
+  }
+
+  .desktop\:pb-\[200px\] {
+    padding-bottom: 200px;
+  }
+
+  .desktop\:pb-40 {
+    padding-bottom: 10rem;
   }
 
   .desktop\:text-left {
