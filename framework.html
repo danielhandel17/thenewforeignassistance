@@ -153,14 +153,14 @@
 <!-- CONTENTS + FRAMEWORK BODY — Figma 332:3419 / 332:3422 / decor 332:3528 / TOC 332:3390 -->
 <section class="relative overflow-x-clip border-t border-toc-rail/60 px-10 pt-12 desktop:px-[124px] desktop:pt-36" id="framework-contents">
   <img src="images/fw-contents-decor.svg" alt="" aria-hidden="true" width="97" height="221" class="pointer-events-none absolute left-0 top-36 hidden h-[221px] w-[97px] max-w-none desktop:block">
-  <div class="desktop:grid desktop:grid-cols-12 desktop:gap-x-14 desktop:gap-y-8">
+  <div class="flex flex-col desktop:gap-28">
+    <div class="flex flex-col gap-5">
+      <p class="eyebrow">Contents</p>
+      <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[49px] desktop:leading-[50px]"><span class="desktop:block">The</span> Framework</h2>
+    </div>
 
-    <div class="flex flex-col gap-8 desktop:col-span-4">
-      <div class="flex flex-col gap-5">
-        <p class="eyebrow">Contents</p>
-        <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[49px] desktop:leading-[50px]"><span class="desktop:block">The</span> Framework</h2>
-      </div>
-      <nav id="frameworkToc" class="border-b border-toc-rail/60 pb-8 desktop:sticky desktop:top-28 desktop:border-b-0 desktop:pb-0" aria-label="Framework contents">
+    <div class="desktop:grid desktop:grid-cols-12 desktop:gap-x-14 desktop:gap-y-8">
+      <nav id="frameworkToc" class="border-b border-toc-rail/60 pb-8 desktop:sticky desktop:top-[200px] desktop:col-span-4 desktop:self-start desktop:border-b-0 desktop:pb-0" aria-label="Framework contents">
         <div class="relative desktop:pl-5">
           <div class="absolute left-0 top-1 bottom-1 hidden w-1 rounded-full bg-toc-rail desktop:block" aria-hidden="true"></div>
           <div id="tocPip" class="absolute left-0 top-1 hidden h-6 w-1 rounded-full bg-ink transition-all duration-200 desktop:block" aria-hidden="true"></div>
@@ -174,10 +174,8 @@
           </ul>
         </div>
       </nav>
-    </div>
 
-    <div class="mt-12 flex flex-col gap-16 desktop:col-span-8 desktop:mt-0">
-
+      <div class="mt-12 flex flex-col gap-16 desktop:col-span-8 desktop:mt-0">
       <article id="moonshots" class="fw-section flex flex-col gap-5 border-t border-toc-rail/50 pt-10 fade-up desktop:border-t-0 desktop:pt-0">
         <h2 class="font-newsreader text-[28px] font-medium leading-tight text-ink desktop:text-[36px]">Signature “Moonshot” Initiatives</h2>
         <p class="text-[18px] leading-[1.55] text-ink desktop:text-[20px]">Legacy-building, focused, achievable with existing interventions, capable of crowding in bilateral and philanthropic capital.</p>
@@ -295,6 +293,7 @@
       </article>
 
       <p class="border-t border-toc-rail/50 pt-10 text-[18px] text-ink">Feedback and reflections welcomed. <a href="mailto:contact@thenewforeignassistance.org" class="text-amber underline underline-offset-4">contact@thenewforeignassistance.org</a></p>
+      </div>
     </div>
   </div>
 </section>
