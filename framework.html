@@ -489,45 +489,34 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="border-t border-toc-border px-10 py-[108px] desktop:px-0 desktop:py-14" id="contact">
+  <section class="px-4 py-[108px] wide:px-[124px] wide:pt-[127px] wide:pb-[131px]" id="contact">
     <div class="mx-auto flex w-full min-w-0 max-w-3xl flex-col items-center gap-5 text-center fade-up">
       <p class="eyebrow">Contact</p>
-      <h2 class="w-full min-w-0 font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[50px]">For
-        press inquiries, partnership<br class="hidden desktop:inline"> opportunities, or to learn more<br
-          class="hidden desktop:inline"> about our work.</h2>
-      <a href="mailto:contact@thenewforeignassistance.org"
-        class="link-draw font-newsreader text-lg text-ink desktop:text-[42px]">contact@thenewforeignassistance.org</a>
+      <h2 class="w-full min-w-0 font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[50px]">For press inquiries, partnership<br class="hidden desktop:inline"> opportunities, or to learn more<br class="hidden desktop:inline"> about our work.</h2>
+      <a href="mailto:contact@thenewforeignassistance.org" class="link-draw font-newsreader text-lg text-ink desktop:text-[42px]">contact@thenewforeignassistance.org</a>
     </div>
   </section>
 
+  <!-- NEWSLETTER + FOOTER -->
   <footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
-    <img src="images/decor-rebuild-mobile.png" alt="" aria-hidden="true" width="53" height="159"
-      class="pointer-events-none absolute left-0 top-0 z-0 h-[159px] w-[53px] max-w-none shrink-0 desktop:hidden">
-    <img src="images/decor-rebuild.png" alt="" aria-hidden="true" width="201" height="520"
-      class="pointer-events-none absolute left-0 top-[-16px] z-0 hidden h-[260px] w-[101px] max-w-none shrink-0 desktop:block">
-    <div
-      class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] desktop:flex-row desktop:items-center desktop:justify-between desktop:px-[124px] desktop:pt-19.5 desktop:pb-[100px]">
+    <!-- Mobile: Figma Mask group (332:4102) — 53×159 at left edge, Home - Mobile -->
+    <img src="images/decor-rebuild-mobile.png" alt="" aria-hidden="true" width="53" height="159" class="pointer-events-none absolute left-0 top-0 z-0 h-[159px] w-[53px] max-w-none shrink-0 desktop:hidden">
+    <img src="images/decor-rebuild.png" alt="" aria-hidden="true" width="201" height="520" class="pointer-events-none absolute left-0 top-[-16px] z-0 hidden h-[260px] w-[101px] max-w-none shrink-0 desktop:block">
+    <div class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] desktop:flex-row desktop:items-center desktop:justify-between desktop:px-[124px] desktop:pt-19.5 desktop:pb-[100px]">
       <div class="flex flex-col gap-3">
         <p class="eyebrow">From the rebuild</p>
-        <h3 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[49px]">A brief,
-          occasional newsletter<br class="hidden desktop:inline"> on the rebuild.</h3>
+        <h3 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[49px]">A brief, occasional newsletter<br class="hidden desktop:inline"> on the rebuild.</h3>
       </div>
-      <form class="flex w-full max-w-md flex-col items-stretch gap-3 desktop:flex-row desktop:items-center"
-        id="newsletterForm">
-        <input type="email" class="newsletter-input" placeholder="Your email address" required
-          aria-label="Email address">
-        <button type="submit" class="btn-filled w-full max-w-none shrink-0 desktop:w-auto">Subscribe</button>
+      <form class="flex w-full max-w-md flex-col items-stretch gap-3 desktop:flex-row desktop:items-center" id="newsletterForm">
+        <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit" class="btn-filled w-full shrink-0 self-start desktop:w-auto desktop:self-auto">Subscribe</button>
       </form>
-      <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you.
-        We&#39;ll be in touch.</div>
+      <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you. We&#39;ll be in touch.</div>
     </div>
     <div class="border-b border-t border-footer-border bg-footer-strip desktop:px-[124px]">
-      <div
-        class="mx-auto flex flex-col gap-3 px-5 py-6 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-0">
-        <p class="font-libertinus text-lg font-normal leading-tight text-amber">&copy; 2026 The New Foreign Assistance ·
-          700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
-        <img src="images/powered-by-shapeshift.png" alt="Powered by shapeshift" width="442" height="70"
-          class="h-[35px] w-[221px] shrink-0">
+      <div class="mx-auto flex flex-col gap-3 px-5 py-6 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-0">
+        <p class="font-libertinus text-lg text-center desktop:text-left font-normal leading-tight text-amber">&copy; 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
+        <img src="images/powered-by-shapeshift.png" alt="Powered by shapeshift" width="442" height="70" class="hidden desktop:inline h-[35px] w-[221px] shrink-0">
       </div>
     </div>
   </footer>
