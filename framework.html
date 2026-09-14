@@ -48,9 +48,9 @@
 <body class="font-newsreader">
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white">
+  <header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
     <div
-      class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-6 desktop:pb-0">
+      class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
       <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
         <img src="images/logo.png" alt="The New Foreign Assistance" width="216" height="108"
           class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
@@ -103,7 +103,7 @@
   </div>
 
   <!-- HERO — Figma mask 332:3289; title 332:3387/3388; decor 332:3293, 332:3294, 332:3335, 332:3376, 332:3379 -->
-  <section class="relative overflow-x-clip">
+  <section id="page-hero" class="relative overflow-x-clip">
     <div class="fw-hero-grid mx-auto max-w-page fade-up">
       <div class="fw-hero-grid__decor" aria-hidden="true">
         <img src="images/fw-hero-bg.png" alt="" width="1728" height="677" class="fw-hero-grid__bg" decoding="async">
@@ -522,6 +522,7 @@
   </footer>
 
   <script src="js/mobile-menu.js"></script>
+  <script src="js/header-scroll.js" defer></script>
 
   <script>
     const observer = new IntersectionObserver(entries => {

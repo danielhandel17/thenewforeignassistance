@@ -61,8 +61,8 @@
 <body class="font-newsreader">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white">
-  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-6 desktop:pb-0">
+<header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
+  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
       <img src="images/logo.png" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
     </a>
@@ -99,7 +99,7 @@
 </div>
 
 <!-- HERO -->
-<section>
+<section id="page-hero">
   <div class="mx-auto grid items-start gap-8 wide:grid-cols-2 wide:gap-16">
     <div class="relative order-1 fade-up wide:order-2">
       <img src="images/hero-school.jpg" alt="Schoolchildren holding flags outdoors" class="h-[221px] w-full object-cover object-center wide:aspect-[827/985] wide:h-auto wide:min-h-[985px] wide:object-left-bottom desktop:min-h-[985px]" width="1024" height="683">
@@ -418,6 +418,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script src="js/header-scroll.js" defer></script>
 <script src="js/index.js"></script>
 
 </body>
