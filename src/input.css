@@ -32,7 +32,7 @@
   }
   /* Footer newsletter email — Figma Group 22 (332:4094): 363×55, placeholder Libertinus 18px amber / 3.6px tracking */
   .newsletter-input {
-    @apply box-border h-[55px] min-h-[55px] w-full flex-1 border border-solid border-amber bg-white px-[22px] font-libertinus text-[18px] leading-[33px] tracking-normal text-ink placeholder:text-amber placeholder:opacity-100 placeholder:tracking-eyebrow focus:outline-none focus:ring-1 focus:ring-amber;
+    @apply box-border h-[55px] min-h-[55px] w-full flex-1 border border-solid border-amber bg-white px-[22px] font-libertinus text-lg leading-[33px] tracking-normal text-ink placeholder:text-amber placeholder:opacity-100 placeholder:tracking-eyebrow focus:outline-none focus:ring-1 focus:ring-amber;
   }
   .eyebrow {
     @apply font-libertinus text-xl text-nowrap max-w-[282px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
@@ -99,7 +99,7 @@
 
   /* Framework pull quote — Figma Rectangle 9 (332:4349): 89×311 accent at x=16 */
   .fw-pullquote {
-    @apply text-[19px];
+    @apply text-lg;
     position: relative;
     padding-left: 0;
   }

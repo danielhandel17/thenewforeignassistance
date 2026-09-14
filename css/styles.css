@@ -733,7 +733,8 @@ body {
   padding-left: 22px;
   padding-right: 22px;
   font-family: "Libertinus Serif Display", Newsreader, Georgia, serif;
-  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   line-height: 33px;
   letter-spacing: 0em;
   --tw-text-opacity: 1;
@@ -840,7 +841,8 @@ body {
 /* Framework pull quote — Figma Rectangle 9 (332:4349): 89×311 accent at x=16 */
 
 .fw-pullquote {
-  font-size: 19px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   position: relative;
   padding-left: 0;
 }
@@ -1517,10 +1519,6 @@ body {
   gap: 35px;
 }
 
-.gap-28 {
-  gap: 7rem;
-}
-
 .gap-x-4 {
   -moz-column-gap: 1rem;
        column-gap: 1rem;
@@ -1882,10 +1880,6 @@ body {
   font-size: 17px;
 }
 
-.text-\[18px\] {
-  font-size: 18px;
-}
-
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -1913,6 +1907,16 @@ body {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-\[22px\] {
@@ -2398,10 +2402,6 @@ html.js .fade-up.visible {
     right: -35px;
   }
 
-  .desktop\:top-28 {
-    top: 7rem;
-  }
-
   .desktop\:top-\[125px\] {
     top: 125px;
   }
@@ -2410,16 +2410,12 @@ html.js .fade-up.visible {
     top: 180px;
   }
 
-  .desktop\:top-\[9\.5rem\] {
-    top: 9.5rem;
-  }
-
-  .desktop\:top-40 {
-    top: 10rem;
-  }
-
   .desktop\:top-\[200px\] {
     top: 200px;
+  }
+
+  .desktop\:top-\[9\.5rem\] {
+    top: 9.5rem;
   }
 
   .desktop\:col-span-2 {
@@ -2574,6 +2570,10 @@ html.js .fade-up.visible {
     gap: 4rem;
   }
 
+  .desktop\:gap-28 {
+    gap: 7rem;
+  }
+
   .desktop\:gap-5 {
     gap: 1.25rem;
   }
@@ -2588,10 +2588,6 @@ html.js .fade-up.visible {
 
   .desktop\:gap-\[134px\] {
     gap: 134px;
-  }
-
-  .desktop\:gap-28 {
-    gap: 7rem;
   }
 
   .desktop\:gap-x-14 {
@@ -2722,10 +2718,6 @@ html.js .fade-up.visible {
     line-height: 1;
   }
 
-  .desktop\:text-\[18px\] {
-    font-size: 18px;
-  }
-
   .desktop\:text-\[20px\] {
     font-size: 20px;
   }
@@ -2740,6 +2732,10 @@ html.js .fade-up.visible {
 
   .desktop\:text-\[36px\] {
     font-size: 36px;
+  }
+
+  .desktop\:text-\[38px\] {
+    font-size: 38px;
   }
 
   .desktop\:text-\[40px\] {
@@ -2764,6 +2760,16 @@ html.js .fade-up.visible {
 
   .desktop\:text-\[72px\] {
     font-size: 72px;
+  }
+
+  .desktop\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .desktop\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .desktop\:leading-\[1\.15\] {
