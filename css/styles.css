@@ -1122,6 +1122,34 @@ body {
   top: auto;
 }
 
+.left-\[30px\] {
+  left: 30px;
+}
+
+.top-\[107px\] {
+  top: 107px;
+}
+
+.left-\[-10px\] {
+  left: -10px;
+}
+
+.left-\[-5px\] {
+  left: -5px;
+}
+
+.top-\[75pxpx\] {
+  top: 75pxpx;
+}
+
+.top-\[75px\] {
+  top: 75px;
+}
+
+.top-\[40px\] {
+  top: 40px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -2626,6 +2654,10 @@ html.js .fade-up.visible {
 
   .desktop\:self-start {
     align-self: flex-start;
+  }
+
+  .desktop\:text-wrap {
+    text-wrap: wrap;
   }
 
   .desktop\:border-b-0 {
