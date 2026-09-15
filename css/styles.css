@@ -1150,6 +1150,62 @@ body {
   top: 40px;
 }
 
+.bottom-\[-53px\] {
+  bottom: -53px;
+}
+
+.right-\[-53px\] {
+  right: -53px;
+}
+
+.right-\[-60px\] {
+  right: -60px;
+}
+
+.right-\[-70px\] {
+  right: -70px;
+}
+
+.left-\[60\%\] {
+  left: 60%;
+}
+
+.left-\[55\%\] {
+  left: 55%;
+}
+
+.left-\[30\%\] {
+  left: 30%;
+}
+
+.bottom-\[30px\] {
+  bottom: 30px;
+}
+
+.bottom-\[-30px\] {
+  bottom: -30px;
+}
+
+.left-\[50\%\] {
+  left: 50%;
+}
+
+.left-\[40\%\] {
+  left: 40%;
+}
+
+.bottom-\[-35px\] {
+  bottom: -35px;
+}
+
+.left-\[35\%\] {
+  left: 35%;
+}
+
+.left-\[32\%\] {
+  left: 32%;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1521,6 +1577,10 @@ body {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
 }
 
 .min-w-0 {
@@ -2190,6 +2250,10 @@ body {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.leading-\[25px\] {
+  line-height: 25px;
 }
 
 .tracking-\[3\.2px\] {
