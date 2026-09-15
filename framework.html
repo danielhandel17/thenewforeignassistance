@@ -139,10 +139,15 @@
   </section>
 
   <!-- HISTORY — Figma Mask group 332:3638 (102×220 @ x=0 y=910) -->
-  <section class="relative overflow-x-clip bg-cream px-10 desktop:px-[124px] desktop:pt-[131px] desktop:pb-[177px]"
+  <section class="relative overflow-x-clip bg-cream px-10 pt-[117px] pb-[106px] desktop:px-[124px] desktop:pt-[131px] desktop:pb-[177px]"
     id="history">
+    <!-- Desktop decor — Figma 332:3638 -->
     <img src="images/fw-history-decor.svg" alt="" aria-hidden="true" width="102" height="220"
-      class="pointer-events-none absolute left-0 top-4 h-[110px] w-[51px] max-w-none desktop:top-[125px] desktop:h-[220px] desktop:w-[102px]">
+      class="pointer-events-none absolute left-0 top-[125px] hidden h-[220px] w-[102px] max-w-none desktop:block">
+    <!-- Mobile decor — Figma 332:4239 (Group 2457; cream @ left -16, 51×145 visible) -->
+    <img src="images/fw-history-decor-mobile.svg" alt="" aria-hidden="true" width="93" height="145"
+      class="pointer-events-none absolute left-[-42px] top-4 h-[145px] w-[93px] max-w-none desktop:hidden"
+      data-node-id="332:4239">
     <div class="mx-auto grid gap-10 desktop:grid-cols-12 desktop:gap-12 fade-up">
       <!-- History title deskto -->
       <div class="hidden desktop:col-span-4 desktop:flex desktop:flex-col desktop:gap-5">
@@ -171,8 +176,8 @@
             Green, USAID launched the Journey to Self-Reliance and overhauled procurement through 170-plus reform
             recommendations. Green stated the thesis directly:</p>
         </div>
-        <blockquote class="fw-pullquote not-italic desktop:pt-[35px] desktop:pb-[15px]">
-          <p class="text-3xl leading-[1.5] desktop:text-4xl">&ldquo;I believe the purpose of foreign assistance should
+        <blockquote class="fw-pullquote pt-[35px] pb-0 desktop:pb-[15px]">
+          <p class="italic font-semibold text-justify text-3xl leading-[1.5] desktop:text-4xl">&ldquo;I believe the purpose of foreign assistance should
             be ending its need to exist. Each of our programs should look forward to the day when it can end.&rdquo;</p>
           <cite class="mt-4 block font-newsreader text-[14px] not-italic leading-snug text-toc-muted">&mdash; Mark
             Green, USAID Administrator, August 2017</cite>
@@ -186,25 +191,20 @@
             partial reforms. Yes, the disruption had painful human costs. So did the decades of programs that didn&#39;t
             meet their potential.</p>
           <br>
-          <p><strong>Now is the chance to build a system that can be the pride of America and a model for the
-              world.</strong></p>
+          <p class="font-semibold italic">Now is the chance to build a system that can be the pride of America and a model for the
+              world.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Mobile bridge image — Figma 332:4109 379×397 at y=2422 -->
-  <div class="px-10 pt-10 desktop:hidden">
-    <img src="images/fw-portrait.jpg" alt="Two people walking in a city plaza"
-      class="aspect-[379/397] w-full max-w-[379px] object-cover object-[72%_42%]" width="379" height="397">
-  </div>
-
   <!-- WHAT WAS WRONG — Figma Mask group 332:3412 + portrait 332:3380 (703×948 at x=919 y=2038) -->
   <section
-    class="relative overflow-x-clip bg-white px-10 py-12 desktop:grid desktop:grid-cols-2 desktop:items-start desktop:gap-[110px] desktop:px-[124px] desktop:py-[180px]"
+    class="relative overflow-x-clip bg-white px-10 pt-[114px] pb-[89px] desktop:grid desktop:grid-cols-2 desktop:items-start desktop:gap-[110px] desktop:px-[124px] desktop:py-[180px]"
     id="what-was-wrong">
     <img src="images/decor-record.svg" alt="" aria-hidden="true" width="79" height="232"
-      class="pointer-events-none absolute left-0 top-8 hidden h-[232px] w-[79px] max-w-none shrink-0 desktop:top-[180px] desktop:block">
+      class="pointer-events-none absolute left-0 top-[73px] h-[147px] w-[50px] max-w-none shrink-0 desktop:top-[180px] desktop:h-[232px] desktop:w-[79px]"
+      data-node-id="332:4353">
     <div class="relative flex flex-col gap-6 fade-up">
       <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">too many programs</p>
       <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[40px]">What was wrong with
@@ -229,7 +229,8 @@
         </p>
       </div>
     </div>
-    <div class="relative hidden overflow-hidden desktop:block desktop:aspect-[703/948]" data-node-id="332:3380">
+    <div class="relative mt-10 aspect-[379/397] w-full max-w-[379px] overflow-hidden desktop:mt-0 desktop:aspect-[703/948] desktop:max-w-none"
+      data-node-id="332:3380">
       <img src="images/fw-portrait.jpg" alt="Two people walking in a city plaza" width="1254" height="1254"
         class="pointer-events-none absolute left-[-49.63%] top-[-10.93%] h-[110.93%] w-[149.63%] max-w-none"
         decoding="async">
