@@ -32,11 +32,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The New Foreign Assistance — Tracker">
 <meta name="twitter:description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
-<link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg"><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='36' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>TNFA</text></svg>">
-<link rel="apple-touch-icon" href="images/favicon-mark.jpg"><rect width='100' height='100' rx='12' fill='%23b8682a'/><text y='.9em' font-size='36' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>TNFA</text></svg>">
+<link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
+<link rel="apple-touch-icon" href="images/favicon-mark.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 <style>
   :root {
     /* Brand palette — matches site-wide */
@@ -56,19 +57,10 @@
   html, body { overflow-x: hidden; }
   body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-  /* STICKY HEADER — dark navy, unified with rest of site */
-  .sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--banner); border-bottom: 2px solid rgba(184,104,42,0.6); transition: box-shadow 0.3s; }
+  /* Tracker subnav — Timeline / Dashboard + running totals */
+  .sticky-header { position: sticky; top: 0; z-index: 40; background: var(--banner); border-bottom: 2px solid rgba(184,104,42,0.6); transition: box-shadow 0.3s; }
   .sticky-header.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.18); }
   .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; height: 56px; gap: 24px; }
-  .site-name { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.92); text-decoration: none; letter-spacing: -0.3px; white-space: nowrap; flex-shrink: 0; }
-  .site-name em { font-style: normal; color: var(--amber); }
-  .main-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
-  .main-nav a { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
-  .main-nav a:hover { color: #fff; }
-  .main-nav a.nav-current { color: #fff; font-weight: 600; pointer-events: none; }
-  .main-nav a.nav-tracker { color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 13px; border-radius: 3px; font-size: 13px; }
-  .main-nav a.nav-tracker:hover { border-color: var(--amber); color: var(--amber); }
-  .main-nav a.nav-tracker.nav-current { background: rgba(184,104,42,0.18); border-color: var(--amber); }
 
   .header-tabs { display: flex; align-items: center; height: 100%; gap: 0; }
   .header-tab { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; padding: 0 14px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.65); text-decoration: none; transition: all 0.2s; white-space: nowrap; }
@@ -84,7 +76,7 @@
   .total-announced { color: #fcd34d; }
 
   /* HERO */
-  .hero { padding: 120px 32px 40px; max-width: 920px; margin: 0 auto; text-align: center; }
+  .hero { padding: 48px 32px 40px; max-width: 920px; margin: 0 auto; text-align: center; }
   .hero h1 { font-family: 'Newsreader', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 500; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.3px; color: var(--ink); }
   .hero h1 em { font-style: italic; color: var(--amber); font-weight: 500; display: inline-block; margin-top: 8px; }
   .hero .subtitle { font-size: 17px; color: var(--ink-light); max-width: 560px; margin: 0 auto; line-height: 1.7; }
@@ -207,17 +199,11 @@
     .card-title { font-size: 17px; }
     .card-desc { font-size: 15px; }
 
-    /* Header — compact on mobile, hide global nav, show wordmark + tabs */
+    /* Header — compact on mobile */
     .header-inner {
       padding: 0 14px;
       gap: 12px;
       height: 52px;
-    }
-    .site-name {
-      font-size: 18px;
-    }
-    .main-nav {
-      display: none;
     }
     .header-tabs {
       height: auto;
@@ -245,9 +231,9 @@
       font-size: 15px;
     }
 
-    /* Hero — generous top padding to clear header */
+    /* Hero */
     .hero {
-      padding: 80px 16px 24px;
+      padding: 32px 16px 24px;
     }
     .hero h1 {
       font-size: 22px;
@@ -492,9 +478,43 @@
 </head>
 <body>
 
+<!-- HEADER -->
+<header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
+  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
+    <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
+      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
+    </a>
+
+    <nav class="hidden items-center gap-8 desktop:flex" aria-label="Primary">
+      <a href="/" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
+      <a href="framework.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Framework</a>
+      <a href="about.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">About</a>
+      <a href="press.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Press</a>
+    </nav>
+
+    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] desktop:hidden" hidden aria-hidden="true">
+  <button type="button" id="menuClose" class="absolute right-[15px] top-4 z-10 inline-flex h-10 w-10 items-center justify-center text-ink" aria-label="Close menu">
+    <img src="images/icon-close.svg" alt="" class="h-6 w-6" width="24" height="24">
+  </button>
+  <nav class="mobile-menu__nav pointer-events-none flex h-full flex-col items-center px-5 pt-[133px]" aria-label="Mobile">
+    <div class="pointer-events-auto flex w-full flex-col items-center">
+    <a href="/" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-ink">Home</a>
+    <a href="framework.html" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-ink">Framework</a>
+    <a href="about.html" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-ink">About</a>
+    <a href="press.html" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-ink">Press</a>
+    </div>
+  </nav>
+</div>
+
 <div class="sticky-header" id="stickyHeader">
   <div class="header-inner">
-    <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
     <div class="header-tabs">
       <a href="tracker.html" class="header-tab active">Timeline</a>
       <a href="dashboard.html" class="header-tab">Dashboard</a>
@@ -521,12 +541,6 @@
         <span class="total-value total-announced" id="totalAnnounced">$0</span>
       </div>
     </div>
-    <nav class="main-nav">
-      <a href="framework.html">Framework</a>
-      <a href="about.html">About</a>
-      <a href="press.html">Press</a>
-      <a href="tracker.html" class="nav-tracker nav-current">Tracker →</a>
-    </nav>
   </div>
 </div>
 
@@ -1757,10 +1771,12 @@ function updateTotals() {
   }
 
   cEl.textContent = fmt(Math.max(0,c)); aEl.textContent = fmt(Math.max(0,a));
-  hdr.classList.toggle('scrolled', window.scrollY > 100);
+  if (hdr) hdr.classList.toggle('scrolled', window.scrollY > 100);
 }
 window.addEventListener('scroll', updateTotals, {passive:true});
 updateTotals();
 </script>
+<script src="js/mobile-menu.js"></script>
+<script src="js/header-scroll.js" defer></script>
 </body>
 </html>

@@ -19,7 +19,8 @@
 <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
 <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 <style>
   :root {
     --bg:       #faf7f0;
@@ -45,65 +46,6 @@
     color: var(--ink);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── HEADER ── */
-  .site-header {
-    background: var(--banner);
-    border-bottom: 2px solid rgba(184,104,42,0.6);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    min-height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-  }
-  .site-name {
-    font-family: 'Newsreader', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: rgba(255,255,255,0.92);
-    text-decoration: none;
-    letter-spacing: -0.3px;
-  }
-  .site-name em {
-    font-style: normal;
-    color: var(--amber);
-  }
-  nav { display: flex; gap: 28px; align-items: center; }
-  nav a {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    text-transform: none;
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    transition: color 0.2s, opacity 0.2s;
-  }
-  nav a:hover { color: rgba(255,255,255,1); }
-  .nav-current {
-    color: rgba(255,255,255,1) !important;
-    font-weight: 600;
-    pointer-events: none;
-  }
-  .nav-tracker {
-    color: rgba(255,255,255,1) !important;
-    border: 1px solid rgba(255,255,255,0.4);
-    padding: 5px 13px;
-    border-radius: 3px;
-    transition: border-color 0.2s !important;
-  }
-  .nav-tracker:hover {
-    border-color: rgba(255,255,255,1) !important;
   }
 
   /* ── HERO ── */
@@ -213,10 +155,6 @@
 
   /* ── MOBILE ── */
   @media (max-width: 860px) {
-    .header-inner { padding: 8px 20px; }
-    nav { gap: 16px; }
-    nav a { font-size: 12px; }
-    .site-name { font-size: 18px; }
     .hero { padding: 56px 20px 64px; }
     .hero-inner { grid-template-columns: 1fr; gap: 40px; }
     .section { padding: 56px 20px; }
@@ -820,7 +758,10 @@
   body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
-  [id] { scroll-margin-top: 80px; }
+  [id] { scroll-margin-top: 5.5rem; }
+  @media (min-width: 860px) {
+    [id] { scroll-margin-top: 9.5rem; }
+  }
   ::selection { background: var(--amber); color: #fff; }
   a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
     outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px;
@@ -852,17 +793,42 @@
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="site-name">The <em>New</em> Foreign Assistance</a>
-    <nav>
-      <a href="framework.html">Framework</a>
-      <a href="about.html" class="nav-current">About</a>
-      <a href="press.html">Press</a>
-      <a href="tracker.html" class="nav-tracker">Tracker →</a>
+<header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
+  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
+    <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
+      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
+    </a>
+
+    <nav class="hidden items-center gap-8 desktop:flex" aria-label="Primary">
+      <a href="/" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
+      <a href="framework.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Framework</a>
+      <a href="about.html" class="font-libertinus text-lg uppercase tracking-nav text-amber">About</a>
+      <a href="press.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Press</a>
     </nav>
+
+    <a href="tracker.html" class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white desktop:inline-flex">Tracker →</a>
+
+    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
+    </button>
   </div>
 </header>
+
+<!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] desktop:hidden" hidden aria-hidden="true">
+  <button type="button" id="menuClose" class="absolute right-[15px] top-4 z-10 inline-flex h-10 w-10 items-center justify-center text-ink" aria-label="Close menu">
+    <img src="images/icon-close.svg" alt="" class="h-6 w-6" width="24" height="24">
+  </button>
+  <nav class="mobile-menu__nav pointer-events-none flex h-full flex-col items-center px-5 pt-[133px]" aria-label="Mobile">
+    <div class="pointer-events-auto flex w-full flex-col items-center">
+    <a href="/" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-ink">Home</a>
+    <a href="framework.html" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-ink">Framework</a>
+    <a href="about.html" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-amber">About</a>
+    <a href="press.html" class="font-libertinus text-lg uppercase leading-[61px] tracking-[3.6px] text-ink">Press</a>
+    <a href="tracker.html" class="mt-[34px] inline-flex h-[55px] w-[168px] items-center justify-center gap-2 border border-amber bg-white font-libertinus text-[16px] uppercase tracking-[3.2px] text-amber">Tracker →</a>
+    </div>
+  </nav>
+</div>
 
 <!-- PAGE INTRO -->
 <section class="page-intro">
@@ -892,7 +858,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/daniel-handel.jpg" alt="Daniel Handel" class="leader-photo">
+              <img src="images/daniel-handel.webp" alt="Daniel Handel" class="leader-photo">
               <div class="board-text">
                 <div class="board-name">Daniel Handel</div>
                 <div class="board-role">Executive Director<br><span class="board-role-sub">Former USAID Foreign Service economist; Policy Director, Unlock Aid</span></div>
@@ -907,7 +873,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/randy-tift.jpg" alt="Randy Tift" class="leader-photo">
+              <img src="images/randy-tift.webp" alt="Randy Tift" class="leader-photo">
               <div class="board-text">
                 <div class="board-name">Randy Tift</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Senior Advisor, Accord Network; Head of Transformation, Trump I USAID</span></div>
@@ -922,7 +888,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/parth-ahya.jpg" alt="Parth Ahya" class="leader-photo">
+              <img src="images/parth-ahya.webp" alt="Parth Ahya" class="leader-photo">
               <div class="board-text">
                 <div class="board-name">Parth Ahya</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Program Director, Renaissance Philanthropy</span></div>
@@ -937,7 +903,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/daniel-duman.jpg" alt="Daniel Duman" class="leader-photo">
+              <img src="images/daniel-duman.webp" alt="Daniel Duman" class="leader-photo">
               <div class="board-text">
                 <div class="board-name">Daniel Duman</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Impact investor; former Tony Blair Institute governance advisor</span></div>
@@ -958,63 +924,63 @@
     <div class="advisor-grid">
       
       <button class="advisor-card" data-advisor="burks" type="button">
-        <div class="advisor-avatar"><img src="images/jonathan-burks.jpg" alt="Jonathan Burks"></div>
+        <div class="advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks"></div>
         <div class="advisor-name">Jonathan Burks</div>
         <div class="advisor-affil">Executive Vice President, Bipartisan Policy Center; former Chief of Staff to Speaker Paul Ryan</div>
       </button>
       <button class="advisor-card" data-advisor="cavallorunde" type="button">
-        <div class="advisor-avatar"><img src="images/sonia-cavallo-runde.jpg" alt="Sonia Cavallo Runde"></div>
+        <div class="advisor-avatar"><img src="images/sonia-cavallo-runde.webp" alt="Sonia Cavallo Runde"></div>
         <div class="advisor-name">Sonia Cavallo Runde</div>
         <div class="advisor-affil">Former Argentine Ambassador to the OAS</div>
       </button>
       <button class="advisor-card" data-advisor="coyne" type="button">
-        <div class="advisor-avatar"><img src="images/chris-coyne.jpg" alt="Chris Coyne"></div>
+        <div class="advisor-avatar"><img src="images/chris-coyne.webp" alt="Chris Coyne"></div>
         <div class="advisor-name">Chris Coyne</div>
         <div class="advisor-affil">Prof. Chris Coyne, Author of <em>Doing Bad by Doing Good: Why Humanitarian Action Fails</em></div>
       </button>
       <button class="advisor-card" data-advisor="dookhony" type="button">
-        <div class="advisor-avatar"><img src="images/manisha-dookhony.jpg" alt="Manisha Dookhony"></div>
+        <div class="advisor-avatar"><img src="images/manisha-dookhony.webp" alt="Manisha Dookhony"></div>
         <div class="advisor-name">Manisha Dookhony</div>
         <div class="advisor-affil">CEO and co-founder, Terramont Capital Partners</div>
       </button>
       <button class="advisor-card" data-advisor="gallenstein" type="button">
-        <div class="advisor-avatar"><img src="images/tony-gallenstein.jpg" alt="Tony Gallenstein"></div>
+        <div class="advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein"></div>
         <div class="advisor-name">Tony Gallenstein</div>
         <div class="advisor-affil">Professor of Economics and Public Policy, Catholic Univ.</div>
       </button>
       <button class="advisor-card" data-advisor="murry" type="button">
-        <div class="advisor-avatar"><img src="images/luke-murry.jpg" alt="Luke Murry"></div>
+        <div class="advisor-avatar"><img src="images/luke-murry.webp" alt="Luke Murry"></div>
         <div class="advisor-name">Luke Murry</div>
         <div class="advisor-affil">Head of Government Affairs, Marvell; architect of the Foreign Aid Transparency and Accountability Act</div>
       </button>
       <button class="advisor-card" data-advisor="mowers" type="button">
-        <div class="advisor-avatar"><img src="images/matt-mowers.jpg" alt="Matt Mowers"></div>
+        <div class="advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers"></div>
         <div class="advisor-name">Matt Mowers</div>
         <div class="advisor-affil">President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR</div>
       </button>
       <button class="advisor-card" data-advisor="nagy" type="button">
-        <div class="advisor-avatar"><img src="images/tibor-nagy.jpg" alt="Tibor Nagy"></div>
+        <div class="advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy"></div>
         <div class="advisor-name">Amb. Tibor Nagy</div>
         <div class="advisor-affil">Former Asst. Secretary of State for African Affairs</div>
       </button>
       <button class="advisor-card" data-advisor="pritchett" type="button">
-        <div class="advisor-avatar"><img src="images/lant-pritchett.jpg" alt="Lant Pritchett"></div>
+        <div class="advisor-avatar"><img src="images/lant-pritchett.webp" alt="Lant Pritchett"></div>
         <div class="advisor-name">Lant Pritchett</div>
         <div class="advisor-affil">Professor of Economics and Practice, London School of Economics</div>
       </button>
       <button class="advisor-card" data-advisor="runde" type="button">
-        <div class="advisor-avatar"><img src="images/dan-runde.jpg" alt="Dan Runde"></div>
+        <div class="advisor-avatar"><img src="images/dan-runde.webp" alt="Dan Runde"></div>
         <div class="advisor-name">Dan Runde</div>
         <div class="advisor-affil">Author of <em>The American Imperative</em></div>
       </button>
       <button class="advisor-card" data-advisor="soule" type="button">
-        <div class="advisor-avatar"><img src="images/nate-soule.jpg" alt="Nate Soule"></div>
+        <div class="advisor-avatar"><img src="images/nate-soule.webp" alt="Nate Soule"></div>
         <div class="advisor-name">Nate Soule</div>
         <div class="advisor-affil">Executive Director, Campaign for America First International Assistance</div>
       </button>
       
       <button class="advisor-card" data-advisor="wydick" type="button">
-        <div class="advisor-avatar"><img src="images/bruce-wydick.jpg" alt="Bruce Wydick"></div>
+        <div class="advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick"></div>
         <div class="advisor-name">Bruce Wydick</div>
         <div class="advisor-affil">Author of <em>Shrewd Samaritan</em>; Prof. of Economics, Univ. of San Francisco</div>
       </button>
@@ -1103,6 +1069,8 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 })();
 </script>
 
+<script src="js/mobile-menu.js"></script>
+<script src="js/header-scroll.js" defer></script>
 <script>
 // ── ADVISOR BIO DATA ──
 // Placeholder bios drawn from public information. Each will be replaced
@@ -1112,75 +1080,75 @@ const ADVISORS = {
     name: 'Jonathan Burks',
     affil: 'EVP for Economic and Health Policy, Bipartisan Policy Center',
     bio: 'Executive Vice President for Economic and Health Policy at the Bipartisan Policy Center. Previously spent five years leading Global Public Policy for Walmart. Career in public service spans: Chief of Staff to Speaker of the House Paul Ryan; advisor to Senate Majority Leader Mitch McConnell on budget and appropriations; Policy Director of the House Budget Committee; Director of Legislative Affairs at the SEC; Senior Advisor to the Under Secretary of the Treasury for International Affairs; and policy roles in the transition office of the Director of National Intelligence. Deputy Policy Director on the Romney for President campaign (2012). Earlier served at the White House under Vice President Cheney and President Bush, including as the Vice President’s Staff Secretary and Special Assistant to the President for Policy. Board member, Metropolitan Washington Airports Authority and American Idea Foundation; Senate-confirmed Board member, U.S. Institute of Peace. MA from Johns Hopkins SAIS; BS in Foreign Service from Georgetown University.',
-    photo: 'images/jonathan-burks.jpg'
+    photo: 'images/jonathan-burks.webp'
   },
   runde: {
     name: 'Dan Runde',
     affil: 'Author of <em>The American Imperative</em>',
     bio: 'A leading conservative voice on U.S. foreign assistance, economic statecraft, and the role of development in great-power competition. Author of multiple books on the future of American engagement abroad. Former Director of the Project on Prosperity and Development at CSIS.'
   ,
-    photo: 'images/dan-runde.jpg'
+    photo: 'images/dan-runde.webp'
   },
   pritchett: {
     name: 'Lant Pritchett',
     affil: 'Professor of Economics and Practice, London School of Economics',
     bio: 'Among the most cited development economists of his generation, and a long-running critic of conventional foreign assistance. PhD MIT; nearly two decades at the World Bank; long-time professor at the Harvard Kennedy School; research director of the RISE Programme at Oxford\u2019s Blavatnik School. Currently Visiting Professor at the London School of Economics and co-founder of Labor Mobility Partnerships.',
-    photo: 'images/lant-pritchett.jpg'
+    photo: 'images/lant-pritchett.webp'
   },
   murry: {
     name: 'Luke Murry',
     affil: 'Head of Government Affairs, Marvell; architect of the Foreign Aid Transparency and Accountability Act',
     bio: 'Head of Government Affairs at Marvell, a global semiconductor firm. Previously National Security Advisor to then-Minority Leader Kevin McCarthy, and subcommittee staff director on the House Foreign Affairs Committee. While on the staff of Rep. Ted Poe, helped author and pass the Foreign Aid Transparency and Accountability Act. Adjunct assistant professor at Georgetown University. M.A. in Security Studies from Georgetown; B.A. in Political Science from UCLA.',
-    photo: 'images/luke-murry.jpg'
+    photo: 'images/luke-murry.webp'
   },
   mowers: {
     name: 'Matt Mowers',
     affil: 'President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR',
     bio: 'President of Valcour, a global public strategy firm. Served as Senior White House Advisor at the State Department under President Trump, where he helped lead the $6 billion PEPFAR program — credited with saving over 15 million lives — and secured its unanimous bipartisan reauthorization in Congress. Previously a senior official on the Trump-Pence campaign and transition. Republican nominee for Congress in New Hampshire in 2020 and 2022. Named a Washington "Power Player" by Politico.',
-    photo: 'images/matt-mowers.jpg'
+    photo: 'images/matt-mowers.webp'
   },
   nagy: {
     name: 'Ambassador Tibor Nagy',
     affil: 'Former Asst. Secretary of State for African Affairs',
     bio: 'Career Foreign Service Officer with eight postings across sub-Saharan Africa, including ambassadorships in Ethiopia and Guinea. As Assistant Secretary of State for African Affairs (2018\u20132021), built \u201Cdeal teams\u201D in every U.S. embassy on the continent to drive trade and investment. Performed the duties of Undersecretary of State for Management, January\u2013April 2025.',
-    photo: 'images/tibor-nagy.jpg'
+    photo: 'images/tibor-nagy.webp'
   },
   dookhony: {
     name: 'Manisha Dookhony',
     affil: 'CEO and co-founder, Terramont Capital Partners',
     bio: 'CEO and co-founder, Terramont Capital Partners. African investment promotion advisor including partnership agreements under CECPA, SADC, and COMESA. Led drafting of the Rwanda Investment Code. Vice Chair of the National Tripartite Council of Mauritius.',
-    photo: 'images/manisha-dookhony.jpg'
+    photo: 'images/manisha-dookhony.webp'
   },
   cavallorunde: {
     name: 'Sonia Cavallo Runde',
     affil: 'Former Ambassador and Permanent Representative of Argentina to the Organization of American States',
     bio: 'Economist who served as Argentina\u2019s Ambassador and Permanent Representative to the OAS, appointed by the President and confirmed by the Senate. Co-founded CIPPEC, the Argentine think tank, and led its Health Policy Program. Lectures in economics at The Catholic University of America; co-author of Economic History of Argentina (Routledge). Harvard Kennedy School.',
-    photo: 'images/sonia-cavallo-runde.jpg'
+    photo: 'images/sonia-cavallo-runde.webp'
   },
   coyne: {
     name: 'Chris Coyne',
     affil: 'Prof. Chris Coyne — Author, <em>Doing Bad by Doing Good: Why Humanitarian Action Fails</em>',
     bio: 'Professor of Economics at George Mason University; Associate Director of the F. A. Hayek Program at the Mercatus Center; Director of the Initiative for the Study of a Stable Peace; Senior Fellow at the Independent Institute; Non-resident Fellow at the Quincy Institute. Co-Editor of The Review of Austrian Economics and The Independent Review. Author or co-author of How to Run Wars (2024), In Search of Monsters to Destroy (2022), Manufacturing Militarism (2021), Tyranny Comes Home (2018), Doing Bad by Doing Good (2013), Media, Development and Institutional Change (2009), and After War (2007). Co-editor of six volumes including The Oxford Handbook of Austrian Economics (2015). Recipient of George Mason’s University Teaching Excellence Award (2016).',
-    photo: 'images/chris-coyne.jpg'
+    photo: 'images/chris-coyne.webp'
   },
   gallenstein: {
     name: 'Tony Gallenstein',
     affil: 'Professor of Economics and Public Policy, Catholic Univ.',
     bio: 'Associate Professor of Economics and Director of the Master of Public Policy program at The Catholic University of America. Joined CUA in 2017 after completing his Ph.D. in Agricultural, Environmental, and Development Economics at The Ohio State University. Research focuses on how innovative financial technologies can improve technology adoption and risk management in Sub-Saharan Africa.',
-    photo: 'images/tony-gallenstein.jpg'
+    photo: 'images/tony-gallenstein.webp'
   },
   wydick: {
     name: 'Bruce Wydick',
     affil: 'Professor of Economics, University of San Francisco',
     bio: 'Professor of Economics at the University of San Francisco, with research affiliations at UC Davis, Notre Dame, and UC Berkeley’s Center for Effective Global Action. Specializes in econometric, experimental, and quasi-experimental methods to evaluate development programs — including microenterprise, child sponsorship, disability interventions, and poverty traps. Publications in the Journal of Political Economy, Economic Journal, Journal of Development Economics, and World Bank Economic Review, among others. Author of Shrewd Samaritan (Thomas Nelson/HarperCollins). Regular contributor to Christianity Today on global poverty. Founder and co-director of Mayan Partners, working in education and community development in Guatemala.',
-    photo: 'images/bruce-wydick.jpg'
+    photo: 'images/bruce-wydick.webp'
   },
   soule: {
     name: 'Nate Soule',
     affil: 'Executive Director, Campaign for America First International Assistance',
     bio: 'Communications and political strategist, currently Executive Director of the Campaign for America First International Assistance (CAFIA). Previously Chief of Staff to Rep. Mike Lawler (R-NY-17), overseeing one of the most active offices in Congress, and before that his Deputy Chief of Staff and Communications Director, providing senior strategic counsel and leading communications and constituent outreach through one of the country’s most competitive House races. BA from Franklin & Marshall College.'
   ,
-    photo: 'images/nate-soule.jpg'
+    photo: 'images/nate-soule.webp'
   }
 };
 
