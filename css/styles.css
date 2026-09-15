@@ -1679,6 +1679,10 @@ body {
   flex-shrink: 0;
 }
 
+.origin-\[72\%_42\%\] {
+  transform-origin: 72% 42%;
+}
+
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1686,6 +1690,12 @@ body {
 
 .rotate-180 {
   --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-\[1\.5\] {
+  --tw-scale-x: 1.5;
+  --tw-scale-y: 1.5;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1783,6 +1793,10 @@ body {
 
 .gap-\[35px\] {
   gap: 35px;
+}
+
+.gap-\[60px\] {
+  gap: 60px;
 }
 
 .gap-x-4 {
@@ -2013,6 +2027,36 @@ body {
 .object-right-bottom {
   -o-object-position: right bottom;
      object-position: right bottom;
+}
+
+.object-\[72\%_54\%\] {
+  -o-object-position: 72% 54%;
+     object-position: 72% 54%;
+}
+
+.object-\[72\%_50px\] {
+  -o-object-position: 72% 50px;
+     object-position: 72% 50px;
+}
+
+.object-\[72\%_20px\] {
+  -o-object-position: 72% 20px;
+     object-position: 72% 20px;
+}
+
+.object-\[72\%_0px\] {
+  -o-object-position: 72% 0px;
+     object-position: 72% 0px;
+}
+
+.object-\[72\%_-15\%\] {
+  -o-object-position: 72% -15%;
+     object-position: 72% -15%;
+}
+
+.object-\[96\%_-5px\] {
+  -o-object-position: 96% -5px;
+     object-position: 96% -5px;
 }
 
 .px-10 {
@@ -2535,6 +2579,14 @@ html.js .fade-up.visible {
   }
 }
 
+.\[object-view-box\:inset\(10\%_0\%_15\%_25\%\)\] {
+  object-view-box: inset(10% 0% 15% 25%);
+}
+
+.\[object-view-box\:inset\(15\%_0\%_15\%_25\%\)\] {
+  object-view-box: inset(15% 0% 15% 25%);
+}
+
 .hover\:bg-amber:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(184 104 42 / var(--tw-bg-opacity, 1));
@@ -2583,6 +2635,14 @@ html.js .fade-up.visible {
 
   .desktop\:top-\[9\.5rem\] {
     top: 9.5rem;
+  }
+
+  .desktop\:order-1 {
+    order: 1;
+  }
+
+  .desktop\:order-2 {
+    order: 2;
   }
 
   .desktop\:col-span-2 {
@@ -2810,6 +2870,11 @@ html.js .fade-up.visible {
 
   .desktop\:border-t-0 {
     border-top-width: 0px;
+  }
+
+  .desktop\:object-\[72\%_42\%\] {
+    -o-object-position: 72% 42%;
+       object-position: 72% 42%;
   }
 
   .desktop\:px-0 {
