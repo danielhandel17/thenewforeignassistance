@@ -2697,6 +2697,10 @@ html.js .fade-up.visible {
     aspect-ratio: 703/948;
   }
 
+  .desktop\:aspect-\[66\/89\] {
+    aspect-ratio: 66/89;
+  }
+
   .desktop\:h-\[108px\] {
     height: 108px;
   }
@@ -2719,6 +2723,10 @@ html.js .fade-up.visible {
 
   .desktop\:h-\[232px\] {
     height: 232px;
+  }
+
+  .desktop\:h-\[948px\] {
+    height: 948px;
   }
 
   .desktop\:min-h-\[132px\] {
@@ -2875,6 +2883,11 @@ html.js .fade-up.visible {
   .desktop\:object-\[72\%_42\%\] {
     -o-object-position: 72% 42%;
        object-position: 72% 42%;
+  }
+
+  .desktop\:object-\[100\%_-188px\] {
+    -o-object-position: 100% -188px;
+       object-position: 100% -188px;
   }
 
   .desktop\:px-0 {
@@ -3046,6 +3059,10 @@ html.js .fade-up.visible {
 
   .desktop\:leading-\[50px\] {
     line-height: 50px;
+  }
+
+  .desktop\:\[object-view-box\:inset\(-13\%_0\%_0\%_25\%\)\] {
+    object-view-box: inset(-13% 0% 0% 25%);
   }
 }
 
