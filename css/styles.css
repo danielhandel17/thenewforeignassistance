@@ -1218,6 +1218,18 @@ body {
   top: 73px;
 }
 
+.left-\[33px\] {
+  left: 33px;
+}
+
+.top-\[62px\] {
+  top: 62px;
+}
+
+.left-\[-33px\] {
+  left: -33px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1479,6 +1491,10 @@ body {
   height: 147px;
 }
 
+.h-\[152px\] {
+  height: 152px;
+}
+
 .min-h-\[520px\] {
   min-height: 520px;
 }
@@ -1621,6 +1637,10 @@ body {
 
 .w-\[50px\] {
   width: 50px;
+}
+
+.w-\[59px\] {
+  width: 59px;
 }
 
 .min-w-0 {
@@ -2216,6 +2236,18 @@ body {
   padding-bottom: 89px;
 }
 
+.pb-\[68px\] {
+  padding-bottom: 68px;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
+.pb-\[108px\] {
+  padding-bottom: 108px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2637,6 +2669,14 @@ html.js .fade-up.visible {
     top: 9.5rem;
   }
 
+  .desktop\:left-0 {
+    left: 0px;
+  }
+
+  .desktop\:top-36 {
+    top: 9rem;
+  }
+
   .desktop\:order-1 {
     order: 1;
   }
@@ -2729,6 +2769,10 @@ html.js .fade-up.visible {
     height: 948px;
   }
 
+  .desktop\:h-\[221px\] {
+    height: 221px;
+  }
+
   .desktop\:min-h-\[132px\] {
     min-height: 132px;
   }
@@ -2751,6 +2795,10 @@ html.js .fade-up.visible {
 
   .desktop\:w-\[79px\] {
     width: 79px;
+  }
+
+  .desktop\:w-\[97px\] {
+    width: 97px;
   }
 
   .desktop\:min-w-\[640px\] {
@@ -2839,6 +2887,10 @@ html.js .fade-up.visible {
 
   .desktop\:gap-\[134px\] {
     gap: 134px;
+  }
+
+  .desktop\:gap-10 {
+    gap: 2.5rem;
   }
 
   .desktop\:gap-x-14 {
@@ -2977,6 +3029,10 @@ html.js .fade-up.visible {
     padding-top: 70px;
   }
 
+  .desktop\:pt-0 {
+    padding-top: 0px;
+  }
+
   .desktop\:text-left {
     text-align: left;
   }
@@ -3035,6 +3091,10 @@ html.js .fade-up.visible {
   .desktop\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .desktop\:font-medium {
+    font-weight: 500;
   }
 
   .desktop\:leading-7 {
@@ -3356,6 +3416,18 @@ html.js .fade-up.visible {
   padding-top: 70px;
 }
 
+@media (min-width: 860px) {
+  .desktop\:\[\&\:not\(\:first-of-type\)\]\:pt-\[70px\]:not(:first-of-type) {
+    padding-top: 70px;
+  }
+}
+
 .\[\&\:not\(\:last-of-type\)\]\:pb-\[70px\]:not(:last-of-type) {
   padding-bottom: 70px;
+}
+
+@media (min-width: 860px) {
+  .desktop\:\[\&\:not\(\:last-of-type\)\]\:pb-\[70px\]:not(:last-of-type) {
+    padding-bottom: 70px;
+  }
 }
