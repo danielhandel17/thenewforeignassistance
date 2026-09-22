@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+  @media (min-width: 860px) {
+    [id] {
+      scroll-margin-top: 9.5rem;
+    }
+  }
+  ::selection {
+    @apply bg-amber text-white;
+  }
+}
+
+@layer components {
+  .btn-filled {
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap desktop:max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
+  }
+  .btn-outline {
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-white px-8 font-libertinus text-base text-nowrap desktop:max-w-[282px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white;
+  }
+  /* Footer newsletter email — Figma Group 22 (332:4094): 363×55, placeholder Libertinus 18px amber / 3.6px tracking */
+  .newsletter-input {
+    @apply box-border h-[55px] min-h-[55px] w-full flex-1 border border-solid border-amber bg-white px-[22px] font-libertinus text-lg leading-[33px] tracking-normal text-ink placeholder:text-amber placeholder:opacity-100 placeholder:tracking-eyebrow focus:outline-none focus:ring-1 focus:ring-amber;
+  }
+  .eyebrow {
+    @apply font-libertinus text-xl text-nowrap max-w-[282px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
+  }
+  .link-draw {
+    @apply relative inline-block no-underline;
+  }
+  .link-draw::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0.12em;
+    left: 0;
+    height: 0.06em;
+    min-height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-draw:hover::after,
+  .link-draw:focus-visible::after {
+    transform: scaleX(1);
+  }
+  .fn {
+    @apply relative ml-0.5 inline-block align-super text-[0.65em] font-semibold text-amber no-underline;
+  }
+  .fn a {
+    @apply text-amber no-underline;
+  }
+  .fn-tip {
+    @apply pointer-events-none absolute bottom-full left-1/2 z-20 hidden w-56 -translate-x-1/2 rounded bg-ink px-3 py-2 text-left text-[11px] font-normal normal-case leading-snug tracking-normal text-white shadow-lg;
+  }
+  .fn:hover .fn-tip,
+  .fn:focus-within .fn-tip {
+    @apply block;
+  }
+
+  /* Mobile menu overlay — Figma Home - Mobile - Menu (350:5411) */
+  .mobile-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.4s;
+  }
+  .mobile-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-menu__nav {
+    opacity: 0;
+    transform: translateY(-16px);
+    transition:
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.06s,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.06s;
+  }
+  .mobile-menu.is-open .mobile-menu__nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Framework pull quote — Figma Rectangle 9 (332:4349): 89×311 accent at x=16 */
+  .fw-pullquote {
+    @apply text-lg;
+    position: relative;
+    padding-left: 0;
+  }
+  .fw-pullquote::before {
+    content: "";
+    position: absolute;
+    left: -23px;
+    top: 0;
+    bottom: 0;
+    width: 89px;
+    background-color: #ebd6c5;
+    z-index: 0;
+  }
+  .fw-pullquote > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Site header — white background; desktop scroll hide */
+  .site-header {
+    background-color: #fff;
+  }
+  @media (min-width: 860px) {
+    .site-header {
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+      will-change: opacity, transform;
+    }
+    .site-header.is-scroll-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-100%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-header {
+      transition: none;
+    }
+  }
+
+  /* Framework A/B/C subsections — body in title column (col 2), letter in col 1 */
+  .fw-subsection {
+    @apply grid grid-cols-[auto_1fr] gap-x-[17px] gap-y-4;
+  }
+  .fw-subsection-letter {
+    @apply col-start-1 row-start-1 self-baseline font-newsreader text-xl font-semibold leading-[30px] text-[#7f503d];
+  }
+  .fw-subsection-title {
+    @apply col-start-2 row-start-1 font-newsreader text-xl font-semibold leading-[30px] text-ink;
+  }
+  .fw-subsection-body {
+    @apply col-start-2 row-start-2 flex flex-col gap-4;
+  }
+}
+
+@layer utilities {
+  html.js .fade-up {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  html.js .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .newsletter-thanks.show {
+    display: block;
+  }
+
+  /* Diagnosis “What went wrong” rule — Figma Group 43 (332:3053): 25×12 rounded ticks, 8px gap */
+  .tick-pattern {
+    display: block;
+    height: 12px;
+    min-width: 0;
+    overflow: hidden;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12' viewBox='0 0 33 12'%3E%3Crect width='25' height='12' rx='2' fill='%23C4C7CC'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: left center;
+    width: 310px;
+    background-size: 24px 12px;
+
+    @media screen('mobile') {
+      width: 396px;
+    }
+
+    @media screen(desktop) {
+      background-size: 33px 12px;
+    }
+  }
+
+  /* Live tracker month pills — Figma Group 62 (332:2833 / 332:2841): 75×36, bg #F9C69F, text #793A09 16px / 3.2px tracking, radius 4px */
+  .tracker-month {
+    @apply flex h-9 w-[75px] shrink-0 items-center justify-center rounded-[4px] bg-[#F9C69F] font-libertinus text-[16px] uppercase leading-[33px] tracking-[3.2px] text-[#793A09];
+  }
+
+  /* Live tracker month-rail divider — Figma dashed stroke: 1.5px amber, dash 5 / gap 5 */
+  .tracker-rail-divider {
+    width: 1.5px;
+    align-self: stretch;
+    flex-shrink: 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      theme('colors.amber') 0,
+      theme('colors.amber') 5px,
+      transparent 5px,
+      transparent 10px
+    );
+  }
+
+  /* Diagnosis “What comes next” rule — 23×12 scallop, 9px gap */
+  .tick-pattern-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='12' viewBox='0 0 32 12' fill='none'%3E%3Cpath d='M0 0H23V0.5C23 6.85127 17.8513 12 11.5 12C5.14873 12 0 6.85127 0 0.5V0Z' fill='%23EBD6C5'/%3E%3C/svg%3E");
+    width: 310px;
+    background-size: 24px 12px;
+
+    @media screen('mobile') {
+      width: 396px;
+    }
+
+    @media screen(desktop) {
+      background-size: 32px 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    html.js .fade-up {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .link-draw::after {
+      transition: none;
+    }
+    .mobile-menu,
+    .mobile-menu__nav {
+      transition: none !important;
+    }
+    .site-header {
+      transition: none;
+    }
+  }
+}

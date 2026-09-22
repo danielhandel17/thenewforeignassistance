@@ -1,0 +1,36 @@
+# Allowlist: ignore everything except the paths below.
+*
+
+# Keep this file
+!.gitignore
+
+# Pages
+!*.html
+
+# JavaScript
+!*.js
+!js/
+!js/**
+
+# Compiled CSS (served by GitHub Pages)
+!css/
+!css/**
+
+# Tailwind source
+!src/
+!src/**
+
+# Assets
+!images/
+!images/**
+!og-image.png
+
+# Site config
+!CNAME
+!robots.txt
+!sitemap.xml
+
+# Build tooling
+!package.json
+!package-lock.json
+!tailwind.config.js
