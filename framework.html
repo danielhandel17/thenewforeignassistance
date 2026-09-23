@@ -61,6 +61,8 @@
   <style>
     /* Keep newsletter headline on one line on wide screens */
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
+    /* Balanced wrapping: no one- or two-word orphan lines */
+    .balance-wrap { text-wrap: balance; }
   </style>
 </head>
 
@@ -560,9 +562,7 @@
   <section class="px-4 pb-[108px] desktop:px-[124px] desktop:pt-[127px] desktop:pb-[131px]" id="contact">
     <div class="mx-auto flex w-full min-w-0 max-w-3xl flex-col items-center gap-5 text-center fade-up">
       <p class="eyebrow">Contact</p>
-      <h2 class="w-full min-w-0 font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">For
-        press inquiries, partnership<br class="hidden tablet:inline"> opportunities, or to learn more<br
-          class="hidden tablet:inline"> about our work.</h2>
+      <h2 class="balance-wrap w-full min-w-0 font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">For press inquiries, partnership opportunities, or to learn more about our work.</h2>
       <a href="mailto:contact@thenewforeignassistance.org"
         class="link-draw font-newsreader text-[16px] text-ink tablet:text-[22px]">contact@thenewforeignassistance.org</a>
     </div>
@@ -579,7 +579,7 @@
       class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] tablet:flex-row tablet:items-center tablet:justify-between tablet:px-[124px] tablet:pt-19.5 tablet:pb-[100px]">
       <div class="flex flex-col gap-3">
         <p class="eyebrow">From the rebuild</p>
-        <h3 class="nl-oneline font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">A brief, occasional newsletter on the rebuild.</h3>
+        <h3 class="nl-oneline balance-wrap font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">A brief, occasional newsletter on the rebuild.</h3>
       </div>
       <form class="flex w-full max-w-md flex-col items-stretch gap-3 tablet:flex-row tablet:items-center"
         id="newsletterForm">
