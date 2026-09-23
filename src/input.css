@@ -141,18 +141,21 @@
     }
   }
 
-  /* Framework A/B/C subsections — body in title column (col 2), letter in col 1 */
+  /* Framework A/B/C subsections — letter inline with title, body left-aligned */
   .fw-subsection {
-    @apply grid grid-cols-[auto_1fr] gap-x-[17px] gap-y-4;
+    @apply flex flex-col gap-4;
   }
   .fw-subsection-letter {
-    @apply col-start-1 row-start-1 self-baseline font-newsreader text-xl font-semibold leading-[30px] text-[#7f503d];
+    @apply font-newsreader text-xl font-semibold leading-[30px] text-[#7f503d];
   }
   .fw-subsection-title {
-    @apply col-start-2 row-start-1 font-newsreader text-xl font-semibold leading-[30px] text-ink;
+    @apply font-newsreader text-xl font-semibold leading-[30px] text-ink;
+  }
+  .fw-subsection-heading {
+    @apply flex flex-wrap items-baseline gap-x-2;
   }
   .fw-subsection-body {
-    @apply col-start-2 row-start-2 flex flex-col gap-4;
+    @apply flex flex-col gap-4;
   }
 }
 
@@ -175,17 +178,14 @@
   .tick-pattern {
     display: block;
     height: 12px;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
     overflow: hidden;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12' viewBox='0 0 33 12'%3E%3Crect width='25' height='12' rx='2' fill='%23C4C7CC'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
     background-position: left center;
-    width: 310px;
     background-size: 24px 12px;
-
-    @media screen('mobile') {
-      width: 396px;
-    }
 
     @media screen(desktop) {
       background-size: 33px 12px;
@@ -214,12 +214,7 @@
   /* Diagnosis “What comes next” rule — 23×12 scallop, 9px gap */
   .tick-pattern-next {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='12' viewBox='0 0 32 12' fill='none'%3E%3Cpath d='M0 0H23V0.5C23 6.85127 17.8513 12 11.5 12C5.14873 12 0 6.85127 0 0.5V0Z' fill='%23EBD6C5'/%3E%3C/svg%3E");
-    width: 310px;
     background-size: 24px 12px;
-
-    @media screen('mobile') {
-      width: 396px;
-    }
 
     @media screen(desktop) {
       background-size: 32px 12px;

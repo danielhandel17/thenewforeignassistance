@@ -37,7 +37,7 @@ module.exports = {
         'mobile-small': { max: '390px' },
         mobile: { min: '391px' },
         desktop: '860px',
-        wide: '1100px',
+        wide: '1280px',
       },
     },
   },

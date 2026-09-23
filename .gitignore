@@ -34,3 +34,9 @@
 !package.json
 !package-lock.json
 !tailwind.config.js
+!playwright.config.ts
+
+# Playwright e2e (source only; reports stay ignored via allowlist)
+!e2e/
+!e2e/**
+!e2e/**/*
