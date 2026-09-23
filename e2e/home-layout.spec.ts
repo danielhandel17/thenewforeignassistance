@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { isDesktop, isWide, viewports } from './fixtures/viewports';
+import { isTablet, viewports } from './fixtures/viewports';
 import {
   assertBoxHeightPx,
   assertFontSizePx,
@@ -13,7 +13,7 @@ import {
   settlePage,
 } from './helpers/layout';
 
-/** Phrases that must read with spaces once mobile-only <br>s are hidden (≥860). */
+/** Phrases that must read with spaces once mobile-only <br>s are hidden (≥860 / tablet). */
 const PRINCIPLES_SPACED_PHRASES = [
   'not a global safety net',
   'Do What Only Governments Can Do',
@@ -60,12 +60,12 @@ for (const vp of viewports) {
         await assertNoOverlap(main[0], main[2]);
         await assertNoOverlap(main[1], main[2]);
 
-        if (isWide(vp.width)) {
+        if (isTablet(vp.width)) {
           const boxes = await Promise.all(main.map((l) => getBox(l)));
           const xs = boxes.map((b) => Math.round(b.x));
           expect(
             new Set(xs).size,
-            `wide Record article[${i}] children should have distinct x: ${xs.join(',')}`,
+            `tablet+ Record article[${i}] children should have distinct x: ${xs.join(',')}`,
           ).toBe(3);
         } else {
           await assertStackedVertically(main);
@@ -97,7 +97,7 @@ for (const vp of viewports) {
         expect(principlesText, `glued words present: ${glued}`).not.toContain(glued);
       }
 
-      // --- Contact / newsletter type (+ shapeshift mark on desktop) ---
+      // --- Contact / newsletter type (+ shapeshift mark from tablet up) ---
       const contactHeading = page.locator('#contact h2');
       const contactEmail = page.locator('#contact a[href^="mailto:"]');
       const newsletterHeading = page.locator('footer h3');
@@ -105,13 +105,13 @@ for (const vp of viewports) {
       await expect(contactEmail).toBeVisible();
       await expect(newsletterHeading).toBeVisible();
 
-      const typePx = isDesktop(vp.width) ? 34 : 26;
-      const emailPx = isDesktop(vp.width) ? 34 : 16;
+      const typePx = isTablet(vp.width) ? 34 : 26;
+      const emailPx = isTablet(vp.width) ? 34 : 16;
       await assertFontSizePx(contactHeading, typePx);
       await assertFontSizePx(contactEmail, emailPx);
       await assertFontSizePx(newsletterHeading, typePx);
 
-      if (isDesktop(vp.width)) {
+      if (isTablet(vp.width)) {
         const mark = page.locator('img[alt="Powered by shapeshift"]');
         await expect(mark).toBeVisible();
         await assertBoxHeightPx(mark, 26);
@@ -121,8 +121,8 @@ for (const vp of viewports) {
       await expect(page.locator('#page-hero img').first()).toBeVisible();
       await assertNoHorizontalPageOverflow(page);
 
-      // --- Nav band ---
-      if (isDesktop(vp.width)) {
+      // --- Nav band (tablet floor = 860) ---
+      if (isTablet(vp.width)) {
         await expect(page.locator('nav[aria-label="Primary"]')).toBeVisible();
         await expect(page.locator('nav[aria-label="Primary"] a').first()).toBeVisible();
         await expect(page.locator('#menuToggle')).toBeHidden();

@@ -48,15 +48,15 @@
 <body class="font-newsreader">
 
   <!-- HEADER -->
-  <header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
+  <header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
     <div
-      class="mx-auto flex max-w-page items-center justify-between gap-3 px-5 pt-5 pb-6 desktop:px-8 desktop:pt-3 desktop:pb-3 wide:gap-4 wide:px-[60px]">
+      class="mx-auto flex max-w-page items-center justify-between gap-3 px-5 pt-5 pb-6 tablet:px-8 tablet:pt-3 tablet:pb-3 desktop:gap-4 desktop:px-[60px]">
       <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
         <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108"
-          class="h-[60px] w-[119px] object-contain desktop:h-[80px] desktop:w-[160px] wide:h-[108px] wide:w-[216px]">
+          class="h-[60px] w-[119px] object-contain tablet:h-[80px] tablet:w-[160px] desktop:h-[108px] desktop:w-[216px]">
       </a>
 
-      <nav class="hidden min-w-0 items-center gap-5 desktop:flex wide:gap-8" aria-label="Primary">
+      <nav class="hidden min-w-0 items-center gap-5 tablet:flex desktop:gap-8" aria-label="Primary">
         <a href="/"
           class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
         <a href="framework.html" class="font-libertinus text-lg uppercase tracking-nav text-amber">Framework</a>
@@ -67,11 +67,11 @@
       </nav>
 
       <a href="tracker.html"
-        class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white desktop:inline-flex">Tracker
+        class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white tablet:inline-flex">Tracker
         →</a>
 
       <button type="button" id="menuToggle"
-        class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false"
+        class="inline-flex h-10 w-10 items-center justify-center text-ink tablet:hidden" aria-expanded="false"
         aria-controls="mobileMenu" aria-label="Open menu">
         <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
       </button>
@@ -79,7 +79,7 @@
   </header>
 
   <!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
-  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] desktop:hidden" hidden aria-hidden="true">
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] tablet:hidden" hidden aria-hidden="true">
     <button type="button" id="menuClose"
       class="absolute right-[15px] top-4 z-10 inline-flex h-10 w-10 items-center justify-center text-ink"
       aria-label="Close menu">
@@ -105,35 +105,36 @@
   <!-- HERO — Figma mask 332:3289; title 332:3387/3388; decor 332:3293, 332:3294, 332:3335, 332:3376, 332:3379 -->
   <section id="page-hero" class="relative overflow-x-clip">
     <div
-      class="relative mx-auto isolate min-h-[520px] max-w-page overflow-hidden bg-white fade-up wide:h-[677px] wide:min-h-[480px] wide:max-h-[calc(100dvh-8.25rem)]">
+      class="relative mx-auto isolate min-h-[520px] max-w-page overflow-hidden bg-white fade-up tablet:h-[677px] tablet:min-h-[480px] tablet:max-h-[calc(100dvh-8.25rem)]">
       <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <img src="images/fw-hero-bg.webp" alt="" width="1728" height="677"
           class="absolute inset-0 z-0 h-full w-full max-w-none object-cover object-bottom" decoding="async">
         <div class="absolute left-0 right-0 top-0 z-[1] h-[40.03%] bg-gradient-to-b from-white to-transparent"
           data-node-id="332:3293"></div>
+        <!-- Geometry decors stay behind the person (z below person) from tablet up, same as desktop -->
         <img src="images/fw-hero-bars-mid.svg" alt="" width="381" height="258"
-          class="absolute bottom-[-35px] left-[32%] top-auto z-[4] h-auto w-[52%] max-w-[220px] wide:bottom-auto wide:left-[57.27%] wide:top-[72.82%] wide:w-[21.77%] wide:max-w-none"
+          class="absolute bottom-[-35px] left-[32%] top-auto z-[2] h-auto w-[52%] max-w-[220px] tablet:bottom-auto tablet:left-[57.27%] tablet:top-[72.82%] tablet:w-[21.77%] tablet:max-w-none"
           data-node-id="332:3335">
         <img src="images/fw-hero-bars-right.svg" alt="" width="381" height="258"
-          class="absolute bottom-0 left-[76.89%] z-[4] hidden h-auto w-[21.77%] wide:block" data-node-id="332:3294">
+          class="absolute bottom-0 left-[76.89%] z-[2] hidden h-auto w-[21.77%] tablet:block" data-node-id="332:3294">
         <img src="images/fw-hero-blob-41.svg" alt="" width="496" height="687"
-          class="absolute left-[55%] top-[38%] z-[2] h-auto w-[70%] max-w-[280px] wide:left-[68.13%] wide:top-[12.9%] wide:w-[28.36%] wide:max-w-none"
+          class="absolute left-[55%] top-[38%] z-[2] h-auto w-[70%] max-w-[280px] tablet:left-[68.13%] tablet:top-[12.9%] tablet:w-[28.36%] tablet:max-w-none"
           data-node-id="332:3376">
         <div
-          class="pointer-events-none absolute bottom-0 right-[-70px] top-auto z-[5] h-[386px] w-[min(333px,85%)] overflow-hidden wide:left-[58.41%] wide:right-auto wide:bottom-0 wide:top-auto wide:h-[79.03%] wide:w-auto wide:aspect-[605/535]"
+          class="pointer-events-none absolute bottom-0 right-[-70px] top-auto z-[5] h-[386px] w-[min(333px,85%)] overflow-hidden tablet:left-[58.41%] tablet:right-auto tablet:bottom-0 tablet:top-auto tablet:h-[79.03%] tablet:w-auto tablet:aspect-[605/535]"
           data-node-id="332:3379">
           <img src="images/fw-hero-person.webp" alt="Person using a tablet in an agricultural field" width="605"
-            height="530" class="block h-full w-full max-w-none object-contain object-right-bottom" decoding="async">
+            height="530" class="relative z-[5] block h-full w-full max-w-none object-contain object-right-bottom" decoding="async">
         </div>
       </div>
       <div
-        class="absolute top-0 left-[-5px] z-[6] flex flex-col gap-4 desktop:gap-5 px-10 pt-8 wide:left-[7.29%] wide:top-[23.78%] wide:w-[min(50.58%,874px)] wide:px-0 wide:pt-0">
+        class="absolute top-0 left-[-5px] z-[6] flex flex-col gap-4 tablet:gap-5 px-10 pt-8 tablet:left-[7.29%] tablet:top-[23.78%] tablet:w-[min(50.58%,874px)] tablet:px-0 tablet:pt-0">
         <p class="eyebrow">Reform Framework</p>
         <h1
-          class="text-nowrap desktop:text-wrap font-newsreader text-[42px] font-medium leading-[50px] text-ink wide:text-[clamp(2.625rem,4.1667vw,4.5rem)] wide:leading-[1.194]">
-          State Department<br class="inline desktop:hidden"> and <br class="hidden wide:inline">Foreign<br
-            class="inline desktop:hidden"> Assistance <br class="hidden wide:inline">Reform<br
-            class="inline desktop:hidden">
+          class="text-nowrap tablet:text-wrap font-newsreader text-[42px] font-medium leading-[50px] text-ink tablet:text-[clamp(2.625rem,4.1667vw,4.5rem)] tablet:leading-[1.194]">
+          State Department<br class="inline tablet:hidden"> and <br class="hidden tablet:inline">Foreign<br
+            class="inline tablet:hidden"> Assistance <br class="hidden tablet:inline">Reform<br
+            class="inline tablet:hidden">
           Framework.</h1>
       </div>
     </div>
@@ -141,26 +142,26 @@
 
   <!-- HISTORY — Figma Mask group 332:3638 (102×220 @ x=0 y=910) -->
   <section
-    class="relative overflow-x-clip bg-cream px-10 pt-[117px] pb-[106px] desktop:px-[124px] desktop:pt-[131px] desktop:pb-[177px]"
+    class="relative overflow-x-clip bg-cream px-10 pt-[117px] pb-[106px] tablet:px-[124px] tablet:pt-[131px] tablet:pb-[177px]"
     id="history">
     <!-- Desktop decor — Figma 332:3638 -->
     <img src="images/fw-history-decor.svg" alt="" aria-hidden="true" width="102" height="220"
-      class="pointer-events-none absolute left-0 top-[125px] hidden h-[220px] w-[102px] max-w-none desktop:block">
+      class="pointer-events-none absolute left-0 top-[125px] hidden h-[220px] w-[102px] max-w-none tablet:block">
     <!-- Mobile decor — Figma 332:4239 (Group 2457; cream @ left -16, 51×145 visible) -->
     <img src="images/fw-history-decor-mobile.svg" alt="" aria-hidden="true" width="93" height="145"
-      class="pointer-events-none absolute left-[-42px] top-4 h-[145px] w-[93px] max-w-none desktop:hidden"
+      class="pointer-events-none absolute left-[-42px] top-4 h-[145px] w-[93px] max-w-none tablet:hidden"
       data-node-id="332:4239">
-    <div class="mx-auto grid gap-10 desktop:grid-cols-12 desktop:gap-12 fade-up">
+    <div class="mx-auto grid gap-10 tablet:grid-cols-12 tablet:gap-12 fade-up">
       <!-- History title deskto -->
-      <div class="hidden desktop:col-span-4 desktop:flex desktop:flex-col desktop:gap-5">
+      <div class="hidden tablet:col-span-4 tablet:flex tablet:flex-col tablet:gap-5">
         <p class="eyebrow">THE PAST</p>
-        <h2 class="mt-3 font-newsreader text-[40px] desktop:text-5xl font-medium leading-tight text-ink">A long story<br>
+        <h2 class="mt-3 font-newsreader text-[40px] tablet:text-5xl font-medium leading-tight text-ink">A long story<br>
           of attempted reform</h2>
         <p class="text-ink font-[22px]">Every administration since Kennedy has tried to fix USAID.</p>
       </div>
 
       <!-- History title mobile -->
-      <div class="flex flex-col gap-5 desktop:hidden">
+      <div class="flex flex-col gap-5 tablet:hidden">
         <p class="eyebrow" data-node-id="332:4112">THE RECORD</p>
         <h2 class="font-newsreader text-[40px] font-normal leading-[50px] text-ink" data-node-id="332:4113">What went
           right.</h2>
@@ -168,7 +169,7 @@
           has produced some of the most successful international programs in history. The numbers tell the story.</p>
       </div>
 
-      <div class="flex flex-col gap-[35px] text-lg leading-[1.6] text-ink desktop:col-span-8 desktop:text-xl">
+      <div class="flex flex-col gap-[35px] text-lg leading-[1.6] text-ink tablet:col-span-8 tablet:text-xl">
         <div>
           <p>Nixon tried to dismantle it and route aid through the World Bank. Clinton cut staff without cutting scope,
             fueling the rise of the &ldquo;development industry.&rdquo; Bush built PEPFAR and the Millennium Challenge
@@ -178,8 +179,8 @@
             Green, USAID launched the Journey to Self-Reliance and overhauled procurement through 170-plus reform
             recommendations. Green stated the thesis directly:</p>
         </div>
-        <blockquote class="fw-pullquote pt-[35px] pb-0 desktop:pb-[15px]">
-          <p class="italic font-semibold text-left text-[28px] leading-[1.5] desktop:text-[34px]">&ldquo;I believe the
+        <blockquote class="fw-pullquote pt-[35px] pb-0 tablet:pb-[15px]">
+          <p class="italic font-semibold text-left text-[28px] leading-[1.5] tablet:text-[34px]">&ldquo;I believe the
             purpose of foreign assistance should
             be ending its need to exist. Each of our programs should look forward to the day when it can end.&rdquo;</p>
           <cite class="mt-4 block font-newsreader text-[14px] not-italic leading-snug text-toc-muted">&mdash; Mark
@@ -204,26 +205,26 @@
 
   <!-- WHAT WAS WRONG — Figma Mask group 332:3412 + portrait 332:3380 (703×948 at x=919 y=2038) -->
   <section
-    class="relative overflow-x-clip bg-white px-10 pt-[114px] pb-[89px] flex flex-col gap-[60px] desktop:grid desktop:grid-cols-2 desktop:items-start desktop:gap-[110px] desktop:px-[124px] desktop:py-[180px]"
+    class="relative overflow-x-clip bg-white px-10 pt-[114px] pb-[89px] flex flex-col gap-[60px] tablet:grid tablet:grid-cols-2 tablet:items-start tablet:gap-[110px] tablet:px-[124px] tablet:py-[180px]"
     id="what-was-wrong">
     <img src="images/decor-record.svg" alt="" aria-hidden="true" width="79" height="232"
-      class="pointer-events-none absolute left-0 top-[73px] h-[147px] w-[50px] max-w-none shrink-0 desktop:top-[180px] desktop:h-[232px] desktop:w-[79px]"
+      class="pointer-events-none absolute left-0 top-[73px] h-[147px] w-[50px] max-w-none shrink-0 tablet:top-[180px] tablet:h-[232px] tablet:w-[79px]"
       data-node-id="332:4353">
-    <figure class="relative z-1 flex flex-col gap-3 desktop:order-2 desktop:mt-0">
+    <figure class="relative z-1 flex flex-col gap-3 tablet:order-2 tablet:mt-0">
       <img src="images/fw-portrait.webp" alt="Winnie at work in a laboratory setting" width="1400" height="2097"
-        class="aspect-[379/397] h-auto w-full object-cover object-top desktop:h-[948px] desktop:aspect-[66/89]"
+        class="aspect-[379/397] h-auto w-full object-cover object-top tablet:h-[948px] tablet:aspect-[66/89]"
         decoding="async" data-node-id="332:3380">
-      <figcaption class="font-newsreader text-sm leading-snug text-toc-muted desktop:text-base">
+      <figcaption class="font-newsreader text-sm leading-snug text-toc-muted tablet:text-base">
         Mia Collis 73: Winnie at work. Photo: Mia Collis / Essential
       </figcaption>
     </figure>
-    <div class="relative flex flex-col gap-10 fade-up desktop:order-1">
+    <div class="relative flex flex-col gap-10 fade-up tablet:order-1">
       <div class="flex flex-col gap-4">
         <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">too many programs</p>
-        <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[40px]">What was wrong
+        <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink tablet:text-[40px]">What was wrong
           with the old system</h2>
       </div>
-      <div class="flex flex-col gap-5 text-lg leading-[1.6] text-ink desktop:text-xl">
+      <div class="flex flex-col gap-5 text-lg leading-[1.6] text-ink tablet:text-xl">
         <p>USAID&#39;s central failure was the way it spent money: too many programs aimed at marginal rather than
           transformational improvements, in too many countries. Each country office spread its money too thin. Despite a
           veneer of strategic planning, country missions had too many programs in too many sectors. Each program had too
@@ -246,30 +247,30 @@
   </section>
 
   <!-- CONTENTS + FRAMEWORK BODY — Figma 332:3419 / 332:3422 / decor 332:3528 / TOC 332:3390 -->
-  <section class="relative overflow-x-clip border-t border-toc-border px-10 pt-[114px] pb-10 desktop:px-[124px] desktop:pt-36"
+  <section class="relative overflow-x-clip border-t border-toc-border px-10 pt-[114px] pb-10 tablet:px-[124px] tablet:pt-36"
     id="framework-contents">
     <img src="images/fw-contents-decor.svg" alt="" aria-hidden="true" width="97" height="221"
-      class="pointer-events-none absolute left-[-33px] top-[62px] desktop:left-0 desktop:top-36 block w-[59px] h-[152px] desktop:h-[221px] desktop:w-[97px] max-w-none">
-    <div class="flex flex-col desktop:gap-28">
-      <div class="flex flex-col gap-4 desktop:gap-5">
+      class="pointer-events-none absolute left-[-33px] top-[62px] tablet:left-0 tablet:top-36 block w-[59px] h-[152px] tablet:h-[221px] tablet:w-[97px] max-w-none">
+    <div class="flex flex-col tablet:gap-28">
+      <div class="flex flex-col gap-4 tablet:gap-5">
         <h2
-          class="font-newsreader text-[40px] desktop:font-medium leading-tight text-ink desktop:text-[49px] desktop:leading-[50px]">
+          class="font-newsreader text-[40px] tablet:font-medium leading-tight text-ink tablet:text-[49px] tablet:leading-[50px]">
           The Framework
         </h2>
       </div>
 
-      <div class="desktop:grid desktop:grid-cols-12 desktop:gap-x-14 desktop:gap-y-8">
+      <div class="tablet:grid tablet:grid-cols-12 tablet:gap-x-14 tablet:gap-y-8">
         <nav id="frameworkToc"
-          class="pt-10 desktop:pt-0 pb-10 border-b border-toc-border desktop:border-b-0 desktop:sticky desktop:top-[200px] desktop:col-span-4 desktop:self-start desktop:pb-40"
+          class="pt-10 tablet:pt-0 pb-10 border-b border-toc-border tablet:border-b-0 tablet:sticky tablet:top-[200px] tablet:col-span-4 tablet:self-start tablet:pb-40"
           aria-label="Framework contents">
-          <div class="relative desktop:pl-5">
-            <div class="absolute left-0 top-1 bottom-1 hidden w-1 rounded-full bg-toc-rail desktop:block"
+          <div class="relative tablet:pl-5">
+            <div class="absolute left-0 top-1 bottom-1 hidden w-1 rounded-full bg-toc-rail tablet:block"
               aria-hidden="true"></div>
             <div id="tocPip"
-              class="absolute left-0 top-1 hidden h-6 w-1 rounded-full bg-ink transition-all duration-200 desktop:block"
+              class="absolute left-0 top-1 hidden h-6 w-1 rounded-full bg-ink transition-all duration-200 tablet:block"
               aria-hidden="true"></div>
             <ul
-              class="flex flex-col gap-4 font-newsreader text-lg font-semibold leading-[30px] desktop:gap-5 desktop:text-xl">
+              class="flex flex-col gap-4 font-newsreader text-lg font-semibold leading-[30px] tablet:gap-5 tablet:text-xl">
               <li><a href="#moonshots" data-toc="moonshots" class="toc-link text-ink">Signature “Moonshot”
                   Initiatives</a></li>
               <li><a href="#transformational" data-toc="transformational" class="toc-link text-toc-muted">Focus on
@@ -284,17 +285,17 @@
           </div>
         </nav>
 
-        <div class="flex flex-col desktop:col-span-8">
+        <div class="flex flex-col tablet:col-span-8">
           <article id="moonshots"
-            class="fw-section flex flex-col gap-4 desktop:gap-10 pt-10 pb-10 desktop:[&:not(:first-of-type)]:pt-[70px] desktop:[&:not(:last-of-type)]:pb-[70px] fade-up">
-            <h2 class="font-newsreader text-[22px] font-medium leading-tight text-ink desktop:text-[38px]">Signature
+            class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
+            <h2 class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px]">Signature
               “Moonshot” Initiatives</h2>
-            <p class="text-lg leading-[1.55] text-ink desktop:text-xl">Legacy-building, focused, achievable with
+            <p class="text-lg leading-[1.55] text-ink tablet:text-xl">Legacy-building, focused, achievable with
               existing interventions, capable of crowding in bilateral and philanthropic capital.</p>
             <div class="flex flex-col gap-3">
               <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
               <ul
-                class="list-disc space-y-3 border-t border-toc-border pt-4 pl-5 text-lg leading-[1.5] text-ink desktop:text-xl">
+                class="list-disc space-y-3 border-t border-toc-border pt-4 pl-5 text-lg leading-[1.5] text-ink tablet:text-xl">
                 <li>Eliminate neural tube defects, which cause permanent decreases in human potential (multiple
                   micronutrient supplements)</li>
                 <li>Reduce lead exposure, which kills 1.6 million per year and affects 800 million children</li>
@@ -304,28 +305,28 @@
           </article>
 
           <article id="transformational"
-            class="fw-section flex flex-col gap-4 desktop:gap-10 pt-10 pb-10 border-t border-toc-border desktop:[&:not(:first-of-type)]:pt-[70px] desktop:[&:not(:last-of-type)]:pb-[70px] fade-up">
+            class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink desktop:text-[38px] desktop:leading-[50px]">
+              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
               Focus on Transformational Change Not Smallball Programs</h2>
-            <p class="text-lg leading-[1.55] text-ink desktop:text-xl desktop:leading-7">Too many USAID programs focused
+            <p class="text-lg leading-[1.55] text-ink tablet:text-xl tablet:leading-7">Too many USAID programs focused
               on small-scale household and individual level interventions which, even if highly successful, would only
               help tens of thousands of people rather than millions. U.S. government funding should focus on assistance
               that has transformational potential. The new foreign assistance should move beyond investments with
               limited scale to those that drive systematic change and rapid economic growth.</p>
 
             <div class="flex flex-col gap-0">
-              <div class="fw-subsection pb-10 desktop:pb-[70px]">
+              <div class="fw-subsection pb-10 tablet:pb-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">A.</span>
                   <h3 class="fw-subsection-title">Fostering Private Sector Growth</h3>
                 </div>
                 <div class="fw-subsection-body">
-                  <p class="text-lg leading-7 text-ink desktop:text-xl">Prioritize investments that promote jobs and
+                  <p class="text-lg leading-7 text-ink tablet:text-xl">Prioritize investments that promote jobs and
                     economic growth while securing new markets for U.S. products and services.</p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Subsidizing first movers to promote economic discovery and diversification (&gt;2% GDP or
                         &gt;2%
                         exports)</li>
@@ -338,7 +339,7 @@
                 </div>
               </div>
 
-              <div class="fw-subsection border-t border-toc-border pt-10 pb-10 desktop:pt-[70px] desktop:pb-[70px]">
+              <div class="fw-subsection border-t border-toc-border pt-10 pb-10 tablet:pt-[70px] tablet:pb-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">B.</span>
                   <h3 class="fw-subsection-title">Global Public Goods</h3>
@@ -346,7 +347,7 @@
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Advanced market commitments (e.g. Operation Warp Speed) for treatments for neglected tropical
                         diseases, repurposing generics, etc.</li>
                       <li>Evidence synthesis (“Smart Buys” and other systematic reviews)</li>
@@ -355,13 +356,13 @@
                 </div>
               </div>
 
-              <div class="fw-subsection border-t border-toc-border pt-10 desktop:pt-[70px]">
+              <div class="fw-subsection border-t border-toc-border pt-10 tablet:pt-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">C.</span>
                   <h3 class="fw-subsection-title">Work with Countries That Are Willing to Help Themselves</h3>
                 </div>
                 <div class="fw-subsection-body">
-                  <p class="text-lg leading-7 text-ink desktop:text-xl">It is not the responsibility of the United
+                  <p class="text-lg leading-7 text-ink tablet:text-xl">It is not the responsibility of the United
                     States to
                     substitute for good governance or cover for predatory governments. Rather, as in the MCC model, the
                     State Dept. should prioritize assistance to governments committed to reform, markets and basic
@@ -369,7 +370,7 @@
                     sustainability plans or transition strategies for local ownership.</p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Require host government skin in the game</li>
                       <li>Provide support for or require domestic resource mobilization so countries can fund own
                         priorities
@@ -382,25 +383,25 @@
           </article>
 
           <article id="move-money"
-            class="fw-section flex flex-col gap-4 desktop:gap-10 pt-10 pb-10 border-t border-toc-border desktop:[&:not(:first-of-type)]:pt-[70px] desktop:[&:not(:last-of-type)]:pb-[70px] fade-up">
+            class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink desktop:text-[38px] desktop:leading-[50px]">
+              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
               Move Money Differently: Results-Based and Innovation-Focused Procurement</h2>
 
             <div class="flex flex-col gap-0">
-              <div class="fw-subsection pb-10 desktop:pb-[70px]">
+              <div class="fw-subsection pb-10 tablet:pb-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">A.</span>
                   <h3 class="fw-subsection-title">Pay for Results</h3>
                 </div>
                 <div class="fw-subsection-body">
-                  <p class="text-lg leading-7 text-ink desktop:text-xl">Embed results- and milestones-based awards to
+                  <p class="text-lg leading-7 text-ink tablet:text-xl">Embed results- and milestones-based awards to
                     replace compliance-oriented models, with up-front payment to get started coupled with subsequent
                     payments tied to results delivery. Focus on paying for measurable results rather than activities.
                   </p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Create pay-for-results mechanisms across sectors whenever feasible</li>
                       <li>Require financial sustainability through revenue diversification tests</li>
                     </ul>
@@ -408,13 +409,13 @@
                 </div>
               </div>
 
-              <div class="fw-subsection border-t border-toc-border pt-10 pb-10 desktop:pt-[70px] desktop:pb-[70px]">
+              <div class="fw-subsection border-t border-toc-border pt-10 pb-10 tablet:pt-[70px] tablet:pb-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">B.</span>
                   <h3 class="fw-subsection-title">Prioritize Commercial Solutions and Innovation</h3>
                 </div>
                 <div class="fw-subsection-body">
-                  <p class="text-lg leading-7 text-ink desktop:text-xl">Leverage technology, innovation, and evidence to
+                  <p class="text-lg leading-7 text-ink tablet:text-xl">Leverage technology, innovation, and evidence to
                     bring down costs, deliver faster results, and scale what works. Stop developing aid projects in
                     Washington, DC or behind embassy walls that lack buy-in or co-investment from host countries or the
                     private sector, jeopardizing sustainability. End reliance on the contractor industry and instead
@@ -423,7 +424,7 @@
                   </p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Create a Global Innovation Unit with Commercial Solutions Opening authority to support
                         innovators
                         wanting to work with the State Department</li>
@@ -436,7 +437,7 @@
                 </div>
               </div>
 
-              <div class="fw-subsection border-t border-toc-border pt-10 desktop:pt-[70px]">
+              <div class="fw-subsection border-t border-toc-border pt-10 tablet:pt-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">C.</span>
                   <h3 class="fw-subsection-title">Proven Solutions Fast-Track</h3>
@@ -444,7 +445,7 @@
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Create a “Smart Buys” list of evidence-backed interventions</li>
                       <li>Streamlined procurement for commercial technologies</li>
                       <li>Buy-in mechanisms for commonly procured interventions</li>
@@ -456,20 +457,20 @@
           </article>
 
           <article id="values"
-            class="fw-section flex flex-col gap-4 desktop:gap-10 pt-10 pb-10 border-t border-toc-border desktop:[&:not(:first-of-type)]:pt-[70px] desktop:[&:not(:last-of-type)]:pb-[70px] fade-up">
+            class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink desktop:text-[38px] desktop:leading-[50px]">
+              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
               Values-Based Aid</h2>
-            <p class="text-lg leading-[1.55] text-ink desktop:text-xl desktop:leading-7">Demonstrating American
+            <p class="text-lg leading-[1.55] text-ink tablet:text-xl tablet:leading-7">Demonstrating American
               generosity and goodness by funding programs that address:</p>
             <div class="flex flex-col gap-3">
               <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-              <div class="grid gap-8 desktop:grid-cols-2 desktop:gap-x-[90px]">
-                <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+              <div class="grid gap-8 tablet:grid-cols-2 tablet:gap-x-[90px]">
+                <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                   <li>Children in adversity</li>
                   <li>Promotion of freedom of religion and other political rights</li>
                 </ul>
-                <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                   <li>Anti-human trafficking, anti-slavery</li>
                   <li>Disaster response (including use of cash transfers)</li>
                 </ul>
@@ -478,12 +479,12 @@
           </article>
 
           <article id="allocation"
-            class="fw-section flex flex-col gap-4 desktop:gap-10 pt-10 pb-10 border-t border-toc-border desktop:[&:not(:first-of-type)]:pt-[70px] desktop:[&:not(:last-of-type)]:pb-[70px] fade-up">
+            class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink desktop:text-[38px] desktop:leading-[50px]">
+              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
               Aid Allocation and Sustainability</h2>
             <div class="flex flex-col gap-0">
-              <div class="fw-subsection pb-10 desktop:pb-[70px]">
+              <div class="fw-subsection pb-10 tablet:pb-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">A.</span>
                   <h3 class="fw-subsection-title">Rational Allocation</h3>
@@ -491,7 +492,7 @@
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Let the State Department set foreign policy priorities</li>
                       <li>Within the foreign policy framework, direct funding based on expected return; i.e. more money
                         to
@@ -502,7 +503,7 @@
                   </div>
                 </div>
               </div>
-              <div class="fw-subsection border-t border-toc-border pt-10 desktop:pt-[70px]">
+              <div class="fw-subsection border-t border-toc-border pt-10 tablet:pt-[70px]">
                 <div class="fw-subsection-heading">
                   <span class="fw-subsection-letter">B.</span>
                   <h3 class="fw-subsection-title">Transition and Exit Planning</h3>
@@ -510,7 +511,7 @@
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>All programs designed with fixed end dates</li>
                       <li>Co-funding requirements from host governments from day one (outside of acute emergencies)</li>
                       <li>Clear handover timelines to local actors or other funders</li>
@@ -522,9 +523,9 @@
           </article>
 
           <article id="staffing"
-            class="fw-section flex flex-col gap-4 desktop:gap-10 pt-10 pb-10 border-t border-b border-toc-border desktop:[&:not(:first-of-type)]:pt-[70px] desktop:[&:not(:last-of-type)]:pb-[70px] fade-up">
+            class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-b border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink desktop:text-[38px] desktop:leading-[50px]">
+              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
               The Right Staffing</h2>
             <div class="flex flex-col gap-0">
               <div class="fw-subsection">
@@ -535,7 +536,7 @@
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink tablet:text-xl">
                       <li>Require staff involved in program design and/or vetting to have economics, finance or private
                         sector training / experience</li>
                       <li>Establish pipeline of staff from business schools; pair with internship opportunities at State
@@ -552,14 +553,14 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="px-4 pb-[108px] wide:px-[124px] wide:pt-[127px] wide:pb-[131px]" id="contact">
+  <section class="px-4 pb-[108px] desktop:px-[124px] desktop:pt-[127px] desktop:pb-[131px]" id="contact">
     <div class="mx-auto flex w-full min-w-0 max-w-3xl flex-col items-center gap-5 text-center fade-up">
       <p class="eyebrow">Contact</p>
-      <h2 class="w-full min-w-0 font-newsreader text-[26px] font-medium leading-tight text-ink desktop:text-[34px]">For
-        press inquiries, partnership<br class="hidden desktop:inline"> opportunities, or to learn more<br
-          class="hidden desktop:inline"> about our work.</h2>
+      <h2 class="w-full min-w-0 font-newsreader text-[26px] font-medium leading-tight text-ink tablet:text-[34px]">For
+        press inquiries, partnership<br class="hidden tablet:inline"> opportunities, or to learn more<br
+          class="hidden tablet:inline"> about our work.</h2>
       <a href="mailto:contact@thenewforeignassistance.org"
-        class="link-draw font-newsreader text-[16px] text-ink desktop:text-[34px]">contact@thenewforeignassistance.org</a>
+        class="link-draw font-newsreader text-[16px] text-ink tablet:text-[34px]">contact@thenewforeignassistance.org</a>
     </div>
   </section>
 
@@ -567,30 +568,30 @@
   <footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
     <!-- Mobile: Figma Mask group (332:4102) — 53×159 at left edge, Home - Mobile -->
     <img src="images/decor-rebuild-mobile.webp" alt="" aria-hidden="true" width="53" height="159"
-      class="pointer-events-none absolute left-0 top-0 z-0 h-[159px] w-[53px] max-w-none shrink-0 desktop:hidden">
+      class="pointer-events-none absolute left-0 top-0 z-0 h-[159px] w-[53px] max-w-none shrink-0 tablet:hidden">
     <img src="images/decor-rebuild.webp" alt="" aria-hidden="true" width="201" height="520"
-      class="pointer-events-none absolute left-0 top-[-16px] z-0 hidden h-[260px] w-[101px] max-w-none shrink-0 desktop:block">
+      class="pointer-events-none absolute left-0 top-[-16px] z-0 hidden h-[260px] w-[101px] max-w-none shrink-0 tablet:block">
     <div
-      class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] desktop:flex-row desktop:items-center desktop:justify-between desktop:px-[124px] desktop:pt-19.5 desktop:pb-[100px]">
+      class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] tablet:flex-row tablet:items-center tablet:justify-between tablet:px-[124px] tablet:pt-19.5 tablet:pb-[100px]">
       <div class="flex flex-col gap-3">
         <p class="eyebrow">From the rebuild</p>
-        <h3 class="font-newsreader text-[26px] font-medium leading-tight text-ink desktop:text-[34px]">A brief,
+        <h3 class="font-newsreader text-[26px] font-medium leading-tight text-ink tablet:text-[34px]">A brief,
           occasional newsletter on the rebuild.</h3>
       </div>
-      <form class="flex w-full max-w-md flex-col items-stretch gap-3 desktop:flex-row desktop:items-center"
+      <form class="flex w-full max-w-md flex-col items-stretch gap-3 tablet:flex-row tablet:items-center"
         id="newsletterForm">
         <input type="email" class="newsletter-input" placeholder="Your email address" required
           aria-label="Email address">
         <button type="submit"
-          class="btn-filled w-full shrink-0 self-start desktop:w-auto desktop:self-auto">Subscribe</button>
+          class="btn-filled w-full shrink-0 self-start tablet:w-auto tablet:self-auto">Subscribe</button>
       </form>
       <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you.
         We&#39;ll be in touch.</div>
     </div>
-    <div class="border-b border-t border-footer-border bg-footer-strip desktop:px-[124px]">
+    <div class="border-b border-t border-footer-border bg-footer-strip tablet:px-[124px]">
       <div
-        class="mx-auto flex flex-col gap-3 px-5 py-6 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-0">
-        <p class="font-libertinus text-lg text-center desktop:text-left font-normal leading-tight text-amber">&copy;
+        class="mx-auto flex flex-col gap-3 px-5 py-6 tablet:flex-row tablet:items-center tablet:justify-between tablet:px-0">
+        <p class="font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber">&copy;
           2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
         <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
           <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
