@@ -142,3 +142,32 @@ export async function settlePage(page: Page): Promise<void> {
   });
   await page.waitForTimeout(150);
 }
+
+/** Normalize whitespace for glued-word checks. */
+export function normalizeText(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+export async function assertFontSizePx(
+  locator: Locator,
+  expectedPx: number,
+  tolerance = 1,
+): Promise<void> {
+  const actual = await locator.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+  expect(
+    Math.abs(actual - expectedPx),
+    `font-size ${actual}px should be ~${expectedPx}px (±${tolerance})`,
+  ).toBeLessThanOrEqual(tolerance);
+}
+
+export async function assertBoxHeightPx(
+  locator: Locator,
+  expectedPx: number,
+  tolerance = 1,
+): Promise<void> {
+  const box = await getBox(locator);
+  expect(
+    Math.abs(box.height - expectedPx),
+    `height ${box.height}px should be ~${expectedPx}px (±${tolerance})`,
+  ).toBeLessThanOrEqual(tolerance);
+}

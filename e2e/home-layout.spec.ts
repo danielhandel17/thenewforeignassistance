@@ -1,14 +1,38 @@
 import { test, expect } from '@playwright/test';
 import { isDesktop, isWide, viewports } from './fixtures/viewports';
 import {
+  assertBoxHeightPx,
+  assertFontSizePx,
   assertLabelFitsButton,
   assertNoHorizontalPageOverflow,
   assertNoOverlap,
   assertStackedVertically,
   assertWithinParent,
   getBox,
+  normalizeText,
   settlePage,
 } from './helpers/layout';
+
+/** Phrases that must read with spaces once mobile-only <br>s are hidden (≥860). */
+const PRINCIPLES_SPACED_PHRASES = [
+  'not a global safety net',
+  'Do What Only Governments Can Do',
+  'Public goods and systems change. Leave the rest',
+  'markets where markets can deliver',
+  'Not Failing States',
+  "End What Doesn't Work",
+  'goal, not permanent dependency',
+];
+
+const PRINCIPLES_GLUED_FORBIDDEN = [
+  'nota global',
+  'GovernmentsCan',
+  'change.Leave',
+  'wheremarkets',
+  'NotFailing',
+  "WhatDoesn't",
+  'permanentdependency',
+];
 
 for (const vp of viewports) {
   test.describe(`homepage layout @ ${vp.id} (${vp.width}×${vp.height})`, () => {
@@ -26,7 +50,6 @@ for (const vp of viewports) {
 
       for (let i = 0; i < articleCount; i++) {
         const article = articles.nth(i);
-        // Direct children: stat block, copy, image block (ignore empty text nodes)
         const children = article.locator(':scope > *');
         const childCount = await children.count();
         expect(childCount).toBeGreaterThanOrEqual(3);
@@ -61,10 +84,38 @@ for (const vp of viewports) {
       // --- Principles / live-tracker seam ---
       await assertNoOverlap(page.locator('#principles'), page.locator('#live-tracker'));
 
-      // Mobile CTA is `wide:hidden`; sidebar CTA is `hidden wide:inline-flex`
       const principlesCta = page.locator('#principles a.btn-outline').filter({ visible: true });
       await expect(principlesCta).toBeVisible();
       await assertLabelFitsButton(principlesCta);
+
+      // --- Glued Six Principles words (spaces around mobile-only breaks) ---
+      const principlesText = normalizeText(await page.locator('#principles').innerText());
+      for (const phrase of PRINCIPLES_SPACED_PHRASES) {
+        expect(principlesText, `missing spaced phrase: ${phrase}`).toContain(phrase);
+      }
+      for (const glued of PRINCIPLES_GLUED_FORBIDDEN) {
+        expect(principlesText, `glued words present: ${glued}`).not.toContain(glued);
+      }
+
+      // --- Contact / newsletter type (+ shapeshift mark on desktop) ---
+      const contactHeading = page.locator('#contact h2');
+      const contactEmail = page.locator('#contact a[href^="mailto:"]');
+      const newsletterHeading = page.locator('footer h3');
+      await expect(contactHeading).toBeVisible();
+      await expect(contactEmail).toBeVisible();
+      await expect(newsletterHeading).toBeVisible();
+
+      const typePx = isDesktop(vp.width) ? 34 : 26;
+      const emailPx = isDesktop(vp.width) ? 34 : 16;
+      await assertFontSizePx(contactHeading, typePx);
+      await assertFontSizePx(contactEmail, emailPx);
+      await assertFontSizePx(newsletterHeading, typePx);
+
+      if (isDesktop(vp.width)) {
+        const mark = page.locator('img[alt="Powered by shapeshift"]');
+        await expect(mark).toBeVisible();
+        await assertBoxHeightPx(mark, 26);
+      }
 
       // --- Hero + page overflow ---
       await expect(page.locator('#page-hero img').first()).toBeVisible();
