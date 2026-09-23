@@ -60,6 +60,15 @@
   <style>
     /* Keep newsletter headline on one line on wide screens */
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
+    /* Hero: vertically center the H1 on the photo beside it.
+       Photo = half-width column at 3:2, so its height = (100vw - 64px gap) / 3.
+       Top padding = photo midpoint minus half the H1 height. */
+    @media (min-width: 860px) {
+      .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 124px)) !important; }
+    }
+    @media (min-width: 1280px) {
+      .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; }
+    }
   </style>
 </head>
 <body class="font-newsreader">
@@ -109,7 +118,7 @@
       <img src="images/hero-school.webp" alt="Schoolchildren holding flags outdoors" class="hero-school-img" width="1024" height="683">
       <img src="images/decor-star.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -bottom-[2.5%] right-0 hidden w-[12%] max-w-[100px] tablet:block opacity-60">
     </div>
-    <div class="order-2 flex min-w-0 flex-col gap-8 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:pt-[147px] tablet:pb-[130px]">
+    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-8 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:pt-[147px] tablet:pb-[130px]">
       <h1 class="font-newsreader text-[42px] font-medium leading-[1.1] text-ink tablet:text-[72px] tablet:leading-[1.15] xl:text-[92px] xl:leading-[106px]">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
