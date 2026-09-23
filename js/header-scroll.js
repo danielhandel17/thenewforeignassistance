@@ -2,15 +2,15 @@
   var header = document.querySelector('header.site-header');
   if (!header) return;
 
-  var desktopMq = window.matchMedia('(min-width: 860px)');
+  var tabletMq = window.matchMedia('(min-width: 860px)');
   var TOP_THRESHOLD = 16;
   var MIN_HIDE_SCROLL = 132;
   var DELTA = 10;
   var lastScrollY = Math.max(0, window.scrollY || window.pageYOffset || 0);
   var ticking = false;
 
-  function isDesktop() {
-    return desktopMq.matches;
+  function isTablet() {
+    return tabletMq.matches;
   }
 
   function scrollY() {
@@ -23,7 +23,7 @@
 
   function update() {
     ticking = false;
-    if (!isDesktop()) {
+    if (!isTablet()) {
       setHidden(false);
       lastScrollY = scrollY();
       return;
@@ -54,10 +54,10 @@
     update();
   }
 
-  if (desktopMq.addEventListener) {
-    desktopMq.addEventListener('change', onResize);
-  } else if (desktopMq.addListener) {
-    desktopMq.addListener(onResize);
+  if (tabletMq.addEventListener) {
+    tabletMq.addEventListener('change', onResize);
+  } else if (tabletMq.addListener) {
+    tabletMq.addListener(onResize);
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });

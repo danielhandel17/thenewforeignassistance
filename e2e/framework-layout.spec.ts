@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { isDesktop, viewports } from './fixtures/viewports';
+import { isTablet, viewports } from './fixtures/viewports';
 import {
   assertBoxHeightPx,
   assertFontSizePx,
@@ -28,7 +28,7 @@ for (const vp of viewports) {
 
       await expect(page.locator('.fw-subsection-heading').first()).toBeVisible();
 
-      // --- “of attempted reform” break (desktop history title; present in DOM at all widths) ---
+      // --- “of attempted reform” break (tablet+ history title; present in DOM at all widths) ---
       const historyHeading = page.locator('h2').filter({ hasText: 'attempted reform' }).first();
       await expect(historyHeading).toBeAttached();
       const historyText = normalizeText(await historyHeading.innerText());
@@ -38,11 +38,11 @@ for (const vp of viewports) {
         /<br[^>]*>\s*of\s+attempted/i.test(el.innerHTML),
       );
       expect(breakBeforeOf, 'line break should sit before “of”').toBe(true);
-      if (isDesktop(vp.width)) {
+      if (isTablet(vp.width)) {
         await expect(historyHeading).toBeVisible();
       }
 
-      // --- Contact / newsletter type (+ shapeshift mark on desktop) ---
+      // --- Contact / newsletter type (+ shapeshift mark from tablet up) ---
       const contactHeading = page.locator('#contact h2');
       const contactEmail = page.locator('#contact a[href^="mailto:"]');
       const newsletterHeading = page.locator('footer h3');
@@ -50,13 +50,13 @@ for (const vp of viewports) {
       await expect(contactEmail).toBeVisible();
       await expect(newsletterHeading).toBeVisible();
 
-      const typePx = isDesktop(vp.width) ? 34 : 26;
-      const emailPx = isDesktop(vp.width) ? 34 : 16;
+      const typePx = isTablet(vp.width) ? 34 : 26;
+      const emailPx = isTablet(vp.width) ? 34 : 16;
       await assertFontSizePx(contactHeading, typePx);
       await assertFontSizePx(contactEmail, emailPx);
       await assertFontSizePx(newsletterHeading, typePx);
 
-      if (isDesktop(vp.width)) {
+      if (isTablet(vp.width)) {
         const mark = page.locator('img[alt="Powered by shapeshift"]');
         await expect(mark).toBeVisible();
         await assertBoxHeightPx(mark, 26);
@@ -64,7 +64,7 @@ for (const vp of viewports) {
 
       await assertNoHorizontalPageOverflow(page);
 
-      if (isDesktop(vp.width)) {
+      if (isTablet(vp.width)) {
         await expect(page.locator('nav[aria-label="Primary"]')).toBeVisible();
         await expect(page.locator('#menuToggle')).toBeHidden();
       } else {
