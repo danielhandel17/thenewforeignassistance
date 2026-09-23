@@ -50,13 +50,13 @@
   <!-- HEADER -->
   <header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
     <div
-      class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
+      class="mx-auto flex max-w-page items-center justify-between gap-3 px-5 pt-5 pb-6 desktop:px-8 desktop:pt-3 desktop:pb-3 wide:gap-4 wide:px-[60px]">
       <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
         <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108"
-          class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
+          class="h-[60px] w-[119px] object-contain desktop:h-[80px] desktop:w-[160px] wide:h-[108px] wide:w-[216px]">
       </a>
 
-      <nav class="hidden items-center gap-8 desktop:flex" aria-label="Primary">
+      <nav class="hidden min-w-0 items-center gap-5 desktop:flex wide:gap-8" aria-label="Primary">
         <a href="/"
           class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
         <a href="framework.html" class="font-libertinus text-lg uppercase tracking-nav text-amber">Framework</a>
@@ -154,8 +154,8 @@
       <!-- History title deskto -->
       <div class="hidden desktop:col-span-4 desktop:flex desktop:flex-col desktop:gap-5">
         <p class="eyebrow">THE PAST</p>
-        <h2 class="mt-3 font-newsreader text-[40px] desktop:text-5xl font-medium leading-tight text-ink">A long story
-          of<br class="hidden desktop:inline">attempted reform</h2>
+        <h2 class="mt-3 font-newsreader text-[40px] desktop:text-5xl font-medium leading-tight text-ink">A long story<br>
+          of attempted reform</h2>
         <p class="text-ink font-[22px]">Every administration since Kennedy has tried to fix USAID.</p>
       </div>
 
@@ -179,7 +179,7 @@
             recommendations. Green stated the thesis directly:</p>
         </div>
         <blockquote class="fw-pullquote pt-[35px] pb-0 desktop:pb-[15px]">
-          <p class="italic font-semibold text-justify text-3xl leading-[1.5] desktop:text-4xl">&ldquo;I believe the
+          <p class="italic font-semibold text-left text-3xl leading-[1.5] desktop:text-4xl">&ldquo;I believe the
             purpose of foreign assistance should
             be ending its need to exist. Each of our programs should look forward to the day when it can end.&rdquo;</p>
           <cite class="mt-4 block font-newsreader text-[14px] not-italic leading-snug text-toc-muted">&mdash; Mark
@@ -252,10 +252,9 @@
       class="pointer-events-none absolute left-[-33px] top-[62px] desktop:left-0 desktop:top-36 block w-[59px] h-[152px] desktop:h-[221px] desktop:w-[97px] max-w-none">
     <div class="flex flex-col desktop:gap-28">
       <div class="flex flex-col gap-4 desktop:gap-5">
-        <p class="eyebrow">Contents</p>
         <h2
           class="font-newsreader text-[40px] desktop:font-medium leading-tight text-ink desktop:text-[49px] desktop:leading-[50px]">
-          The<br class="desktop:hidden"> Framework
+          The Framework
         </h2>
       </div>
 
@@ -317,14 +316,16 @@
 
             <div class="flex flex-col gap-0">
               <div class="fw-subsection pb-10 desktop:pb-[70px]">
-                <span class="fw-subsection-letter">A.</span>
-                <h3 class="fw-subsection-title">Fostering Private Sector Growth</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">A.</span>
+                  <h3 class="fw-subsection-title">Fostering Private Sector Growth</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <p class="text-lg leading-7 text-ink desktop:text-xl">Prioritize investments that promote jobs and
                     economic growth while securing new markets for U.S. products and services.</p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Subsidizing first movers to promote economic discovery and diversification (&gt;2% GDP or
                         &gt;2%
                         exports)</li>
@@ -338,12 +339,14 @@
               </div>
 
               <div class="fw-subsection border-t border-toc-border pt-10 pb-10 desktop:pt-[70px] desktop:pb-[70px]">
-                <span class="fw-subsection-letter">B.</span>
-                <h3 class="fw-subsection-title">Global Public Goods</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">B.</span>
+                  <h3 class="fw-subsection-title">Global Public Goods</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Advanced market commitments (e.g. Operation Warp Speed) for treatments for neglected tropical
                         diseases, repurposing generics, etc.</li>
                       <li>Evidence synthesis (“Smart Buys” and other systematic reviews)</li>
@@ -353,8 +356,10 @@
               </div>
 
               <div class="fw-subsection border-t border-toc-border pt-10 desktop:pt-[70px]">
-                <span class="fw-subsection-letter">C.</span>
-                <h3 class="fw-subsection-title">Work with Countries That Are Willing to Help Themselves</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">C.</span>
+                  <h3 class="fw-subsection-title">Work with Countries That Are Willing to Help Themselves</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <p class="text-lg leading-7 text-ink desktop:text-xl">It is not the responsibility of the United
                     States to
@@ -364,7 +369,7 @@
                     sustainability plans or transition strategies for local ownership.</p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Require host government skin in the game</li>
                       <li>Provide support for or require domestic resource mobilization so countries can fund own
                         priorities
@@ -384,8 +389,10 @@
 
             <div class="flex flex-col gap-0">
               <div class="fw-subsection pb-10 desktop:pb-[70px]">
-                <span class="fw-subsection-letter">A.</span>
-                <h3 class="fw-subsection-title">Pay for Results</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">A.</span>
+                  <h3 class="fw-subsection-title">Pay for Results</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <p class="text-lg leading-7 text-ink desktop:text-xl">Embed results- and milestones-based awards to
                     replace compliance-oriented models, with up-front payment to get started coupled with subsequent
@@ -393,7 +400,7 @@
                   </p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Create pay-for-results mechanisms across sectors whenever feasible</li>
                       <li>Require financial sustainability through revenue diversification tests</li>
                     </ul>
@@ -402,8 +409,10 @@
               </div>
 
               <div class="fw-subsection border-t border-toc-border pt-10 pb-10 desktop:pt-[70px] desktop:pb-[70px]">
-                <span class="fw-subsection-letter">B.</span>
-                <h3 class="fw-subsection-title">Prioritize Commercial Solutions and Innovation</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">B.</span>
+                  <h3 class="fw-subsection-title">Prioritize Commercial Solutions and Innovation</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <p class="text-lg leading-7 text-ink desktop:text-xl">Leverage technology, innovation, and evidence to
                     bring down costs, deliver faster results, and scale what works. Stop developing aid projects in
@@ -414,7 +423,7 @@
                   </p>
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Create a Global Innovation Unit with Commercial Solutions Opening authority to support
                         innovators
                         wanting to work with the State Department</li>
@@ -428,12 +437,14 @@
               </div>
 
               <div class="fw-subsection border-t border-toc-border pt-10 desktop:pt-[70px]">
-                <span class="fw-subsection-letter">C.</span>
-                <h3 class="fw-subsection-title">Proven Solutions Fast-Track</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">C.</span>
+                  <h3 class="fw-subsection-title">Proven Solutions Fast-Track</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Create a “Smart Buys” list of evidence-backed interventions</li>
                       <li>Streamlined procurement for commercial technologies</li>
                       <li>Buy-in mechanisms for commonly procured interventions</li>
@@ -454,11 +465,11 @@
             <div class="flex flex-col gap-3">
               <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
               <div class="grid gap-8 desktop:grid-cols-2 desktop:gap-x-[90px]">
-                <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                   <li>Children in adversity</li>
                   <li>Promotion of freedom of religion and other political rights</li>
                 </ul>
-                <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                   <li>Anti-human trafficking, anti-slavery</li>
                   <li>Disaster response (including use of cash transfers)</li>
                 </ul>
@@ -473,12 +484,14 @@
               Aid Allocation and Sustainability</h2>
             <div class="flex flex-col gap-0">
               <div class="fw-subsection pb-10 desktop:pb-[70px]">
-                <span class="fw-subsection-letter">A.</span>
-                <h3 class="fw-subsection-title">Rational Allocation</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">A.</span>
+                  <h3 class="fw-subsection-title">Rational Allocation</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Let the State Department set foreign policy priorities</li>
                       <li>Within the foreign policy framework, direct funding based on expected return; i.e. more money
                         to
@@ -490,12 +503,14 @@
                 </div>
               </div>
               <div class="fw-subsection border-t border-toc-border pt-10 desktop:pt-[70px]">
-                <span class="fw-subsection-letter">B.</span>
-                <h3 class="fw-subsection-title">Transition and Exit Planning</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">B.</span>
+                  <h3 class="fw-subsection-title">Transition and Exit Planning</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>All programs designed with fixed end dates</li>
                       <li>Co-funding requirements from host governments from day one (outside of acute emergencies)</li>
                       <li>Clear handover timelines to local actors or other funders</li>
@@ -513,12 +528,14 @@
               The Right Staffing</h2>
             <div class="flex flex-col gap-0">
               <div class="fw-subsection">
-                <span class="fw-subsection-letter">A.</span>
-                <h3 class="fw-subsection-title">Understanding of the Private Sector</h3>
+                <div class="fw-subsection-heading">
+                  <span class="fw-subsection-letter">A.</span>
+                  <h3 class="fw-subsection-title">Understanding of the Private Sector</h3>
+                </div>
                 <div class="fw-subsection-body">
                   <div class="flex flex-col gap-3">
                     <p class="font-libertinus text-lg uppercase tracking-eyebrow text-amber">Examples</p>
-                    <ul class="list-disc pl-[30px] text-lg leading-7 text-ink desktop:text-xl">
+                    <ul class="list-disc pl-5 text-lg leading-7 text-ink desktop:text-xl">
                       <li>Require staff involved in program design and/or vetting to have economics, finance or private
                         sector training / experience</li>
                       <li>Establish pipeline of staff from business schools; pair with internship opportunities at State
@@ -538,11 +555,11 @@
   <section class="px-4 pb-[108px] wide:px-[124px] wide:pt-[127px] wide:pb-[131px]" id="contact">
     <div class="mx-auto flex w-full min-w-0 max-w-3xl flex-col items-center gap-5 text-center fade-up">
       <p class="eyebrow">Contact</p>
-      <h2 class="w-full min-w-0 font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[50px]">For
+      <h2 class="w-full min-w-0 font-newsreader text-[26px] font-medium leading-tight text-ink desktop:text-[34px]">For
         press inquiries, partnership<br class="hidden desktop:inline"> opportunities, or to learn more<br
           class="hidden desktop:inline"> about our work.</h2>
       <a href="mailto:contact@thenewforeignassistance.org"
-        class="link-draw font-newsreader text-lg text-ink desktop:text-[42px]">contact@thenewforeignassistance.org</a>
+        class="link-draw font-newsreader text-[16px] text-ink desktop:text-[34px]">contact@thenewforeignassistance.org</a>
     </div>
   </section>
 
@@ -557,8 +574,8 @@
       class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] desktop:flex-row desktop:items-center desktop:justify-between desktop:px-[124px] desktop:pt-19.5 desktop:pb-[100px]">
       <div class="flex flex-col gap-3">
         <p class="eyebrow">From the rebuild</p>
-        <h3 class="font-newsreader text-[40px] font-medium leading-tight text-ink desktop:text-[49px]">A brief,
-          occasional newsletter<br class="hidden desktop:inline"> on the rebuild.</h3>
+        <h3 class="font-newsreader text-[26px] font-medium leading-tight text-ink desktop:text-[34px]">A brief,
+          occasional newsletter on the rebuild.</h3>
       </div>
       <form class="flex w-full max-w-md flex-col items-stretch gap-3 desktop:flex-row desktop:items-center"
         id="newsletterForm">
@@ -575,8 +592,10 @@
         class="mx-auto flex flex-col gap-3 px-5 py-6 desktop:flex-row desktop:items-center desktop:justify-between desktop:px-0">
         <p class="font-libertinus text-lg text-center desktop:text-left font-normal leading-tight text-amber">&copy;
           2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
-        <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
-          class="hidden desktop:inline h-[35px] w-[221px] shrink-0">
+        <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
+          <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
+            class="h-[26px] w-[164px]">
+        </a>
       </div>
     </div>
   </footer>
