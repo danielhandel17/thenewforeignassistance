@@ -63,6 +63,8 @@
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
+    /* Pull quote: hard amber rule instead of soft tan block */
+    .fw-pullquote::before { width: 4px !important; left: -28px !important; background-color: #b8682a !important; }
   </style>
 </head>
 
@@ -150,13 +152,8 @@
   <section
     class="relative overflow-x-clip bg-cream px-10 pt-[117px] pb-[106px] tablet:px-[124px] tablet:pt-[131px] tablet:pb-[177px]"
     id="history">
-    <!-- Desktop decor — Figma 332:3638 -->
-    <img src="images/fw-history-decor.svg" alt="" aria-hidden="true" width="102" height="220"
-      class="pointer-events-none absolute left-0 top-[125px] hidden h-[220px] w-[102px] max-w-none tablet:block">
-    <!-- Mobile decor — Figma 332:4239 (Group 2457; cream @ left -16, 51×145 visible) -->
-    <img src="images/fw-history-decor-mobile.svg" alt="" aria-hidden="true" width="93" height="145"
-      class="pointer-events-none absolute left-[-42px] top-4 h-[145px] w-[93px] max-w-none tablet:hidden"
-      data-node-id="332:4239">
+    <!-- Desktop: side accent -->
+    <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:131px;width:79px;height:232px;max-width:none">
     <div class="mx-auto grid gap-10 tablet:grid-cols-12 tablet:gap-12 fade-up">
       <!-- History title deskto -->
       <div class="hidden tablet:col-span-4 tablet:flex tablet:flex-col tablet:gap-5">
@@ -213,9 +210,7 @@
   <section
     class="relative overflow-x-clip bg-white px-10 pt-[114px] pb-[89px] flex flex-col gap-[60px] tablet:grid tablet:grid-cols-2 tablet:items-start tablet:gap-[110px] tablet:px-[124px] tablet:py-[180px]"
     id="what-was-wrong">
-    <img src="images/decor-record.svg" alt="" aria-hidden="true" width="79" height="232"
-      class="pointer-events-none absolute left-0 top-[73px] h-[147px] w-[50px] max-w-none shrink-0 tablet:top-[180px] tablet:h-[232px] tablet:w-[79px]"
-      data-node-id="332:4353">
+    <img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" width="90" height="296" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:180px;width:90px;height:296px;max-width:none">
     <figure class="relative z-1 flex flex-col gap-3 tablet:order-2 tablet:mt-0">
       <img src="images/fw-portrait.webp" alt="Winnie at work in a laboratory setting" width="1400" height="2097"
         class="aspect-[379/397] h-auto w-full object-cover object-top tablet:h-[948px] tablet:aspect-[66/89]"
@@ -255,8 +250,7 @@
   <!-- CONTENTS + FRAMEWORK BODY — Figma 332:3419 / 332:3422 / decor 332:3528 / TOC 332:3390 -->
   <section class="relative overflow-x-clip border-t border-toc-border px-10 pt-[114px] pb-10 tablet:px-[124px] tablet:pt-36"
     id="framework-contents">
-    <img src="images/fw-contents-decor.svg" alt="" aria-hidden="true" width="97" height="221"
-      class="pointer-events-none absolute left-[-33px] top-[62px] tablet:left-0 tablet:top-36 block w-[59px] h-[152px] tablet:h-[221px] tablet:w-[97px] max-w-none">
+    <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:144px;width:79px;height:232px;max-width:none">
     <div class="flex flex-col tablet:gap-28">
       <div class="flex flex-col gap-4 tablet:gap-5">
         <h2
@@ -570,11 +564,8 @@
 
   <!-- NEWSLETTER + FOOTER -->
   <footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
-    <!-- Mobile: Figma Mask group (332:4102) — 53×159 at left edge, Home - Mobile -->
-    <img src="images/decor-rebuild-mobile.webp" alt="" aria-hidden="true" width="53" height="159"
-      class="pointer-events-none absolute left-0 top-0 z-0 h-[159px] w-[53px] max-w-none shrink-0 tablet:hidden">
-    <img src="images/decor-rebuild.webp" alt="" aria-hidden="true" width="201" height="520"
-      class="pointer-events-none absolute left-0 top-[-16px] z-0 hidden h-[260px] w-[101px] max-w-none shrink-0 tablet:block">
+    <!-- Desktop: footer side accent -->
+    <img src="images/decor-bars-rebuild.svg" alt="" aria-hidden="true" width="101" height="260" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:-16px;width:101px;height:260px;max-width:none">
     <div
       class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] tablet:flex-row tablet:items-center tablet:justify-between tablet:px-[124px] tablet:pt-19.5 tablet:pb-[100px]">
       <div class="flex flex-col gap-3">
