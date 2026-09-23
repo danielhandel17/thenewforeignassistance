@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile hero: zoom into the US flag and crop the third child on the right */
+@layer components {
+  .hero-school-img {
+    @apply h-[260px] w-full max-w-full object-cover;
+    object-position: 18% 22%;
+    transform-origin: center;
+    transform: scale(2.15) translate(18%, 11%);
+  }
+  @media (min-width: 860px) {
+    .hero-school-img {
+      @apply aspect-[3/2] h-auto max-h-[683px];
+      object-position: 40% center;
+      transform: none;
+    }
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
