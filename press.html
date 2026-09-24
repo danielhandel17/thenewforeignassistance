@@ -445,6 +445,15 @@
   @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
   .intro-stripes { display: none; }
   @media (min-width: 860px) { .intro-stripes { display: block; } }
+  /* Press page: section labels match site eyebrows */
+  .pub-subsection-label.press-eyebrow { font-family: "Libertinus Serif Display", Newsreader, Georgia, serif; font-size: 18px; font-weight: 400; letter-spacing: .2em; color: var(--amber); padding-bottom: 14px; margin-top: 16px; }
+  .press-accent-m { display: block; width: 40px; height: 117px; margin: 0 0 20px -20px; }
+  @media (min-width: 721px) { .press-accent-m { display: none; } }
+  /* Reading list: show 8, expand on demand */
+  .reading-extra { display: none !important; }
+  .reading-open .reading-extra { display: flex !important; }
+  .reading-toggle { margin-top: 28px; }
+  .reading-open .reading-toggle { display: none; }
 </style>
 
 <style>
@@ -550,7 +559,7 @@
   <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
     <h1 class="page-h1 has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent" width="79" height="232" style="width:79px;height:232px">What we've written.<br><em>What we're reading.</em></h1>
-    <p class="page-lead">Our own articles in the major outlets, and the writing that informs the work.</p>
+    <p class="page-lead">Our own writing, coverage of our work, and the reading that informs it.</p>
   </div>
 </section>
 
@@ -559,7 +568,7 @@
 <!-- PRESS -->
 <section class="section publications-section" id="press">
   <div class="section-inner fade-up">
-    <div class="pub-subsection-label">What we've written</div>
+    <div class="pub-subsection-label press-eyebrow">What we've written</div>
     <div class="article-cards">
       <a class="article-card" href="https://nationalaffairs.com/publications/detail/reforming-foreign-assistance" target="_blank" rel="noopener">
         <div class="article-outlet">National Affairs · Summer 2026</div>
@@ -575,91 +584,8 @@
 
     </div>
 
-    <div class="pub-subsection-label has-accent"><img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" class="press-accent" width="90" height="296" style="width:90px;height:296px">What we're reading</div>
-    <div class="article-cards">
-      <a class="article-card" href="https://mccloskey.substack.com/p/then-many-of-us-shot-up-the-blade" target="_blank" rel="noopener">
-        <div class="article-outlet">Deirdre McCloskey · September 2026</div>
-        <div class="article-title">Then Many of Us Shot Up the Blade of a Hockey Stick</div>
-        <div class="article-pull">Poverty was universal until the Great Enrichment after 1800 — driven not by capital or exploitation but by an ideology of liberty and dignity for ordinary people. The case for growth as the most important secular event in human history.</div>
-      </a>
-      <a class="article-card" href="https://nationalinterest.org/feature/how-the-us-can-reclaim-the-world-bank-from-china" target="_blank" rel="noopener">
-        <div class="article-outlet">The National Interest · August 2026</div>
-        <div class="article-title">How the US Can Reclaim the World Bank from China</div>
-        <div class="article-pull">China has entrenched itself in the World Bank, using U.S. contributions to subsidize Belt and Road and lock in Chinese technology. The case for the U.S. to reassert strategic leverage in a $400 billion institution.</div>
-      </a>
-      <a class="article-card" href="https://www.cato.org/research-briefs-economic-policy/do-market-reforms-cause-growth" target="_blank" rel="noopener">
-        <div class="article-outlet">Cato Institute · July 2026</div>
-        <div class="article-title">Do Market Reforms Cause Growth?</div>
-        <div class="article-pull">Hartley, Pallan, and Wheaton find that market reforms drive substantial long-run growth — but benefits take 3-5 years to materialize as capital and labor reallocate. The case for patient, structural ambition over short-term fixes.</div>
-      </a>
-      <a class="article-card" href="https://www.africanistperspective.com/p/a-caution-against-faddist-approaches" target="_blank" rel="noopener">
-        <div class="article-outlet">An Africanist Perspective · May 2026</div>
-        <div class="article-title">A Caution Against Faddist Approaches to Industrial Policy</div>
-        <div class="article-pull">Ken Opalo on why the World Bank's newfound enthusiasm for industrial policy will produce the same faddist failures as every previous orthodoxy — and why African governments should ignore the best-practice packaging.</div>
-      </a>
-      <a class="article-card" href="https://www.nber.org/papers/w35253" target="_blank" rel="noopener">
-        <div class="article-outlet">NBER · May 2026</div>
-        <div class="article-title">The Sisyphean Pursuit of Evidence for Poverty Traps</div>
-        <div class="article-pull">Dean Karlan and co-authors reassess poverty traps: the theory is more often assumed than empirically demonstrated.</div>
-      </a>
-      <a class="article-card" href="https://www.devex.com/news/global-health-in-2026-hard-truths-from-11-leaders-112469" target="_blank" rel="noopener">
-        <div class="article-outlet">Devex · May 2026</div>
-        <div class="article-title">Global Health in 2026: Hard Truths from 11 Leaders</div>
-        <div class="article-pull">Even insiders concede the system is no longer fit for purpose.</div>
-      </a>
-      <a class="article-card" href="https://www.state.gov/releases/bureau-of-african-affairs/2026/04/a-new-model-for-economic-prosperity-in-africa" target="_blank" rel="noopener">
-        <div class="article-outlet">U.S. State Department · April 2026</div>
-        <div class="article-title">A New Model for Economic Prosperity in Africa</div>
-        <div class="article-pull">State's Nick Checker on commercial diplomacy: deals over programs, results over disbursement.</div>
-      </a>
-      <a class="article-card" href="https://www.solutionsindex.org/" target="_blank" rel="noopener">
-        <div class="article-outlet">Unlock Aid · March 2026</div>
-        <div class="article-title">Solutions Index</div>
-        <div class="article-pull">A reference directory of pacesetting organizations across global health, food security, and nutrition.</div>
-      </a>
-      <a class="article-card" href="https://www.persuasion.community/p/growth-is-all-you-need" target="_blank" rel="noopener">
-        <div class="article-outlet">Persuasion · March 2026</div>
-        <div class="article-title">Growth Is All You Need</div>
-        <div class="article-pull">Quico Toro on Pritchett's case against RCTs, and for growth-first development.</div>
-      </a>
-      <a class="article-card" href="https://www.nber.org/papers/w34583" target="_blank" rel="noopener">
-        <div class="article-outlet">NBER · December 2025</div>
-        <div class="article-title">What Would it Cost to End Extreme Poverty?</div>
-        <div class="article-pull">Paul Niehaus and co-authors price the end of extreme poverty: 0.3% of global GDP.</div>
-      </a>
-      <a class="article-card" href="https://asteriskmag.com/issues/07/want-growth-kill-small-businesses" target="_blank" rel="noopener">
-        <div class="article-outlet">Asterisk · 2024</div>
-        <div class="article-title">Want Growth? Kill Small Businesses</div>
-        <div class="article-pull">Karthik Tadepalli on the "missing middle" of development: not household interventions, not growth platitudes, but firm growth — the rigorous, ambitious lens that ties aid to prosperity.</div>
-      </a>
-      <a class="article-card" href="https://foreignpolicy.com/2024/04/10/us-foreign-aid-gaza-trump-threats/" target="_blank" rel="noopener">
-        <div class="article-outlet">Foreign Policy · April 2024</div>
-        <div class="article-title">Trump's Foreign Aid Threat Offers Chance for Change</div>
-        <div class="article-pull">The reform opportunity hiding in the aid-cuts moment.</div>
-      </a>
-      <a class="article-card" href="https://www.hks.harvard.edu/centers/cid/publications/faculty-working-papers/national-development-delivers" target="_blank" rel="noopener">
-        <div class="article-outlet">CID · May 2021</div>
-        <div class="article-title">National Development Delivers: And How! And How?</div>
-        <div class="article-pull">Lant Pritchett on the case for growth: no country has reached high wellbeing without it.</div>
-      </a>
-      <a class="article-card" href="https://oig.usaid.gov/node/2639" target="_blank" rel="noopener">
-        <div class="article-outlet">USAID OIG · September 2019</div>
-        <div class="article-title">USAID's Award Oversight Is Insufficient to Hold Implementers Accountable for Achieving Results</div>
-        <div class="article-pull">Nearly half of sampled awards failed to achieve expected results — yet implementers were generally paid in full. An agency-wide failure of accountability, not a war-zone anomaly.</div>
-      </a>
-      <a class="article-card" href="https://www.nationalaffairs.com/publications/detail/kludgeocracy-in-america" target="_blank" rel="noopener">
-        <div class="article-outlet">National Affairs · Fall 2013</div>
-        <div class="article-title">Kludgeocracy in America</div>
-        <div class="article-pull">Steven Teles on why government complexity, not size, is the deeper problem.</div>
-      </a>
-      <a class="article-card" href="https://www.cgdev.org/publication/clash-counter-bureaucracy-and-development" target="_blank" rel="noopener">
-        <div class="article-outlet">CGD · July 2010</div>
-        <div class="article-title">The Clash of the Counter-bureaucracy and Development</div>
-        <div class="article-pull">Andrew Natsios on the paradox: the most measurable programs are the least transformational, and the most transformational the least measurable.</div>
-      </a>
-    </div>
 
-    <div class="pub-subsection-label has-accent"><img src="images/decor-bars-rebuild.svg" alt="" aria-hidden="true" class="press-accent" width="101" height="260" style="width:101px;height:260px">In the press</div>
+    <div class="pub-subsection-label press-eyebrow has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent-m" width="40" height="117"><img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" class="press-accent" width="90" height="296" style="width:90px;height:296px">In the press</div>
     <div class="article-cards">
       <a class="article-card" href="https://www.devex.com/news/the-ashes-of-usaid-america-s-new-architecture-of-foreign-assistance-112887" target="_blank" rel="noopener">
         <div class="article-outlet">Devex · July 2026</div>
@@ -686,6 +612,107 @@
         <div class="article-cta">Read →</div>
       </a>
     </div>
+
+    <div class="pub-subsection-label press-eyebrow has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent-m" width="40" height="117"><img src="images/decor-bars-rebuild.svg" alt="" aria-hidden="true" class="press-accent" width="101" height="260" style="width:101px;height:260px">What we're reading</div>
+    <div class="article-cards">
+      <a class="article-card" href="https://mccloskey.substack.com/p/then-many-of-us-shot-up-the-blade" target="_blank" rel="noopener">
+        <div class="article-outlet">Deirdre McCloskey · September 2026</div>
+        <div class="article-title">Then Many of Us Shot Up the Blade of a Hockey Stick</div>
+        <div class="article-pull">Poverty was universal until the Great Enrichment after 1800 — driven not by capital or exploitation but by an ideology of liberty and dignity for ordinary people. The case for growth as the most important secular event in human history.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://nationalinterest.org/feature/how-the-us-can-reclaim-the-world-bank-from-china" target="_blank" rel="noopener">
+        <div class="article-outlet">The National Interest · August 2026</div>
+        <div class="article-title">How the US Can Reclaim the World Bank from China</div>
+        <div class="article-pull">China has entrenched itself in the World Bank, using U.S. contributions to subsidize Belt and Road and lock in Chinese technology. The case for the U.S. to reassert strategic leverage in a $400 billion institution.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.cato.org/research-briefs-economic-policy/do-market-reforms-cause-growth" target="_blank" rel="noopener">
+        <div class="article-outlet">Cato Institute · July 2026</div>
+        <div class="article-title">Do Market Reforms Cause Growth?</div>
+        <div class="article-pull">Hartley, Pallan, and Wheaton find that market reforms drive substantial long-run growth — but benefits take 3-5 years to materialize as capital and labor reallocate. The case for patient, structural ambition over short-term fixes.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.africanistperspective.com/p/a-caution-against-faddist-approaches" target="_blank" rel="noopener">
+        <div class="article-outlet">An Africanist Perspective · May 2026</div>
+        <div class="article-title">A Caution Against Faddist Approaches to Industrial Policy</div>
+        <div class="article-pull">Ken Opalo on why the World Bank's newfound enthusiasm for industrial policy will produce the same faddist failures as every previous orthodoxy — and why African governments should ignore the best-practice packaging.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.nber.org/papers/w35253" target="_blank" rel="noopener">
+        <div class="article-outlet">NBER · May 2026</div>
+        <div class="article-title">The Sisyphean Pursuit of Evidence for Poverty Traps</div>
+        <div class="article-pull">Dean Karlan and co-authors reassess poverty traps: the theory is more often assumed than empirically demonstrated.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.devex.com/news/global-health-in-2026-hard-truths-from-11-leaders-112469" target="_blank" rel="noopener">
+        <div class="article-outlet">Devex · May 2026</div>
+        <div class="article-title">Global Health in 2026: Hard Truths from 11 Leaders</div>
+        <div class="article-pull">Even insiders concede the system is no longer fit for purpose.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.state.gov/releases/bureau-of-african-affairs/2026/04/a-new-model-for-economic-prosperity-in-africa" target="_blank" rel="noopener">
+        <div class="article-outlet">U.S. State Department · April 2026</div>
+        <div class="article-title">A New Model for Economic Prosperity in Africa</div>
+        <div class="article-pull">State's Nick Checker on commercial diplomacy: deals over programs, results over disbursement.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.solutionsindex.org/" target="_blank" rel="noopener">
+        <div class="article-outlet">Unlock Aid · March 2026</div>
+        <div class="article-title">Solutions Index</div>
+        <div class="article-pull">A reference directory of pacesetting organizations across global health, food security, and nutrition.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://www.persuasion.community/p/growth-is-all-you-need" target="_blank" rel="noopener">
+        <div class="article-outlet">Persuasion · March 2026</div>
+        <div class="article-title">Growth Is All You Need</div>
+        <div class="article-pull">Quico Toro on Pritchett's case against RCTs, and for growth-first development.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://www.nber.org/papers/w34583" target="_blank" rel="noopener">
+        <div class="article-outlet">NBER · December 2025</div>
+        <div class="article-title">What Would it Cost to End Extreme Poverty?</div>
+        <div class="article-pull">Paul Niehaus and co-authors price the end of extreme poverty: 0.3% of global GDP.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://asteriskmag.com/issues/07/want-growth-kill-small-businesses" target="_blank" rel="noopener">
+        <div class="article-outlet">Asterisk · 2024</div>
+        <div class="article-title">Want Growth? Kill Small Businesses</div>
+        <div class="article-pull">Karthik Tadepalli on the "missing middle" of development: not household interventions, not growth platitudes, but firm growth — the rigorous, ambitious lens that ties aid to prosperity.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://foreignpolicy.com/2024/04/10/us-foreign-aid-gaza-trump-threats/" target="_blank" rel="noopener">
+        <div class="article-outlet">Foreign Policy · April 2024</div>
+        <div class="article-title">Trump's Foreign Aid Threat Offers Chance for Change</div>
+        <div class="article-pull">The reform opportunity hiding in the aid-cuts moment.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://www.hks.harvard.edu/centers/cid/publications/faculty-working-papers/national-development-delivers" target="_blank" rel="noopener">
+        <div class="article-outlet">CID · May 2021</div>
+        <div class="article-title">National Development Delivers: And How! And How?</div>
+        <div class="article-pull">Lant Pritchett on the case for growth: no country has reached high wellbeing without it.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://oig.usaid.gov/node/2639" target="_blank" rel="noopener">
+        <div class="article-outlet">USAID OIG · September 2019</div>
+        <div class="article-title">USAID's Award Oversight Is Insufficient to Hold Implementers Accountable for Achieving Results</div>
+        <div class="article-pull">Nearly half of sampled awards failed to achieve expected results — yet implementers were generally paid in full. An agency-wide failure of accountability, not a war-zone anomaly.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://www.nationalaffairs.com/publications/detail/kludgeocracy-in-america" target="_blank" rel="noopener">
+        <div class="article-outlet">National Affairs · Fall 2013</div>
+        <div class="article-title">Kludgeocracy in America</div>
+        <div class="article-pull">Steven Teles on why government complexity, not size, is the deeper problem.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card reading-extra" href="https://www.cgdev.org/publication/clash-counter-bureaucracy-and-development" target="_blank" rel="noopener">
+        <div class="article-outlet">CGD · July 2010</div>
+        <div class="article-title">The Clash of the Counter-bureaucracy and Development</div>
+        <div class="article-pull">Andrew Natsios on the paradox: the most measurable programs are the least transformational, and the most transformational the least measurable.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+    </div>
+    <button type="button" class="reading-toggle btn-outline" id="readingToggle" aria-expanded="false">See all 16 readings</button>
 
   </div>
 </section>
@@ -761,5 +788,8 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 <script src="js/mobile-menu.js"></script>
 <script src="js/header-scroll.js" defer></script>
 
+<script>
+(function(){var b=document.getElementById('readingToggle');if(!b)return;b.addEventListener('click',function(){var s=b.closest('.section-inner')||document.body;s.classList.add('reading-open');b.setAttribute('aria-expanded','true');});})();
+</script>
 </body>
 </html>
