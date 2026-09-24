@@ -429,6 +429,12 @@
     .newsletter-input, .newsletter-submit { width: 100%; }
   }
 
+  /* Star-and-stripe accents in the left margin (only where there is room) */
+  .press-accent { display: none; }
+  @media (min-width: 1400px) {
+    .has-accent { position: relative; }
+    .press-accent { display: block; position: absolute; top: 0; left: calc((1200px - 100vw) / 2); pointer-events: none; }
+  }
 </style>
 
 <style>
@@ -532,7 +538,7 @@
 <!-- PAGE INTRO -->
 <section class="page-intro">
   <div class="page-intro-inner fade-up">
-    <h1 class="page-h1">What we've written.<br><em>What we're reading.</em></h1>
+    <h1 class="page-h1 has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent" width="79" height="232" style="width:79px;height:232px">What we've written.<br><em>What we're reading.</em></h1>
     <p class="page-lead">Our own articles in the major outlets, and the writing that informs the work.</p>
   </div>
 </section>
@@ -558,7 +564,7 @@
 
     </div>
 
-    <div class="pub-subsection-label">What we're reading</div>
+    <div class="pub-subsection-label has-accent"><img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" class="press-accent" width="90" height="296" style="width:90px;height:296px">What we're reading</div>
     <div class="article-cards">
       <a class="article-card" href="https://mccloskey.substack.com/p/then-many-of-us-shot-up-the-blade" target="_blank" rel="noopener">
         <div class="article-outlet">Deirdre McCloskey · September 2026</div>
@@ -642,7 +648,7 @@
       </a>
     </div>
 
-    <div class="pub-subsection-label">In the press</div>
+    <div class="pub-subsection-label has-accent"><img src="images/decor-bars-rebuild.svg" alt="" aria-hidden="true" class="press-accent" width="101" height="260" style="width:101px;height:260px">In the press</div>
     <div class="article-cards">
       <a class="article-card" href="https://www.devex.com/news/the-ashes-of-usaid-america-s-new-architecture-of-foreign-assistance-112887" target="_blank" rel="noopener">
         <div class="article-outlet">Devex · July 2026</div>
