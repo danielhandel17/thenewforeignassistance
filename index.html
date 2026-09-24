@@ -80,6 +80,9 @@
   @media (max-width: 859px) { [data-mobile-tight] { padding-top: 150px !important; } }
   /* Principles: right margin to match the left gutter; smaller gap above */
   @media (min-width: 860px) { .principles-grid { padding-right: 124px; margin-top: 96px !important; } }
+  /* "What comes next" divider: same rounded-bar shape as "What went wrong", keep its color */
+  .tick-pattern.tick-pattern-next { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12'%3E%3Crect width='25' height='12' fill='%23EBD6C5' rx='2'/%3E%3C/svg%3E") !important; background-size: 24px 12px !important; }
+  @media (min-width: 860px) { .tick-pattern.tick-pattern-next { background-size: 33px 12px !important; } }
 </style>
 </head>
 <body class="font-newsreader">
