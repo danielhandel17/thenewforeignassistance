@@ -78,6 +78,8 @@
   @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
   /* Mobile: tighten top gap left over from the old decorations */
   @media (max-width: 859px) { [data-mobile-tight] { padding-top: 150px !important; } }
+  /* Principles: right margin to match the left gutter; smaller gap above */
+  @media (min-width: 860px) { .principles-grid { padding-right: 124px; margin-top: 96px !important; } }
 </style>
 </head>
 <body class="font-newsreader">
@@ -267,7 +269,7 @@
   
   <!-- Desktop: Principles side accent -->
   <img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" width="90" height="296" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:379px;width:90px;height:296px;max-width:none">
-  <div class="relative mx-auto grid gap-12 tablet:mt-[200px] tablet:grid-cols-2 tablet:gap-16 tablet:pl-[126px] fade-up">
+  <div class="principles-grid relative mx-auto grid gap-12 tablet:mt-[200px] tablet:grid-cols-2 tablet:gap-16 tablet:pl-[126px] fade-up">
     <aside class="tablet:sticky tablet:top-[12.5rem] tablet:self-start">
       <div class="flex flex-col gap-6 tablet:mb-[108px] tablet:pt-8">
         <p class="eyebrow">Reformed Approach</p>
@@ -310,7 +312,7 @@
         <p class="font-newsreader text-[22px] font-medium leading-tight text-amber tablet:text-[28px]">05</p>
         <div class="flex flex-col gap-4">
           <h3 class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">Assess Everything, End What <br class="inline tablet:hidden">Doesn&#39;t Work</h3>
-          <p class="text-lg tablet:text-[22px] leading-[1.45] text-ink-light">Set clear objectives. Measure outcomes. <br class="inline tablet:hidden">Reallocate from what fails to <br class="hidden tablet:inline">what works.</p>
+          <p class="text-lg tablet:text-[22px] leading-[1.45] text-ink-light">Set clear objectives. Measure outcomes. Reallocate from what fails to what works.</p>
         </div>
       </article>
       <article class="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-2 tablet:gap-x-7">
