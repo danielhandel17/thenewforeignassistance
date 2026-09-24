@@ -70,6 +70,10 @@
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
+    /* Lettered subsections: keep title beside its letter, wrap with a hanging indent */
+    .fw-subsection-heading { flex-wrap: nowrap !important; }
+    .fw-subsection-letter { flex-shrink: 0; }
+    .fw-subsection-title { min-width: 0; }
     @media (max-width: 859px) { [data-mobile-tight] { padding-top: 150px !important; } }
     /* Pull quote: hard amber rule instead of soft tan block */
     .fw-pullquote::before { width: 4px !important; left: -28px !important; background-color: #b8682a !important; }
