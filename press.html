@@ -712,7 +712,7 @@
         <div class="article-cta">Read →</div>
       </a>
     </div>
-    <button type="button" class="reading-toggle btn-outline" id="readingToggle" aria-expanded="false">See all readings</button>
+    <button type="button" class="reading-toggle btn-outline" id="readingToggle" aria-expanded="false">See all</button>
 
   </div>
 </section>
@@ -789,7 +789,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 <script src="js/header-scroll.js" defer></script>
 
 <script>
-(function(){var b=document.getElementById('readingToggle');if(!b)return;var n=document.querySelectorAll('#readingCards > .article-card').length;if(n<=8){b.style.display='none';return;}b.textContent='See all '+n+' readings';b.addEventListener('click',function(){var s=b.closest('.section-inner')||document.body;s.classList.add('reading-open');b.setAttribute('aria-expanded','true');});})();
+(function(){var b=document.getElementById('readingToggle');if(!b)return;var n=document.querySelectorAll('#readingCards > .article-card').length;if(n<=8){b.style.display='none';return;}b.addEventListener('click',function(){var s=b.closest('.section-inner')||document.body;s.classList.add('reading-open');b.setAttribute('aria-expanded','true');});})();
 </script>
 </body>
 </html>
