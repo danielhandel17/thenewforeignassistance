@@ -70,6 +70,7 @@
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
+    @media (max-width: 859px) { [data-mobile-tight] { padding-top: 150px !important; } }
     /* Pull quote: hard amber rule instead of soft tan block */
     .fw-pullquote::before { width: 4px !important; left: -28px !important; background-color: #b8682a !important; }
   </style>
@@ -155,7 +156,9 @@
   <!-- HISTORY — Figma Mask group 332:3638 (102×220 @ x=0 y=910) -->
   <section
     class="relative overflow-x-clip bg-cream px-10 pt-[117px] pb-[106px] tablet:px-[124px] tablet:pt-[131px] tablet:pb-[177px]"
-    id="history">
+    id="history" data-mobile-tight>
+    <!-- Mobile: side accent -->
+    <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="40" height="117" class="pointer-events-none absolute left-0 tablet:hidden" style="top:20px;width:40px;height:117px;max-width:none">
     <!-- Desktop: side accent -->
     <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:131px;width:79px;height:232px;max-width:none">
     <div class="mx-auto grid gap-10 tablet:grid-cols-12 tablet:gap-12 fade-up">
@@ -250,8 +253,10 @@
   </section>
 
   <!-- CONTENTS + FRAMEWORK BODY — Figma 332:3419 / 332:3422 / decor 332:3528 / TOC 332:3390 -->
-  <section class="relative overflow-x-clip border-t border-toc-border px-10 pt-[114px] pb-10 tablet:px-[124px] tablet:pt-36"
+  <section data-mobile-tight class="relative overflow-x-clip border-t border-toc-border px-10 pt-[114px] pb-10 tablet:px-[124px] tablet:pt-36"
     id="framework-contents">
+    <!-- Mobile: side accent -->
+    <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="40" height="117" class="pointer-events-none absolute left-0 tablet:hidden" style="top:20px;width:40px;height:117px;max-width:none">
     <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:144px;width:79px;height:232px;max-width:none">
     <div class="flex flex-col tablet:gap-28">
       <div class="flex flex-col gap-4 tablet:gap-5">
