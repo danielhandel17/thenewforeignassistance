@@ -450,8 +450,8 @@
   .press-accent-m { display: block; width: 40px; height: 117px; margin: 0 0 20px -20px; }
   @media (min-width: 721px) { .press-accent-m { display: none; } }
   /* Reading list: show 8, expand on demand */
-  .reading-extra { display: none !important; }
-  .reading-open .reading-extra { display: flex !important; }
+  #readingCards > .article-card:nth-child(n+9) { display: none; }
+  .reading-open #readingCards > .article-card:nth-child(n+9) { display: flex; }
   .reading-toggle { margin-top: 28px; }
   .reading-open .reading-toggle { display: none; }
 </style>
@@ -614,7 +614,7 @@
     </div>
 
     <div class="pub-subsection-label press-eyebrow has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent-m" width="40" height="117"><img src="images/decor-bars-rebuild.svg" alt="" aria-hidden="true" class="press-accent" width="101" height="260" style="width:101px;height:260px">What we're reading</div>
-    <div class="article-cards">
+    <div class="article-cards" id="readingCards">
       <a class="article-card" href="https://mccloskey.substack.com/p/then-many-of-us-shot-up-the-blade" target="_blank" rel="noopener">
         <div class="article-outlet">Deirdre McCloskey · September 2026</div>
         <div class="article-title">Then Many of Us Shot Up the Blade of a Hockey Stick</div>
@@ -663,56 +663,56 @@
         <div class="article-pull">A reference directory of pacesetting organizations across global health, food security, and nutrition.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://www.persuasion.community/p/growth-is-all-you-need" target="_blank" rel="noopener">
+      <a class="article-card" href="https://www.persuasion.community/p/growth-is-all-you-need" target="_blank" rel="noopener">
         <div class="article-outlet">Persuasion · March 2026</div>
         <div class="article-title">Growth Is All You Need</div>
         <div class="article-pull">Quico Toro on Pritchett's case against RCTs, and for growth-first development.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://www.nber.org/papers/w34583" target="_blank" rel="noopener">
+      <a class="article-card" href="https://www.nber.org/papers/w34583" target="_blank" rel="noopener">
         <div class="article-outlet">NBER · December 2025</div>
         <div class="article-title">What Would it Cost to End Extreme Poverty?</div>
         <div class="article-pull">Paul Niehaus and co-authors price the end of extreme poverty: 0.3% of global GDP.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://asteriskmag.com/issues/07/want-growth-kill-small-businesses" target="_blank" rel="noopener">
+      <a class="article-card" href="https://asteriskmag.com/issues/07/want-growth-kill-small-businesses" target="_blank" rel="noopener">
         <div class="article-outlet">Asterisk · 2024</div>
         <div class="article-title">Want Growth? Kill Small Businesses</div>
         <div class="article-pull">Karthik Tadepalli on the "missing middle" of development: not household interventions, not growth platitudes, but firm growth — the rigorous, ambitious lens that ties aid to prosperity.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://foreignpolicy.com/2024/04/10/us-foreign-aid-gaza-trump-threats/" target="_blank" rel="noopener">
+      <a class="article-card" href="https://foreignpolicy.com/2024/04/10/us-foreign-aid-gaza-trump-threats/" target="_blank" rel="noopener">
         <div class="article-outlet">Foreign Policy · April 2024</div>
         <div class="article-title">Trump's Foreign Aid Threat Offers Chance for Change</div>
         <div class="article-pull">The reform opportunity hiding in the aid-cuts moment.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://www.hks.harvard.edu/centers/cid/publications/faculty-working-papers/national-development-delivers" target="_blank" rel="noopener">
+      <a class="article-card" href="https://www.hks.harvard.edu/centers/cid/publications/faculty-working-papers/national-development-delivers" target="_blank" rel="noopener">
         <div class="article-outlet">CID · May 2021</div>
         <div class="article-title">National Development Delivers: And How! And How?</div>
         <div class="article-pull">Lant Pritchett on the case for growth: no country has reached high wellbeing without it.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://oig.usaid.gov/node/2639" target="_blank" rel="noopener">
+      <a class="article-card" href="https://oig.usaid.gov/node/2639" target="_blank" rel="noopener">
         <div class="article-outlet">USAID OIG · September 2019</div>
         <div class="article-title">USAID's Award Oversight Is Insufficient to Hold Implementers Accountable for Achieving Results</div>
         <div class="article-pull">Nearly half of sampled awards failed to achieve expected results — yet implementers were generally paid in full. An agency-wide failure of accountability, not a war-zone anomaly.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://www.nationalaffairs.com/publications/detail/kludgeocracy-in-america" target="_blank" rel="noopener">
+      <a class="article-card" href="https://www.nationalaffairs.com/publications/detail/kludgeocracy-in-america" target="_blank" rel="noopener">
         <div class="article-outlet">National Affairs · Fall 2013</div>
         <div class="article-title">Kludgeocracy in America</div>
         <div class="article-pull">Steven Teles on why government complexity, not size, is the deeper problem.</div>
         <div class="article-cta">Read →</div>
       </a>
-      <a class="article-card reading-extra" href="https://www.cgdev.org/publication/clash-counter-bureaucracy-and-development" target="_blank" rel="noopener">
+      <a class="article-card" href="https://www.cgdev.org/publication/clash-counter-bureaucracy-and-development" target="_blank" rel="noopener">
         <div class="article-outlet">CGD · July 2010</div>
         <div class="article-title">The Clash of the Counter-bureaucracy and Development</div>
         <div class="article-pull">Andrew Natsios on the paradox: the most measurable programs are the least transformational, and the most transformational the least measurable.</div>
         <div class="article-cta">Read →</div>
       </a>
     </div>
-    <button type="button" class="reading-toggle btn-outline" id="readingToggle" aria-expanded="false">See all 16 readings</button>
+    <button type="button" class="reading-toggle btn-outline" id="readingToggle" aria-expanded="false">See all readings</button>
 
   </div>
 </section>
@@ -789,7 +789,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 <script src="js/header-scroll.js" defer></script>
 
 <script>
-(function(){var b=document.getElementById('readingToggle');if(!b)return;b.addEventListener('click',function(){var s=b.closest('.section-inner')||document.body;s.classList.add('reading-open');b.setAttribute('aria-expanded','true');});})();
+(function(){var b=document.getElementById('readingToggle');if(!b)return;var n=document.querySelectorAll('#readingCards > .article-card').length;if(n<=8){b.style.display='none';return;}b.textContent='See all '+n+' readings';b.addEventListener('click',function(){var s=b.closest('.section-inner')||document.body;s.classList.add('reading-open');b.setAttribute('aria-expanded','true');});})();
 </script>
 </body>
 </html>
