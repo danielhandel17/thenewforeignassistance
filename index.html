@@ -76,6 +76,8 @@
   .footer-legal .fl-chunk { white-space: nowrap; }
   @media (min-width: 860px) { .footer-legal .fl-addr { white-space: nowrap; } }
   @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
+  /* Mobile: tighten top gap left over from the old decorations */
+  @media (max-width: 859px) { [data-mobile-tight] { padding-top: 150px !important; } }
 </style>
 </head>
 <body class="font-newsreader">
@@ -145,9 +147,9 @@
 </section>
 
 <!-- THE RECORD -->
-<section class="relative overflow-x-clip px-10 pt-[250px] pb-[90px] tablet:overflow-visible tablet:pt-[130px] tablet:pb-[78px] tablet:px-[124px]" id="the-record">
+<section class="relative overflow-x-clip px-10 pt-[250px] pb-[90px] tablet:overflow-visible tablet:pt-[130px] tablet:pb-[78px] tablet:px-[124px]" id="the-record" data-mobile-tight>
   <!-- Mobile: side accent -->
-  <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="50" height="147" class="pointer-events-none absolute left-0 tablet:hidden" style="top:56px;width:50px;height:147px;max-width:none">
+  <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="40" height="117" class="pointer-events-none absolute left-0 tablet:hidden" style="top:20px;width:40px;height:117px;max-width:none">
   <!-- Desktop: Record side accent -->
   <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute left-0 top-[129px] hidden tablet:block" style="width:79px;height:232px;max-width:none">
 
@@ -213,9 +215,9 @@
 
 <!-- DIAGNOSIS -->
  <!-- Figma 332:3882 (Group 332:3882) //TODO: CHECK the inline color -->
-<section class="relative overflow-x-clip bg-cream-warm px-10 pt-[250px] pb-[90px] tablet:overflow-visible tablet:px-[124px] tablet:pt-[147px] tablet:pb-[130px]" id="the-diagnosis">
+<section class="relative overflow-x-clip bg-cream-warm px-10 pt-[250px] pb-[90px] tablet:overflow-visible tablet:px-[124px] tablet:pt-[147px] tablet:pb-[130px]" id="the-diagnosis" data-mobile-tight>
   <!-- Mobile: side accent -->
-  <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="50" height="147" class="pointer-events-none absolute left-0 tablet:hidden" style="top:56px;width:50px;height:147px;max-width:none">
+  <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="40" height="117" class="pointer-events-none absolute left-0 tablet:hidden" style="top:20px;width:40px;height:117px;max-width:none">
   <!-- Desktop: Diagnosis side accent -->
   <img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" width="90" height="296" class="pointer-events-none absolute left-0 top-[147px] hidden tablet:block" style="width:90px;height:296px;max-width:none">
   <div class="mx-auto flex flex-col gap-10 tablet:gap-[134px] fade-up">
