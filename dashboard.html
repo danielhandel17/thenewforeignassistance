@@ -461,12 +461,12 @@
         });
         input.style.display = 'none';
         button.style.display = 'none';
-        thanks.classList.add('shown');
+        thanks.classList.add('shown'); thanks.classList.remove('hidden');
       } catch (err) {
         button.disabled = false;
         button.textContent = originalLabel;
         thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
-        thanks.classList.add('shown');
+        thanks.classList.add('shown'); thanks.classList.remove('hidden');
       }
     });
   });
