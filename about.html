@@ -569,6 +569,8 @@
   .footer-legal .fl-chunk { white-space: nowrap; }
   @media (min-width: 860px) { .footer-legal .fl-addr { white-space: nowrap; } }
   @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
+  .intro-stripes { display: none; }
+  @media (min-width: 860px) { .intro-stripes { display: block; } }
 </style>
 
 <style>
@@ -839,7 +841,8 @@
 </div>
 
 <!-- PAGE INTRO -->
-<section class="page-intro">
+<section class="page-intro" style="position:relative;overflow:hidden">
+  <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
     <h1 class="page-h1">Building <em>what comes next</em></h1>
     <p class="page-lead">The operating team, the board, and the senior advisors who guide the work.</p>

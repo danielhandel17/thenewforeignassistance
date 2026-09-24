@@ -443,6 +443,8 @@
   .footer-legal .fl-chunk { white-space: nowrap; }
   @media (min-width: 860px) { .footer-legal .fl-addr { white-space: nowrap; } }
   @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
+  .intro-stripes { display: none; }
+  @media (min-width: 860px) { .intro-stripes { display: block; } }
 </style>
 
 <style>
@@ -544,7 +546,8 @@
 </div>
 
 <!-- PAGE INTRO -->
-<section class="page-intro">
+<section class="page-intro" style="position:relative;overflow:hidden">
+  <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
     <h1 class="page-h1 has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent" width="79" height="232" style="width:79px;height:232px">What we've written.<br><em>What we're reading.</em></h1>
     <p class="page-lead">Our own articles in the major outlets, and the writing that informs the work.</p>
