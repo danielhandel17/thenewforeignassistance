@@ -435,6 +435,9 @@
     .has-accent { position: relative; }
     .press-accent { display: block; position: absolute; top: 0; left: calc((1200px - 100vw) / 2); pointer-events: none; }
   }
+  /* Shared footer helpers (match home/framework) */
+  @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
+  .balance-wrap { text-wrap: balance; }
 </style>
 
 <style>
@@ -680,24 +683,37 @@
 </section>
 
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-newsletter">
-      <div class="newsletter-eyebrow">From the rebuild</div>
-      <h3 class="newsletter-headline">A brief, occasional newsletter on the rebuild.</h3>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
-        <button type="submit" class="newsletter-submit">Subscribe →</button>
+<footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
+    <!-- Desktop: footer side accent -->
+    <img src="images/decor-bars-rebuild.svg" alt="" aria-hidden="true" width="101" height="260" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:-16px;width:101px;height:260px;max-width:none">
+    <div
+      class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] tablet:flex-row tablet:items-center tablet:justify-between tablet:px-[124px] tablet:pt-19.5 tablet:pb-[100px]">
+      <div class="flex flex-col gap-3">
+        <p class="eyebrow">From the rebuild</p>
+        <h3 class="nl-oneline balance-wrap font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">A brief, occasional newsletter on the rebuild.</h3>
+      </div>
+      <form class="flex w-full max-w-md flex-col items-stretch gap-3 tablet:flex-row tablet:items-center"
+        id="newsletterForm">
+        <input type="email" class="newsletter-input" placeholder="Your email address" required
+          aria-label="Email address">
+        <button type="submit"
+          class="btn-filled w-full shrink-0 self-start tablet:w-auto tablet:self-auto">Subscribe</button>
       </form>
-      <div class="newsletter-thanks" id="newsletterThanks">Thank you. We'll be in touch.</div>
+      <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you.
+        We&#39;ll be in touch.</div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 The New Foreign Assistance</span>
-      <span class="footer-sep">·</span>
-      <span>700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</span>
+    <div class="border-b border-t border-footer-border bg-footer-strip tablet:px-[124px]">
+      <div
+        class="mx-auto flex flex-col gap-3 px-5 py-6 tablet:flex-row tablet:items-center tablet:justify-between tablet:px-0">
+        <p class="font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber">&copy;
+          2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</p>
+        <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
+          <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
+            class="h-[26px] w-[164px]">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 <script>
 const observer = new IntersectionObserver((entries) => {
@@ -725,12 +741,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         body: new URLSearchParams({ email: email })
       });
       form.style.display = 'none';
-      thanks.classList.add('show');
+      thanks.classList.add('show'); thanks.classList.remove('hidden');
     } catch (err) {
       button.disabled = false;
       button.textContent = originalLabel;
       thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
-      thanks.classList.add('show');
+      thanks.classList.add('show'); thanks.classList.remove('hidden');
     }
   });
 })();
