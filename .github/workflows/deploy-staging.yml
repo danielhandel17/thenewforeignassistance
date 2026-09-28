@@ -1,0 +1,50 @@
+name: Deploy staging
+
+on:
+  push:
+    branches: [staging]
+
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.repository == 'danielhandel17/thenewforeignassistance'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies and build CSS
+        run: |
+          npm ci
+          npm run build:css
+
+      - name: Deploy to xneelo staging
+        env:
+          XNEELO_SSH_KEY: ${{ secrets.XNEELO_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$XNEELO_SSH_KEY" > ~/.ssh/xneelo_staging
+          chmod 600 ~/.ssh/xneelo_staging
+          ssh-keyscan -p 2222 clients.shapeshift.co.za >> ~/.ssh/known_hosts
+          rsync -avz --delete \
+            --exclude 'node_modules/' \
+            --exclude 'package.json' \
+            --exclude 'package-lock.json' \
+            --exclude 'tailwind.config.js' \
+            --exclude 'src/' \
+            --exclude 'AGENTS.md' \
+            --exclude '.git/' \
+            --exclude 'e2e/' \
+            --exclude 'test-results/' \
+            --exclude 'playwright*' \
+            -e "ssh -p 2222 -i ~/.ssh/xneelo_staging -o IdentitiesOnly=yes" \
+            ./ \
+            clienj@clients.shapeshift.co.za:public_html/thenewforeignassistance.clients.shapeshift.co.za/
