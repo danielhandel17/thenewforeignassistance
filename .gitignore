@@ -34,3 +34,8 @@
 !package.json
 !package-lock.json
 !tailwind.config.js
+
+# Staging deploy workflow
+!.github/
+!.github/workflows/
+!.github/workflows/**
