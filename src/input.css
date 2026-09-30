@@ -68,6 +68,18 @@
 }
 
 @layer components {
+  .display-heading {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.1;
+  }
+  @media (min-width: 860px) {
+    .display-heading {
+      font-size: 48px;
+      line-height: 1.08;
+    }
+  }
   .unga-banner {
     background: #f4ede0;
     color: #1c2e4a;

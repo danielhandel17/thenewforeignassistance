@@ -76,11 +76,14 @@
   }
   h2 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(26px, 3vw, 36px);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: normal;
     margin-bottom: 28px;
+  }
+  @media (min-width: 860px) {
+    h2 { font-size: 48px; line-height: 1.08; }
   }
 
   /* ── MISSION ── */
@@ -415,7 +418,7 @@
     .agenda-section { padding: 40px 16px; }
     .agenda-frame { font-size: 16px; }
     .examples-list li { font-size: 15px; line-height: 1.55; }
-    .page-h1 { font-size: 32px !important; line-height: 1.15; }
+    .page-h1 { font-size: 42px !important; line-height: 1.1; }
     .hero h1 { font-size: 38px !important; line-height: 1.1; }
     .principle-card { padding: 22px 18px; }
     .principle-num { font-size: 13px; }
@@ -463,9 +466,12 @@
   .page-intro-inner { max-width: 1200px; margin: 0 auto; }
   .page-h1 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(36px, 5vw, 64px); font-weight: 500;
-    line-height: 1.12; letter-spacing: -0.5px;
+    font-size: 42px; font-weight: 500;
+    line-height: 1.1; letter-spacing: normal;
     color: var(--ink); margin: 18px 0 24px;
+  }
+  @media (min-width: 860px) {
+    .page-h1 { font-size: 48px; line-height: 1.08; }
   }
   .page-h1 em { font-style: italic; color: var(--amber); font-weight: 500; }
   .page-lead {

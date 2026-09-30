@@ -60,7 +60,10 @@
 
   /* HERO */
   .dash-hero { margin-bottom: 36px; }
-  .dash-hero h1 { font-family: 'Newsreader', serif; font-size: 28px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.3px; color: var(--ink); }
+  .dash-hero h1 { font-family: 'Newsreader', serif; font-size: 42px; font-weight: 500; line-height: 1.1; margin-bottom: 6px; letter-spacing: normal; color: var(--ink); }
+  @media (min-width: 860px) {
+    .dash-hero h1 { font-size: 48px; line-height: 1.08; }
+  }
   .dash-hero h1 em { font-style: italic; color: var(--amber); font-weight: 500; }
   .dash-hero p { font-size: 14px; color: var(--ink-light); }
 
@@ -202,7 +205,7 @@
   /* MOBILE */
   @media (max-width: 640px) {
     .page { padding: 32px 12px 60px; }
-    .dash-hero h1 { font-size: 22px; }
+    .dash-hero h1 { font-size: 42px; line-height: 1.1; }
     .summary-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .stat-value { font-size: 20px; }
     .geo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
