@@ -803,6 +803,17 @@
 <body>
 
 <!-- HEADER -->
+<aside class="unga-banner" aria-label="TNFA speaking at UN General Assembly">
+  <div class="unga-banner__inner">
+    <p class="unga-banner__title">TNFA speaking at UN General Assembly</p>
+    <ul class="unga-banner__links">
+      <li><a href="https://www.devex.com/news/are-there-reasons-to-be-cheerful-about-us-development-funding-113405" target="_blank" rel="noopener">Are there reasons to be cheerful about US development funding?</a></li>
+      <li><a href="https://www.youtube.com/watch?v=CpfMky1Kt3g" target="_blank" rel="noopener">What Should America Be Trying to Achieve Through Development</a></li>
+      <li><a href="https://www.youtube.com/watch?v=T8ohfa5Eeag" target="_blank" rel="noopener">Building the Future of U.S. Foreign Aid: What Comes Next</a></li>
+    </ul>
+  </div>
+</aside>
+
 <header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
   <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 tablet:px-[60px] tablet:pt-3 tablet:pb-3">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
@@ -974,6 +985,11 @@
         <div class="advisor-name">Manisha Dookhony</div>
         <div class="advisor-affil">CEO and co-founder, Terramont Capital Partners</div>
       </button>
+      <button class="advisor-card" data-advisor="dry" type="button">
+        <div class="advisor-avatar"><img src="images/david-dry.webp" alt="David Dry"></div>
+        <div class="advisor-name">David Dry</div>
+        <div class="advisor-affil">Chief of Staff, The New Foreign Assistance</div>
+      </button>
       <button class="advisor-card" data-advisor="gallenstein" type="button">
         <div class="advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein"></div>
         <div class="advisor-name">Tony Gallenstein</div>
@@ -988,6 +1004,11 @@
         <div class="advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers"></div>
         <div class="advisor-name">Matt Mowers</div>
         <div class="advisor-affil">President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR</div>
+      </button>
+      <button class="advisor-card" data-advisor="moore" type="button">
+        <div class="advisor-avatar"><img src="images/ryan-moore.webp" alt="Ryan Moore"></div>
+        <div class="advisor-name">Ryan Moore</div>
+        <div class="advisor-affil">VP Policy Innovation, The New Foreign Assistance</div>
       </button>
       <button class="advisor-card" data-advisor="nagy" type="button">
         <div class="advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy"></div>
@@ -1013,6 +1034,11 @@
         <div class="advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger"></div>
         <div class="advisor-name">Bill Steiger</div>
         <div class="advisor-affil">CEO, Malaria No More; former Chief of Staff, USAID</div>
+      </button>
+      <button class="advisor-card" data-advisor="tomory" type="button">
+        <div class="advisor-avatar"><img src="images/hanna-tomory.webp" alt="Hanna Tomory"></div>
+        <div class="advisor-name">Hanna Tomory</div>
+        <div class="advisor-affil">CEO, Kalandjai</div>
       </button>
       <button class="advisor-card" data-advisor="wade" type="button">
         <div class="advisor-avatar"><img src="images/magatte-wade.webp" alt="Magatte Wade"></div>
@@ -1143,6 +1169,12 @@ const ADVISORS = {
     bio: 'Head of Government Affairs at Marvell, a global semiconductor firm. Previously National Security Advisor to then-Minority Leader Kevin McCarthy, and subcommittee staff director on the House Foreign Affairs Committee. While on the staff of Rep. Ted Poe, helped author and pass the Foreign Aid Transparency and Accountability Act. Adjunct assistant professor at Georgetown University. M.A. in Security Studies from Georgetown; B.A. in Political Science from UCLA.',
     photo: 'images/luke-murry.webp'
   },
+  moore: {
+    name: 'Ryan Moore',
+    affil: 'VP Policy Innovation, The New Foreign Assistance',
+    bio: 'Ryan Andrew Moore is Vice President of Policy Innovation at The New Foreign Assistance (TNFA). A development economist and seasoned operational executive, Ryan brings fifteen years of experience driving economic growth through policy reform and large-scale capital investments. At TNFA, he spearheads the design of next-generation foreign assistance architecture, focusing on results-based financing and institutional design.<br><br>Ryan previously served as Chief of Strategy and Data at the Peace Corps and as a Director at the Millennium Challenge Corporation (MCC). Uniquely spanning MCC\u2019s two primary operational pillars (the Department of Compact Operations and the Department of Policy and Evaluation), he led teams delivering major growth-enhancing infrastructure compacts alongside rigorous empirical accountability systems. An experienced data scientist, he has engineered enterprise-wide analytics platforms and managed global operations across Africa, Latin America, and Asia. He holds a master\u2019s degree in development economics from Harvard University.',
+    photo: 'images/ryan-moore.webp'
+  },
   mowers: {
     name: 'Matt Mowers',
     affil: 'President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR',
@@ -1154,6 +1186,12 @@ const ADVISORS = {
     affil: 'Former Asst. Secretary of State for African Affairs',
     bio: 'Career Foreign Service Officer with eight postings across sub-Saharan Africa, including ambassadorships in Ethiopia and Guinea. As Assistant Secretary of State for African Affairs (2018\u20132021), built \u201Cdeal teams\u201D in every U.S. embassy on the continent to drive trade and investment. Performed the duties of Undersecretary of State for Management, January\u2013April 2025.',
     photo: 'images/tibor-nagy.webp'
+  },
+  dry: {
+    name: 'David Dry',
+    affil: 'Chief of Staff, The New Foreign Assistance',
+    bio: 'David Dry served as an Attaché at the Holy See Mission to the United Nations in Geneva, where he worked on trade and development issues and represented the Holy See at the WTO, UNCTAD, ILO, and other international organizations.<br><br>He subsequently served as Senior Advisor to the Rector of the Pontifical University of St. Thomas Aquinas in Rome, advising university leadership on institutional priorities and strategy. David has also worked for elected officials in the U.S. House of Representatives and the Los Angeles County Board of Supervisors, and holds a Master of Public Policy from Pepperdine University.',
+    photo: 'images/david-dry.webp'
   },
   dookhony: {
     name: 'Manisha Dookhony',
@@ -1197,6 +1235,12 @@ const ADVISORS = {
     affil: 'Economist; founder, Solution42.Org; former World Bank and IDB',
     bio: 'Economist focused on finding simple solutions to complex problems. With 25 years of experience at global institutions including the World Bank and Inter-American Development Bank, she has deep expertise designing high-impact programs that drive sustainable economic growth in emerging markets. Her company, Solution42.Org, designs innovative finance solutions for climate and women\u2019s empowerment, and pioneers disaster risk management plans aimed at saving lives across sub-Saharan Africa. Her career began 25 years ago at the World Bank, working with farmers, indigenous entrepreneurs, and women\u2019s collectives on sustainable livelihoods and poverty reduction, across land, disaster risk management, and safety net programs. Recognized as a global thought leader on women\u2019s empowerment and climate ethics; has led teams designing mechanisms such as debt-for-nature swaps and community-based disaster risk protocols. Ph.D. in economics from Johns Hopkins University; Fulbright Scholar.',
     photo: 'images/emily-brearley.webp'
+  },
+  tomory: {
+    name: 'Hanna Tomory',
+    affil: 'CEO, Kalandjai',
+    bio: 'Hanna Tomory is a systems engineer and business leader who heads the private sector operations of a major Silicon Valley tech company in Canada. With a career spanning multiple countries, she has led complex projects across the UK, Switzerland, Germany, Mexico, and the United States in industries including banking, insurance, automotive, healthcare, and defence.<br><br>She holds degrees in Systems Engineering and Philosophy from the University of Toronto, where she combined physics with metaphysics, and conducted research in Bioelectronics at ETH Zurich. Alongside her corporate work, Hanna advises several technology startups and has co-founded multiple non-profit foundations in both Europe and North America.',
+    photo: 'images/hanna-tomory.webp'
   },
   steiger: {
     name: 'Bill Steiger',

@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mobile hero: zoom into the US flag and crop the third child on the right */
-@layer components {
-  .hero-school-img {
-    @apply h-[260px] w-full max-w-full object-cover;
-    object-position: 18% 22%;
-    transform-origin: center;
-    transform: scale(2.15) translate(18%, 11%);
-  }
-  @media (min-width: 860px) {
-    .hero-school-img {
-      @apply aspect-[3/2] h-auto max-h-[683px];
-      object-position: 40% center;
-      transform: none;
-    }
-  }
-}
 
 @layer base {
   html {
@@ -41,6 +25,51 @@
 }
 
 @layer components {
+  .unga-banner {
+    background: #f4ede0;
+    color: #1c2e4a;
+    border-bottom: 1px solid #e6d9d0;
+  }
+  .unga-banner__inner {
+    @apply mx-auto flex max-w-page flex-col gap-2 px-5 py-3.5 tablet:gap-2.5 tablet:px-[60px] tablet:py-4;
+  }
+  .unga-banner__title {
+    @apply m-0 font-libertinus text-[15px] uppercase tracking-[0.12em] text-amber;
+  }
+  .unga-banner__links {
+    @apply m-0 flex list-none flex-col gap-1.5 p-0 tablet:flex-row tablet:flex-wrap tablet:gap-x-6 tablet:gap-y-1;
+  }
+  .unga-banner__links a {
+    @apply font-newsreader text-base leading-snug text-ink underline decoration-ink/30 underline-offset-[0.15em] hover:text-amber hover:decoration-amber;
+  }
+  .hero-nightlights,
+  .hero-nightlights-still {
+    @apply h-[260px] w-full max-w-full object-cover object-center;
+  }
+  @media (min-width: 860px) {
+    .hero-nightlights,
+    .hero-nightlights-still {
+      @apply aspect-[3/2] h-auto max-h-[683px];
+    }
+  }
+  .hero-nightlights-still {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-nightlights {
+      display: none;
+    }
+    .hero-nightlights-still {
+      display: block;
+    }
+  }
+  .hero-credit {
+    @apply pointer-events-none absolute bottom-2 left-3 z-[2] m-0 max-w-[70%] font-newsreader text-[11px] leading-snug text-white/90 tablet:bottom-3 tablet:left-4 tablet:text-xs;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+  }
+  .hero-credit a {
+    @apply pointer-events-auto text-white/90 underline decoration-white/40 underline-offset-2 hover:text-white;
+  }
   .btn-filled {
     @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap tablet:max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
   }

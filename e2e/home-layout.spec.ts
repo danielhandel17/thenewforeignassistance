@@ -118,7 +118,7 @@ for (const vp of viewports) {
       }
 
       // --- Hero + page overflow ---
-      await expect(page.locator('#page-hero img').first()).toBeVisible();
+      await expect(page.locator('#page-hero video.hero-nightlights')).toBeVisible();
       await assertNoHorizontalPageOverflow(page);
 
       // --- Nav band (tablet floor = 860) ---

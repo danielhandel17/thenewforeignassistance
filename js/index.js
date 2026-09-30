@@ -356,3 +356,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     }
   });
 })();
+
+(function () {
+  var video = document.querySelector('.hero-nightlights');
+  if (!video) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay');
+    video.pause();
+  }
+})();
