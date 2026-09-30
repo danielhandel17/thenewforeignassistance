@@ -76,7 +76,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.07 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-(function () {
+function initGrowthChart() {
   var canvas = document.getElementById('growth-chart');
   if (!canvas || typeof Chart === 'undefined') return;
 
@@ -323,6 +323,34 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     });
   }, { threshold: 0.5 });
   chartObserver.observe(canvas);
+}
+
+(function () {
+  var section = document.getElementById('long-view');
+  if (!section) return;
+  var started = false;
+  function start() {
+    if (started) return;
+    started = true;
+    if (typeof Chart !== 'undefined') {
+      initGrowthChart();
+      return;
+    }
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
+    script.onload = initGrowthChart;
+    document.head.appendChild(script);
+  }
+  if (!('IntersectionObserver' in window)) {
+    start();
+    return;
+  }
+  var loader = new IntersectionObserver(function (entries) {
+    if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+    loader.disconnect();
+    start();
+  }, { rootMargin: '200px 0px' });
+  loader.observe(section);
 })();
 
 (function () {
@@ -361,7 +389,19 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   var video = document.querySelector('.hero-nightlights');
   if (!video) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    video.removeAttribute('autoplay');
-    video.pause();
+    var source = video.querySelector('source');
+    if (source) source.removeAttribute('src');
+    video.removeAttribute('src');
+    video.load();
+    return;
   }
+  video.addEventListener('playing', function () {
+    video.classList.add('is-playing');
+  });
+  function start() {
+    var play = video.play();
+    if (play && typeof play.catch === 'function') play.catch(function () {});
+  }
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start);
 })();

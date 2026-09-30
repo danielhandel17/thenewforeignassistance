@@ -19,25 +19,10 @@
 <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
 <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DY00G9KT05');
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GPQHNR6C2C');
-</script>
+<script src="js/analytics.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,10 +125,12 @@
 <section id="page-hero">
   <div class="mx-auto grid min-w-0 items-start gap-8 tablet:grid-cols-2 tablet:gap-16">
     <div class="relative order-1 min-w-0 overflow-hidden fade-up tablet:order-2">
-      <video class="hero-nightlights" width="1280" height="720" autoplay muted loop playsinline poster="images/hero-india-nightlights.jpg" aria-label="NASA Black Marble night lights over India, 2012 to 2023">
-        <source src="images/hero-india-nightlights.mp4" type="video/mp4">
-      </video>
-      <img src="images/hero-india-nightlights.jpg" alt="NASA Black Marble night lights over India" class="hero-nightlights-still" width="1280" height="720">
+      <div class="hero-nightlights-frame">
+        <img src="images/hero-india-nightlights.jpg" alt="NASA Black Marble night lights over India, 2012 to 2023" class="hero-nightlights-still" width="1280" height="720" fetchpriority="high" decoding="async">
+        <video class="hero-nightlights" width="1280" height="720" muted loop playsinline preload="none" aria-label="NASA Black Marble night lights over India, 2012 to 2023">
+          <source src="images/hero-india-nightlights.mp4" type="video/mp4">
+        </video>
+      </div>
       <p class="hero-credit"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
       <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
     </div>
@@ -190,7 +177,7 @@
         </div>
         <p class="min-w-0 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[30px]">Since 2003, a $100 billion bipartisan investment has supported 20.6 million people on antiretroviral therapy.</p>
         <div class="relative min-w-0 overflow-visible">
-          <img src="images/record-pepfar.webp" alt="Diplomatic ceremony outdoors" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="489">
+          <img src="images/record-pepfar.webp" alt="Diplomatic ceremony outdoors" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="489" loading="lazy">
           
         </div>
       </article>
@@ -202,7 +189,7 @@
         </div>
         <p class="min-w-0 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[30px]">The President&#39;s Malaria Initiative prevented an estimated 185 million cases between 2005 and 2017.</p>
         <div class="relative min-w-0 overflow-visible">
-          <img src="images/record-malaria.webp" alt="Healthcare worker with a woman and child" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="547">
+          <img src="images/record-malaria.webp" alt="Healthcare worker with a woman and child" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="547" loading="lazy">
           
         </div>
       </article>
@@ -215,7 +202,7 @@
         <p class="min-w-0 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[30px]">Development Innovation Ventures funded evidence-backed solutions and let results speak.</p>
         <div class="grid min-w-0 gap-2 tablet:max-w-[412px]">
           <div class="relative overflow-visible">
-            <img src="images/record-div.webp" alt="Morphat at the factory" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px]" width="1200" height="800">
+            <img src="images/record-div.webp" alt="Morphat at the factory" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px]" width="1200" height="800" loading="lazy">
             
           </div>
           <p class="text-sm leading-snug text-ink/60">Factory 19: Morphat at the factory. Photo: Mia Collis / Essential</p>
@@ -423,13 +410,12 @@
     <div class="mx-auto flex flex-col gap-3 px-5 py-6 tablet:flex-row tablet:items-center tablet:justify-between tablet:px-0">
       <p class="footer-legal font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber"><span class="fl-chunk">&copy; 2026 The New Foreign Assistance</span><span class="hidden tablet:inline"> · </span><br class="tablet:hidden"> <span class="fl-addr"><span class="fl-chunk">700 Pennsylvania Ave. SE, Suite 200,</span> <span class="fl-chunk">Washington, DC 20003</span></span></p>
       <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
-        <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70" class="h-[26px] w-[164px]">
+        <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70" class="h-[26px] w-[164px]" loading="lazy">
       </a>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="js/header-scroll.js" defer></script>
 <script src="js/index.js"></script>
 
