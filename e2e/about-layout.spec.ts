@@ -23,9 +23,9 @@ for (const vp of aboutViewports) {
       await expect(team.locator('.board-name', { hasText: 'Daniel Handel' })).toBeVisible();
       await expect(team.locator('.board-name', { hasText: 'David Dry' })).toBeVisible();
       await expect(team.locator('.board-name', { hasText: 'Ryan Moore' })).toBeVisible();
-      await expect(team.getByText('Executive Director')).toBeVisible();
-      await expect(team.getByText('Chief of Staff')).toBeVisible();
-      await expect(team.getByText('VP Policy Innovation')).toBeVisible();
+      await expect(team.locator('.board-role', { hasText: 'Executive Director' })).toBeVisible();
+      await expect(team.locator('.board-role', { hasText: 'Chief of Staff' })).toBeVisible();
+      await expect(team.locator('.board-role', { hasText: 'VP Policy Innovation' })).toBeVisible();
       const leadership = page.locator('.board-block').first();
       await expect(leadership.getByRole('heading', { name: 'Leadership' })).toBeVisible();
       await expect(leadership.getByText('Daniel Handel')).toHaveCount(0);

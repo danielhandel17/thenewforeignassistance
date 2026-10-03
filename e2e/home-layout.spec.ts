@@ -105,8 +105,9 @@ for (const vp of viewports) {
       await expect(contactEmail).toBeVisible();
       await expect(newsletterHeading).toBeVisible();
 
-      const typePx = isTablet(vp.width) ? 34 : 26;
-      const emailPx = isTablet(vp.width) ? 34 : 16;
+      // Shipped scale is 22px mobile / 28px from the tablet floor (headings) and 16/22 (email).
+      const typePx = isTablet(vp.width) ? 28 : 22;
+      const emailPx = isTablet(vp.width) ? 22 : 16;
       await assertFontSizePx(contactHeading, typePx);
       await assertFontSizePx(contactEmail, emailPx);
       await assertFontSizePx(newsletterHeading, typePx);
