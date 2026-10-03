@@ -1,6 +1,50 @@
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/newsreader-normal-300700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/newsreader-italic-400600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Libertinus Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/libertinus-serif-display-normal-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/inter-normal-300700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-normal-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-normal-500.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer base {
   html {
@@ -24,18 +68,101 @@
 }
 
 @layer components {
+  .display-heading {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.1;
+  }
+  @media (min-width: 860px) {
+    .display-heading {
+      font-size: 48px;
+      line-height: 1.08;
+    }
+  }
+  .unga-banner {
+    display: block;
+    background: #f4ede0;
+    color: #1c2e4a;
+    border-bottom: 1px solid #e6d9d0;
+    text-decoration: none;
+  }
+  .unga-banner:hover {
+    background: #efe4d2;
+  }
+  .unga-banner:focus-visible {
+    outline: 2px solid #b8682a;
+    outline-offset: -2px;
+  }
+  .unga-banner__inner {
+    @apply mx-auto flex max-w-page items-center px-5 py-2 tablet:px-[60px] tablet:py-2.5;
+  }
+  .unga-banner__title {
+    @apply m-0 font-libertinus text-sm leading-snug tracking-normal text-amber;
+  }
+  .unga-banner:hover .unga-banner__title {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+  .hero-india {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+  @media (max-width: 359px) {
+    .hero-india {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  .hero-india__panel {
+    margin: 0;
+    min-width: 0;
+  }
+  .hero-india img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #070b16;
+  }
+  .hero-india figcaption {
+    margin-top: 8px;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 13px;
+    line-height: 1.35;
+    color: #1c2e4a;
+  }
+  @media (min-width: 860px) {
+    .hero-india {
+      gap: 14px;
+    }
+    .hero-india figcaption {
+      font-size: 15px;
+    }
+  }
+  .hero-nasa {
+    @apply m-0 mt-2.5 font-newsreader text-xs leading-snug text-ink/70;
+  }
+  .hero-nasa a {
+    @apply text-inherit underline decoration-ink/30 underline-offset-2 hover:text-amber hover:decoration-amber;
+  }
+  .hero-nasa a:focus-visible {
+    outline: 2px solid #b8682a;
+    outline-offset: 2px;
+  }
   .btn-filled {
-    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap desktop:max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap tablet:max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
   }
   .btn-outline {
-    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-white px-8 font-libertinus text-base text-nowrap desktop:max-w-[282px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white;
+    @apply inline-flex h-[55px] items-center justify-center border border-amber bg-white px-8 font-libertinus text-base text-nowrap tablet:max-w-[282px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white;
   }
   /* Footer newsletter email — Figma Group 22 (332:4094): 363×55, placeholder Libertinus 18px amber / 3.6px tracking */
   .newsletter-input {
     @apply box-border h-[55px] min-h-[55px] w-full flex-1 border border-solid border-amber bg-white px-[22px] font-libertinus text-lg leading-[33px] tracking-normal text-ink placeholder:text-amber placeholder:opacity-100 placeholder:tracking-eyebrow focus:outline-none focus:ring-1 focus:ring-amber;
   }
   .eyebrow {
-    @apply font-libertinus text-xl text-nowrap max-w-[282px] uppercase tracking-eyebrow text-amber desktop:text-[22px];
+    @apply font-libertinus text-xl text-nowrap max-w-[282px] uppercase tracking-eyebrow text-amber tablet:text-[22px];
   }
   .link-draw {
     @apply relative inline-block no-underline;
@@ -118,10 +245,11 @@
     z-index: 1;
   }
 
-  /* Site header — white background; desktop scroll hide */
+  /* Site header — white background; tablet+ scroll hide */
   .site-header {
     background-color: #fff;
   }
+  /* tablet floor (860px) */
   @media (min-width: 860px) {
     .site-header {
       transition:
@@ -141,18 +269,21 @@
     }
   }
 
-  /* Framework A/B/C subsections — body in title column (col 2), letter in col 1 */
+  /* Framework A/B/C subsections — letter inline with title, body left-aligned */
   .fw-subsection {
-    @apply grid grid-cols-[auto_1fr] gap-x-[17px] gap-y-4;
+    @apply flex flex-col gap-4;
   }
   .fw-subsection-letter {
-    @apply col-start-1 row-start-1 self-baseline font-newsreader text-xl font-semibold leading-[30px] text-[#7f503d];
+    @apply font-newsreader text-xl font-semibold leading-[30px] text-[#7f503d];
   }
   .fw-subsection-title {
-    @apply col-start-2 row-start-1 font-newsreader text-xl font-semibold leading-[30px] text-ink;
+    @apply font-newsreader text-xl font-semibold leading-[30px] text-ink;
+  }
+  .fw-subsection-heading {
+    @apply flex flex-wrap items-baseline gap-x-2;
   }
   .fw-subsection-body {
-    @apply col-start-2 row-start-2 flex flex-col gap-4;
+    @apply flex flex-col gap-4;
   }
 }
 
@@ -175,19 +306,16 @@
   .tick-pattern {
     display: block;
     height: 12px;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
     overflow: hidden;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12' viewBox='0 0 33 12'%3E%3Crect width='25' height='12' rx='2' fill='%23C4C7CC'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
     background-position: left center;
-    width: 310px;
     background-size: 24px 12px;
 
-    @media screen('mobile') {
-      width: 396px;
-    }
-
-    @media screen(desktop) {
+    @media screen(tablet) {
       background-size: 33px 12px;
     }
   }
@@ -214,14 +342,9 @@
   /* Diagnosis “What comes next” rule — 23×12 scallop, 9px gap */
   .tick-pattern-next {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='12' viewBox='0 0 32 12' fill='none'%3E%3Cpath d='M0 0H23V0.5C23 6.85127 17.8513 12 11.5 12C5.14873 12 0 6.85127 0 0.5V0Z' fill='%23EBD6C5'/%3E%3C/svg%3E");
-    width: 310px;
     background-size: 24px 12px;
 
-    @media screen('mobile') {
-      width: 396px;
-    }
-
-    @media screen(desktop) {
+    @media screen(tablet) {
       background-size: 32px 12px;
     }
   }

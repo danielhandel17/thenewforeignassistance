@@ -76,7 +76,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.07 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-(function () {
+function initGrowthChart() {
   var canvas = document.getElementById('growth-chart');
   if (!canvas || typeof Chart === 'undefined') return;
 
@@ -92,7 +92,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function useDesktopChartLayout() {
+  function useTabletChartLayout() {
     var plotWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 0;
     return window.matchMedia('(min-width: 860px)').matches && plotWidth >= 640;
   }
@@ -100,7 +100,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   var endLabelsPlugin = {
     id: 'endLabels',
     afterDatasetsDraw: function (chart) {
-      if (!useDesktopChartLayout()) return;
+      if (!useTabletChartLayout()) return;
       if (!chart.$lineDrawDone) return;
       var ctx = chart.ctx;
       var fontSize = 12.5;
@@ -170,12 +170,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     afterDraw: function (chart) {
       var ctx = chart.ctx;
       var area = chart.chartArea;
-      var isDesktopChart = useDesktopChartLayout();
+      var isTabletChart = useTabletChartLayout();
       ctx.save();
       ctx.fillStyle = '#6B9AE3';
       ctx.textAlign = 'left';
       if (ctx.letterSpacing !== undefined) ctx.letterSpacing = '0px';
-      if (isDesktopChart) {
+      if (isTabletChart) {
         ctx.font = 'italic 400 18px Newsreader, Georgia, serif';
         ctx.textBaseline = 'bottom';
         ctx.fillText('GDP per capita (international $, 2011 prices)', area.left, area.top - 25);
@@ -192,12 +192,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   };
 
   function chartLayoutPadding() {
-    return useDesktopChartLayout()
+    return useTabletChartLayout()
       ? { top: 50, right: 168, bottom: 4, left: 4 }
       : { top: 64, right: 12, bottom: 4, left: 4 };
   }
 
-  var isWide = window.matchMedia('(min-width: 1100px)').matches;
+  var isDesktop = window.matchMedia('(min-width: 1280px)').matches;
   var chart = new Chart(canvas, {
     type: 'line',
     data: {
@@ -252,9 +252,9 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
             color: '#be9a7a',
             font: {
               family: 'Newsreader, Georgia, serif',
-              size: isWide ? 21 : 14,
+              size: isDesktop ? 21 : 14,
               weight: '400',
-              lineHeight: isWide ? 23 / 21 : 1.2
+              lineHeight: isDesktop ? 23 / 21 : 1.2
             },
             padding: 8,
             crossAlign: 'far',
@@ -323,6 +323,34 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     });
   }, { threshold: 0.5 });
   chartObserver.observe(canvas);
+}
+
+(function () {
+  var section = document.getElementById('long-view');
+  if (!section) return;
+  var started = false;
+  function start() {
+    if (started) return;
+    started = true;
+    if (typeof Chart !== 'undefined') {
+      initGrowthChart();
+      return;
+    }
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
+    script.onload = initGrowthChart;
+    document.head.appendChild(script);
+  }
+  if (!('IntersectionObserver' in window)) {
+    start();
+    return;
+  }
+  var loader = new IntersectionObserver(function (entries) {
+    if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+    loader.disconnect();
+    start();
+  }, { rootMargin: '200px 0px' });
+  loader.observe(section);
 })();
 
 (function () {
