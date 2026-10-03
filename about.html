@@ -190,14 +190,11 @@
     margin-bottom: 56px;
   }
   .board-block h2 { margin-top: 0; }
-  .board-grid {
+  /* Shared box for Leadership, Team, and Advisory Council cards. */
+  .person-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
-    max-width: 940px;
-  }
-  @media (max-width: 720px) {
-    .board-grid { grid-template-columns: 1fr; gap: 18px; }
   }
   .board-role {
     font-family: 'Inter', sans-serif;
@@ -253,13 +250,8 @@
     max-width: 720px;
     margin-bottom: 48px;
   }
-  .advisor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-    margin-bottom: 40px;
-  }
-  .advisor-card {
+  .advisor-grid { margin-bottom: 40px; }
+  .person-card {
     background: transparent;
     border: 1px solid var(--border);
     border-radius: 0;
@@ -273,8 +265,10 @@
     align-items: stretch;
     gap: 18px;
   }
-  .advisor-card .advisor-avatar { align-self: flex-start; }
-  .advisor-card:hover {
+  .person-card > .person-photo { align-self: flex-start; }
+  .person-card:hover,
+  .flip-card:hover .person-card,
+  .flip-card:hover .flip-card-back {
     border-color: var(--amber);
     background: rgba(184,104,42,0.03);
   }
@@ -282,17 +276,22 @@
     outline: 2px solid var(--amber);
     outline-offset: 3px;
   }
-  .advisor-avatar {
+  .person-photo {
     width: 140px;
     height: 140px;
     border-radius: 50%;
     background: var(--bone);
     border: 1px solid var(--border);
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    transition: background .18s ease, border-color .18s ease;
+  }
+  .advisor-avatar {
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transition: background .18s ease, border-color .18s ease;
   }
   .advisor-avatar img {
     width: 100%;
@@ -300,7 +299,8 @@
     object-fit: cover;
     display: block;
   }
-  .advisor-card:hover .advisor-avatar {
+  .person-card:hover .person-photo,
+  .flip-card:hover .person-photo {
     background: var(--white);
     border-color: var(--amber);
   }
@@ -685,7 +685,10 @@
     font: inherit;
     cursor: pointer;
     width: 100%;
-    height: 320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
   }
   .flip-card:focus-visible {
     outline: 2px solid var(--amber);
@@ -693,58 +696,52 @@
   }
   .flip-card-inner {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
     width: 100%;
     height: 100%;
     transition: transform 0.65s cubic-bezier(.2,.7,.2,1);
     transform-style: preserve-3d;
   }
   .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
-  .flip-card-front,
+  .flip-card-front {
+    position: relative;
+    flex: 1 1 auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    justify-content: flex-start;
+  }
   .flip-card-back {
     position: absolute;
     inset: 0;
     border: 1px solid var(--border);
     border-radius: 0;
-    padding: 28px 26px;
-    background: var(--white);
+    padding: 28px 26px 26px;
+    background: var(--bone);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: left;
-    transition: border-color .15s ease;
+    transition: border-color .18s ease, background .18s ease;
+    transform: rotateY(180deg);
+    overflow-y: auto;
   }
-  .flip-card:hover .flip-card-front,
-  .flip-card:hover .flip-card-back { border-color: var(--amber); }
-  .flip-card-front .board-role { margin-top: 8px; }
-  .flip-card-front.has-photo {
+  .flip-card-front .board-text {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 18px;
+    flex: none;
+    min-width: 0;
   }
-  .flip-card-front.has-photo .board-role { margin-top: 4px; }
-  .leader-photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--border);
-    flex-shrink: 0;
-  }
-  .flip-card-front .board-text { flex: 1; min-width: 0; }
   .flip-card-front .board-name {
     font-family: 'Newsreader', serif;
     font-size: 20px;
     font-weight: 600;
     color: var(--ink);
     letter-spacing: -0.1px;
-  }
-  .flip-card-back {
-    transform: rotateY(180deg);
-    background: var(--bone);
-    justify-content: flex-start;
-    overflow-y: auto;
   }
   .flip-back-name {
     font-family: 'Newsreader', serif;
@@ -863,11 +860,11 @@
 
     <div class="board-block">
       <h2>Leadership</h2>
-      <div class="board-grid">
+      <div class="person-grid board-grid">
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/randy-tift.webp" alt="Randy Tift" class="leader-photo" loading="lazy">
+            <div class="person-card flip-card-front">
+              <img src="images/randy-tift.webp" alt="Randy Tift" class="person-photo leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Randy Tift</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Senior Advisor, Accord Network; Head of Transformation, Trump I USAID</span></div>
@@ -881,8 +878,8 @@
         </button>
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/parth-ahya.webp" alt="Parth Ahya" class="leader-photo" loading="lazy">
+            <div class="person-card flip-card-front">
+              <img src="images/parth-ahya.webp" alt="Parth Ahya" class="person-photo leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Parth Ahya</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Program Director, Renaissance Philanthropy</span></div>
@@ -896,8 +893,8 @@
         </button>
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/daniel-duman.webp" alt="Daniel Duman" class="leader-photo" loading="lazy">
+            <div class="person-card flip-card-front">
+              <img src="images/daniel-duman.webp" alt="Daniel Duman" class="person-photo leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Daniel Duman</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Impact investor; former Tony Blair Institute governance advisor</span></div>
@@ -911,8 +908,8 @@
         </button>
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/joe-mandelbaum.jpg" alt="Joe Mandelbaum" class="leader-photo" loading="lazy">
+            <div class="person-card flip-card-front">
+              <img src="images/joe-mandelbaum.jpg" alt="Joe Mandelbaum" class="person-photo leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Joseph Mandelbaum</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Founder, 1 Life 1 World</span></div>
@@ -929,11 +926,11 @@
 
     <div class="board-block" id="team">
       <h2>Team</h2>
-      <div class="board-grid">
+      <div class="person-grid board-grid">
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/daniel-handel.webp" alt="Daniel Handel" class="leader-photo" width="140" height="140" loading="lazy">
+            <div class="person-card flip-card-front">
+              <img src="images/daniel-handel.webp" alt="Daniel Handel" class="person-photo leader-photo" width="140" height="140" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Daniel Handel</div>
                 <div class="board-role">Executive Director<br><span class="board-role-sub">The New Foreign Assistance</span></div>
@@ -947,8 +944,8 @@
         </button>
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/david-dry.webp" alt="David Dry" class="leader-photo" width="140" height="140" loading="lazy">
+            <div class="person-card flip-card-front">
+              <img src="images/david-dry.webp" alt="David Dry" class="person-photo leader-photo" width="140" height="140" loading="lazy">
               <div class="board-text">
                 <div class="board-name">David Dry</div>
                 <div class="board-role">Chief of Staff<br><span class="board-role-sub">The New Foreign Assistance</span></div>
@@ -962,8 +959,8 @@
         </button>
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/ryan-moore.webp" alt="Ryan Moore" class="leader-photo" width="140" height="140" loading="lazy">
+            <div class="person-card flip-card-front">
+              <img src="images/ryan-moore.webp" alt="Ryan Moore" class="person-photo leader-photo" width="140" height="140" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Ryan Moore</div>
                 <div class="board-role">VP Policy Innovation<br><span class="board-role-sub">The New Foreign Assistance</span></div>
@@ -981,85 +978,85 @@
     <div class="advisory-block" id="advisory">
     <h2>Advisory Council</h2>
     <p class="advisory-intro">Senior policymakers, scholars, and practitioners who advise the work. Click any name for a bio.</p>
-    <div class="advisor-grid">
+    <div class="person-grid advisor-grid">
 
-      <button class="advisor-card" data-advisor="brearley" type="button">
-        <div class="advisor-avatar"><img src="images/emily-brearley.webp" alt="Emily Brearley" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="brearley" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/emily-brearley.webp" alt="Emily Brearley" loading="lazy"></div>
         <div class="advisor-name">Emily Brearley</div>
         <div class="advisor-affil">Economist; founder, Solution42.Org; former World Bank and IDB</div>
       </button>
-      <button class="advisor-card" data-advisor="burks" type="button">
-        <div class="advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="burks" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks" loading="lazy"></div>
         <div class="advisor-name">Jonathan Burks</div>
         <div class="advisor-affil">Executive Vice President, Bipartisan Policy Center; former Chief of Staff to Speaker Paul Ryan</div>
       </button>
-      <button class="advisor-card" data-advisor="cavallorunde" type="button">
-        <div class="advisor-avatar"><img src="images/sonia-cavallo-runde.webp" alt="Sonia Cavallo Runde" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="cavallorunde" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/sonia-cavallo-runde.webp" alt="Sonia Cavallo Runde" loading="lazy"></div>
         <div class="advisor-name">Sonia Cavallo Runde</div>
         <div class="advisor-affil">Former Argentine Ambassador to the OAS</div>
       </button>
-      <button class="advisor-card" data-advisor="coyne" type="button">
-        <div class="advisor-avatar"><img src="images/chris-coyne.webp" alt="Chris Coyne" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="coyne" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/chris-coyne.webp" alt="Chris Coyne" loading="lazy"></div>
         <div class="advisor-name">Chris Coyne</div>
         <div class="advisor-affil">Prof. Chris Coyne, Author of <em>Doing Bad by Doing Good: Why Humanitarian Action Fails</em></div>
       </button>
-      <button class="advisor-card" data-advisor="dookhony" type="button">
-        <div class="advisor-avatar"><img src="images/manisha-dookhony.webp" alt="Manisha Dookhony" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="dookhony" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/manisha-dookhony.webp" alt="Manisha Dookhony" loading="lazy"></div>
         <div class="advisor-name">Manisha Dookhony</div>
         <div class="advisor-affil">CEO and co-founder, Terramont Capital Partners</div>
       </button>
-      <button class="advisor-card" data-advisor="gallenstein" type="button">
-        <div class="advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="gallenstein" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein" loading="lazy"></div>
         <div class="advisor-name">Tony Gallenstein</div>
         <div class="advisor-affil">Professor of Economics and Public Policy, Catholic Univ.</div>
       </button>
-      <button class="advisor-card" data-advisor="murry" type="button">
-        <div class="advisor-avatar"><img src="images/luke-murry.webp" alt="Luke Murry" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="murry" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/luke-murry.webp" alt="Luke Murry" loading="lazy"></div>
         <div class="advisor-name">Luke Murry</div>
         <div class="advisor-affil">Head of Government Affairs, Marvell; architect of the Foreign Aid Transparency and Accountability Act</div>
       </button>
-      <button class="advisor-card" data-advisor="mowers" type="button">
-        <div class="advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="mowers" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers" loading="lazy"></div>
         <div class="advisor-name">Matt Mowers</div>
         <div class="advisor-affil">President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR</div>
       </button>
-      <button class="advisor-card" data-advisor="nagy" type="button">
-        <div class="advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="nagy" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy" loading="lazy"></div>
         <div class="advisor-name">Amb. Tibor Nagy</div>
         <div class="advisor-affil">Former Asst. Secretary of State for African Affairs</div>
       </button>
-      <button class="advisor-card" data-advisor="pritchett" type="button">
-        <div class="advisor-avatar"><img src="images/lant-pritchett.webp" alt="Lant Pritchett" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="pritchett" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/lant-pritchett.webp" alt="Lant Pritchett" loading="lazy"></div>
         <div class="advisor-name">Lant Pritchett</div>
         <div class="advisor-affil">Professor of Economics and Practice, London School of Economics</div>
       </button>
-      <button class="advisor-card" data-advisor="runde" type="button">
-        <div class="advisor-avatar"><img src="images/dan-runde.webp" alt="Dan Runde" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="runde" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/dan-runde.webp" alt="Dan Runde" loading="lazy"></div>
         <div class="advisor-name">Dan Runde</div>
         <div class="advisor-affil">Author of <em>The American Imperative</em></div>
       </button>
-      <button class="advisor-card" data-advisor="soule" type="button">
-        <div class="advisor-avatar"><img src="images/nate-soule.webp" alt="Nate Soule" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="soule" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/nate-soule.webp" alt="Nate Soule" loading="lazy"></div>
         <div class="advisor-name">Nate Soule</div>
         <div class="advisor-affil">Executive Director, Campaign for America First International Assistance</div>
       </button>
-      <button class="advisor-card" data-advisor="steiger" type="button">
-        <div class="advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="steiger" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger" loading="lazy"></div>
         <div class="advisor-name">Bill Steiger</div>
         <div class="advisor-affil">CEO, Malaria No More; former Chief of Staff, USAID</div>
       </button>
-      <button class="advisor-card" data-advisor="tomory" type="button">
-        <div class="advisor-avatar"><img src="images/hanna-tomory.webp" alt="Hanna Tomory" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="tomory" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/hanna-tomory.webp" alt="Hanna Tomory" loading="lazy"></div>
         <div class="advisor-name">Hanna Tomory</div>
         <div class="advisor-affil">CEO, Kalandjai</div>
       </button>
-      <button class="advisor-card" data-advisor="wade" type="button">
-        <div class="advisor-avatar"><img src="images/magatte-wade.webp" alt="Magatte Wade" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="wade" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/magatte-wade.webp" alt="Magatte Wade" loading="lazy"></div>
         <div class="advisor-name">Magatte Wade</div>
         <div class="advisor-affil">Author of <em>The Heart of a Cheetah</em>; Senior Fellow, Atlas Network</div>
       </button>
-      <button class="advisor-card" data-advisor="wydick" type="button">
-        <div class="advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick" loading="lazy"></div>
+      <button class="person-card advisor-card" data-advisor="wydick" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick" loading="lazy"></div>
         <div class="advisor-name">Bruce Wydick</div>
         <div class="advisor-affil">Author of <em>Shrewd Samaritan</em>; Prof. of Economics, Univ. of San Francisco</div>
       </button>
