@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DY00G9KT05');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GPQHNR6C2C');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
@@ -34,10 +18,10 @@
 <meta name="twitter:description" content="Every major foreign assistance commitment, pledge, and policy from the State Department since it assumed responsibility for U.S. foreign assistance. Updated weekly.">
 <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/analytics.js" defer></script>
 <style>
   :root {
     /* Brand palette — matches site-wide */
@@ -77,7 +61,10 @@
 
   /* HERO */
   .hero { padding: 48px 32px 40px; max-width: 920px; margin: 0 auto; text-align: center; }
-  .hero h1 { font-family: 'Newsreader', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 500; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.3px; color: var(--ink); }
+  .hero h1 { font-family: 'Newsreader', serif; font-size: 42px; font-weight: 500; line-height: 1.1; margin-bottom: 16px; letter-spacing: normal; color: var(--ink); }
+  @media (min-width: 860px) {
+    .hero h1 { font-size: 48px; line-height: 1.08; }
+  }
   .hero h1 em { font-style: italic; color: var(--amber); font-weight: 500; display: inline-block; margin-top: 8px; }
   .hero .subtitle { font-size: 17px; color: var(--ink-light); max-width: 560px; margin: 0 auto; line-height: 1.7; }
 
@@ -172,22 +159,22 @@
   .footer-sources { max-width: 720px; margin: 0 auto; padding: 32px 32px 8px; }
   .footer-sources p { font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.8; text-align: center; }
   .newsletter { max-width: 1100px; margin: 0 auto; padding: 56px 40px 48px; border-top: 1px solid rgba(255,255,255,0.08); }
-  .newsletter-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; color: var(--amber-mid); margin-bottom: 14px; }
-  .newsletter-h { font-family: 'Newsreader', serif; font-size: clamp(22px, 3vw, 28px); font-weight: 500; color: #fff; letter-spacing: -0.3px; line-height: 1.25; margin-bottom: 22px; max-width: 560px; }
-  .newsletter-form { display: flex; gap: 10px; max-width: 480px; flex-wrap: wrap; }
-  .newsletter-form input { flex: 1; min-width: 220px; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; border-radius: 3px; transition: border-color 0.15s; }
-  .newsletter-form input:focus { outline: none; border-color: var(--amber); }
-  .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
-  .newsletter-form button { padding: 12px 22px; background: var(--amber); color: #fff; border: none; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; cursor: pointer; border-radius: 3px; transition: background 0.15s; }
-  .newsletter-form button:hover { background: #a35a22; }
-  .newsletter-thanks { display: none; font-family: 'Newsreader', serif; font-size: 14px; color: rgba(255,255,255,0.85); font-style: italic; margin-top: 4px; }
-  .newsletter-thanks.shown { display: block; }
+  .legacy-newsletter-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; color: var(--amber-mid); margin-bottom: 14px; }
+  .legacy-newsletter-h { font-family: 'Newsreader', serif; font-size: clamp(22px, 3vw, 28px); font-weight: 500; color: #fff; letter-spacing: -0.3px; line-height: 1.25; margin-bottom: 22px; max-width: 560px; }
+  .legacy-newsletter-form { display: flex; gap: 10px; max-width: 480px; flex-wrap: wrap; }
+  .legacy-newsletter-form input { flex: 1; min-width: 220px; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; border-radius: 3px; transition: border-color 0.15s; }
+  .legacy-newsletter-form input:focus { outline: none; border-color: var(--amber); }
+  .legacy-newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+  .legacy-newsletter-form button { padding: 12px 22px; background: var(--amber); color: #fff; border: none; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; cursor: pointer; border-radius: 3px; transition: background 0.15s; }
+  .legacy-newsletter-form button:hover { background: #a35a22; }
+  .legacy-newsletter-thanks { display: none; font-family: 'Newsreader', serif; font-size: 14px; color: rgba(255,255,255,0.85); font-style: italic; margin-top: 4px; }
+  .legacy-newsletter-thanks.shown { display: block; }
   .footer-bottom { max-width: 1100px; margin: 0 auto; padding: 22px 40px 36px; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.4px; color: rgba(255,255,255,0.45); }
   @media (max-width: 640px) {
     .newsletter { padding: 40px 20px 32px; }
-    .newsletter-form { flex-direction: column; }
-    .newsletter-form input { min-width: 0; width: 100%; }
-    .newsletter-form button { width: 100%; }
+    .legacy-newsletter-form { flex-direction: column; }
+    .legacy-newsletter-form input { min-width: 0; width: 100%; }
+    .legacy-newsletter-form button { width: 100%; }
     .footer-bottom { padding: 18px 20px 32px; }
     .footer-sources { padding: 24px 20px 4px; }
   }
@@ -236,7 +223,8 @@
       padding: 32px 16px 24px;
     }
     .hero h1 {
-      font-size: 22px;
+      font-size: 42px;
+      line-height: 1.1;
       margin-bottom: 10px;
     }
     .hero .subtitle {
@@ -455,6 +443,14 @@
   .info-tooltip::after { content: ''; position: absolute; top: 100%; right: 12px; border: 5px solid transparent; border-top-color: var(--ink); }
   .info-wrap:hover .info-tooltip { opacity: 1; }
 
+  /* Shared footer helpers (match home/framework) */
+  @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
+  .balance-wrap { text-wrap: balance; }
+  /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
+  .footer-legal { letter-spacing: normal !important; }
+  .footer-legal .fl-chunk { white-space: nowrap; }
+  @media (min-width: 860px) { .footer-legal .fl-addr { white-space: nowrap; } }
+  @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
 </style>
 <style id="design-polish">
   /* ── DESIGN POLISH (craft layer) ── */
@@ -479,27 +475,38 @@
 <body>
 
 <!-- HEADER -->
-<header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
-  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
+<aside class="unga-banner" aria-label="TNFA speaking at UN General Assembly">
+  <div class="unga-banner__inner">
+    <p class="unga-banner__title">TNFA speaking at UN General Assembly</p>
+    <ul class="unga-banner__links">
+      <li><a href="https://www.devex.com/news/are-there-reasons-to-be-cheerful-about-us-development-funding-113405" target="_blank" rel="noopener">Are there reasons to be cheerful about US development funding?</a></li>
+      <li><a href="https://www.youtube.com/watch?v=CpfMky1Kt3g" target="_blank" rel="noopener">What Should America Be Trying to Achieve Through Development</a></li>
+      <li><a href="https://www.youtube.com/watch?v=T8ohfa5Eeag" target="_blank" rel="noopener">Building the Future of U.S. Foreign Aid: What Comes Next</a></li>
+    </ul>
+  </div>
+</aside>
+
+<header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
+  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 tablet:px-[60px] tablet:pt-3 tablet:pb-3">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
-      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
+      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain tablet:h-[108px] tablet:w-[216px]">
     </a>
 
-    <nav class="hidden items-center gap-8 desktop:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-8 tablet:flex" aria-label="Primary">
       <a href="/" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
       <a href="framework.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Framework</a>
       <a href="about.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">About</a>
       <a href="press.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Press</a>
     </nav>
 
-    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink tablet:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
     </button>
   </div>
 </header>
 
 <!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] desktop:hidden" hidden aria-hidden="true">
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-cream tablet:hidden" hidden aria-hidden="true">
   <button type="button" id="menuClose" class="absolute right-[15px] top-4 z-10 inline-flex h-10 w-10 items-center justify-center text-ink" aria-label="Close menu">
     <img src="images/icon-close.svg" alt="" class="h-6 w-6" width="24" height="24">
   </button>
@@ -558,7 +565,7 @@
       <div class="hero-stat-label">Pledged (annual)</div>
     </div>
   </div>
-  <div class="hero-updated">Last updated September 21, 2026 &nbsp;·&nbsp; Updated weekly</div>
+  <div class="hero-updated">Last updated September 24, 2026 &nbsp;·&nbsp; Updated weekly</div>
 </section>
 
 <div class="explainer">
@@ -599,23 +606,36 @@
   <div id="timeline"></div>
 </div>
 
-<footer class="site-footer">
-  <div class="footer-sources">
-    <p>Sources: state.gov, whitehouse.gov, congress.gov, grants.gov, theglobalfund.org<br>Running totals use annualized figures for multi-year commitments. Co-investment shown separately on cards.<br>*FY25 bilateral economic assistance est.: FY24 enacted ~$25.5B less $7.67B rescissions (P.L. 119-28) targeting foreign assistance accounts. FY26 figure: enacted Title III (GHP $9.41B + NSIP $6.77B + IHA $5.5B).</p>
-  </div>
-  <div class="newsletter">
-    <div class="newsletter-eyebrow">From the rebuild</div>
-    <h2 class="newsletter-h">A brief, occasional newsletter on the rebuild.</h2>
-    <form class="newsletter-form">
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <button type="submit">Subscribe →</button>
-    </form>
-    <p class="newsletter-thanks">Thank you. We'll be in touch.</p>
-  </div>
-  <div class="footer-bottom">
-    © 2026 The New Foreign Assistance · 700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003
-  </div>
-</footer>
+<footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
+    <!-- Desktop: footer side accent -->
+    <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="56" height="164" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:44px;width:56px;height:164px;max-width:none">
+    <div
+      class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] tablet:flex-row tablet:items-center tablet:justify-between tablet:px-[124px] tablet:pt-19.5 tablet:pb-[100px]">
+      <div class="flex flex-col gap-3">
+        <p class="eyebrow">From the rebuild</p>
+        <h3 class="nl-oneline balance-wrap font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">A brief, occasional newsletter on the rebuild.</h3>
+      </div>
+      <form class="flex w-full max-w-md flex-col items-stretch gap-3 tablet:flex-row tablet:items-center"
+        id="newsletterForm">
+        <input type="email" class="newsletter-input" placeholder="Your email address" required
+          aria-label="Email address">
+        <button type="submit"
+          class="btn-filled w-full shrink-0 self-start tablet:w-auto tablet:self-auto">Subscribe</button>
+      </form>
+      <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you.
+        We&#39;ll be in touch.</div>
+    </div>
+    <div class="border-b border-t border-footer-border bg-footer-strip tablet:px-[124px]">
+      <div
+        class="mx-auto flex flex-col gap-3 px-5 py-6 tablet:flex-row tablet:items-center tablet:justify-between tablet:px-0">
+        <p class="footer-legal font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber"><span class="fl-chunk">&copy; 2026 The New Foreign Assistance</span><span class="hidden tablet:inline"> · </span><br class="tablet:hidden"> <span class="fl-addr"><span class="fl-chunk">700 Pennsylvania Ave. SE, Suite 200,</span> <span class="fl-chunk">Washington, DC 20003</span></span></p>
+        <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
+          <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
+            class="h-[26px] w-[164px]" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </footer>
 
 <script>
   // Newsletter subscribe — POSTs to Google Apps Script, appends row to Sheet
@@ -640,12 +660,12 @@
         });
         input.style.display = 'none';
         button.style.display = 'none';
-        thanks.classList.add('shown');
+        thanks.classList.add('shown'); thanks.classList.remove('hidden');
       } catch (err) {
         button.disabled = false;
         button.textContent = originalLabel;
         thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
-        thanks.classList.add('shown');
+        thanks.classList.add('shown'); thanks.classList.remove('hidden');
       }
     });
   });
@@ -776,7 +796,28 @@ const events = [
     },
     source:"https://www.state.gov/releases/office-of-the-spokesperson/2026/09/united-states-approves-additional-funding-for-the-nepal-floods-response/" },
 
-  { month:"2026-09", date:"Sep 11, 2026", title:"Vietnam Bilateral Health MOU",
+  { month:"2026-09", date:"Sep 23, 2026", title:"Ebola Response — $267M Additional (UNGA)",
+    type:"commitment", sector:"health", sectorLabel:"Health",
+    totalAmount:267e6, annualAmount:267e6, years:1,
+    displayTotal:"$267M additional", displayAnnual:"Total US Ebola response: $887M",
+    desc:"Announced at the UN General Assembly high-level week in New York, September 23, 2026. Additional $267M brings total US Ebola commitment to $887M — the largest US bilateral Ebola response in history. State Dept ($780M) + HHS/CDC ($107M). The DRC outbreak, now the second deadliest in history, has killed 3,639 and infected 7,541 since May 2026 — WHO declared a Public Health Emergency of International Concern on May 17. Bundibugyo strain. New funding pays for: additional Ebola treatment units, safe and dignified burial teams, mass PPE procurement, expanded surveillance, contact tracing, and health commodities. To date: 8.6M health screenings, 292 MT humanitarian supplies, 23 specialized Ebola treatment centers, 235 health facilities supported. US calling on capable nations to increase burden-sharing toward $2B international target.",
+    details:{
+      "New commitment":"$267M (September 23, UNGA)",
+      "State Dept total":"$780M across all tranches",
+      "HHS/CDC total":"$107M",
+      "Grand total US":"$887M — largest US Ebola response in history",
+      "Outbreak scale":"3,639 dead, 7,541 infected — 2nd deadliest Ebola outbreak in history (behind 2014-16 West Africa)",
+      "Strain":"Bundibugyo — different from Zaire strain; existing vaccines not optimized",
+      "PHEIC":"WHO declared public health emergency of international concern May 17, 2026",
+      "Uganda":"Linked outbreak declared over August 25, 2026 (20 cases)",
+      "Epicenter":"Ituri province, DRC — 6 affected provinces",
+      "Prior tranches":"$32M (May 19), $350M OCHA earmark (May 14/Jun 12), subsequent State increases",
+      "Call to action":"US calling on other capable nations to contribute toward $2B international target",
+      "Key outputs to date":"8.6M health screenings; 292 MT humanitarian supplies; 23 treatment centers; 235 health facilities"
+    },
+    source:"https://www.state.gov/releases/office-of-the-spokesman/2026/09/united-states-pledges-additional-life-saving-health-assistance-in-response-to-ebola-outbreak" },
+
+    { month:"2026-09", date:"Sep 11, 2026", title:"Vietnam Bilateral Health MOU",
     type:"announcement", sector:"health", sectorLabel:"Health",
     totalAmount:98.75e6, annualAmount:19.75e6, years:5,
     displayTotal:"~$98.75M US / 5 yrs", displayAnnual:"~$19.75M/yr US",

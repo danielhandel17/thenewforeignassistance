@@ -19,8 +19,10 @@
 <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
 <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/analytics.js" defer></script>
 <style>
   :root {
     --bg:       #faf7f0;
@@ -74,11 +76,14 @@
   }
   h2 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(26px, 3vw, 36px);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: normal;
     margin-bottom: 28px;
+  }
+  @media (min-width: 860px) {
+    h2 { font-size: 48px; line-height: 1.08; }
   }
 
   /* ── MISSION ── */
@@ -135,7 +140,7 @@
   }
 
   /* ── FOOTER ── */
-  footer {
+  footer.legacy-footer {
     background: var(--bg);
     padding: 22px 40px;
     text-align: center;
@@ -481,7 +486,7 @@
     border-bottom: 1px solid rgba(252,247,235,0.12);
     margin-bottom: 28px;
   }
-  .newsletter-eyebrow {
+  .legacy-newsletter-eyebrow {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 500;
@@ -490,7 +495,7 @@
     color: var(--ink-light);
     margin-bottom: 16px;
   }
-  .newsletter-headline {
+  .legacy-newsletter-headline {
     font-family: 'Newsreader', serif;
     font-size: clamp(22px, 2.8vw, 30px);
     font-weight: 500;
@@ -500,13 +505,13 @@
     margin: 0 0 26px;
     max-width: 640px;
   }
-  .newsletter-form {
+  .legacy-newsletter-form {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     max-width: 500px;
   }
-  .newsletter-input {
+  .legacy-newsletter-input {
     flex: 1;
     min-width: 220px;
     font-family: 'Inter', sans-serif;
@@ -518,13 +523,13 @@
     border-radius: 4px;
     transition: border-color .15s ease, background .15s ease;
   }
-  .newsletter-input::placeholder { color: rgba(252,247,235,0.4); }
-  .newsletter-input:focus {
+  .legacy-newsletter-input::placeholder { color: rgba(252,247,235,0.4); }
+  .legacy-newsletter-input:focus {
     outline: none;
     border-color: var(--amber);
     background: rgba(252,247,235,0.10);
   }
-  .newsletter-submit {
+  .legacy-newsletter-submit {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     letter-spacing: 1.2px;
@@ -538,18 +543,18 @@
     font-weight: 500;
     transition: background .15s ease, transform .15s ease;
   }
-  .newsletter-submit:hover {
+  .legacy-newsletter-submit:hover {
     background: #cf7d36;
     transform: translateY(-1px);
   }
-  .newsletter-thanks {
+  .legacy-newsletter-thanks {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: var(--amber-mid);
     margin-top: 14px;
     display: none;
   }
-  .newsletter-thanks.show { display: block; }
+  .legacy-newsletter-thanks.show { display: block; }
   .footer-bottom {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
@@ -561,6 +566,16 @@
     align-items: center;
   }
   .footer-sep { opacity: 0.4; }
+  /* Shared footer helpers (match home/framework) */
+  @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
+  .balance-wrap { text-wrap: balance; }
+  /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
+  .footer-legal { letter-spacing: normal !important; }
+  .footer-legal .fl-chunk { white-space: nowrap; }
+  @media (min-width: 860px) { .footer-legal .fl-addr { white-space: nowrap; } }
+  @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
+  .intro-stripes { display: none; }
+  @media (min-width: 860px) { .intro-stripes { display: block; } }
 </style>
 
 <style>
@@ -575,12 +590,15 @@
   }
   .page-h1 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: 42px;
     font-weight: 500;
-    line-height: 1.12;
-    letter-spacing: -0.5px;
+    line-height: 1.1;
+    letter-spacing: normal;
     color: var(--ink);
     margin: 18px 0 24px;
+  }
+  @media (min-width: 860px) {
+    .page-h1 { font-size: 48px; line-height: 1.08; }
   }
   .page-h1 em {
     font-style: italic;
@@ -773,49 +791,44 @@
     *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DY00G9KT05');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GPQHNR6C2C');
-</script>
 </head>
 <body>
 
 <!-- HEADER -->
-<header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
-  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
+<aside class="unga-banner" aria-label="TNFA speaking at UN General Assembly">
+  <div class="unga-banner__inner">
+    <p class="unga-banner__title">TNFA speaking at UN General Assembly</p>
+    <ul class="unga-banner__links">
+      <li><a href="https://www.devex.com/news/are-there-reasons-to-be-cheerful-about-us-development-funding-113405" target="_blank" rel="noopener">Are there reasons to be cheerful about US development funding?</a></li>
+      <li><a href="https://www.youtube.com/watch?v=CpfMky1Kt3g" target="_blank" rel="noopener">What Should America Be Trying to Achieve Through Development</a></li>
+      <li><a href="https://www.youtube.com/watch?v=T8ohfa5Eeag" target="_blank" rel="noopener">Building the Future of U.S. Foreign Aid: What Comes Next</a></li>
+    </ul>
+  </div>
+</aside>
+
+<header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
+  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 tablet:px-[60px] tablet:pt-3 tablet:pb-3">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
-      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
+      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain tablet:h-[108px] tablet:w-[216px]">
     </a>
 
-    <nav class="hidden items-center gap-8 desktop:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-8 tablet:flex" aria-label="Primary">
       <a href="/" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
       <a href="framework.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Framework</a>
       <a href="about.html" class="font-libertinus text-lg uppercase tracking-nav text-amber">About</a>
       <a href="press.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Press</a>
     </nav>
 
-    <a href="tracker.html" class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white desktop:inline-flex">Tracker →</a>
+    <a href="tracker.html" class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white tablet:inline-flex">Tracker →</a>
 
-    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink tablet:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
     </button>
   </div>
 </header>
 
 <!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] desktop:hidden" hidden aria-hidden="true">
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-cream tablet:hidden" hidden aria-hidden="true">
   <button type="button" id="menuClose" class="absolute right-[15px] top-4 z-10 inline-flex h-10 w-10 items-center justify-center text-ink" aria-label="Close menu">
     <img src="images/icon-close.svg" alt="" class="h-6 w-6" width="24" height="24">
   </button>
@@ -831,7 +844,8 @@
 </div>
 
 <!-- PAGE INTRO -->
-<section class="page-intro">
+<section class="page-intro" style="position:relative;overflow:hidden">
+  <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
     <h1 class="page-h1">Building <em>what comes next</em></h1>
     <p class="page-lead">The operating team, the board, and the senior advisors who guide the work.</p>
@@ -858,7 +872,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/daniel-handel.webp" alt="Daniel Handel" class="leader-photo">
+              <img src="images/daniel-handel.webp" alt="Daniel Handel" class="leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Daniel Handel</div>
                 <div class="board-role">Executive Director<br><span class="board-role-sub">Former USAID Foreign Service economist; Policy Director, Unlock Aid</span></div>
@@ -873,7 +887,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/randy-tift.webp" alt="Randy Tift" class="leader-photo">
+              <img src="images/randy-tift.webp" alt="Randy Tift" class="leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Randy Tift</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Senior Advisor, Accord Network; Head of Transformation, Trump I USAID</span></div>
@@ -888,7 +902,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/parth-ahya.webp" alt="Parth Ahya" class="leader-photo">
+              <img src="images/parth-ahya.webp" alt="Parth Ahya" class="leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Parth Ahya</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Program Director, Renaissance Philanthropy</span></div>
@@ -903,7 +917,7 @@
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/daniel-duman.webp" alt="Daniel Duman" class="leader-photo">
+              <img src="images/daniel-duman.webp" alt="Daniel Duman" class="leader-photo" loading="lazy">
               <div class="board-text">
                 <div class="board-name">Daniel Duman</div>
                 <div class="board-role">Board<br><span class="board-role-sub">Impact investor; former Tony Blair Institute governance advisor</span></div>
@@ -912,6 +926,21 @@
             <div class="flip-card-back">
               <div class="flip-back-name">Daniel Duman</div>
               <p class="flip-back-bio">Over 35 years of structured and private finance experience. Advisor at Total Impact Capital, where he focuses on closing the capital gap in emerging markets. Previously built an advisory and private equity practice closing over $750 million in financings. Served as a Governance Advisor to the Government of Rwanda on behalf of the Tony Blair Institute, focused on the Kigali Innovation City and the $250 million Angaza Innovation Fund. Earlier experience in USAID's Global Health Bureau. BA from NYU, MA from Columbia SIPA, MSc in International Development Management from LSE.</p>
+            </div>
+          </div>
+        </button>
+        <button type="button" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/joe-mandelbaum.jpg" alt="Joe Mandelbaum" class="leader-photo" loading="lazy">
+              <div class="board-text">
+                <div class="board-name">Joseph Mandelbaum</div>
+                <div class="board-role">Board<br><span class="board-role-sub">Founder, 1 Life 1 World</span></div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-name">Joseph Mandelbaum</div>
+              <p class="flip-back-bio">Founder of 1 Life 1 World. Works to connect private capital, philanthropy, industry, government, and faith-based organizations around the partnerships and infrastructure needed to ensure that life-saving programs don’t collapse in the gap — and that the restructuring of American foreign assistance results in something more accountable, more effective, and more durable than what came before.</p>
             </div>
           </div>
         </button>
@@ -924,77 +953,92 @@
     <div class="advisor-grid">
 
       <button class="advisor-card" data-advisor="brearley" type="button">
-        <div class="advisor-avatar"><img src="images/emily-brearley.webp" alt="Emily Brearley"></div>
+        <div class="advisor-avatar"><img src="images/emily-brearley.webp" alt="Emily Brearley" loading="lazy"></div>
         <div class="advisor-name">Emily Brearley</div>
-        <div class="advisor-affil">Economist; founder, Solution42.Org; former World Bank, IDB, and USAID</div>
+        <div class="advisor-affil">Economist; founder, Solution42.Org; former World Bank and IDB</div>
       </button>
       <button class="advisor-card" data-advisor="burks" type="button">
-        <div class="advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks"></div>
+        <div class="advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks" loading="lazy"></div>
         <div class="advisor-name">Jonathan Burks</div>
         <div class="advisor-affil">Executive Vice President, Bipartisan Policy Center; former Chief of Staff to Speaker Paul Ryan</div>
       </button>
       <button class="advisor-card" data-advisor="cavallorunde" type="button">
-        <div class="advisor-avatar"><img src="images/sonia-cavallo-runde.webp" alt="Sonia Cavallo Runde"></div>
+        <div class="advisor-avatar"><img src="images/sonia-cavallo-runde.webp" alt="Sonia Cavallo Runde" loading="lazy"></div>
         <div class="advisor-name">Sonia Cavallo Runde</div>
         <div class="advisor-affil">Former Argentine Ambassador to the OAS</div>
       </button>
       <button class="advisor-card" data-advisor="coyne" type="button">
-        <div class="advisor-avatar"><img src="images/chris-coyne.webp" alt="Chris Coyne"></div>
+        <div class="advisor-avatar"><img src="images/chris-coyne.webp" alt="Chris Coyne" loading="lazy"></div>
         <div class="advisor-name">Chris Coyne</div>
         <div class="advisor-affil">Prof. Chris Coyne, Author of <em>Doing Bad by Doing Good: Why Humanitarian Action Fails</em></div>
       </button>
       <button class="advisor-card" data-advisor="dookhony" type="button">
-        <div class="advisor-avatar"><img src="images/manisha-dookhony.webp" alt="Manisha Dookhony"></div>
+        <div class="advisor-avatar"><img src="images/manisha-dookhony.webp" alt="Manisha Dookhony" loading="lazy"></div>
         <div class="advisor-name">Manisha Dookhony</div>
         <div class="advisor-affil">CEO and co-founder, Terramont Capital Partners</div>
       </button>
+      <button class="advisor-card" data-advisor="dry" type="button">
+        <div class="advisor-avatar"><img src="images/david-dry.webp" alt="David Dry" loading="lazy"></div>
+        <div class="advisor-name">David Dry</div>
+        <div class="advisor-affil">Chief of Staff, The New Foreign Assistance</div>
+      </button>
       <button class="advisor-card" data-advisor="gallenstein" type="button">
-        <div class="advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein"></div>
+        <div class="advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein" loading="lazy"></div>
         <div class="advisor-name">Tony Gallenstein</div>
         <div class="advisor-affil">Professor of Economics and Public Policy, Catholic Univ.</div>
       </button>
       <button class="advisor-card" data-advisor="murry" type="button">
-        <div class="advisor-avatar"><img src="images/luke-murry.webp" alt="Luke Murry"></div>
+        <div class="advisor-avatar"><img src="images/luke-murry.webp" alt="Luke Murry" loading="lazy"></div>
         <div class="advisor-name">Luke Murry</div>
         <div class="advisor-affil">Head of Government Affairs, Marvell; architect of the Foreign Aid Transparency and Accountability Act</div>
       </button>
       <button class="advisor-card" data-advisor="mowers" type="button">
-        <div class="advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers"></div>
+        <div class="advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers" loading="lazy"></div>
         <div class="advisor-name">Matt Mowers</div>
         <div class="advisor-affil">President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR</div>
       </button>
+      <button class="advisor-card" data-advisor="moore" type="button">
+        <div class="advisor-avatar"><img src="images/ryan-moore.webp" alt="Ryan Moore" loading="lazy"></div>
+        <div class="advisor-name">Ryan Moore</div>
+        <div class="advisor-affil">VP Policy Innovation, The New Foreign Assistance</div>
+      </button>
       <button class="advisor-card" data-advisor="nagy" type="button">
-        <div class="advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy"></div>
+        <div class="advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy" loading="lazy"></div>
         <div class="advisor-name">Amb. Tibor Nagy</div>
         <div class="advisor-affil">Former Asst. Secretary of State for African Affairs</div>
       </button>
       <button class="advisor-card" data-advisor="pritchett" type="button">
-        <div class="advisor-avatar"><img src="images/lant-pritchett.webp" alt="Lant Pritchett"></div>
+        <div class="advisor-avatar"><img src="images/lant-pritchett.webp" alt="Lant Pritchett" loading="lazy"></div>
         <div class="advisor-name">Lant Pritchett</div>
         <div class="advisor-affil">Professor of Economics and Practice, London School of Economics</div>
       </button>
       <button class="advisor-card" data-advisor="runde" type="button">
-        <div class="advisor-avatar"><img src="images/dan-runde.webp" alt="Dan Runde"></div>
+        <div class="advisor-avatar"><img src="images/dan-runde.webp" alt="Dan Runde" loading="lazy"></div>
         <div class="advisor-name">Dan Runde</div>
         <div class="advisor-affil">Author of <em>The American Imperative</em></div>
       </button>
       <button class="advisor-card" data-advisor="soule" type="button">
-        <div class="advisor-avatar"><img src="images/nate-soule.webp" alt="Nate Soule"></div>
+        <div class="advisor-avatar"><img src="images/nate-soule.webp" alt="Nate Soule" loading="lazy"></div>
         <div class="advisor-name">Nate Soule</div>
         <div class="advisor-affil">Executive Director, Campaign for America First International Assistance</div>
       </button>
       <button class="advisor-card" data-advisor="steiger" type="button">
-        <div class="advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger"></div>
+        <div class="advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger" loading="lazy"></div>
         <div class="advisor-name">Bill Steiger</div>
         <div class="advisor-affil">CEO, Malaria No More; former Chief of Staff, USAID</div>
       </button>
+      <button class="advisor-card" data-advisor="tomory" type="button">
+        <div class="advisor-avatar"><img src="images/hanna-tomory.webp" alt="Hanna Tomory" loading="lazy"></div>
+        <div class="advisor-name">Hanna Tomory</div>
+        <div class="advisor-affil">CEO, Kalandjai</div>
+      </button>
       <button class="advisor-card" data-advisor="wade" type="button">
-        <div class="advisor-avatar"><img src="images/magatte-wade.webp" alt="Magatte Wade"></div>
+        <div class="advisor-avatar"><img src="images/magatte-wade.webp" alt="Magatte Wade" loading="lazy"></div>
         <div class="advisor-name">Magatte Wade</div>
         <div class="advisor-affil">Author of <em>The Heart of a Cheetah</em>; Senior Fellow, Atlas Network</div>
       </button>
       <button class="advisor-card" data-advisor="wydick" type="button">
-        <div class="advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick"></div>
+        <div class="advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick" loading="lazy"></div>
         <div class="advisor-name">Bruce Wydick</div>
         <div class="advisor-affil">Author of <em>Shrewd Samaritan</em>; Prof. of Economics, Univ. of San Francisco</div>
       </button>
@@ -1004,35 +1048,37 @@
   </div>
 </section>
 
-<!-- HIRING -->
-<section class="section" style="background:var(--bg); border-top: 1px solid var(--border);">
-  <div class="section-inner fade-up" style="max-width:740px;">
-    <div class="section-label">Join the team</div>
-    <h2 style="font-size:clamp(22px,2.5vw,30px); margin-bottom:12px;">We're hiring.</h2>
-    <p style="font-family:'Newsreader',serif; font-size:20px; line-height:1.65; color:var(--ink-light); margin-bottom:28px;">The New Foreign Assistance is building its team. See our open positions in Washington, DC.</p>
-    <a href="https://apply.workable.com/the-new-foreign-assistance" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;">See the full job description →</a>
-  </div>
-</section>
 
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-newsletter">
-      <div class="newsletter-eyebrow">From the rebuild</div>
-      <h3 class="newsletter-headline">A brief, occasional newsletter on the rebuild.</h3>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
-        <button type="submit" class="newsletter-submit">Subscribe →</button>
+<footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
+    <!-- Desktop: footer side accent -->
+    <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="56" height="164" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:44px;width:56px;height:164px;max-width:none">
+    <div
+      class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] tablet:flex-row tablet:items-center tablet:justify-between tablet:px-[124px] tablet:pt-19.5 tablet:pb-[100px]">
+      <div class="flex flex-col gap-3">
+        <p class="eyebrow">From the rebuild</p>
+        <h3 class="nl-oneline balance-wrap font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">A brief, occasional newsletter on the rebuild.</h3>
+      </div>
+      <form class="flex w-full max-w-md flex-col items-stretch gap-3 tablet:flex-row tablet:items-center"
+        id="newsletterForm">
+        <input type="email" class="newsletter-input" placeholder="Your email address" required
+          aria-label="Email address">
+        <button type="submit"
+          class="btn-filled w-full shrink-0 self-start tablet:w-auto tablet:self-auto">Subscribe</button>
       </form>
-      <div class="newsletter-thanks" id="newsletterThanks">Thank you. We'll be in touch.</div>
+      <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you.
+        We&#39;ll be in touch.</div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 The New Foreign Assistance</span>
-      <span class="footer-sep">·</span>
-      <span>700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</span>
+    <div class="border-b border-t border-footer-border bg-footer-strip tablet:px-[124px]">
+      <div
+        class="mx-auto flex flex-col gap-3 px-5 py-6 tablet:flex-row tablet:items-center tablet:justify-between tablet:px-0">
+        <p class="footer-legal font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber"><span class="fl-chunk">&copy; 2026 The New Foreign Assistance</span><span class="hidden tablet:inline"> · </span><br class="tablet:hidden"> <span class="fl-addr"><span class="fl-chunk">700 Pennsylvania Ave. SE, Suite 200,</span> <span class="fl-chunk">Washington, DC 20003</span></span></p>
+        <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
+          <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
+            class="h-[26px] w-[164px]" loading="lazy">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 <!-- ADVISOR MODAL -->
 <div class="advisor-modal" id="advisorModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
@@ -1072,12 +1118,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         body: new URLSearchParams({ email: email })
       });
       form.style.display = 'none';
-      thanks.classList.add('show');
+      thanks.classList.add('show'); thanks.classList.remove('hidden');
     } catch (err) {
       button.disabled = false;
       button.textContent = originalLabel;
       thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
-      thanks.classList.add('show');
+      thanks.classList.add('show'); thanks.classList.remove('hidden');
     }
   });
 })();
@@ -1115,6 +1161,12 @@ const ADVISORS = {
     bio: 'Head of Government Affairs at Marvell, a global semiconductor firm. Previously National Security Advisor to then-Minority Leader Kevin McCarthy, and subcommittee staff director on the House Foreign Affairs Committee. While on the staff of Rep. Ted Poe, helped author and pass the Foreign Aid Transparency and Accountability Act. Adjunct assistant professor at Georgetown University. M.A. in Security Studies from Georgetown; B.A. in Political Science from UCLA.',
     photo: 'images/luke-murry.webp'
   },
+  moore: {
+    name: 'Ryan Moore',
+    affil: 'VP Policy Innovation, The New Foreign Assistance',
+    bio: 'Ryan Andrew Moore is Vice President of Policy Innovation at The New Foreign Assistance (TNFA). A development economist and seasoned operational executive, Ryan brings fifteen years of experience driving economic growth through policy reform and large-scale capital investments. At TNFA, he spearheads the design of next-generation foreign assistance architecture, focusing on results-based financing and institutional design.<br><br>Ryan previously served as Chief of Strategy and Data at the Peace Corps and as a Director at the Millennium Challenge Corporation (MCC). Uniquely spanning MCC\u2019s two primary operational pillars (the Department of Compact Operations and the Department of Policy and Evaluation), he led teams delivering major growth-enhancing infrastructure compacts alongside rigorous empirical accountability systems. An experienced data scientist, he has engineered enterprise-wide analytics platforms and managed global operations across Africa, Latin America, and Asia. He holds a master\u2019s degree in development economics from Harvard University.',
+    photo: 'images/ryan-moore.webp'
+  },
   mowers: {
     name: 'Matt Mowers',
     affil: 'President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR',
@@ -1126,6 +1178,12 @@ const ADVISORS = {
     affil: 'Former Asst. Secretary of State for African Affairs',
     bio: 'Career Foreign Service Officer with eight postings across sub-Saharan Africa, including ambassadorships in Ethiopia and Guinea. As Assistant Secretary of State for African Affairs (2018\u20132021), built \u201Cdeal teams\u201D in every U.S. embassy on the continent to drive trade and investment. Performed the duties of Undersecretary of State for Management, January\u2013April 2025.',
     photo: 'images/tibor-nagy.webp'
+  },
+  dry: {
+    name: 'David Dry',
+    affil: 'Chief of Staff, The New Foreign Assistance',
+    bio: 'David Dry served as an Attaché at the Holy See Mission to the United Nations in Geneva, where he worked on trade and development issues and represented the Holy See at the WTO, UNCTAD, ILO, and other international organizations.<br><br>He subsequently served as Senior Advisor to the Rector of the Pontifical University of St. Thomas Aquinas in Rome, advising university leadership on institutional priorities and strategy. David has also worked for elected officials in the U.S. House of Representatives and the Los Angeles County Board of Supervisors, and holds a Master of Public Policy from Pepperdine University.',
+    photo: 'images/david-dry.webp'
   },
   dookhony: {
     name: 'Manisha Dookhony',
@@ -1166,9 +1224,15 @@ const ADVISORS = {
   },
   brearley: {
     name: 'Emily Brearley',
-    affil: 'Economist; founder, Solution42.Org; former World Bank, IDB, and USAID',
-    bio: 'Economist focused on finding simple solutions to complex problems. With 25 years of experience at global institutions including the World Bank, Inter-American Development Bank, and USAID, she has deep expertise designing high-impact programs that drive sustainable economic growth in emerging markets. Her company, Solution42.Org, designs innovative finance solutions for climate and women\u2019s empowerment, and pioneers disaster risk management plans aimed at saving lives across sub-Saharan Africa. Her career began 25 years ago at the World Bank, working with farmers, indigenous entrepreneurs, and women\u2019s collectives on sustainable livelihoods and poverty reduction, across land, disaster risk management, and safety net programs. Recognized as a global thought leader on women\u2019s empowerment and climate ethics; has led teams designing mechanisms such as debt-for-nature swaps and community-based disaster risk protocols. Ph.D. in economics from Johns Hopkins University; Fulbright Scholar.',
+    affil: 'Economist; founder, Solution42.Org; former World Bank and IDB',
+    bio: 'Economist focused on finding simple solutions to complex problems. With 25 years of experience at global institutions including the World Bank and Inter-American Development Bank, she has deep expertise designing high-impact programs that drive sustainable economic growth in emerging markets. Her company, Solution42.Org, designs innovative finance solutions for climate and women\u2019s empowerment, and pioneers disaster risk management plans aimed at saving lives across sub-Saharan Africa. Her career began 25 years ago at the World Bank, working with farmers, indigenous entrepreneurs, and women\u2019s collectives on sustainable livelihoods and poverty reduction, across land, disaster risk management, and safety net programs. Recognized as a global thought leader on women\u2019s empowerment and climate ethics; has led teams designing mechanisms such as debt-for-nature swaps and community-based disaster risk protocols. Ph.D. in economics from Johns Hopkins University; Fulbright Scholar.',
     photo: 'images/emily-brearley.webp'
+  },
+  tomory: {
+    name: 'Hanna Tomory',
+    affil: 'CEO, Kalandjai',
+    bio: 'Hanna Tomory is a systems engineer and business leader who heads the private sector operations of a major Silicon Valley tech company in Canada. With a career spanning multiple countries, she has led complex projects across the UK, Switzerland, Germany, Mexico, and the United States in industries including banking, insurance, automotive, healthcare, and defence.<br><br>She holds degrees in Systems Engineering and Philosophy from the University of Toronto, where she combined physics with metaphysics, and conducted research in Bioelectronics at ETH Zurich. Alongside her corporate work, Hanna advises several technology startups and has co-founded multiple non-profit foundations in both Europe and North America.',
+    photo: 'images/hanna-tomory.webp'
   },
   steiger: {
     name: 'Bill Steiger',

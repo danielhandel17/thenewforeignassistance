@@ -19,8 +19,10 @@
 <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
 <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/analytics.js" defer></script>
 <style>
   :root {
     --bg:       #faf7f0;
@@ -74,11 +76,14 @@
   }
   h2 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(26px, 3vw, 36px);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: normal;
     margin-bottom: 28px;
+  }
+  @media (min-width: 860px) {
+    h2 { font-size: 48px; line-height: 1.08; }
   }
 
   /* ── MISSION ── */
@@ -109,7 +114,7 @@
   }
 
   /* ── FOOTER ── */
-  footer {
+  footer.legacy-footer {
     background: var(--bg);
     padding: 22px 40px;
     text-align: center;
@@ -317,7 +322,7 @@
     border-bottom: 1px solid rgba(252,247,235,0.12);
     margin-bottom: 28px;
   }
-  .newsletter-eyebrow {
+  .legacy-newsletter-eyebrow {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 500;
@@ -326,7 +331,7 @@
     color: var(--ink-light);
     margin-bottom: 16px;
   }
-  .newsletter-headline {
+  .legacy-newsletter-headline {
     font-family: 'Newsreader', serif;
     font-size: clamp(22px, 2.8vw, 30px);
     font-weight: 500;
@@ -336,13 +341,13 @@
     margin: 0 0 26px;
     max-width: 640px;
   }
-  .newsletter-form {
+  .legacy-newsletter-form {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     max-width: 500px;
   }
-  .newsletter-input {
+  .legacy-newsletter-input {
     flex: 1;
     min-width: 220px;
     font-family: 'Inter', sans-serif;
@@ -354,13 +359,13 @@
     border-radius: 4px;
     transition: border-color .15s ease, background .15s ease;
   }
-  .newsletter-input::placeholder { color: rgba(252,247,235,0.4); }
-  .newsletter-input:focus {
+  .legacy-newsletter-input::placeholder { color: rgba(252,247,235,0.4); }
+  .legacy-newsletter-input:focus {
     outline: none;
     border-color: var(--amber);
     background: rgba(252,247,235,0.10);
   }
-  .newsletter-submit {
+  .legacy-newsletter-submit {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     letter-spacing: 1.2px;
@@ -374,18 +379,18 @@
     font-weight: 500;
     transition: background .15s ease, transform .15s ease;
   }
-  .newsletter-submit:hover {
+  .legacy-newsletter-submit:hover {
     background: #cf7d36;
     transform: translateY(-1px);
   }
-  .newsletter-thanks {
+  .legacy-newsletter-thanks {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: var(--amber-mid);
     margin-top: 14px;
     display: none;
   }
-  .newsletter-thanks.show { display: block; }
+  .legacy-newsletter-thanks.show { display: block; }
   .footer-bottom {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
@@ -413,7 +418,7 @@
     .agenda-section { padding: 40px 16px; }
     .agenda-frame { font-size: 16px; }
     .examples-list li { font-size: 15px; line-height: 1.55; }
-    .page-h1 { font-size: 32px !important; line-height: 1.15; }
+    .page-h1 { font-size: 42px !important; line-height: 1.1; }
     .hero h1 { font-size: 38px !important; line-height: 1.1; }
     .principle-card { padding: 22px 18px; }
     .principle-num { font-size: 13px; }
@@ -425,10 +430,35 @@
     .org-prose p { font-size: 16px; line-height: 1.6; }
     .footer-bottom { flex-direction: column; gap: 4px; text-align: center; }
     .footer-sep { display: none; }
-    .newsletter-form { flex-direction: column; }
-    .newsletter-input, .newsletter-submit { width: 100%; }
+    .legacy-newsletter-form { flex-direction: column; }
+    .legacy-newsletter-input, .legacy-newsletter-submit { width: 100%; }
   }
 
+  /* Star-and-stripe accents in the left margin (only where there is room) */
+  .press-accent { display: none; }
+  @media (min-width: 1400px) {
+    .has-accent { position: relative; }
+    .press-accent { display: block; position: absolute; top: 0; left: calc((1200px - 100vw) / 2); pointer-events: none; }
+  }
+  /* Shared footer helpers (match home/framework) */
+  @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
+  .balance-wrap { text-wrap: balance; }
+  /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
+  .footer-legal { letter-spacing: normal !important; }
+  .footer-legal .fl-chunk { white-space: nowrap; }
+  @media (min-width: 860px) { .footer-legal .fl-addr { white-space: nowrap; } }
+  @media (max-width: 859px) { .footer-legal { font-size: 15px !important; } }
+  .intro-stripes { display: none; }
+  @media (min-width: 860px) { .intro-stripes { display: block; } }
+  /* Press page: section labels match site eyebrows */
+  .pub-subsection-label.press-eyebrow { font-family: "Libertinus Serif Display", Newsreader, Georgia, serif; font-size: 18px; font-weight: 400; letter-spacing: .2em; color: var(--amber); padding-bottom: 14px; margin-top: 16px; }
+  .press-accent-m { display: block; width: 40px; height: 117px; margin: 0 0 20px -20px; }
+  @media (min-width: 721px) { .press-accent-m { display: none; } }
+  /* Reading list: show 8, expand on demand */
+  #readingCards > .article-card:nth-child(n+9) { display: none; }
+  .reading-open #readingCards > .article-card:nth-child(n+9) { display: flex; }
+  .reading-toggle { margin-top: 28px; }
+  .reading-open .reading-toggle { display: none; }
 </style>
 
 <style>
@@ -436,9 +466,12 @@
   .page-intro-inner { max-width: 1200px; margin: 0 auto; }
   .page-h1 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(36px, 5vw, 64px); font-weight: 500;
-    line-height: 1.12; letter-spacing: -0.5px;
+    font-size: 42px; font-weight: 500;
+    line-height: 1.1; letter-spacing: normal;
     color: var(--ink); margin: 18px 0 24px;
+  }
+  @media (min-width: 860px) {
+    .page-h1 { font-size: 48px; line-height: 1.08; }
   }
   .page-h1 em { font-style: italic; color: var(--amber); font-weight: 500; }
   .page-lead {
@@ -472,49 +505,44 @@
     *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DY00G9KT05');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GPQHNR6C2C');
-</script>
 </head>
 <body>
 
 <!-- HEADER -->
-<header id="siteHeader" class="site-header sticky top-0 z-50 desktop:min-h-[132px]">
-  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 desktop:px-[60px] desktop:pt-3 desktop:pb-3">
+<aside class="unga-banner" aria-label="TNFA speaking at UN General Assembly">
+  <div class="unga-banner__inner">
+    <p class="unga-banner__title">TNFA speaking at UN General Assembly</p>
+    <ul class="unga-banner__links">
+      <li><a href="https://www.devex.com/news/are-there-reasons-to-be-cheerful-about-us-development-funding-113405" target="_blank" rel="noopener">Are there reasons to be cheerful about US development funding?</a></li>
+      <li><a href="https://www.youtube.com/watch?v=CpfMky1Kt3g" target="_blank" rel="noopener">What Should America Be Trying to Achieve Through Development</a></li>
+      <li><a href="https://www.youtube.com/watch?v=T8ohfa5Eeag" target="_blank" rel="noopener">Building the Future of U.S. Foreign Aid: What Comes Next</a></li>
+    </ul>
+  </div>
+</aside>
+
+<header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
+  <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 tablet:px-[60px] tablet:pt-3 tablet:pb-3">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
-      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain desktop:h-[108px] desktop:w-[216px]">
+      <img src="images/logo.webp" alt="The New Foreign Assistance" width="216" height="108" class="h-[60px] w-[119px] object-contain tablet:h-[108px] tablet:w-[216px]">
     </a>
 
-    <nav class="hidden items-center gap-8 desktop:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-8 tablet:flex" aria-label="Primary">
       <a href="/" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Home</a>
       <a href="framework.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">Framework</a>
       <a href="about.html" class="font-libertinus text-lg uppercase tracking-nav text-ink transition-colors hover:text-amber">About</a>
       <a href="press.html" class="font-libertinus text-lg uppercase tracking-nav text-amber">Press</a>
     </nav>
 
-    <a href="tracker.html" class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white desktop:inline-flex">Tracker →</a>
+    <a href="tracker.html" class="hidden border border-amber px-4 py-2 font-libertinus text-[16px] uppercase tracking-nav text-amber transition-colors hover:bg-amber hover:text-white tablet:inline-flex">Tracker →</a>
 
-    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink desktop:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+    <button type="button" id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center text-ink tablet:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <img src="images/icon-menu.svg" alt="" class="h-6 w-6" width="24" height="24">
     </button>
   </div>
 </header>
 
 <!-- Mobile menu — Figma Home - Mobile - Menu (350:5411): full-screen overlay -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-[#ebd6c5] desktop:hidden" hidden aria-hidden="true">
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-cream tablet:hidden" hidden aria-hidden="true">
   <button type="button" id="menuClose" class="absolute right-[15px] top-4 z-10 inline-flex h-10 w-10 items-center justify-center text-ink" aria-label="Close menu">
     <img src="images/icon-close.svg" alt="" class="h-6 w-6" width="24" height="24">
   </button>
@@ -530,10 +558,11 @@
 </div>
 
 <!-- PAGE INTRO -->
-<section class="page-intro">
+<section class="page-intro" style="position:relative;overflow:hidden">
+  <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
     <h1 class="page-h1">What we've written.<br><em>What we're reading.</em></h1>
-    <p class="page-lead">Our own articles in the major outlets, and the writing that informs the work.</p>
+    <p class="page-lead">Our own writing, coverage of our work, and the reading that informs it.</p>
   </div>
 </section>
 
@@ -542,7 +571,7 @@
 <!-- PRESS -->
 <section class="section publications-section" id="press">
   <div class="section-inner fade-up">
-    <div class="pub-subsection-label">What we've written</div>
+    <div class="pub-subsection-label press-eyebrow">What we've written</div>
     <div class="article-cards">
       <a class="article-card" href="https://nationalaffairs.com/publications/detail/reforming-foreign-assistance" target="_blank" rel="noopener">
         <div class="article-outlet">National Affairs · Summer 2026</div>
@@ -558,92 +587,24 @@
 
     </div>
 
-    <div class="pub-subsection-label">What we're reading</div>
-    <div class="article-cards">
-      <a class="article-card" href="https://mccloskey.substack.com/p/then-many-of-us-shot-up-the-blade" target="_blank" rel="noopener">
-        <div class="article-outlet">Deirdre McCloskey · September 2026</div>
-        <div class="article-title">Then Many of Us Shot Up the Blade of a Hockey Stick</div>
-        <div class="article-pull">Poverty was universal until the Great Enrichment after 1800 — driven not by capital or exploitation but by an ideology of liberty and dignity for ordinary people. The case for growth as the most important secular event in human history.</div>
-      </a>
-      <a class="article-card" href="https://nationalinterest.org/feature/how-the-us-can-reclaim-the-world-bank-from-china" target="_blank" rel="noopener">
-        <div class="article-outlet">The National Interest · August 2026</div>
-        <div class="article-title">How the US Can Reclaim the World Bank from China</div>
-        <div class="article-pull">China has entrenched itself in the World Bank, using U.S. contributions to subsidize Belt and Road and lock in Chinese technology. The case for the U.S. to reassert strategic leverage in a $400 billion institution.</div>
-      </a>
-      <a class="article-card" href="https://www.cato.org/research-briefs-economic-policy/do-market-reforms-cause-growth" target="_blank" rel="noopener">
-        <div class="article-outlet">Cato Institute · July 2026</div>
-        <div class="article-title">Do Market Reforms Cause Growth?</div>
-        <div class="article-pull">Hartley, Pallan, and Wheaton find that market reforms drive substantial long-run growth — but benefits take 3-5 years to materialize as capital and labor reallocate. The case for patient, structural ambition over short-term fixes.</div>
-      </a>
-      <a class="article-card" href="https://www.africanistperspective.com/p/a-caution-against-faddist-approaches" target="_blank" rel="noopener">
-        <div class="article-outlet">An Africanist Perspective · May 2026</div>
-        <div class="article-title">A Caution Against Faddist Approaches to Industrial Policy</div>
-        <div class="article-pull">Ken Opalo on why the World Bank's newfound enthusiasm for industrial policy will produce the same faddist failures as every previous orthodoxy — and why African governments should ignore the best-practice packaging.</div>
-      </a>
-      <a class="article-card" href="https://www.nber.org/papers/w35253" target="_blank" rel="noopener">
-        <div class="article-outlet">NBER · May 2026</div>
-        <div class="article-title">The Sisyphean Pursuit of Evidence for Poverty Traps</div>
-        <div class="article-pull">Dean Karlan and co-authors reassess poverty traps: the theory is more often assumed than empirically demonstrated.</div>
-      </a>
-      <a class="article-card" href="https://www.devex.com/news/global-health-in-2026-hard-truths-from-11-leaders-112469" target="_blank" rel="noopener">
-        <div class="article-outlet">Devex · May 2026</div>
-        <div class="article-title">Global Health in 2026: Hard Truths from 11 Leaders</div>
-        <div class="article-pull">Even insiders concede the system is no longer fit for purpose.</div>
-      </a>
-      <a class="article-card" href="https://www.state.gov/releases/bureau-of-african-affairs/2026/04/a-new-model-for-economic-prosperity-in-africa" target="_blank" rel="noopener">
-        <div class="article-outlet">U.S. State Department · April 2026</div>
-        <div class="article-title">A New Model for Economic Prosperity in Africa</div>
-        <div class="article-pull">State's Nick Checker on commercial diplomacy: deals over programs, results over disbursement.</div>
-      </a>
-      <a class="article-card" href="https://www.solutionsindex.org/" target="_blank" rel="noopener">
-        <div class="article-outlet">Unlock Aid · March 2026</div>
-        <div class="article-title">Solutions Index</div>
-        <div class="article-pull">A reference directory of pacesetting organizations across global health, food security, and nutrition.</div>
-      </a>
-      <a class="article-card" href="https://www.persuasion.community/p/growth-is-all-you-need" target="_blank" rel="noopener">
-        <div class="article-outlet">Persuasion · March 2026</div>
-        <div class="article-title">Growth Is All You Need</div>
-        <div class="article-pull">Quico Toro on Pritchett's case against RCTs, and for growth-first development.</div>
-      </a>
-      <a class="article-card" href="https://www.nber.org/papers/w34583" target="_blank" rel="noopener">
-        <div class="article-outlet">NBER · December 2025</div>
-        <div class="article-title">What Would it Cost to End Extreme Poverty?</div>
-        <div class="article-pull">Paul Niehaus and co-authors price the end of extreme poverty: 0.3% of global GDP.</div>
-      </a>
-      <a class="article-card" href="https://asteriskmag.com/issues/07/want-growth-kill-small-businesses" target="_blank" rel="noopener">
-        <div class="article-outlet">Asterisk · 2024</div>
-        <div class="article-title">Want Growth? Kill Small Businesses</div>
-        <div class="article-pull">Karthik Tadepalli on the "missing middle" of development: not household interventions, not growth platitudes, but firm growth — the rigorous, ambitious lens that ties aid to prosperity.</div>
-      </a>
-      <a class="article-card" href="https://foreignpolicy.com/2024/04/10/us-foreign-aid-gaza-trump-threats/" target="_blank" rel="noopener">
-        <div class="article-outlet">Foreign Policy · April 2024</div>
-        <div class="article-title">Trump's Foreign Aid Threat Offers Chance for Change</div>
-        <div class="article-pull">The reform opportunity hiding in the aid-cuts moment.</div>
-      </a>
-      <a class="article-card" href="https://www.hks.harvard.edu/centers/cid/publications/faculty-working-papers/national-development-delivers" target="_blank" rel="noopener">
-        <div class="article-outlet">CID · May 2021</div>
-        <div class="article-title">National Development Delivers: And How! And How?</div>
-        <div class="article-pull">Lant Pritchett on the case for growth: no country has reached high wellbeing without it.</div>
-      </a>
-      <a class="article-card" href="https://oig.usaid.gov/node/2639" target="_blank" rel="noopener">
-        <div class="article-outlet">USAID OIG · September 2019</div>
-        <div class="article-title">USAID's Award Oversight Is Insufficient to Hold Implementers Accountable for Achieving Results</div>
-        <div class="article-pull">Nearly half of sampled awards failed to achieve expected results — yet implementers were generally paid in full. An agency-wide failure of accountability, not a war-zone anomaly.</div>
-      </a>
-      <a class="article-card" href="https://www.nationalaffairs.com/publications/detail/kludgeocracy-in-america" target="_blank" rel="noopener">
-        <div class="article-outlet">National Affairs · Fall 2013</div>
-        <div class="article-title">Kludgeocracy in America</div>
-        <div class="article-pull">Steven Teles on why government complexity, not size, is the deeper problem.</div>
-      </a>
-      <a class="article-card" href="https://www.cgdev.org/publication/clash-counter-bureaucracy-and-development" target="_blank" rel="noopener">
-        <div class="article-outlet">CGD · July 2010</div>
-        <div class="article-title">The Clash of the Counter-bureaucracy and Development</div>
-        <div class="article-pull">Andrew Natsios on the paradox: the most measurable programs are the least transformational, and the most transformational the least measurable.</div>
-      </a>
-    </div>
 
-    <div class="pub-subsection-label">In the press</div>
+    <div class="pub-subsection-label press-eyebrow has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent-m" width="40" height="117"><img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" class="press-accent" width="90" height="296" style="width:90px;height:296px">In the press</div>
     <div class="article-cards">
+      <a class="article-card" href="https://www.devex.com/news/are-there-reasons-to-be-cheerful-about-us-development-funding-113405" target="_blank" rel="noopener">
+        <div class="article-outlet">Devex</div>
+        <div class="article-title">Are there reasons to be cheerful about US development funding?</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.youtube.com/watch?v=CpfMky1Kt3g" target="_blank" rel="noopener">
+        <div class="article-outlet">YouTube</div>
+        <div class="article-title">What Should America Be Trying to Achieve Through Development</div>
+        <div class="article-cta">Watch →</div>
+      </a>
+      <a class="article-card" href="https://www.youtube.com/watch?v=T8ohfa5Eeag" target="_blank" rel="noopener">
+        <div class="article-outlet">YouTube</div>
+        <div class="article-title">Building the Future of U.S. Foreign Aid: What Comes Next</div>
+        <div class="article-cta">Watch →</div>
+      </a>
       <a class="article-card" href="https://www.devex.com/news/the-ashes-of-usaid-america-s-new-architecture-of-foreign-assistance-112887" target="_blank" rel="noopener">
         <div class="article-outlet">Devex · July 2026</div>
         <div class="article-title">'The Ashes of USAID': America's New Architecture of Foreign Assistance</div>
@@ -670,28 +631,141 @@
       </a>
     </div>
 
+    <div class="pub-subsection-label press-eyebrow has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent-m" width="40" height="117"><img src="images/decor-bars-rebuild.svg" alt="" aria-hidden="true" class="press-accent" width="101" height="260" style="width:101px;height:260px">What we're reading</div>
+    <div class="article-cards" id="readingCards">
+      <a class="article-card" href="https://mccloskey.substack.com/p/then-many-of-us-shot-up-the-blade" target="_blank" rel="noopener">
+        <div class="article-outlet">Deirdre McCloskey · September 2026</div>
+        <div class="article-title">Then Many of Us Shot Up the Blade of a Hockey Stick</div>
+        <div class="article-pull">Poverty was universal until the Great Enrichment after 1800 — driven not by capital or exploitation but by an ideology of liberty and dignity for ordinary people. The case for growth as the most important secular event in human history.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://nationalinterest.org/feature/how-the-us-can-reclaim-the-world-bank-from-china" target="_blank" rel="noopener">
+        <div class="article-outlet">The National Interest · August 2026</div>
+        <div class="article-title">How the US Can Reclaim the World Bank from China</div>
+        <div class="article-pull">China has entrenched itself in the World Bank, using U.S. contributions to subsidize Belt and Road and lock in Chinese technology. The case for the U.S. to reassert strategic leverage in a $400 billion institution.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.cato.org/research-briefs-economic-policy/do-market-reforms-cause-growth" target="_blank" rel="noopener">
+        <div class="article-outlet">Cato Institute · July 2026</div>
+        <div class="article-title">Do Market Reforms Cause Growth?</div>
+        <div class="article-pull">Hartley, Pallan, and Wheaton find that market reforms drive substantial long-run growth — but benefits take 3-5 years to materialize as capital and labor reallocate. The case for patient, structural ambition over short-term fixes.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.africanistperspective.com/p/a-caution-against-faddist-approaches" target="_blank" rel="noopener">
+        <div class="article-outlet">An Africanist Perspective · May 2026</div>
+        <div class="article-title">A Caution Against Faddist Approaches to Industrial Policy</div>
+        <div class="article-pull">Ken Opalo on why the World Bank's newfound enthusiasm for industrial policy will produce the same faddist failures as every previous orthodoxy — and why African governments should ignore the best-practice packaging.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.nber.org/papers/w35253" target="_blank" rel="noopener">
+        <div class="article-outlet">NBER · May 2026</div>
+        <div class="article-title">The Sisyphean Pursuit of Evidence for Poverty Traps</div>
+        <div class="article-pull">Dean Karlan and co-authors reassess poverty traps: the theory is more often assumed than empirically demonstrated.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.devex.com/news/global-health-in-2026-hard-truths-from-11-leaders-112469" target="_blank" rel="noopener">
+        <div class="article-outlet">Devex · May 2026</div>
+        <div class="article-title">Global Health in 2026: Hard Truths from 11 Leaders</div>
+        <div class="article-pull">Even insiders concede the system is no longer fit for purpose.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.state.gov/releases/bureau-of-african-affairs/2026/04/a-new-model-for-economic-prosperity-in-africa" target="_blank" rel="noopener">
+        <div class="article-outlet">U.S. State Department · April 2026</div>
+        <div class="article-title">A New Model for Economic Prosperity in Africa</div>
+        <div class="article-pull">State's Nick Checker on commercial diplomacy: deals over programs, results over disbursement.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.solutionsindex.org/" target="_blank" rel="noopener">
+        <div class="article-outlet">Unlock Aid · March 2026</div>
+        <div class="article-title">Solutions Index</div>
+        <div class="article-pull">A reference directory of pacesetting organizations across global health, food security, and nutrition.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.persuasion.community/p/growth-is-all-you-need" target="_blank" rel="noopener">
+        <div class="article-outlet">Persuasion · March 2026</div>
+        <div class="article-title">Growth Is All You Need</div>
+        <div class="article-pull">Quico Toro on Pritchett's case against RCTs, and for growth-first development.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.nber.org/papers/w34583" target="_blank" rel="noopener">
+        <div class="article-outlet">NBER · December 2025</div>
+        <div class="article-title">What Would it Cost to End Extreme Poverty?</div>
+        <div class="article-pull">Paul Niehaus and co-authors price the end of extreme poverty: 0.3% of global GDP.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://asteriskmag.com/issues/07/want-growth-kill-small-businesses" target="_blank" rel="noopener">
+        <div class="article-outlet">Asterisk · 2024</div>
+        <div class="article-title">Want Growth? Kill Small Businesses</div>
+        <div class="article-pull">Karthik Tadepalli on the "missing middle" of development: not household interventions, not growth platitudes, but firm growth — the rigorous, ambitious lens that ties aid to prosperity.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://foreignpolicy.com/2024/04/10/us-foreign-aid-gaza-trump-threats/" target="_blank" rel="noopener">
+        <div class="article-outlet">Foreign Policy · April 2024</div>
+        <div class="article-title">Trump's Foreign Aid Threat Offers Chance for Change</div>
+        <div class="article-pull">The reform opportunity hiding in the aid-cuts moment.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.hks.harvard.edu/centers/cid/publications/faculty-working-papers/national-development-delivers" target="_blank" rel="noopener">
+        <div class="article-outlet">CID · May 2021</div>
+        <div class="article-title">National Development Delivers: And How! And How?</div>
+        <div class="article-pull">Lant Pritchett on the case for growth: no country has reached high wellbeing without it.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://oig.usaid.gov/node/2639" target="_blank" rel="noopener">
+        <div class="article-outlet">USAID OIG · September 2019</div>
+        <div class="article-title">USAID's Award Oversight Is Insufficient to Hold Implementers Accountable for Achieving Results</div>
+        <div class="article-pull">Nearly half of sampled awards failed to achieve expected results — yet implementers were generally paid in full. An agency-wide failure of accountability, not a war-zone anomaly.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.nationalaffairs.com/publications/detail/kludgeocracy-in-america" target="_blank" rel="noopener">
+        <div class="article-outlet">National Affairs · Fall 2013</div>
+        <div class="article-title">Kludgeocracy in America</div>
+        <div class="article-pull">Steven Teles on why government complexity, not size, is the deeper problem.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.cgdev.org/publication/clash-counter-bureaucracy-and-development" target="_blank" rel="noopener">
+        <div class="article-outlet">CGD · July 2010</div>
+        <div class="article-title">The Clash of the Counter-bureaucracy and Development</div>
+        <div class="article-pull">Andrew Natsios on the paradox: the most measurable programs are the least transformational, and the most transformational the least measurable.</div>
+        <div class="article-cta">Read →</div>
+      </a>
+    </div>
+    <button type="button" class="reading-toggle btn-outline" id="readingToggle" aria-expanded="false">See all</button>
+
   </div>
 </section>
 
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-newsletter">
-      <div class="newsletter-eyebrow">From the rebuild</div>
-      <h3 class="newsletter-headline">A brief, occasional newsletter on the rebuild.</h3>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
-        <button type="submit" class="newsletter-submit">Subscribe →</button>
+<footer class="relative overflow-hidden border-t border-footer-border bg-footer-bg">
+    <!-- Desktop: footer side accent -->
+    <img src="images/decor-bars-record.svg" alt="" aria-hidden="true" width="56" height="164" class="pointer-events-none absolute left-0 hidden tablet:block" style="top:44px;width:56px;height:164px;max-width:none">
+    <div
+      class="relative mx-auto flex flex-col gap-8 px-10 py-[78px] tablet:flex-row tablet:items-center tablet:justify-between tablet:px-[124px] tablet:pt-19.5 tablet:pb-[100px]">
+      <div class="flex flex-col gap-3">
+        <p class="eyebrow">From the rebuild</p>
+        <h3 class="nl-oneline balance-wrap font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[28px]">A brief, occasional newsletter on the rebuild.</h3>
+      </div>
+      <form class="flex w-full max-w-md flex-col items-stretch gap-3 tablet:flex-row tablet:items-center"
+        id="newsletterForm">
+        <input type="email" class="newsletter-input" placeholder="Your email address" required
+          aria-label="Email address">
+        <button type="submit"
+          class="btn-filled w-full shrink-0 self-start tablet:w-auto tablet:self-auto">Subscribe</button>
       </form>
-      <div class="newsletter-thanks" id="newsletterThanks">Thank you. We'll be in touch.</div>
+      <div class="newsletter-thanks hidden font-newsreader text-[16px] italic text-ink" id="newsletterThanks">Thank you.
+        We&#39;ll be in touch.</div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 The New Foreign Assistance</span>
-      <span class="footer-sep">·</span>
-      <span>700 Pennsylvania Ave. SE, Suite 200, Washington, DC 20003</span>
+    <div class="border-b border-t border-footer-border bg-footer-strip tablet:px-[124px]">
+      <div
+        class="mx-auto flex flex-col gap-3 px-5 py-6 tablet:flex-row tablet:items-center tablet:justify-between tablet:px-0">
+        <p class="footer-legal font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber"><span class="fl-chunk">&copy; 2026 The New Foreign Assistance</span><span class="hidden tablet:inline"> · </span><br class="tablet:hidden"> <span class="fl-addr"><span class="fl-chunk">700 Pennsylvania Ave. SE, Suite 200,</span> <span class="fl-chunk">Washington, DC 20003</span></span></p>
+        <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
+          <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
+            class="h-[26px] w-[164px]" loading="lazy">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 <script>
 const observer = new IntersectionObserver((entries) => {
@@ -719,12 +793,12 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         body: new URLSearchParams({ email: email })
       });
       form.style.display = 'none';
-      thanks.classList.add('show');
+      thanks.classList.add('show'); thanks.classList.remove('hidden');
     } catch (err) {
       button.disabled = false;
       button.textContent = originalLabel;
       thanks.textContent = 'Something went wrong. Try again, or email daniel@thenewforeignassistance.org';
-      thanks.classList.add('show');
+      thanks.classList.add('show'); thanks.classList.remove('hidden');
     }
   });
 })();
@@ -732,5 +806,8 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 <script src="js/mobile-menu.js"></script>
 <script src="js/header-scroll.js" defer></script>
 
+<script>
+(function(){var b=document.getElementById('readingToggle');if(!b)return;var n=document.querySelectorAll('#readingCards > .article-card').length;if(n<=8){b.style.display='none';return;}b.addEventListener('click',function(){var s=b.closest('.section-inner')||document.body;s.classList.add('reading-open');b.setAttribute('aria-expanded','true');});})();
+</script>
 </body>
 </html>
