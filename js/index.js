@@ -384,24 +384,3 @@ function initGrowthChart() {
     }
   });
 })();
-
-(function () {
-  var video = document.querySelector('.hero-nightlights');
-  if (!video) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var source = video.querySelector('source');
-    if (source) source.removeAttribute('src');
-    video.removeAttribute('src');
-    video.load();
-    return;
-  }
-  video.addEventListener('playing', function () {
-    video.classList.add('is-playing');
-  });
-  function start() {
-    var play = video.play();
-    if (play && typeof play.catch === 'function') play.catch(function () {});
-  }
-  if (document.readyState === 'complete') start();
-  else window.addEventListener('load', start);
-})();

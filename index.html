@@ -45,15 +45,7 @@
   <style>
     /* Keep newsletter headline on one line on wide screens */
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
-    /* Hero: vertically center the H1 on the photo beside it.
-       Photo = half-width column at 3:2, so its height = (100vw - 64px gap) / 3.
-       Top padding = photo midpoint minus half the H1 height. */
-    @media (min-width: 860px) {
-      .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 124px)) !important; }
-    }
-    @media (min-width: 1280px) {
-      .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; }
-    }
+    /* Hero text column is centered against the India pair by the grid (tablet:items-center). */
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
     /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
@@ -73,16 +65,11 @@
 <body class="font-newsreader">
 
 <!-- HEADER -->
-<aside class="unga-banner" aria-label="TNFA speaking at UN General Assembly">
-  <div class="unga-banner__inner">
-    <p class="unga-banner__title">TNFA speaking at UN General Assembly</p>
-    <ul class="unga-banner__links">
-      <li><a href="https://www.devex.com/news/are-there-reasons-to-be-cheerful-about-us-development-funding-113405" target="_blank" rel="noopener">Are there reasons to be cheerful about US development funding?</a></li>
-      <li><a href="https://www.youtube.com/watch?v=CpfMky1Kt3g" target="_blank" rel="noopener">What Should America Be Trying to Achieve Through Development</a></li>
-      <li><a href="https://www.youtube.com/watch?v=T8ohfa5Eeag" target="_blank" rel="noopener">Building the Future of U.S. Foreign Aid: What Comes Next</a></li>
-    </ul>
-  </div>
-</aside>
+<a class="unga-banner" href="press.html#in-the-press">
+  <span class="unga-banner__inner">
+    <span class="unga-banner__title">TNFA speaking at Devex. View More →</span>
+  </span>
+</a>
 
 <header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
   <div class="mx-auto flex max-w-page items-center justify-between gap-3 px-5 pt-5 pb-6 tablet:px-8 tablet:pt-3 tablet:pb-3 desktop:gap-4 desktop:px-[60px]">
@@ -125,14 +112,28 @@
 <section id="page-hero">
   <div class="mx-auto grid min-w-0 items-start gap-8 tablet:grid-cols-2 tablet:items-center tablet:gap-12">
     <div class="relative order-1 min-w-0 overflow-hidden fade-up tablet:order-2">
-      <div class="hero-nightlights-frame">
-        <img src="images/hero-india-nightlights.jpg" alt="NASA Black Marble night lights over India, 2012 to 2023" class="hero-nightlights-still" width="1280" height="720" fetchpriority="high" decoding="async">
-        <video class="hero-nightlights" width="1280" height="720" muted loop playsinline preload="none" aria-label="NASA Black Marble night lights over India, 2012 to 2023">
-          <source src="images/hero-india-nightlights.mp4" type="video/mp4">
-        </video>
+      <div class="hero-india">
+        <figure class="hero-india__panel">
+          <picture>
+            <source type="image/avif" srcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" sizes="(min-width: 860px) 24vw, (max-width: 479px) 92vw, 46vw">
+            <source type="image/webp" srcset="images/india-1992-480.webp 480w, images/india-1992-1306.webp 1306w" sizes="(min-width: 860px) 24vw, (max-width: 479px) 92vw, 46vw">
+            <img src="images/india-1992-1306.webp" alt="Satellite night lights over India in 1992" width="1306" height="1400" fetchpriority="high" decoding="async">
+          </picture>
+          <figcaption>India, 1992. The end of the License Raj.</figcaption>
+        </figure>
+        <figure class="hero-india__panel">
+          <div class="relative">
+            <picture>
+              <source type="image/avif" srcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" sizes="(min-width: 860px) 24vw, (max-width: 479px) 92vw, 46vw">
+              <source type="image/webp" srcset="images/india-2026-480.webp 480w, images/india-2026-800.webp 800w, images/india-2026-1306.webp 1306w" sizes="(min-width: 860px) 24vw, (max-width: 479px) 92vw, 46vw">
+              <img src="images/india-2026-800.webp" alt="Satellite night lights over India in 2026" width="1306" height="1400" decoding="async">
+            </picture>
+            <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:120px;height:64px;max-width:none">
+          </div>
+          <figcaption>India, 2026. The fruits of liberalization.</figcaption>
+        </figure>
       </div>
-      <p class="hero-credit"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
-      <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
+      <p class="hero-nasa"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
     </div>
     <div class="hero-text-col order-2 flex min-w-0 flex-col gap-6 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:py-4">
       <h1 class="display-heading text-ink">

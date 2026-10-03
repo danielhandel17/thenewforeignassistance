@@ -117,9 +117,18 @@ for (const vp of viewports) {
         await assertBoxHeightPx(mark, 26);
       }
 
-      // --- Hero + page overflow ---
-      await expect(page.locator('#page-hero img.hero-nightlights-still')).toBeVisible();
-      await expect(page.locator('#page-hero video.hero-nightlights.is-playing')).toBeVisible();
+      // --- Hero + page overflow (BugHerd #19) ---
+      await expect(page.getByRole('figure').filter({ hasText: 'India, 1992. The end of the License Raj.' })).toBeVisible();
+      await expect(page.getByRole('figure').filter({ hasText: 'India, 2026. The fruits of liberalization.' })).toBeVisible();
+      await expect(page.locator('#page-hero a[href="https://svs.gsfc.nasa.gov/5276/"]')).toBeVisible();
+      await expect(page.locator('#page-hero video')).toHaveCount(0);
+
+      // --- Devex banner (BugHerd #18): one link, whole banner, no UNGA ---
+      const banner = page.locator('a.unga-banner');
+      await expect(banner).toHaveCount(1);
+      await expect(banner).toHaveAttribute('href', 'press.html#in-the-press');
+      await expect(banner).toHaveText('TNFA speaking at Devex. View More →');
+      await expect(page.locator('body')).not.toContainText('UN General Assembly');
       await assertNoHorizontalPageOverflow(page);
 
       // --- Nav band (tablet floor = 860) ---
