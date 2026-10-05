@@ -122,8 +122,9 @@
       grid-template-columns: minmax(0, 1fr) auto;
       padding-right: 32px;
     }
+    /* Pair caps at 564px: two 275px photos plus the 14px gap. */
     .hero-media {
-      width: min(440px, 42vw);
+      width: min(564px, 44vw);
     }
   }
   @media (min-width: 1280px) {
