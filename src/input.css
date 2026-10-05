@@ -122,14 +122,22 @@
       grid-template-columns: minmax(0, 1fr) auto;
       padding-right: 32px;
     }
-    /* Pair caps at 564px: two 275px photos plus the 14px gap. */
+    /* Pair scales with the viewport until 1280px, then caps at 614px: two 300px photos plus the 14px gap. */
     .hero-media {
-      width: min(564px, 44vw);
+      width: 44vw;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero-media {
+      width: 46vw;
     }
   }
   @media (min-width: 1280px) {
     .hero-grid {
       padding-right: 60px;
+    }
+    .hero-media {
+      width: 614px;
     }
   }
   @media (max-width: 359px) {
