@@ -110,6 +110,27 @@
     gap: 10px;
     align-items: start;
   }
+  /* Keep the night-lights pair from filling half the viewport on tablet and up. */
+  @media (min-width: 640px) and (max-width: 859px) {
+    .hero-media {
+      max-width: 520px;
+      margin-inline: auto;
+    }
+  }
+  @media (min-width: 860px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) auto;
+      padding-right: 32px;
+    }
+    .hero-media {
+      width: min(440px, 42vw);
+    }
+  }
+  @media (min-width: 1280px) {
+    .hero-grid {
+      padding-right: 60px;
+    }
+  }
   @media (max-width: 359px) {
     .hero-india {
       grid-template-columns: 1fr;

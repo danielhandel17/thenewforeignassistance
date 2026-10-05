@@ -14,4 +14,9 @@ test('press page leads with the three Devex sessions from the banner', async ({ 
   );
   await expect(cards.nth(1)).toHaveAttribute('href', 'https://www.youtube.com/watch?v=CpfMky1Kt3g');
   await expect(cards.nth(2)).toHaveAttribute('href', 'https://www.youtube.com/watch?v=T8ohfa5Eeag');
+
+  // BugHerd #21–#23: the three Devex sessions share one outlet label.
+  for (const card of [cards.nth(0), cards.nth(1), cards.nth(2)]) {
+    await expect(card.locator('.article-outlet')).toHaveText('DEVEX - SEPTEMBER 2026');
+  }
 });
