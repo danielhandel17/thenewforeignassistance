@@ -1,23 +1,50 @@
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/newsreader-normal-300700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/newsreader-italic-400600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Libertinus Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/libertinus-serif-display-normal-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/inter-normal-300700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-normal-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-normal-500.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Mobile hero: zoom into the US flag and crop the third child on the right */
-@layer components {
-  .hero-school-img {
-    @apply h-[260px] w-full max-w-full object-cover;
-    object-position: 18% 22%;
-    transform-origin: center;
-    transform: scale(2.15) translate(18%, 11%);
-  }
-  @media (min-width: 860px) {
-    .hero-school-img {
-      @apply aspect-[3/2] h-auto max-h-[683px];
-      object-position: 40% center;
-      transform: none;
-    }
-  }
-}
 
 @layer base {
   html {
@@ -41,6 +68,135 @@
 }
 
 @layer components {
+  .display-heading {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.1;
+  }
+  @media (min-width: 860px) {
+    .display-heading {
+      font-size: 48px;
+      line-height: 1.08;
+    }
+  }
+  .unga-banner {
+    display: block;
+    background: #f4ede0;
+    color: #1c2e4a;
+    border-bottom: 1px solid #e6d9d0;
+    text-decoration: none;
+  }
+  .unga-banner:hover {
+    background: #efe4d2;
+  }
+  .unga-banner:focus-visible {
+    outline: 2px solid #b8682a;
+    outline-offset: -2px;
+  }
+  .unga-banner__inner {
+    @apply mx-auto flex max-w-page items-center px-5 py-2 tablet:px-[60px] tablet:py-2.5;
+  }
+  .unga-banner__title {
+    @apply m-0 font-libertinus text-sm leading-snug tracking-normal text-amber;
+  }
+  .unga-banner:hover .unga-banner__title {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+  .hero-india {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+  /* Keep the night-lights pair from filling half the viewport on tablet and up. */
+  @media (min-width: 640px) and (max-width: 859px) {
+    .hero-media {
+      max-width: 520px;
+      margin-inline: auto;
+    }
+  }
+  @media (min-width: 860px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) auto;
+      padding-right: 32px;
+    }
+    /* Pair scales with the viewport until 1280px, then caps at 614px: two 300px photos plus the 14px gap. */
+    .hero-media {
+      width: 44vw;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero-media {
+      width: 46vw;
+    }
+  }
+  @media (min-width: 1280px) {
+    .hero-grid {
+      padding-right: 60px;
+    }
+    .hero-media {
+      width: 614px;
+    }
+  }
+  @media (max-width: 359px) {
+    .hero-india {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  .hero-india__panel {
+    margin: 0;
+    min-width: 0;
+  }
+  .hero-india img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #070b16;
+  }
+  .hero-india figcaption {
+    margin-top: 8px;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 13px;
+    line-height: 1.35;
+    color: #1c2e4a;
+  }
+  @media (min-width: 860px) {
+    .hero-india {
+      gap: 14px;
+    }
+    .hero-india figcaption {
+      font-size: 15px;
+    }
+  }
+  .hero-nasa {
+    @apply m-0 mt-2.5 font-newsreader text-xs leading-snug text-ink/70;
+  }
+  .hero-nasa a {
+    @apply text-inherit underline decoration-ink/30 underline-offset-2 hover:text-amber hover:decoration-amber;
+  }
+  /* The photos run full-bleed on phones; keep the captions and credit off the screen edge (BugHerd #25). */
+  @media (max-width: 639px) {
+    .hero-india__panel:first-child figcaption,
+    .hero-nasa {
+      padding-left: 20px;
+    }
+    .hero-india__panel:last-child figcaption,
+    .hero-nasa {
+      padding-right: 20px;
+    }
+  }
+  @media (max-width: 359px) {
+    .hero-india figcaption {
+      padding-inline: 20px;
+    }
+  }
+  .hero-nasa a:focus-visible {
+    outline: 2px solid #b8682a;
+    outline-offset: 2px;
+  }
   .btn-filled {
     @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap tablet:max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
   }

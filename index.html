@@ -19,25 +19,12 @@
 <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
 <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" imagesizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" imagesizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
 <link rel="stylesheet" href="css/styles.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DY00G9KT05');
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GPQHNR6C2C');
-</script>
+<script src="js/analytics.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,15 +47,7 @@
   <style>
     /* Keep newsletter headline on one line on wide screens */
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
-    /* Hero: vertically center the H1 on the photo beside it.
-       Photo = half-width column at 3:2, so its height = (100vw - 64px gap) / 3.
-       Top padding = photo midpoint minus half the H1 height. */
-    @media (min-width: 860px) {
-      .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 124px)) !important; }
-    }
-    @media (min-width: 1280px) {
-      .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; }
-    }
+    /* Hero text column is centered against the India pair by the grid (tablet:items-center). */
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
     /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
@@ -88,6 +67,12 @@
 <body class="font-newsreader">
 
 <!-- HEADER -->
+<a class="unga-banner" href="press.html#in-the-press">
+  <span class="unga-banner__inner">
+    <span class="unga-banner__title">TNFA speaking at Devex. View More →</span>
+  </span>
+</a>
+
 <header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
   <div class="mx-auto flex max-w-page items-center justify-between gap-3 px-5 pt-5 pb-6 tablet:px-8 tablet:pt-3 tablet:pb-3 desktop:gap-4 desktop:px-[60px]">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
@@ -127,18 +112,38 @@
 
 <!-- HERO -->
 <section id="page-hero">
-  <div class="mx-auto grid min-w-0 items-start gap-8 tablet:grid-cols-2 tablet:gap-16">
-    <div class="relative order-1 min-w-0 overflow-hidden fade-up tablet:order-2">
-      <img src="images/hero-school.webp" alt="Schoolchildren holding flags outdoors" class="hero-school-img" width="1024" height="683">
-      <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
+  <div class="hero-grid mx-auto grid min-w-0 items-start gap-8 tablet:items-center tablet:gap-12">
+    <div class="hero-media relative order-1 min-w-0 overflow-hidden tablet:order-2">
+      <div class="hero-india">
+        <figure class="hero-india__panel">
+          <picture>
+            <source type="image/avif" srcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
+            <source type="image/webp" srcset="images/india-1992-480.webp 480w, images/india-1992-1306.webp 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
+            <img src="images/india-1992-1306.webp" alt="Satellite night lights over India in 1992" width="1306" height="1400" fetchpriority="high">
+          </picture>
+          <figcaption>India, 1992. The end of the License Raj.</figcaption>
+        </figure>
+        <figure class="hero-india__panel">
+          <div class="relative">
+            <picture>
+              <source type="image/avif" srcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
+              <source type="image/webp" srcset="images/india-2026-480.webp 480w, images/india-2026-800.webp 800w, images/india-2026-1306.webp 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
+              <img src="images/india-2026-800.webp" alt="Satellite night lights over India in 2026" width="1306" height="1400" fetchpriority="high">
+            </picture>
+            <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:120px;height:64px;max-width:none">
+          </div>
+          <figcaption>India, 2026. The fruits of liberalization.</figcaption>
+        </figure>
+      </div>
+      <p class="hero-nasa"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
     </div>
-    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-8 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:pt-[147px] tablet:pb-[130px]">
-      <h1 class="font-newsreader text-[42px] font-medium leading-[1.1] text-ink tablet:text-[72px] tablet:leading-[1.15] xl:text-[92px] xl:leading-[106px]">
+    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-6 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:py-4">
+      <h1 class="display-heading text-ink">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
         <span class="block text-amber">Built to End.</span>
       </h1>
-      <div class="flex flex-col gap-5 text-lg leading-[1.5] text-ink tablet:text-[22px] tablet:leading-[33px]">
+      <div class="flex flex-col gap-4 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[1.5]">
         <p>Since 1961 USAID was America&#39;s premier foreign assistance agency. Its successes were real; so were its failures.</p>
         <p>For those of us who support foreign assistance, it is tempting to bring back what USAID was. That&#39;s not good enough.</p>
         <p>It&#39;s time for what comes next. The New Foreign Assistance is the conservative voice for reform.</p>
@@ -162,7 +167,7 @@
     <div class="flex items-start gap-5 tablet:gap-8">
       <div class="flex min-w-0 flex-col gap-4">
         <p class="eyebrow">The Record</p>
-        <h2 class="font-newsreader text-[36px] font-normal leading-tight text-ink tablet:text-[49px] tablet:leading-[50px]">What went right.</h2>
+        <h2 class="display-heading text-ink">What went right.</h2>
         <p class="max-w-3xl text-lg leading-[1.5] text-ink tablet:text-[22px] tablet:leading-[33px]">American foreign assistance has produced some of the most successful international programs in history. The numbers tell the story.</p>
       </div>
     </div>
@@ -175,7 +180,7 @@
         </div>
         <p class="min-w-0 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[30px]">Since 2003, a $100 billion bipartisan investment has supported 20.6 million people on antiretroviral therapy.</p>
         <div class="relative min-w-0 overflow-visible">
-          <img src="images/record-pepfar.webp" alt="Diplomatic ceremony outdoors" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="489">
+          <img src="images/record-pepfar.webp" alt="Diplomatic ceremony outdoors" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="489" loading="lazy">
           
         </div>
       </article>
@@ -187,7 +192,7 @@
         </div>
         <p class="min-w-0 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[30px]">The President&#39;s Malaria Initiative prevented an estimated 185 million cases between 2005 and 2017.</p>
         <div class="relative min-w-0 overflow-visible">
-          <img src="images/record-malaria.webp" alt="Healthcare worker with a woman and child" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="547">
+          <img src="images/record-malaria.webp" alt="Healthcare worker with a woman and child" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px] tablet:max-w-[412px]" width="1024" height="547" loading="lazy">
           
         </div>
       </article>
@@ -200,7 +205,7 @@
         <p class="min-w-0 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[30px]">Development Innovation Ventures funded evidence-backed solutions and let results speak.</p>
         <div class="grid min-w-0 gap-2 tablet:max-w-[412px]">
           <div class="relative overflow-visible">
-            <img src="images/record-div.webp" alt="Morphat at the factory" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px]" width="1200" height="800">
+            <img src="images/record-div.webp" alt="Morphat at the factory" class="h-[171px] w-full max-w-full object-cover tablet:h-[200px]" width="1200" height="800" loading="lazy">
             
           </div>
           <p class="text-sm leading-snug text-ink/60">Factory 19: Morphat at the factory. Photo: Mia Collis / Essential</p>
@@ -229,7 +234,7 @@
     <div class="flex items-start gap-5 tablet:gap-8">
       <div class="flex min-w-0 flex-col gap-5">
         <p class="eyebrow">The Diagnosis</p>
-        <h2 class="font-newsreader text-[36px] font-medium leading-none tablet:text-[49px]">
+        <h2 class="display-heading">
           <span class="text-ink">What Went Wrong.</span><br class="hidden tablet:inline">
           <span class="text-amber"> What Comes Next.</span>
         </h2>
@@ -278,7 +283,7 @@
     <aside class="tablet:sticky tablet:top-[12.5rem] tablet:self-start">
       <div class="flex flex-col gap-6 tablet:mb-[108px] tablet:pt-8">
         <p class="eyebrow">Reformed Approach</p>
-        <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink tablet:text-[49px]">Six Principles</h2>
+        <h2 class="display-heading text-ink">Six Principles</h2>
         <p class="text-lg leading-[1.35] font-light text-ink tablet:text-[40px] tablet:leading-[1.4]">A framework for what U.S. foreign<br class="hidden tablet:inline"> assistance should look like.</p>
         <a href="framework.html" class="btn-outline hidden self-start tablet:inline-flex max-w-none tablet:w-[404px] text-wrap tablet:text-nowrap">Read the full framework</a>
       </div>
@@ -343,7 +348,7 @@
     <div class="relative z-[1] flex flex-col gap-11 fade-up">
       <div class="flex max-w-[608px] flex-col gap-4">
         <p class="eyebrow">Live Tracker</p>
-        <h2 class="font-newsreader text-[36px] font-medium leading-[50px] tablet:text-[49px] tablet:leading-[50px]">
+        <h2 class="display-heading">
           <span class="block text-ink">It&#39;s being built.</span>
           <span class="block text-amber">Track it in real time.</span>
         </h2>
@@ -359,7 +364,7 @@
   <div class="mx-auto flex flex-col gap-10 fade-up">
     <div class="flex flex-col gap-5">
       <p class="font-libertinus text-xl tablet:text-[22px] line-height-[33px] uppercase tracking-eyebrow text-toc-muted">The Long View</p>
-      <h2 class="font-newsreader text-[40px] font-medium leading-tight tablet:text-[49px]">Two centuries of<br class="hidden tablet:inline"><span class="inline tablet:hidden"> </span>economic growth</h2>
+      <h2 class="display-heading text-white">Two centuries of<br class="hidden tablet:inline"><span class="inline tablet:hidden"> </span>economic growth</h2>
       <p class="max-w-3xl text-lg leading-[1.5] text-toc-muted tablet:text-[22px]">In 1820, every region was poor. Since then, average incomes have<br class="hidden tablet:inline"> risen everywhere &mdash; at very different rates.</p>
     </div>
 
@@ -408,13 +413,12 @@
     <div class="mx-auto flex flex-col gap-3 px-5 py-6 tablet:flex-row tablet:items-center tablet:justify-between tablet:px-0">
       <p class="footer-legal font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber"><span class="fl-chunk">&copy; 2026 The New Foreign Assistance</span><span class="hidden tablet:inline"> · </span><br class="tablet:hidden"> <span class="fl-addr"><span class="fl-chunk">700 Pennsylvania Ave. SE, Suite 200,</span> <span class="fl-chunk">Washington, DC 20003</span></span></p>
       <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
-        <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70" class="h-[26px] w-[164px]">
+        <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70" class="h-[26px] w-[164px]" loading="lazy">
       </a>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="js/header-scroll.js" defer></script>
 <script src="js/index.js"></script>
 

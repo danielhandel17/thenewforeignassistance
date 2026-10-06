@@ -76,7 +76,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.07 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-(function () {
+function initGrowthChart() {
   var canvas = document.getElementById('growth-chart');
   if (!canvas || typeof Chart === 'undefined') return;
 
@@ -323,6 +323,34 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     });
   }, { threshold: 0.5 });
   chartObserver.observe(canvas);
+}
+
+(function () {
+  var section = document.getElementById('long-view');
+  if (!section) return;
+  var started = false;
+  function start() {
+    if (started) return;
+    started = true;
+    if (typeof Chart !== 'undefined') {
+      initGrowthChart();
+      return;
+    }
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
+    script.onload = initGrowthChart;
+    document.head.appendChild(script);
+  }
+  if (!('IntersectionObserver' in window)) {
+    start();
+    return;
+  }
+  var loader = new IntersectionObserver(function (entries) {
+    if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+    loader.disconnect();
+    start();
+  }, { rootMargin: '200px 0px' });
+  loader.observe(section);
 })();
 
 (function () {

@@ -19,8 +19,10 @@
 <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
 <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/analytics.js" defer></script>
 <style>
   :root {
     --bg:       #faf7f0;
@@ -74,11 +76,14 @@
   }
   h2 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(26px, 3vw, 36px);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: normal;
     margin-bottom: 28px;
+  }
+  @media (min-width: 860px) {
+    h2 { font-size: 48px; line-height: 1.08; }
   }
 
   /* ── MISSION ── */
@@ -413,7 +418,7 @@
     .agenda-section { padding: 40px 16px; }
     .agenda-frame { font-size: 16px; }
     .examples-list li { font-size: 15px; line-height: 1.55; }
-    .page-h1 { font-size: 32px !important; line-height: 1.15; }
+    .page-h1 { font-size: 42px !important; line-height: 1.1; }
     .hero h1 { font-size: 38px !important; line-height: 1.1; }
     .principle-card { padding: 22px 18px; }
     .principle-num { font-size: 13px; }
@@ -461,9 +466,12 @@
   .page-intro-inner { max-width: 1200px; margin: 0 auto; }
   .page-h1 {
     font-family: 'Newsreader', serif;
-    font-size: clamp(36px, 5vw, 64px); font-weight: 500;
-    line-height: 1.12; letter-spacing: -0.5px;
+    font-size: 42px; font-weight: 500;
+    line-height: 1.1; letter-spacing: normal;
     color: var(--ink); margin: 18px 0 24px;
+  }
+  @media (min-width: 860px) {
+    .page-h1 { font-size: 48px; line-height: 1.08; }
   }
   .page-h1 em { font-style: italic; color: var(--amber); font-weight: 500; }
   .page-lead {
@@ -497,26 +505,16 @@
     *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DY00G9KT05');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GPQHNR6C2C');
-</script>
 </head>
 <body>
 
 <!-- HEADER -->
+<a class="unga-banner" href="press.html#in-the-press">
+  <span class="unga-banner__inner">
+    <span class="unga-banner__title">TNFA speaking at Devex. View More →</span>
+  </span>
+</a>
+
 <header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
   <div class="mx-auto flex max-w-page items-center justify-between gap-4 px-5 pt-5 pb-6 tablet:px-[60px] tablet:pt-3 tablet:pb-3">
     <a href="/" class="flex shrink-0 items-center gap-2" aria-label="The New Foreign Assistance home">
@@ -558,7 +556,7 @@
 <section class="page-intro" style="position:relative;overflow:hidden">
   <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
-    <h1 class="page-h1 has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent" width="79" height="232" style="width:79px;height:232px">What we've written.<br><em>What we're reading.</em></h1>
+    <h1 class="page-h1">What we've written.<br><em>What we're reading.</em></h1>
     <p class="page-lead">Our own writing, coverage of our work, and the reading that informs it.</p>
   </div>
 </section>
@@ -585,8 +583,23 @@
     </div>
 
 
-    <div class="pub-subsection-label press-eyebrow has-accent"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent-m" width="40" height="117"><img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" class="press-accent" width="90" height="296" style="width:90px;height:296px">In the press</div>
+    <div class="pub-subsection-label press-eyebrow has-accent" id="in-the-press"><img src="images/decor-bars-record.svg" alt="" aria-hidden="true" class="press-accent-m" width="40" height="117"><img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" class="press-accent" width="90" height="296" style="width:90px;height:296px">In the press</div>
     <div class="article-cards">
+      <a class="article-card" href="https://www.devex.com/news/are-there-reasons-to-be-cheerful-about-us-development-funding-113405" target="_blank" rel="noopener">
+        <div class="article-outlet">DEVEX - SEPTEMBER 2026</div>
+        <div class="article-title">Are there reasons to be cheerful about US development funding?</div>
+        <div class="article-cta">Read →</div>
+      </a>
+      <a class="article-card" href="https://www.youtube.com/watch?v=CpfMky1Kt3g" target="_blank" rel="noopener">
+        <div class="article-outlet">DEVEX - SEPTEMBER 2026</div>
+        <div class="article-title">What Should America Be Trying to Achieve Through Development</div>
+        <div class="article-cta">Watch →</div>
+      </a>
+      <a class="article-card" href="https://www.youtube.com/watch?v=T8ohfa5Eeag" target="_blank" rel="noopener">
+        <div class="article-outlet">DEVEX - SEPTEMBER 2026</div>
+        <div class="article-title">Building the Future of U.S. Foreign Aid: What Comes Next</div>
+        <div class="article-cta">Watch →</div>
+      </a>
       <a class="article-card" href="https://www.devex.com/news/the-ashes-of-usaid-america-s-new-architecture-of-foreign-assistance-112887" target="_blank" rel="noopener">
         <div class="article-outlet">Devex · July 2026</div>
         <div class="article-title">'The Ashes of USAID': America's New Architecture of Foreign Assistance</div>
@@ -743,7 +756,7 @@
         <p class="footer-legal font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber"><span class="fl-chunk">&copy; 2026 The New Foreign Assistance</span><span class="hidden tablet:inline"> · </span><br class="tablet:hidden"> <span class="fl-addr"><span class="fl-chunk">700 Pennsylvania Ave. SE, Suite 200,</span> <span class="fl-chunk">Washington, DC 20003</span></span></p>
         <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
           <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
-            class="h-[26px] w-[164px]">
+            class="h-[26px] w-[164px]" loading="lazy">
         </a>
       </div>
     </div>

@@ -23,26 +23,10 @@
   <meta name="twitter:image" content="https://thenewforeignassistance.org/og-image.png">
   <link rel="icon" type="image/jpeg" href="images/favicon-mark.jpg">
   <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DY00G9KT05"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-DY00G9KT05');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPQHNR6C2C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-GPQHNR6C2C');
-  </script>
+  <script src="js/analytics.js" defer></script>
   <style>
     /* Framework hero: opaque panel so title reads cleanly over the powerline photo */
     .fw-title-panel {
@@ -83,6 +67,12 @@
 <body class="font-newsreader">
 
   <!-- HEADER -->
+  <a class="unga-banner" href="press.html#in-the-press">
+    <span class="unga-banner__inner">
+      <span class="unga-banner__title">TNFA speaking at Devex. View More →</span>
+    </span>
+  </a>
+
   <header id="siteHeader" class="site-header sticky top-0 z-50 tablet:min-h-[132px]">
     <div
       class="mx-auto flex max-w-page items-center justify-between gap-3 px-5 pt-5 pb-6 tablet:px-8 tablet:pt-3 tablet:pb-3 desktop:gap-4 desktop:px-[60px]">
@@ -152,7 +142,7 @@
         class="fw-title-panel absolute top-0 left-[-5px] z-[6] flex flex-col gap-4 tablet:gap-5 px-10 pt-8 tablet:left-[7.29%] tablet:top-[23.78%] tablet:w-[min(50.58%,874px)] tablet:px-0 tablet:pt-0">
         <p class="eyebrow">The Framework</p>
         <h1
-          class="font-newsreader text-[42px] font-medium leading-[50px] text-ink tablet:text-[clamp(2.625rem,4.1667vw,4.5rem)] tablet:leading-[1.194]"><span class="block">American foreign<br class="tablet:hidden"> assistance,</span><span class="block text-amber">rebuilt.</span></h1>
+          class="display-heading text-ink"><span class="block">American foreign<br class="tablet:hidden"> assistance,</span><span class="block text-amber">rebuilt.</span></h1>
       </div>
     </div>
   </section>
@@ -169,7 +159,7 @@
       <!-- History title deskto -->
       <div class="hidden tablet:col-span-4 tablet:flex tablet:flex-col tablet:gap-5">
         <p class="eyebrow">THE PAST</p>
-        <h2 class="mt-3 font-newsreader text-[40px] tablet:text-5xl font-medium leading-tight text-ink">A long story<br>
+        <h2 class="display-heading mt-3 text-ink">A long story<br>
           of attempted reform</h2>
         <p class="text-ink font-[22px]">Every administration since Kennedy has tried to fix USAID.</p>
       </div>
@@ -177,7 +167,7 @@
       <!-- History title mobile -->
       <div class="flex flex-col gap-5 tablet:hidden">
         <p class="eyebrow" data-node-id="332:4112">THE PAST</p>
-        <h2 class="font-newsreader text-[40px] font-normal leading-[50px] text-ink" data-node-id="332:4113">A long story of attempted reform</h2>
+        <h2 class="display-heading text-ink" data-node-id="332:4113">A long story of attempted reform</h2>
         <p class="font-newsreader text-lg leading-[25px] text-ink" data-node-id="332:4111">Every administration since Kennedy has tried to fix USAID.</p>
       </div>
 
@@ -223,7 +213,7 @@
     <figure class="relative z-1 flex flex-col gap-3 tablet:order-2 tablet:mt-0">
       <img src="images/fw-portrait.webp" alt="Winnie at work in a laboratory setting" width="1400" height="2097"
         class="aspect-[379/397] h-auto w-full object-cover object-top tablet:h-[948px] tablet:aspect-[66/89]"
-        decoding="async" data-node-id="332:3380">
+        decoding="async" data-node-id="332:3380" loading="lazy">
       <figcaption class="font-newsreader text-sm leading-snug text-toc-muted tablet:text-base">
         Mia Collis 73: Winnie at work. Photo: Mia Collis / Essential
       </figcaption>
@@ -231,7 +221,7 @@
     <div class="relative flex flex-col gap-10 fade-up tablet:order-1">
       <div class="flex flex-col gap-4">
         <p class="footer-legal font-libertinus text-lg uppercase tracking-eyebrow text-amber">too many programs</p>
-        <h2 class="font-newsreader text-[40px] font-medium leading-tight text-ink tablet:text-[40px]">What was wrong
+        <h2 class="display-heading text-ink">What was wrong
           with the old system</h2>
       </div>
       <div class="flex flex-col gap-5 text-lg leading-[1.6] text-ink tablet:text-xl">
@@ -265,7 +255,7 @@
     <div class="flex flex-col tablet:gap-28">
       <div class="flex flex-col gap-4 tablet:gap-5">
         <h2
-          class="font-newsreader text-[40px] tablet:font-medium leading-tight text-ink tablet:text-[49px] tablet:leading-[50px]">
+          class="display-heading text-ink">
           The Framework
         </h2>
       </div>
@@ -299,7 +289,7 @@
         <div class="flex flex-col tablet:col-span-8">
           <article id="moonshots"
             class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
-            <h2 class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px]">Signature
+            <h2 class="display-heading text-ink">Signature
               “Moonshot” Initiatives</h2>
             <p class="text-lg leading-[1.55] text-ink tablet:text-xl">Legacy-building, focused, achievable with
               existing interventions, capable of crowding in bilateral and philanthropic capital.</p>
@@ -318,7 +308,7 @@
           <article id="transformational"
             class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
+              class="display-heading text-ink">
               Focus on Transformational Change Not Smallball Programs</h2>
             <p class="text-lg leading-[1.55] text-ink tablet:text-xl tablet:leading-7">Too many USAID programs focused
               on small-scale household and individual level interventions which, even if highly successful, would only
@@ -396,7 +386,7 @@
           <article id="move-money"
             class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
+              class="display-heading text-ink">
               Move Money Differently: Results-Based and Innovation-Focused Procurement</h2>
 
             <div class="flex flex-col gap-0">
@@ -470,7 +460,7 @@
           <article id="values"
             class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
+              class="display-heading text-ink">
               Values-Based Aid</h2>
             <p class="text-lg leading-[1.55] text-ink tablet:text-xl tablet:leading-7">Demonstrating American
               generosity and goodness by funding programs that address:</p>
@@ -492,7 +482,7 @@
           <article id="allocation"
             class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
+              class="display-heading text-ink">
               Aid Allocation and Sustainability</h2>
             <div class="flex flex-col gap-0">
               <div class="fw-subsection pb-10 tablet:pb-[70px]">
@@ -536,7 +526,7 @@
           <article id="staffing"
             class="fw-section flex flex-col gap-4 tablet:gap-10 pt-10 pb-10 border-t border-b border-toc-border tablet:[&:not(:first-of-type)]:pt-[70px] tablet:[&:not(:last-of-type)]:pb-[70px] fade-up">
             <h2
-              class="font-newsreader text-[22px] font-medium leading-tight text-ink tablet:text-[38px] tablet:leading-[50px]">
+              class="display-heading text-ink">
               The Right Staffing</h2>
             <div class="flex flex-col gap-0">
               <div class="fw-subsection">
@@ -599,7 +589,7 @@
         <p class="font-libertinus text-lg text-center tablet:text-left font-normal leading-tight text-amber"><span class="fl-chunk">&copy; 2026 The New Foreign Assistance</span><span class="hidden tablet:inline"> · </span><br class="tablet:hidden"> <span class="fl-addr"><span class="fl-chunk">700 Pennsylvania Ave. SE, Suite 200,</span> <span class="fl-chunk">Washington, DC 20003</span></span></p>
         <a href="https://www.shapeshift.co.za/" target="_blank" rel="noopener noreferrer" class="self-center shrink-0">
           <img src="images/powered-by-shapeshift.webp" alt="Powered by shapeshift" width="442" height="70"
-            class="h-[26px] w-[164px]">
+            class="h-[26px] w-[164px]" loading="lazy">
         </a>
       </div>
     </div>
