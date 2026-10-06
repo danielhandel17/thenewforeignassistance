@@ -177,6 +177,22 @@
   .hero-nasa a {
     @apply text-inherit underline decoration-ink/30 underline-offset-2 hover:text-amber hover:decoration-amber;
   }
+  /* The photos run full-bleed on phones; keep the captions and credit off the screen edge (BugHerd #25). */
+  @media (max-width: 639px) {
+    .hero-india__panel:first-child figcaption,
+    .hero-nasa {
+      padding-left: 20px;
+    }
+    .hero-india__panel:last-child figcaption,
+    .hero-nasa {
+      padding-right: 20px;
+    }
+  }
+  @media (max-width: 359px) {
+    .hero-india figcaption {
+      padding-inline: 20px;
+    }
+  }
   .hero-nasa a:focus-visible {
     outline: 2px solid #b8682a;
     outline-offset: 2px;
