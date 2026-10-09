@@ -415,3 +415,8 @@
     }
   }
 }
+
+/* Banner: larger, centered text (all pages) */
+.unga-banner__inner{justify-content:center;text-align:center}
+.unga-banner__title{font-size:1.0625rem;line-height:1.4}
+@media (min-width:860px){.unga-banner__title{font-size:1.1875rem}}

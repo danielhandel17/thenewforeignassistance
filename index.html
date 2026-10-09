@@ -60,9 +60,14 @@
   /* "What comes next" divider: same rounded-bar shape as "What went wrong", keep its color */
   .tick-pattern.tick-pattern-next { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12'%3E%3Crect width='25' height='12' fill='%23EBD6C5' rx='2'/%3E%3C/svg%3E") !important; background-size: 24px 12px !important; }
   @media (min-width: 860px) { .tick-pattern.tick-pattern-next { background-size: 33px 12px !important; } }
+    /* Hero: vertically center the H1 on the photo beside it (photo = half-width column at 3:2). */
+    @media (min-width: 860px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 124px)) !important; } }
+    @media (min-width: 1280px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; } }
+    .hero-school-img { display:block; height:260px; width:100%; max-width:100%; object-fit:cover; object-position:18% 22%; transform-origin:center; transform:scale(2.15) translate(18%,11%); }
+    @media (min-width: 860px) { .hero-school-img { aspect-ratio:3/2; height:auto; max-height:683px; object-position:40% center; transform:none; } }
     /* Hero heading restored to original scale (pre night-lights) */
     .hero-h1 { font-size: 42px; line-height: 1.1; }
-    @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } .hero-text-col { max-width: 900px; } }
+    @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } }
     @media (min-width: 1280px) { .hero-h1 { font-size: 92px; line-height: 106px; } }
     /* India night-lights band */
     .india-band { background: #0a1220; color: #fff; padding: 72px 40px 56px; }
@@ -131,8 +136,12 @@
 
 <!-- HERO -->
 <section id="page-hero">
-  <div class="hero-grid mx-auto grid min-w-0 items-start gap-8 tablet:items-center tablet:gap-12">
-    <div class="hero-text-col flex min-w-0 flex-col gap-8 px-10 pt-14 pb-20 fade-up tablet:px-0 tablet:pl-[126px] tablet:pt-[147px] tablet:pb-[130px]">
+  <div class="mx-auto grid min-w-0 items-start gap-8 tablet:grid-cols-2 tablet:gap-16">
+    <div class="relative order-1 min-w-0 overflow-hidden fade-up tablet:order-2">
+      <img src="images/hero-school.webp" alt="Schoolchildren holding American and Kenyan flags" class="hero-school-img" width="1024" height="683" fetchpriority="high">
+      <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
+    </div>
+    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-8 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:pt-[147px] tablet:pb-[130px]">
       <h1 class="hero-h1 font-newsreader font-medium text-ink">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
@@ -278,7 +287,7 @@
           <source type="image/webp" srcset="images/india-nl-1992-480.webp 480w, images/india-nl-1992-800.webp 800w, images/india-nl-1992-1306.webp 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
           <img src="images/india-nl-1992-800.webp" alt="Satellite night lights over India in 1992: scattered points of light, mostly dark" width="1306" height="1400" loading="lazy" decoding="async">
         </picture>
-        <figcaption>India, 1992</figcaption>
+        <figcaption>India, 1992, at the end of the License Raj</figcaption>
       </figure>
       <figure>
         <picture>
