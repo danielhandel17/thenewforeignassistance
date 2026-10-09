@@ -69,6 +69,17 @@
     .hero-h1 { font-size: 42px; line-height: 1.1; }
     @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } }
     @media (min-width: 1280px) { .hero-h1 { font-size: 92px; line-height: 106px; } }
+    /* Friedman pull quote in The Diagnosis */
+    .diag-top { flex-wrap: wrap; }
+    .friedman-quote { margin: 8px 0 0; display: flex; gap: 18px; align-items: flex-start; flex: 1 1 100%; max-width: 560px; }
+    .friedman-quote img { width: 110px; height: auto; flex: none; display: block; }
+    .friedman-quote__body { border-top: 3px solid #b8682a; padding-top: 12px; min-width: 0; }
+    .friedman-quote blockquote { margin: 0; font-family: Newsreader, Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.4; color: #1c2e4a; }
+    .friedman-quote figcaption { margin-top: 12px; display: flex; flex-direction: column; gap: 2px; }
+    .friedman-quote__name { font-family: Newsreader, Georgia, serif; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #b8682a; }
+    .friedman-quote__src { font-size: 14px; color: #4a5a72; }
+    @media (min-width: 860px) { .friedman-quote img { width: 130px; } .friedman-quote blockquote { font-size: 20px; } }
+    @media (min-width: 1360px) { .friedman-quote { flex: 0 0 330px; margin: 40px 0 0 auto; } }
     /* India night-lights band */
     .india-band { background: #0a1220; color: #fff; padding: 72px 40px 56px; }
     .india-band__inner { max-width: 1192px; margin: 0 auto; }
@@ -236,7 +247,7 @@
   <!-- Desktop: Diagnosis side accent -->
   <img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" width="90" height="296" class="pointer-events-none absolute left-0 top-[147px] hidden tablet:block" style="width:90px;height:296px;max-width:none">
   <div class="mx-auto flex flex-col gap-10 tablet:gap-[134px] fade-up">
-    <div class="flex items-start gap-5 tablet:gap-8">
+    <div class="diag-top flex items-start gap-5 tablet:gap-8">
       <div class="flex min-w-0 flex-col gap-5">
         <p class="eyebrow">The Diagnosis</p>
         <h2 class="display-heading">
@@ -245,6 +256,13 @@
         </h2>
         <p class="tablet:max-w-4xl text-lg leading-[1.5] text-ink tablet:text-[22px] tablet:leading-[33px]">USAID&#39;s failures were not about its people or its mission. They were about the slow accretion<br class="hidden tablet:inline"> of rules, mandates, and reporting requirements that, over decades, crowded out the work of<br class="hidden tablet:inline"> development. Each well-meaning reform added a layer…nothing was ever&nbsp;removed.</p>
       </div>
+      <figure class="friedman-quote">
+        <img src="images/friedman-260.webp" srcset="images/friedman-260.webp 260w, images/friedman-520.webp 520w" sizes="130px" alt="Milton Friedman" width="260" height="325" loading="lazy" decoding="async">
+        <div class="friedman-quote__body">
+          <blockquote>&ldquo;One of the great mistakes is to judge policies and programs by their intentions rather than their results.&rdquo;</blockquote>
+          <figcaption><span class="friedman-quote__name">Milton Friedman</span><span class="friedman-quote__src"><em>The Open Mind</em>, 1975</span></figcaption>
+        </div>
+      </figure>
     </div>
 
     <div class="grid gap-10 tablet:grid-cols-2 tablet:gap-16 tablet:px-15">
