@@ -21,8 +21,6 @@
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
 <link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" imagesizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" imagesizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/analytics.js" defer></script>
 <script type="application/ld+json">
@@ -62,7 +60,28 @@
   /* "What comes next" divider: same rounded-bar shape as "What went wrong", keep its color */
   .tick-pattern.tick-pattern-next { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12'%3E%3Crect width='25' height='12' fill='%23EBD6C5' rx='2'/%3E%3C/svg%3E") !important; background-size: 24px 12px !important; }
   @media (min-width: 860px) { .tick-pattern.tick-pattern-next { background-size: 33px 12px !important; } }
-</style>
+    /* Hero heading restored to original scale (pre night-lights) */
+    .hero-h1 { font-size: 42px; line-height: 1.1; }
+    @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } .hero-text-col { max-width: 900px; } }
+    @media (min-width: 1280px) { .hero-h1 { font-size: 92px; line-height: 106px; } }
+    /* India night-lights band */
+    .india-band { background: #0a1220; color: #fff; padding: 72px 40px 56px; }
+    .india-band__inner { max-width: 1192px; margin: 0 auto; }
+    .india-band__eyebrow { color: #e8b27a !important; }
+    .india-band__heading { color: #fff; margin: 10px 0 32px; max-width: 760px; text-wrap: balance; }
+    .india-band__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 -24px; max-width: 980px; }
+    .india-band__pair figure { margin: 0; }
+    .india-band__pair img { display: block; width: 100%; height: auto; }
+    .india-band__pair figcaption { font-family: Newsreader, Georgia, serif; font-size: 16px; color: rgba(255,255,255,.85); margin-top: 10px; padding-left: 24px; }
+    @media (min-width: 860px) { .india-band__pair figcaption { padding-left: 0; } }
+    .india-band__credit { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 20px; }
+    .india-band__credit a { color: rgba(255,255,255,.75); text-decoration: underline; text-underline-offset: 2px; }
+    @media (min-width: 860px) {
+      .india-band { padding: 120px 124px 96px; }
+      .india-band__pair { gap: 24px; margin: 0; }
+      .india-band__pair figcaption { font-size: 18px; }
+    }
+  </style>
 </head>
 <body class="font-newsreader">
 
@@ -113,37 +132,13 @@
 <!-- HERO -->
 <section id="page-hero">
   <div class="hero-grid mx-auto grid min-w-0 items-start gap-8 tablet:items-center tablet:gap-12">
-    <div class="hero-media relative order-1 min-w-0 overflow-hidden tablet:order-2">
-      <div class="hero-india">
-        <figure class="hero-india__panel">
-          <picture>
-            <source type="image/avif" srcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-            <source type="image/webp" srcset="images/india-1992-480.webp 480w, images/india-1992-1306.webp 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-            <img src="images/india-1992-1306.webp" alt="Satellite night lights over India in 1992" width="1306" height="1400" fetchpriority="high">
-          </picture>
-          <figcaption>India, 1992. The end of the License Raj.</figcaption>
-        </figure>
-        <figure class="hero-india__panel">
-          <div class="relative">
-            <picture>
-              <source type="image/avif" srcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-              <source type="image/webp" srcset="images/india-2026-480.webp 480w, images/india-2026-800.webp 800w, images/india-2026-1306.webp 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-              <img src="images/india-2026-800.webp" alt="Satellite night lights over India in 2026" width="1306" height="1400" fetchpriority="high">
-            </picture>
-            <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:120px;height:64px;max-width:none">
-          </div>
-          <figcaption>India, 2026. The fruits of liberalization.</figcaption>
-        </figure>
-      </div>
-      <p class="hero-nasa"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
-    </div>
-    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-6 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:py-4">
-      <h1 class="display-heading text-ink">
+    <div class="hero-text-col flex min-w-0 flex-col gap-8 px-10 pt-14 pb-20 fade-up tablet:px-0 tablet:pl-[126px] tablet:pt-[147px] tablet:pb-[130px]">
+      <h1 class="hero-h1 font-newsreader font-medium text-ink">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
         <span class="block text-amber">Built to End.</span>
       </h1>
-      <div class="flex flex-col gap-4 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[1.5]">
+      <div class="hero-body flex flex-col gap-5 text-lg leading-[1.5] text-ink">
         <p>Since 1961 USAID was America&#39;s premier foreign assistance agency. Its successes were real; so were its failures.</p>
         <p>For those of us who support foreign assistance, it is tempting to bring back what USAID was. That&#39;s not good enough.</p>
         <p>It&#39;s time for what comes next. The New Foreign Assistance is the conservative voice for reform.</p>
@@ -268,6 +263,33 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- INDIA NIGHT LIGHTS -->
+<section class="india-band" id="india-night-lights" aria-labelledby="india-band-heading">
+  <div class="india-band__inner fade-up">
+    <p class="eyebrow india-band__eyebrow">The Evidence</p>
+    <h2 id="india-band-heading" class="display-heading india-band__heading">What opening an economy looks like from space.</h2>
+    <div class="india-band__pair">
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="images/india-nl-1992-480.avif 480w, images/india-nl-1992-800.avif 800w, images/india-nl-1992-1306.avif 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <source type="image/webp" srcset="images/india-nl-1992-480.webp 480w, images/india-nl-1992-800.webp 800w, images/india-nl-1992-1306.webp 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <img src="images/india-nl-1992-800.webp" alt="Satellite night lights over India in 1992: scattered points of light, mostly dark" width="1306" height="1400" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>India, 1992</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/avif" srcset="images/india-nl-2023-480.avif 480w, images/india-nl-2023-800.avif 800w, images/india-nl-2023-1306.avif 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <source type="image/webp" srcset="images/india-nl-2023-480.webp 480w, images/india-nl-2023-800.webp 800w, images/india-nl-2023-1306.webp 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <img src="images/india-nl-2023-800.webp" alt="Satellite night lights over India in 2023: cities and highways lit across the country" width="1306" height="1400" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>India, 2023</figcaption>
+      </figure>
+    </div>
+    <p class="india-band__credit">Night lights: <a href="https://doi.org/10.1038/s41597-024-04228-6" target="_blank" rel="noopener">Chen et al. (2024), <em>Scientific Data</em></a>. Same scale both years.</p>
   </div>
 </section>
 
