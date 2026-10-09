@@ -61,8 +61,8 @@
   .tick-pattern.tick-pattern-next { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12'%3E%3Crect width='25' height='12' fill='%23EBD6C5' rx='2'/%3E%3C/svg%3E") !important; background-size: 24px 12px !important; }
   @media (min-width: 860px) { .tick-pattern.tick-pattern-next { background-size: 33px 12px !important; } }
     /* Hero: vertically center the H1 on the photo beside it (photo = half-width column at 3:2). */
-    @media (min-width: 860px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 124px)) !important; } }
-    @media (min-width: 1280px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; } }
+    @media (min-width: 860px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 124px)) !important; } .hero-photo-col { margin-top: calc(max(0px, calc((100vw - 64px) / 6 - 124px)) + 4px); } }
+    @media (min-width: 1280px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; } .hero-photo-col { margin-top: calc(max(0px, calc((100vw - 64px) / 6 - 159px)) + 6px); } }
     .hero-school-img { display:block; height:260px; width:100%; max-width:100%; object-fit:cover; object-position:18% 22%; transform-origin:center; transform:scale(2.15) translate(18%,11%); }
     @media (min-width: 860px) { .hero-school-img { aspect-ratio:3/2; height:auto; max-height:683px; object-position:40% center; transform:none; } }
     /* Hero heading restored to original scale (pre night-lights) */
@@ -138,7 +138,7 @@
 <!-- HERO -->
 <section id="page-hero">
   <div class="mx-auto grid min-w-0 items-start gap-8 tablet:grid-cols-2 tablet:gap-16">
-    <div class="relative order-1 min-w-0 overflow-hidden fade-up tablet:order-2">
+    <div class="hero-photo-col relative order-1 min-w-0 overflow-hidden fade-up tablet:order-2">
       <img src="images/hero-school.webp" alt="Schoolchildren holding American and Kenyan flags" class="hero-school-img" width="1024" height="683" fetchpriority="high">
       <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
     </div>
