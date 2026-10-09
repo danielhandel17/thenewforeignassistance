@@ -118,11 +118,24 @@ for (const vp of viewports) {
         await assertBoxHeightPx(mark, 26);
       }
 
-      // --- Hero + page overflow (BugHerd #19) ---
-      await expect(page.getByRole('figure').filter({ hasText: 'India, 1992. The end of the License Raj.' })).toBeVisible();
-      await expect(page.getByRole('figure').filter({ hasText: 'India, 2026. The fruits of liberalization.' })).toBeVisible();
-      await expect(page.locator('#page-hero a[href="https://svs.gsfc.nasa.gov/5276/"]')).toBeVisible();
+      // --- Hero: kids-with-flags photo is back (BugHerd #27) ---
+      const heroPhoto = page.locator('#page-hero img.hero-school-img');
+      await expect(heroPhoto).toBeVisible();
+      await expect(heroPhoto).toHaveAttribute('src', 'images/hero-school.webp');
+      await expect(page.locator('#page-hero figure')).toHaveCount(0);
       await expect(page.locator('#page-hero video')).toHaveCount(0);
+
+      // --- India pair (BugHerd #19), now below The Diagnosis and above Reformed Approach (BugHerd #27) ---
+      const india = page.locator('#india');
+      await expect(india.getByRole('figure').filter({ hasText: 'India, 1992. The end of the License Raj.' })).toBeVisible();
+      await expect(india.getByRole('figure').filter({ hasText: 'India, 2026. The fruits of liberalization.' })).toBeVisible();
+      await expect(india.locator('a[href="https://svs.gsfc.nasa.gov/5276/"]')).toBeVisible();
+      const sectionOrder = await page.locator('body > section').evaluateAll((els) => els.map((el) => el.id));
+      expect(sectionOrder.indexOf('india'), `section order: ${sectionOrder.join(',')}`).toBe(
+        sectionOrder.indexOf('the-diagnosis') + 1,
+      );
+      expect(sectionOrder.indexOf('principles')).toBe(sectionOrder.indexOf('india') + 1);
+      await assertWithinParent(india.locator('.india-pair'), india);
 
       // --- Devex banner (BugHerd #18): one link, whole banner, no UNGA ---
       const banner = page.locator('a.unga-banner');

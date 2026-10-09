@@ -21,8 +21,6 @@
 <link rel="apple-touch-icon" href="images/favicon-mark.jpg">
 <link rel="preload" href="fonts/newsreader-normal-300700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/libertinus-serif-display-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" imagesizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" imagesizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/analytics.js" defer></script>
 <script type="application/ld+json">
@@ -47,7 +45,7 @@
   <style>
     /* Keep newsletter headline on one line on wide screens */
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
-    /* Hero text column is centered against the India pair by the grid (tablet:items-center). */
+    /* Hero text column is centered against the hero photo by the grid (tablet:items-center). */
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
     /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
@@ -114,28 +112,8 @@
 <section id="page-hero">
   <div class="hero-grid mx-auto grid min-w-0 items-start gap-8 tablet:items-center tablet:gap-12">
     <div class="hero-media relative order-1 min-w-0 overflow-hidden tablet:order-2">
-      <div class="hero-india">
-        <figure class="hero-india__panel">
-          <picture>
-            <source type="image/avif" srcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-            <source type="image/webp" srcset="images/india-1992-480.webp 480w, images/india-1992-1306.webp 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-            <img src="images/india-1992-1306.webp" alt="Satellite night lights over India in 1992" width="1306" height="1400" fetchpriority="high">
-          </picture>
-          <figcaption>India, 1992. The end of the License Raj.</figcaption>
-        </figure>
-        <figure class="hero-india__panel">
-          <div class="relative">
-            <picture>
-              <source type="image/avif" srcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-              <source type="image/webp" srcset="images/india-2026-480.webp 480w, images/india-2026-800.webp 800w, images/india-2026-1306.webp 1306w" sizes="(min-width: 1280px) 300px, (min-width: 1024px) 23vw, (min-width: 860px) 22vw, (max-width: 359px) 92vw, (max-width: 639px) 46vw, 255px">
-              <img src="images/india-2026-800.webp" alt="Satellite night lights over India in 2026" width="1306" height="1400" fetchpriority="high">
-            </picture>
-            <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:120px;height:64px;max-width:none">
-          </div>
-          <figcaption>India, 2026. The fruits of liberalization.</figcaption>
-        </figure>
-      </div>
-      <p class="hero-nasa"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
+      <img src="images/hero-school.webp" alt="Schoolchildren holding flags outdoors" class="hero-school-img" width="1024" height="683" fetchpriority="high">
+      <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
     </div>
     <div class="hero-text-col order-2 flex min-w-0 flex-col gap-6 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:py-4">
       <h1 class="display-heading text-ink">
@@ -268,6 +246,31 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- INDIA, 1992 / 2026 — moved out of the hero (BugHerd #27) -->
+<section class="india-section px-0 pt-[90px] min-[640px]:px-10 tablet:px-[124px] tablet:pt-[147px]" id="india" aria-label="India at night, 1992 and 2026">
+  <div class="india-media mx-auto fade-up">
+    <div class="india-pair">
+      <figure class="india-pair__panel">
+        <picture>
+          <source type="image/avif" srcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
+          <source type="image/webp" srcset="images/india-1992-480.webp 480w, images/india-1992-1306.webp 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
+          <img src="images/india-1992-1306.webp" alt="Satellite night lights over India in 1992" width="1306" height="1400" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>India, 1992. The end of the License Raj.</figcaption>
+      </figure>
+      <figure class="india-pair__panel">
+        <picture>
+          <source type="image/avif" srcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
+          <source type="image/webp" srcset="images/india-2026-480.webp 480w, images/india-2026-800.webp 800w, images/india-2026-1306.webp 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
+          <img src="images/india-2026-800.webp" alt="Satellite night lights over India in 2026" width="1306" height="1400" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>India, 2026. The fruits of liberalization.</figcaption>
+      </figure>
+    </div>
+    <p class="india-credit"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
   </div>
 </section>
 
