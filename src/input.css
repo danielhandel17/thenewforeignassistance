@@ -104,27 +104,26 @@
     text-decoration: underline;
     text-underline-offset: 0.18em;
   }
-  .hero-india {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    align-items: start;
-  }
-  /* Keep the night-lights pair from filling half the viewport on tablet and up. */
-  @media (min-width: 640px) and (max-width: 859px) {
-    .hero-media {
-      max-width: 520px;
-      margin-inline: auto;
-    }
+  /* Hero: kids-with-flags photo (restored, BugHerd #27). Phones zoom into the US flag and crop the third child. */
+  .hero-school-img {
+    @apply h-[260px] w-full max-w-full object-cover;
+    object-position: 18% 22%;
+    transform-origin: center;
+    transform: scale(2.15) translate(18%, 11%);
   }
   @media (min-width: 860px) {
     .hero-grid {
       grid-template-columns: minmax(0, 1fr) auto;
       padding-right: 32px;
     }
-    /* Pair scales with the viewport until 1280px, then caps at 614px: two 300px photos plus the 14px gap. */
+    /* Photo column scales with the viewport until 1280px, then caps at 614px. */
     .hero-media {
       width: 44vw;
+    }
+    .hero-school-img {
+      @apply aspect-[3/2] h-auto max-h-[683px];
+      object-position: 40% center;
+      transform: none;
     }
   }
   @media (min-width: 1024px) {
@@ -140,23 +139,43 @@
       width: 614px;
     }
   }
+  /* India 1992 / 2026 night-lights pair: its own band between The Diagnosis and Reformed Approach (BugHerd #27). */
+  .india-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+  @media (min-width: 640px) and (max-width: 859px) {
+    .india-media {
+      max-width: 520px;
+    }
+  }
+  @media (min-width: 860px) {
+    .india-media {
+      max-width: 760px;
+    }
+    .india-pair {
+      gap: 14px;
+    }
+  }
   @media (max-width: 359px) {
-    .hero-india {
+    .india-pair {
       grid-template-columns: 1fr;
       gap: 16px;
     }
   }
-  .hero-india__panel {
+  .india-pair__panel {
     margin: 0;
     min-width: 0;
   }
-  .hero-india img {
+  .india-pair img {
     display: block;
     width: 100%;
     height: auto;
     background: #070b16;
   }
-  .hero-india figcaption {
+  .india-pair figcaption {
     margin-top: 8px;
     font-family: Newsreader, Georgia, serif;
     font-size: 13px;
@@ -164,36 +183,33 @@
     color: #1c2e4a;
   }
   @media (min-width: 860px) {
-    .hero-india {
-      gap: 14px;
-    }
-    .hero-india figcaption {
+    .india-pair figcaption {
       font-size: 15px;
     }
   }
-  .hero-nasa {
+  .india-credit {
     @apply m-0 mt-2.5 font-newsreader text-xs leading-snug text-ink/70;
   }
-  .hero-nasa a {
+  .india-credit a {
     @apply text-inherit underline decoration-ink/30 underline-offset-2 hover:text-amber hover:decoration-amber;
   }
   /* The photos run full-bleed on phones; keep the captions and credit off the screen edge (BugHerd #25). */
   @media (max-width: 639px) {
-    .hero-india__panel:first-child figcaption,
-    .hero-nasa {
+    .india-pair__panel:first-child figcaption,
+    .india-credit {
       padding-left: 20px;
     }
-    .hero-india__panel:last-child figcaption,
-    .hero-nasa {
+    .india-pair__panel:last-child figcaption,
+    .india-credit {
       padding-right: 20px;
     }
   }
   @media (max-width: 359px) {
-    .hero-india figcaption {
+    .india-pair figcaption {
       padding-inline: 20px;
     }
   }
-  .hero-nasa a:focus-visible {
+  .india-credit a:focus-visible {
     outline: 2px solid #b8682a;
     outline-offset: 2px;
   }
