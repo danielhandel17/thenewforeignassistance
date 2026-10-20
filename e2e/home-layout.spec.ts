@@ -118,11 +118,42 @@ for (const vp of viewports) {
         await assertBoxHeightPx(mark, 26);
       }
 
-      // --- Hero + page overflow (BugHerd #19) ---
-      await expect(page.getByRole('figure').filter({ hasText: 'India, 1992. The end of the License Raj.' })).toBeVisible();
-      await expect(page.getByRole('figure').filter({ hasText: 'India, 2026. The fruits of liberalization.' })).toBeVisible();
-      await expect(page.locator('#page-hero a[href="https://svs.gsfc.nasa.gov/5276/"]')).toBeVisible();
+      // --- Hero: kids-with-flags photo is back (BugHerd #27) ---
+      const heroPhoto = page.locator('#page-hero img.hero-school-img');
+      await expect(heroPhoto).toBeVisible();
+      await expect(heroPhoto).toHaveAttribute('src', 'images/hero-school.webp');
+      await expect(page.locator('#page-hero figure')).toHaveCount(0);
       await expect(page.locator('#page-hero video')).toHaveCount(0);
+      if (isTablet(vp.width)) {
+        const heroTrack = page.locator('#page-hero .hero-media-track');
+        await expect(heroTrack).toHaveCSS('position', 'sticky');
+      }
+
+      // --- India night-lights band (main), below The Diagnosis and above Reformed Approach ---
+      const india = page.locator('#india-night-lights');
+      await expect(india.getByRole('heading', { name: 'What opening an economy looks like from space.' })).toBeVisible();
+      await expect(india.getByRole('figure').filter({ hasText: 'India, 1992, at the end of the License Raj' })).toBeVisible();
+      await expect(india.getByRole('figure').filter({ hasText: 'India, 2023' })).toBeVisible();
+      await expect(india.locator('a[href="https://doi.org/10.1038/s41597-024-04228-6"]')).toBeVisible();
+      const sectionOrder = await page.locator('body > section').evaluateAll((els) => els.map((el) => el.id));
+      expect(sectionOrder.indexOf('india-night-lights'), `section order: ${sectionOrder.join(',')}`).toBe(
+        sectionOrder.indexOf('the-diagnosis') + 1,
+      );
+      expect(sectionOrder.indexOf('principles')).toBe(sectionOrder.indexOf('india-night-lights') + 1);
+      await assertWithinParent(india.locator('.india-band__pair'), india);
+
+      // --- Hero PEPFAR caption (bucket B) ---
+      const heroCaption = page.locator('#page-hero .hero-photo-caption');
+      await expect(heroCaption).toContainText('PEPFAR');
+      if (isTablet(vp.width)) {
+        const heroMedia = page.locator('#page-hero .hero-media');
+        const mediaBox = await getBox(heroMedia);
+        const captionBox = await getBox(heroCaption);
+        expect(
+          captionBox.width,
+          `caption width ${captionBox.width} should not exceed hero-media ${mediaBox.width}`,
+        ).toBeLessThanOrEqual(mediaBox.width + 2);
+      }
 
       // --- Devex banner (BugHerd #18): one link, whole banner, no UNGA ---
       const banner = page.locator('a.unga-banner');

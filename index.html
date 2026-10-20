@@ -45,7 +45,7 @@
   <style>
     /* Keep newsletter headline on one line on wide screens */
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
-    /* Hero text column is centered against the India pair by the grid (tablet:items-center). */
+    /* Hero: headline scrolls while the photo stays sticky (BugHerd #28), same pattern as #principles. */
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
     /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
@@ -65,8 +65,8 @@
     @media (min-width: 1280px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; } .hero-photo-col { margin-top: calc(max(0px, calc((100vw - 64px) / 6 - 159px)) + 6px); } }
     .hero-school-img { display:block; height:260px; width:100%; max-width:100%; object-fit:cover; object-position:18% 22%; transform-origin:center; transform:scale(2.15) translate(18%,11%); }
     @media (min-width: 860px) { .hero-school-img { aspect-ratio:3/2; height:auto; max-height:683px; object-position:40% center; transform:none; } }
-    .hero-photo-caption { font-size: 13px; line-height: 1.45; color: #5a6880; margin: 8px 40px 0; }
-    @media (min-width: 860px) { .hero-photo-caption { margin: 10px 60px 0 0; } }
+    .hero-photo-caption { font-size: 13px; line-height: 1.45; color: #5a6880; margin: 8px 0 0; max-width: 100%; box-sizing: border-box; display: block; padding-inline: 10px; }
+    @media (min-width: 860px) { .hero-photo-caption { margin: 10px 0 0 0; padding-inline: 0; } }
     /* Desktop: tighter gap between hero and The Record (photo unchanged) */
     @media (min-width: 860px) { #page-hero .hero-text-col { padding-bottom: 56px !important; } #the-record { padding-top: 96px !important; } }
     /* Desktop: hero buttons side by side where they fit */
@@ -91,8 +91,8 @@
     .friedman-quote figcaption { margin-top: 12px; margin-bottom: -4px; display: flex; flex-direction: column; gap: 2px; }
     .friedman-quote__name { white-space: nowrap; font-family: Newsreader, Georgia, serif; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #b8682a; }
     .friedman-quote__src { font-size: 15px; color: #4a5a72; }
-    @media (min-width: 860px) { .friedman-quote__name { font-size: 14px; letter-spacing: .14em; } .friedman-quote { max-width: 440px; gap: 24px; } .friedman-quote__photo { width: 182px; } .friedman-quote blockquote { font-size: 23px; } }
-    @media (min-width: 1360px) { .diag-top > div:first-child { flex: 1 1 0; } .diag-top > div:first-child p br { display: none; } .diag-top > div:first-child p { max-width: 700px; } .friedman-quote { flex: 0 0 430px; margin: 40px 0 0 auto; } }
+    @media (min-width: 860px) { .diag-top { flex-wrap: nowrap; } .diag-top > div:first-child { flex: 1 1 0; min-width: 0; } .friedman-quote__name { font-size: 14px; letter-spacing: .14em; } .friedman-quote { flex: 0 0 auto; max-width: 440px; gap: 24px; } .friedman-quote__photo { width: 182px; } .friedman-quote blockquote { font-size: 23px; } }
+    @media (min-width: 1360px) { .diag-top > div:first-child p br { display: none; } .diag-top > div:first-child p { max-width: 700px; } .friedman-quote { flex: 0 0 430px; margin: 40px 0 0 auto; } }
     /* India night-lights band */
     .india-band { background: #0a1220; color: #fff; padding: 72px 40px 56px; }
     .india-band__inner { max-width: 1192px; margin: 0 auto; }
@@ -162,16 +162,9 @@
 
 <!-- HERO -->
 <section id="page-hero">
-  <div class="mx-auto grid min-w-0 items-start gap-8 tablet:grid-cols-2 tablet:gap-16">
-    <div class="hero-photo-col relative order-2 min-w-0 overflow-hidden fade-up tablet:order-2">
-      <div class="relative overflow-hidden">
-        <img src="images/hero-school.webp" alt="Girls with U.S. and Kenyan flags waiting to greet the U.S. ambassador at a PEPFAR girls' empowerment project in Nairobi" class="hero-school-img" width="1024" height="683" fetchpriority="high">
-        <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
-      </div>
-      <p class="hero-photo-caption">Girls in Nairobi wait to greet the U.S. ambassador at a PEPFAR girls&#39; empowerment project, 2018. Photo: Jonathan Ernst/Reuters</p>
-    </div>
-    <div class="hero-text-col order-1 flex min-w-0 flex-col gap-8 px-10 pt-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:pt-[147px] tablet:pb-[130px]">
-      <h1 class="hero-h1 font-newsreader font-medium text-ink">
+  <div class="hero-grid mx-auto grid min-w-0 items-start gap-8 tablet:gap-12 fade-up">
+    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-6 px-10 tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:py-4">
+      <h1 class="display-heading text-ink">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
         <span class="block text-amber">Built to End.</span>
@@ -181,11 +174,18 @@
         <p>For those of us who support foreign assistance, it is tempting to bring back what USAID was. That&#39;s not good enough.</p>
         <p>It&#39;s time for what comes next. The New Foreign Assistance is the conservative voice for reform.</p>
       </div>
-      <div class="flex w-full flex-col gap-3 tablet:max-w-none tablet:flex-row tablet:flex-wrap tablet:items-center">
+      <div class="hero-actions flex w-full flex-col gap-3 tablet:max-w-none tablet:flex-row tablet:flex-wrap tablet:items-center">
         <a href="framework.html" class="btn-filled w-full">Read the framework</a>
         <a href="tracker.html" class="btn-outline w-full">Open the tracker <span class=" hidden tablet:inline">→</span></a>
       </div>
     </div>
+    <aside class="hero-media-track order-1 min-w-0 tablet:sticky tablet:top-[12.5rem] tablet:order-2 tablet:self-start">
+      <div class="hero-media relative overflow-hidden">
+        <img src="images/hero-school.webp" alt="Girls with U.S. and Kenyan flags waiting to greet the U.S. ambassador at a PEPFAR girls' empowerment project in Nairobi" class="hero-school-img" width="1024" height="683" fetchpriority="high">
+        <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
+      </div>
+      <p class="hero-photo-caption">Girls in Nairobi wait to greet the U.S. ambassador at a PEPFAR girls&#39; empowerment project, 2018. Photo: Jonathan Ernst/Reuters</p>
+    </aside>
   </div>
 </section>
 
