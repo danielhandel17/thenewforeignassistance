@@ -116,8 +116,12 @@
   }
   .hero-photo-caption {
     @apply box-border block max-w-full;
+    padding-inline: 10px;
   }
   @media (min-width: 860px) {
+    .hero-photo-caption {
+      padding-inline: 0;
+    }
     .hero-grid {
       grid-template-columns: minmax(0, 1fr) minmax(0, 44vw);
       align-items: start;
