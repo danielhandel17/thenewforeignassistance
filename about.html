@@ -240,6 +240,11 @@
     padding-bottom: 1px;
   }
 
+  /* ── MISSION BOX ── */
+  .mission-box { margin: 32px 0; padding: 24px 26px; background: #f6efe4; border-left: 4px solid #b8682a; }
+  .org-prose .mission-box__label { margin: 0 0 8px; font-family: 'Libertinus Serif Display', 'Newsreader', serif; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: #b8682a; }
+  .org-prose .mission-box__text { margin: 0; font-family: 'Newsreader', serif; font-size: 22px; line-height: 1.45; color: #1c2e4a; }
+  @media (min-width: 860px) { .mission-box { padding: 30px 36px; } .org-prose .mission-box__text { font-size: 25px; } }
   /* ── ADVISORY COUNCIL ── */
   .advisory-section { background: var(--bone); }
   .advisory-intro {
@@ -854,6 +859,10 @@
     <div class="org-prose">
       <p>The New Foreign Assistance is dedicated to promoting effective, accountable, and finite U.S. foreign assistance that advances American interests and human welfare through economic growth, trade, and investment.</p>
       <p>A &#8220;do tank&#8221; based in Washington, D.C., we exist to move policy and programming.</p>
+      <aside class="mission-box" aria-label="The TNFA mission">
+        <p class="mission-box__label">The TNFA Mission</p>
+        <p class="mission-box__text">To equip the State Department to avoid the mistakes of USAID and build a new foreign assistance that unleashes private sector growth, focuses on transformational wins, is accountable, and has an end game in sight.</p>
+      </aside>
       <p>The New Foreign Assistance does not seek or accept federal funding.</p>
     </div>
 
