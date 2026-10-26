@@ -92,6 +92,16 @@
       .principle__body { --pindent: 60px; }
       .principle__toggle::before, .principle__toggle::after { width: 20px; top: 9px; }
     }
+    /* Desktop hero photo: half the page, bleeding to the right edge (not sticky); top aligned with "Ambitious." */
+    @media (min-width: 860px) {
+      #page-hero .hero-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); padding-right: 0; }
+      #page-hero .hero-media-track { position: static; max-width: none; margin-top: calc(max(0px, calc((100vw - 64px) / 6 - 124px)) + 4px); }
+      #page-hero .hero-media { width: 100%; }
+      #page-hero .hero-photo-caption { padding-right: 60px; }
+    }
+    @media (min-width: 1280px) {
+      #page-hero .hero-media-track { margin-top: calc(max(0px, calc((100vw - 64px) / 6 - 159px)) + 6px + max(0px, (1440px - 100vw) * 0.0375)); }
+    }
     /* Hero heading restored to original scale (pre night-lights) */
     .hero-h1 { font-size: 42px; line-height: 1.1; }
     @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } }
@@ -197,7 +207,7 @@
         <a href="tracker.html" class="btn-outline w-full">Open the tracker <span class=" hidden tablet:inline">→</span></a>
       </div>
     </div>
-    <aside class="hero-media-track order-1 min-w-0 tablet:sticky tablet:top-[12.5rem] tablet:order-2 tablet:self-start">
+    <aside class="hero-media-track order-1 min-w-0 tablet:order-2 tablet:self-start">
       <div class="hero-media relative overflow-hidden">
         <img src="images/hero-school.webp" alt="Girls with U.S. and Kenyan flags waiting to greet the U.S. ambassador at a PEPFAR girls' empowerment project in Nairobi" class="hero-school-img" width="1024" height="683" fetchpriority="high">
         <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
